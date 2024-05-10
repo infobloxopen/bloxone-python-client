@@ -1,0 +1,253 @@
+# ipam.AsmApi
+
+All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**Create**](AsmApi.md#Create) | **POST** /ipam/asm | Update subnet and ranges for Automated Scope Management.
+[**List**](AsmApi.md#List) | **GET** /ipam/asm | Retrieve suggested updates for Automated Scope Management.
+[**Read**](AsmApi.md#Read) | **GET** /ipam/asm/{id} | Retrieve the suggested update for Automated Scope Management.
+
+
+# **Create**
+> CreateASMResponse Create(body)
+
+Update subnet and ranges for Automated Scope Management.
+
+Use this method to update the subnet and range for Automated Scope Management. The __ASM__ object generates and returns the suggestions from the ASM suggestion engine and allows for updating the subnet and range. This method attempts to expand the scope by expanding a range or adding a new range and, if necessary, expanding the subnet.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+
+```python
+import ipam
+from ipam.models.asm import ASM
+from ipam.models.create_asm_response import CreateASMResponse
+from ipam.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ipam.Configuration(
+    host = "http://csp.infoblox.com/api/ddi/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ipam.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ipam.AsmApi(api_client)
+    body = ipam.ASM() # ASM | 
+
+    try:
+        # Update subnet and ranges for Automated Scope Management.
+        api_response = api_instance.Create(body)
+        print("The response of AsmApi->Create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AsmApi->Create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ASM**](ASM.md)|  | 
+
+### Return type
+
+[**CreateASMResponse**](CreateASMResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | POST operation response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **List**
+> ListASMResponse List(fields=fields, subnet_id=subnet_id)
+
+Retrieve suggested updates for Automated Scope Management.
+
+Use this method to retrieve __ASM__ objects for Automated Scope Management. The __ASM__ object returns the suggested updates for the subnet from the ASM suggestion engine and allows for updating the subnet and range information.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+
+```python
+import ipam
+from ipam.models.list_asm_response import ListASMResponse
+from ipam.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ipam.Configuration(
+    host = "http://csp.infoblox.com/api/ddi/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ipam.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ipam.AsmApi(api_client)
+    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
+    subnet_id = 'subnet_id_example' # str |  (optional)
+
+    try:
+        # Retrieve suggested updates for Automated Scope Management.
+        api_response = api_instance.List(fields=fields, subnet_id=subnet_id)
+        print("The response of AsmApi->List:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AsmApi->List: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fields** | **str**|   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | [optional] 
+ **subnet_id** | **str**|  | [optional] 
+
+### Return type
+
+[**ListASMResponse**](ListASMResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | GET operation response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **Read**
+> ReadASMResponse Read(id, fields=fields)
+
+Retrieve the suggested update for Automated Scope Management.
+
+Use this method to retrieve an __ASM__ object for Automated Scope Management. The __ASM__ object returns the suggested updates for the subnet from the ASM suggestion engine and allows for updating the subnet and range information.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+
+```python
+import ipam
+from ipam.models.read_asm_response import ReadASMResponse
+from ipam.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ipam.Configuration(
+    host = "http://csp.infoblox.com/api/ddi/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ipam.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ipam.AsmApi(api_client)
+    id = 'id_example' # str | An application specific resource identity of a resource
+    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
+
+    try:
+        # Retrieve the suggested update for Automated Scope Management.
+        api_response = api_instance.Read(id, fields=fields)
+        print("The response of AsmApi->Read:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AsmApi->Read: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| An application specific resource identity of a resource | 
+ **fields** | **str**|   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | [optional] 
+
+### Return type
+
+[**ReadASMResponse**](ReadASMResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | GET operation response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
