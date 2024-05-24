@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](FixedAddressApi.md#Create) | **POST** /dhcp/fixed_address | Create the fixed address.
-[**Delete**](FixedAddressApi.md#Delete) | **DELETE** /dhcp/fixed_address/{id} | Move the fixed address to the recycle bin.
-[**List**](FixedAddressApi.md#List) | **GET** /dhcp/fixed_address | Retrieve fixed addresses.
-[**Read**](FixedAddressApi.md#Read) | **GET** /dhcp/fixed_address/{id} | Retrieve the fixed address.
-[**Update**](FixedAddressApi.md#Update) | **PATCH** /dhcp/fixed_address/{id} | Update the fixed address.
+[**create**](FixedAddressApi.md#create) | **POST** /dhcp/fixed_address | Create the fixed address.
+[**delete**](FixedAddressApi.md#delete) | **DELETE** /dhcp/fixed_address/{id} | Move the fixed address to the recycle bin.
+[**list**](FixedAddressApi.md#list) | **GET** /dhcp/fixed_address | Retrieve fixed addresses.
+[**read**](FixedAddressApi.md#read) | **GET** /dhcp/fixed_address/{id} | Retrieve the fixed address.
+[**update**](FixedAddressApi.md#update) | **PATCH** /dhcp/fixed_address/{id} | Update the fixed address.
 
 
-# **Create**
-> CreateFixedAddressResponse Create(body, inherit=inherit)
+# **create**
+> CreateFixedAddressResponse create(body, inherit=inherit)
 
 Create the fixed address.
 
@@ -55,11 +55,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the fixed address.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of FixedAddressApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of FixedAddressApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FixedAddressApi->Create: %s\n" % e)
+        print("Exception when calling FixedAddressApi->create: %s\n" % e)
 ```
 
 
@@ -93,8 +93,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the fixed address to the recycle bin.
 
@@ -134,9 +134,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the fixed address to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling FixedAddressApi->Delete: %s\n" % e)
+        print("Exception when calling FixedAddressApi->delete: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListFixedAddressResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListFixedAddressResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve fixed addresses.
 
@@ -219,11 +219,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve fixed addresses.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of FixedAddressApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of FixedAddressApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FixedAddressApi->List: %s\n" % e)
+        print("Exception when calling FixedAddressApi->list: %s\n" % e)
 ```
 
 
@@ -264,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadFixedAddressResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadFixedAddressResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the fixed address.
 
@@ -308,11 +308,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the fixed address.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of FixedAddressApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of FixedAddressApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FixedAddressApi->Read: %s\n" % e)
+        print("Exception when calling FixedAddressApi->read: %s\n" % e)
 ```
 
 
@@ -347,8 +347,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateFixedAddressResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateFixedAddressResponse update(id, body, inherit=inherit)
 
 Update the fixed address.
 
@@ -392,11 +392,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the fixed address.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of FixedAddressApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of FixedAddressApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FixedAddressApi->Update: %s\n" % e)
+        print("Exception when calling FixedAddressApi->update: %s\n" % e)
 ```
 
 

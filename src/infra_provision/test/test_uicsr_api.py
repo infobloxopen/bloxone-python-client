@@ -25,36 +25,36 @@ class TestUICSRApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Approve(self) -> None:
-        """Test case for Approve
+    def test_approve(self) -> None:
+        """Test case for approve
 
         Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
         """
         pass
 
-    def test_Deny(self) -> None:
-        """Test case for Deny
+    def test_deny(self) -> None:
+        """Test case for deny
 
         Marks the certificate signing request as denied.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         User can list the certificate signing requests for an account.
         """
         pass
 
-    def test_Revoke(self) -> None:
-        """Test case for Revoke
+    def test_revoke(self) -> None:
+        """Test case for revoke
 
         Invalidates a certificate by adding it to a certificate revocation list.
         """
         pass
 
-    def test_Revoke2(self) -> None:
-        """Test case for Revoke2
+    def test_revoke2(self) -> None:
+        """Test case for revoke2
 
         Invalidates a certificate by adding it to a certificate revocation list.
         """

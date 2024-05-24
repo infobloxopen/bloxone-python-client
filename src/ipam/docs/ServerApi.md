@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](ServerApi.md#Create) | **POST** /dhcp/server | Create the DHCP configuration profile.
-[**Delete**](ServerApi.md#Delete) | **DELETE** /dhcp/server/{id} | Move the DHCP configuration profile to the recycle bin.
-[**List**](ServerApi.md#List) | **GET** /dhcp/server | Retrieve DHCP configuration profiles.
-[**Read**](ServerApi.md#Read) | **GET** /dhcp/server/{id} | Retrieve the DHCP configuration profile.
-[**Update**](ServerApi.md#Update) | **PATCH** /dhcp/server/{id} | Update the DHCP configuration profile.
+[**create**](ServerApi.md#create) | **POST** /dhcp/server | Create the DHCP configuration profile.
+[**delete**](ServerApi.md#delete) | **DELETE** /dhcp/server/{id} | Move the DHCP configuration profile to the recycle bin.
+[**list**](ServerApi.md#list) | **GET** /dhcp/server | Retrieve DHCP configuration profiles.
+[**read**](ServerApi.md#read) | **GET** /dhcp/server/{id} | Retrieve the DHCP configuration profile.
+[**update**](ServerApi.md#update) | **PATCH** /dhcp/server/{id} | Update the DHCP configuration profile.
 
 
-# **Create**
-> CreateServerResponse Create(body, inherit=inherit)
+# **create**
+> CreateServerResponse create(body, inherit=inherit)
 
 Create the DHCP configuration profile.
 
@@ -55,11 +55,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the DHCP configuration profile.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of ServerApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of ServerApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Create: %s\n" % e)
+        print("Exception when calling ServerApi->create: %s\n" % e)
 ```
 
 
@@ -93,8 +93,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the DHCP configuration profile to the recycle bin.
 
@@ -134,9 +134,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the DHCP configuration profile to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ServerApi->Delete: %s\n" % e)
+        print("Exception when calling ServerApi->delete: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListServerResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListServerResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve DHCP configuration profiles.
 
@@ -219,11 +219,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP configuration profiles.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of ServerApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of ServerApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->List: %s\n" % e)
+        print("Exception when calling ServerApi->list: %s\n" % e)
 ```
 
 
@@ -264,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadServerResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadServerResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the DHCP configuration profile.
 
@@ -308,11 +308,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP configuration profile.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of ServerApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of ServerApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Read: %s\n" % e)
+        print("Exception when calling ServerApi->read: %s\n" % e)
 ```
 
 
@@ -347,8 +347,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateServerResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateServerResponse update(id, body, inherit=inherit)
 
 Update the DHCP configuration profile.
 
@@ -392,11 +392,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP configuration profile.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of ServerApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of ServerApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Update: %s\n" % e)
+        print("Exception when calling ServerApi->update: %s\n" % e)
 ```
 
 

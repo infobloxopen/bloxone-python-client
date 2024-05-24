@@ -4,13 +4,13 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteNamedListItems**](NamedListItemsApi.md#DeleteNamedListItems) | **DELETE** /named_lists/{id}/items | Delete Named List Items.
-[**InsertOrReplaceNamedListItems**](NamedListItemsApi.md#InsertOrReplaceNamedListItems) | **POST** /named_lists/{id}/items | Insert Named List Items.
-[**NamedListItemsPartialUpdate**](NamedListItemsApi.md#NamedListItemsPartialUpdate) | **PATCH** /named_lists/{id}/items | Partial Update Named List Items.
+[**delete_named_list_items**](NamedListItemsApi.md#delete_named_list_items) | **DELETE** /named_lists/{id}/items | Delete Named List Items.
+[**insert_or_replace_named_list_items**](NamedListItemsApi.md#insert_or_replace_named_list_items) | **POST** /named_lists/{id}/items | Insert Named List Items.
+[**named_list_items_partial_update**](NamedListItemsApi.md#named_list_items_partial_update) | **PATCH** /named_lists/{id}/items | Partial Update Named List Items.
 
 
-# **DeleteNamedListItems**
-> DeleteNamedListItems(id, body)
+# **delete_named_list_items**
+> delete_named_list_items(id, body)
 
 Delete Named List Items.
 
@@ -41,9 +41,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Named List Items.
-        api_instance.DeleteNamedListItems(id, body)
+        api_instance.delete_named_list_items(id, body)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->DeleteNamedListItems: %s\n" % e)
+        print("Exception when calling NamedListItemsApi->delete_named_list_items: %s\n" % e)
 ```
 
 
@@ -80,8 +80,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **InsertOrReplaceNamedListItems**
-> NamedListItemsInsertOrUpdateResponse InsertOrReplaceNamedListItems(id, body)
+# **insert_or_replace_named_list_items**
+> NamedListItemsInsertOrUpdateResponse insert_or_replace_named_list_items(id, body)
 
 Insert Named List Items.
 
@@ -113,11 +113,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Insert Named List Items.
-        api_response = api_instance.InsertOrReplaceNamedListItems(id, body)
-        print("The response of NamedListItemsApi->InsertOrReplaceNamedListItems:\n")
+        api_response = api_instance.insert_or_replace_named_list_items(id, body)
+        print("The response of NamedListItemsApi->insert_or_replace_named_list_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->InsertOrReplaceNamedListItems: %s\n" % e)
+        print("Exception when calling NamedListItemsApi->insert_or_replace_named_list_items: %s\n" % e)
 ```
 
 
@@ -154,8 +154,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **NamedListItemsPartialUpdate**
-> object NamedListItemsPartialUpdate(id, body)
+# **named_list_items_partial_update**
+> object named_list_items_partial_update(id, body)
 
 Partial Update Named List Items.
 
@@ -186,11 +186,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Partial Update Named List Items.
-        api_response = api_instance.NamedListItemsPartialUpdate(id, body)
-        print("The response of NamedListItemsApi->NamedListItemsPartialUpdate:\n")
+        api_response = api_instance.named_list_items_partial_update(id, body)
+        print("The response of NamedListItemsApi->named_list_items_partial_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->NamedListItemsPartialUpdate: %s\n" % e)
+        print("Exception when calling NamedListItemsApi->named_list_items_partial_update: %s\n" % e)
 ```
 
 

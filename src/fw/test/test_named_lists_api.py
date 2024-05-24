@@ -25,64 +25,64 @@ class TestNamedListsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateNamedList(self) -> None:
-        """Test case for CreateNamedList
+    def test_create_named_list(self) -> None:
+        """Test case for create_named_list
 
         Create Named List.
         """
         pass
 
-    def test_DeleteNamedLists(self) -> None:
-        """Test case for DeleteNamedLists
+    def test_delete_named_lists(self) -> None:
+        """Test case for delete_named_lists
 
         Delete Named Lists.
         """
         pass
 
-    def test_DeleteSingleNamedLists(self) -> None:
-        """Test case for DeleteSingleNamedLists
+    def test_delete_single_named_lists(self) -> None:
+        """Test case for delete_single_named_lists
 
         Delete Named Lists.
         """
         pass
 
-    def test_ListNamedLists(self) -> None:
-        """Test case for ListNamedLists
+    def test_list_named_lists(self) -> None:
+        """Test case for list_named_lists
 
         List Named Lists.
         """
         pass
 
-    def test_ListNamedListsCSV(self) -> None:
-        """Test case for ListNamedListsCSV
+    def test_list_named_lists_csv(self) -> None:
+        """Test case for list_named_lists_csv
 
         List Named Lists in CSV format.
         """
         pass
 
-    def test_MultiListUpdate(self) -> None:
-        """Test case for MultiListUpdate
+    def test_multi_list_update(self) -> None:
+        """Test case for multi_list_update
 
         Patch Multiple Named Lists.
         """
         pass
 
-    def test_ReadNamedList(self) -> None:
-        """Test case for ReadNamedList
+    def test_read_named_list(self) -> None:
+        """Test case for read_named_list
 
         Read Named List.
         """
         pass
 
-    def test_UpdateNamedList(self) -> None:
-        """Test case for UpdateNamedList
+    def test_update_named_list(self) -> None:
+        """Test case for update_named_list
 
         Update Named List.
         """
         pass
 
-    def test_UpdateNamedListPartial(self) -> None:
-        """Test case for UpdateNamedListPartial
+    def test_update_named_list_partial(self) -> None:
+        """Test case for update_named_list_partial
 
         Patch TI List.
         """

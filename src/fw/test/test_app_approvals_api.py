@@ -25,21 +25,21 @@ class TestAppApprovalsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ListAppApprovals(self) -> None:
-        """Test case for ListAppApprovals
+    def test_list_app_approvals(self) -> None:
+        """Test case for list_app_approvals
 
         """
         pass
 
-    def test_ReplaceAppApprovals(self) -> None:
-        """Test case for ReplaceAppApprovals
+    def test_replace_app_approvals(self) -> None:
+        """Test case for replace_app_approvals
 
         Update Application Approval.
         """
         pass
 
-    def test_UpdateAppApprovals(self) -> None:
-        """Test case for UpdateAppApprovals
+    def test_update_app_approvals(self) -> None:
+        """Test case for update_app_approvals
 
         """
         pass

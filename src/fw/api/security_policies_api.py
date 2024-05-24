@@ -45,7 +45,7 @@ class SecurityPoliciesApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateSecurityPolicy(
+    def create_security_policy(
         self,
         body: Annotated[SecurityPolicy,
                         Field(description="The Security Policy object.")],
@@ -88,7 +88,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateSecurityPolicy_serialize(
+        _param = self._create_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -112,7 +112,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def CreateSecurityPolicy_with_http_info(
+    def create_security_policy_with_http_info(
         self,
         body: Annotated[SecurityPolicy,
                         Field(description="The Security Policy object.")],
@@ -155,7 +155,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateSecurityPolicy_serialize(
+        _param = self._create_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -179,7 +179,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def CreateSecurityPolicy_without_preload_content(
+    def create_security_policy_without_preload_content(
         self,
         body: Annotated[SecurityPolicy,
                         Field(description="The Security Policy object.")],
@@ -222,7 +222,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateSecurityPolicy_serialize(
+        _param = self._create_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -240,7 +240,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateSecurityPolicy_serialize(
+    def _create_security_policy_serialize(
         self,
         body,
         _request_auth,
@@ -301,7 +301,7 @@ class SecurityPoliciesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSecurityPolicy(
+    def delete_security_policy(
         self,
         body: SecurityPolicyDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -343,7 +343,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSecurityPolicy_serialize(
+        _param = self._delete_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -365,7 +365,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def DeleteSecurityPolicy_with_http_info(
+    def delete_security_policy_with_http_info(
         self,
         body: SecurityPolicyDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -407,7 +407,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSecurityPolicy_serialize(
+        _param = self._delete_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -429,7 +429,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def DeleteSecurityPolicy_without_preload_content(
+    def delete_security_policy_without_preload_content(
         self,
         body: SecurityPolicyDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -471,7 +471,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSecurityPolicy_serialize(
+        _param = self._delete_security_policy_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -487,7 +487,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSecurityPolicy_serialize(
+    def _delete_security_policy_serialize(
         self,
         body,
         _request_auth,
@@ -548,7 +548,7 @@ class SecurityPoliciesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleSecurityPolicy(
+    def delete_single_security_policy(
         self,
         id: Annotated[
             StrictInt,
@@ -592,7 +592,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleSecurityPolicy_serialize(
+        _param = self._delete_single_security_policy_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -615,7 +615,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def DeleteSingleSecurityPolicy_with_http_info(
+    def delete_single_security_policy_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -659,7 +659,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleSecurityPolicy_serialize(
+        _param = self._delete_single_security_policy_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -682,7 +682,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def DeleteSingleSecurityPolicy_without_preload_content(
+    def delete_single_security_policy_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -726,7 +726,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleSecurityPolicy_serialize(
+        _param = self._delete_single_security_policy_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -743,7 +743,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleSecurityPolicy_serialize(
+    def _delete_single_security_policy_serialize(
         self,
         id,
         _request_auth,
@@ -794,7 +794,7 @@ class SecurityPoliciesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListSecurityPolicies(
+    def list_security_policies(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -884,7 +884,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicies_serialize(
+        _param = self._list_security_policies_serialize(
             filter=filter,
             fields=fields,
             include_access_codes=include_access_codes,
@@ -912,7 +912,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def ListSecurityPolicies_with_http_info(
+    def list_security_policies_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1002,7 +1002,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicies_serialize(
+        _param = self._list_security_policies_serialize(
             filter=filter,
             fields=fields,
             include_access_codes=include_access_codes,
@@ -1030,7 +1030,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def ListSecurityPolicies_without_preload_content(
+    def list_security_policies_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1120,7 +1120,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicies_serialize(
+        _param = self._list_security_policies_serialize(
             filter=filter,
             fields=fields,
             include_access_codes=include_access_codes,
@@ -1142,7 +1142,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListSecurityPolicies_serialize(
+    def _list_security_policies_serialize(
         self,
         filter,
         fields,
@@ -1231,7 +1231,7 @@ class SecurityPoliciesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadSecurityPolicy(
+    def read_security_policy(
         self,
         id: Annotated[
             StrictInt,
@@ -1286,7 +1286,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadSecurityPolicy_serialize(
+        _param = self._read_security_policy_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1310,7 +1310,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def ReadSecurityPolicy_with_http_info(
+    def read_security_policy_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1365,7 +1365,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadSecurityPolicy_serialize(
+        _param = self._read_security_policy_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1389,7 +1389,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def ReadSecurityPolicy_without_preload_content(
+    def read_security_policy_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1444,7 +1444,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadSecurityPolicy_serialize(
+        _param = self._read_security_policy_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1462,7 +1462,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadSecurityPolicy_serialize(
+    def _read_security_policy_serialize(
         self,
         id,
         fields,
@@ -1523,7 +1523,7 @@ class SecurityPoliciesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateSecurityPolicy(
+    def update_security_policy(
         self,
         id: Annotated[
             StrictInt,
@@ -1571,7 +1571,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateSecurityPolicy_serialize(
+        _param = self._update_security_policy_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1596,7 +1596,7 @@ class SecurityPoliciesApi:
         ).data
 
     @validate_call
-    def UpdateSecurityPolicy_with_http_info(
+    def update_security_policy_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1644,7 +1644,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateSecurityPolicy_serialize(
+        _param = self._update_security_policy_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1669,7 +1669,7 @@ class SecurityPoliciesApi:
         )
 
     @validate_call
-    def UpdateSecurityPolicy_without_preload_content(
+    def update_security_policy_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1717,7 +1717,7 @@ class SecurityPoliciesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateSecurityPolicy_serialize(
+        _param = self._update_security_policy_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1736,7 +1736,7 @@ class SecurityPoliciesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateSecurityPolicy_serialize(
+    def _update_security_policy_serialize(
         self,
         id,
         body,

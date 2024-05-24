@@ -4,27 +4,27 @@ All URIs are relative to *http://csp.infoblox.com/api/anycast/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAnycastConfig**](OnPremAnycastManagerApi.md#CreateAnycastConfig) | **POST** /accm/ac_configs | Create Anycast Configuration
-[**CreateAnycastVersion**](OnPremAnycastManagerApi.md#CreateAnycastVersion) | **POST** /accm/ac_version/{id} | Create Anycast Version
-[**DeleteAnycastConfig**](OnPremAnycastManagerApi.md#DeleteAnycastConfig) | **DELETE** /accm/ac_configs/{id} | Delete Anycast Configuration
-[**DeleteAnycastVersion**](OnPremAnycastManagerApi.md#DeleteAnycastVersion) | **DELETE** /accm/ac_version/{id} | Delete anycast version
-[**DeleteOnpremHost**](OnPremAnycastManagerApi.md#DeleteOnpremHost) | **DELETE** /accm/op_hosts/{id} | Delete On-Prem Host
-[**GetAnycastConfig**](OnPremAnycastManagerApi.md#GetAnycastConfig) | **GET** /accm/ac_configs/{id} | Retrieve Anycast Configuration
-[**GetAnycastConfigList**](OnPremAnycastManagerApi.md#GetAnycastConfigList) | **GET** /accm/ac_configs | Retrieve Multiple Anycast Configurations
-[**GetAnycastVersion**](OnPremAnycastManagerApi.md#GetAnycastVersion) | **GET** /accm/ac_version/{id} | Retrieve Anycast Version
-[**GetOnpremConfig**](OnPremAnycastManagerApi.md#GetOnpremConfig) | **GET** /accm/oph_configs/{ophid}/{version} | Retrieve Generated, Per-Host Anycast Configuration
-[**GetOnpremConfig2**](OnPremAnycastManagerApi.md#GetOnpremConfig2) | **GET** /onprem_config/{ophid}/{version} | Retrieve Generated, Per-Host Anycast Configuration
-[**GetOnpremHost**](OnPremAnycastManagerApi.md#GetOnpremHost) | **GET** /accm/op_hosts/{id} | Retrieve On-Prem Host
-[**GetStatus**](OnPremAnycastManagerApi.md#GetStatus) | **GET** /accm/oph_config_statuses/{ophid}/latest | Retrieve Configuration Status
-[**GetStatus2**](OnPremAnycastManagerApi.md#GetStatus2) | **GET** /onprem_config_statuses/{ophid}/latest | Retrieve Configuration Status
-[**ListAnycastConfigsWithRuntimeStatus**](OnPremAnycastManagerApi.md#ListAnycastConfigsWithRuntimeStatus) | **GET** /accm/ac_runtime_statuses | Read list of Anycast Configurations
-[**ReadAnycastConfigWithRuntimeStatus**](OnPremAnycastManagerApi.md#ReadAnycastConfigWithRuntimeStatus) | **GET** /accm/ac_runtime_statuses/{id} | Read Anycast Configuration
-[**UpdateAnycastConfig**](OnPremAnycastManagerApi.md#UpdateAnycastConfig) | **PUT** /accm/ac_configs/{id} | Create or Update Anycast Configuration
-[**UpdateOnpremHost**](OnPremAnycastManagerApi.md#UpdateOnpremHost) | **PUT** /accm/op_hosts/{id} | Create or Update On-Prem Host
+[**create_anycast_config**](OnPremAnycastManagerApi.md#create_anycast_config) | **POST** /accm/ac_configs | Create Anycast Configuration
+[**create_anycast_version**](OnPremAnycastManagerApi.md#create_anycast_version) | **POST** /accm/ac_version/{id} | Create Anycast Version
+[**delete_anycast_config**](OnPremAnycastManagerApi.md#delete_anycast_config) | **DELETE** /accm/ac_configs/{id} | Delete Anycast Configuration
+[**delete_anycast_version**](OnPremAnycastManagerApi.md#delete_anycast_version) | **DELETE** /accm/ac_version/{id} | Delete anycast version
+[**delete_onprem_host**](OnPremAnycastManagerApi.md#delete_onprem_host) | **DELETE** /accm/op_hosts/{id} | Delete On-Prem Host
+[**get_anycast_config**](OnPremAnycastManagerApi.md#get_anycast_config) | **GET** /accm/ac_configs/{id} | Retrieve Anycast Configuration
+[**get_anycast_config_list**](OnPremAnycastManagerApi.md#get_anycast_config_list) | **GET** /accm/ac_configs | Retrieve Multiple Anycast Configurations
+[**get_anycast_version**](OnPremAnycastManagerApi.md#get_anycast_version) | **GET** /accm/ac_version/{id} | Retrieve Anycast Version
+[**get_onprem_config**](OnPremAnycastManagerApi.md#get_onprem_config) | **GET** /accm/oph_configs/{ophid}/{version} | Retrieve Generated, Per-Host Anycast Configuration
+[**get_onprem_config2**](OnPremAnycastManagerApi.md#get_onprem_config2) | **GET** /onprem_config/{ophid}/{version} | Retrieve Generated, Per-Host Anycast Configuration
+[**get_onprem_host**](OnPremAnycastManagerApi.md#get_onprem_host) | **GET** /accm/op_hosts/{id} | Retrieve On-Prem Host
+[**get_status**](OnPremAnycastManagerApi.md#get_status) | **GET** /accm/oph_config_statuses/{ophid}/latest | Retrieve Configuration Status
+[**get_status2**](OnPremAnycastManagerApi.md#get_status2) | **GET** /onprem_config_statuses/{ophid}/latest | Retrieve Configuration Status
+[**list_anycast_configs_with_runtime_status**](OnPremAnycastManagerApi.md#list_anycast_configs_with_runtime_status) | **GET** /accm/ac_runtime_statuses | Read list of Anycast Configurations
+[**read_anycast_config_with_runtime_status**](OnPremAnycastManagerApi.md#read_anycast_config_with_runtime_status) | **GET** /accm/ac_runtime_statuses/{id} | Read Anycast Configuration
+[**update_anycast_config**](OnPremAnycastManagerApi.md#update_anycast_config) | **PUT** /accm/ac_configs/{id} | Create or Update Anycast Configuration
+[**update_onprem_host**](OnPremAnycastManagerApi.md#update_onprem_host) | **PUT** /accm/op_hosts/{id} | Create or Update On-Prem Host
 
 
-# **CreateAnycastConfig**
-> AnycastConfigResponse CreateAnycastConfig(body)
+# **create_anycast_config**
+> AnycastConfigResponse create_anycast_config(body)
 
 Create Anycast Configuration
 
@@ -66,11 +66,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Create Anycast Configuration
-        api_response = api_instance.CreateAnycastConfig(body)
-        print("The response of OnPremAnycastManagerApi->CreateAnycastConfig:\n")
+        api_response = api_instance.create_anycast_config(body)
+        print("The response of OnPremAnycastManagerApi->create_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->CreateAnycastConfig: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->create_anycast_config: %s\n" % e)
 ```
 
 
@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateAnycastVersion**
-> object CreateAnycastVersion(id)
+# **create_anycast_version**
+> object create_anycast_version(id)
 
 Create Anycast Version
 
@@ -144,11 +144,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Create Anycast Version
-        api_response = api_instance.CreateAnycastVersion(id)
-        print("The response of OnPremAnycastManagerApi->CreateAnycastVersion:\n")
+        api_response = api_instance.create_anycast_version(id)
+        print("The response of OnPremAnycastManagerApi->create_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->CreateAnycastVersion: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->create_anycast_version: %s\n" % e)
 ```
 
 
@@ -181,8 +181,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteAnycastConfig**
-> object DeleteAnycastConfig(id)
+# **delete_anycast_config**
+> object delete_anycast_config(id)
 
 Delete Anycast Configuration
 
@@ -222,11 +222,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Delete Anycast Configuration
-        api_response = api_instance.DeleteAnycastConfig(id)
-        print("The response of OnPremAnycastManagerApi->DeleteAnycastConfig:\n")
+        api_response = api_instance.delete_anycast_config(id)
+        print("The response of OnPremAnycastManagerApi->delete_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->DeleteAnycastConfig: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->delete_anycast_config: %s\n" % e)
 ```
 
 
@@ -259,8 +259,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteAnycastVersion**
-> object DeleteAnycastVersion(id)
+# **delete_anycast_version**
+> object delete_anycast_version(id)
 
 Delete anycast version
 
@@ -300,11 +300,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Delete anycast version
-        api_response = api_instance.DeleteAnycastVersion(id)
-        print("The response of OnPremAnycastManagerApi->DeleteAnycastVersion:\n")
+        api_response = api_instance.delete_anycast_version(id)
+        print("The response of OnPremAnycastManagerApi->delete_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->DeleteAnycastVersion: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->delete_anycast_version: %s\n" % e)
 ```
 
 
@@ -337,8 +337,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteOnpremHost**
-> object DeleteOnpremHost(id)
+# **delete_onprem_host**
+> object delete_onprem_host(id)
 
 Delete On-Prem Host
 
@@ -378,11 +378,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Delete On-Prem Host
-        api_response = api_instance.DeleteOnpremHost(id)
-        print("The response of OnPremAnycastManagerApi->DeleteOnpremHost:\n")
+        api_response = api_instance.delete_onprem_host(id)
+        print("The response of OnPremAnycastManagerApi->delete_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->DeleteOnpremHost: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->delete_onprem_host: %s\n" % e)
 ```
 
 
@@ -415,8 +415,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetAnycastConfig**
-> AnycastConfigResponse GetAnycastConfig(id)
+# **get_anycast_config**
+> AnycastConfigResponse get_anycast_config(id)
 
 Retrieve Anycast Configuration
 
@@ -457,11 +457,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Anycast Configuration
-        api_response = api_instance.GetAnycastConfig(id)
-        print("The response of OnPremAnycastManagerApi->GetAnycastConfig:\n")
+        api_response = api_instance.get_anycast_config(id)
+        print("The response of OnPremAnycastManagerApi->get_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetAnycastConfig: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_anycast_config: %s\n" % e)
 ```
 
 
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetAnycastConfigList**
-> GetAnycastConfigListResponse GetAnycastConfigList(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+# **get_anycast_config_list**
+> GetAnycastConfigListResponse get_anycast_config_list(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
 
 Retrieve Multiple Anycast Configurations
 
@@ -542,11 +542,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Multiple Anycast Configurations
-        api_response = api_instance.GetAnycastConfigList(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
-        print("The response of OnPremAnycastManagerApi->GetAnycastConfigList:\n")
+        api_response = api_instance.get_anycast_config_list(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+        print("The response of OnPremAnycastManagerApi->get_anycast_config_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetAnycastConfigList: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_anycast_config_list: %s\n" % e)
 ```
 
 
@@ -585,8 +585,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetAnycastVersion**
-> AnycastVersion GetAnycastVersion(id)
+# **get_anycast_version**
+> AnycastVersion get_anycast_version(id)
 
 Retrieve Anycast Version
 
@@ -627,11 +627,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Anycast Version
-        api_response = api_instance.GetAnycastVersion(id)
-        print("The response of OnPremAnycastManagerApi->GetAnycastVersion:\n")
+        api_response = api_instance.get_anycast_version(id)
+        print("The response of OnPremAnycastManagerApi->get_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetAnycastVersion: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_anycast_version: %s\n" % e)
 ```
 
 
@@ -664,8 +664,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetOnpremConfig**
-> ServiceConfig GetOnpremConfig(ophid, version, app_name=app_name, app_version=app_version)
+# **get_onprem_config**
+> ServiceConfig get_onprem_config(ophid, version, app_name=app_name, app_version=app_version)
 
 Retrieve Generated, Per-Host Anycast Configuration
 
@@ -709,11 +709,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.GetOnpremConfig(ophid, version, app_name=app_name, app_version=app_version)
-        print("The response of OnPremAnycastManagerApi->GetOnpremConfig:\n")
+        api_response = api_instance.get_onprem_config(ophid, version, app_name=app_name, app_version=app_version)
+        print("The response of OnPremAnycastManagerApi->get_onprem_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetOnpremConfig: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_onprem_config: %s\n" % e)
 ```
 
 
@@ -749,8 +749,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetOnpremConfig2**
-> ServiceConfig GetOnpremConfig2(ophid, version, app_name=app_name, app_version=app_version)
+# **get_onprem_config2**
+> ServiceConfig get_onprem_config2(ophid, version, app_name=app_name, app_version=app_version)
 
 Retrieve Generated, Per-Host Anycast Configuration
 
@@ -794,11 +794,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.GetOnpremConfig2(ophid, version, app_name=app_name, app_version=app_version)
-        print("The response of OnPremAnycastManagerApi->GetOnpremConfig2:\n")
+        api_response = api_instance.get_onprem_config2(ophid, version, app_name=app_name, app_version=app_version)
+        print("The response of OnPremAnycastManagerApi->get_onprem_config2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetOnpremConfig2: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_onprem_config2: %s\n" % e)
 ```
 
 
@@ -834,8 +834,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetOnpremHost**
-> OnpremHostResponse GetOnpremHost(id)
+# **get_onprem_host**
+> OnpremHostResponse get_onprem_host(id)
 
 Retrieve On-Prem Host
 
@@ -876,11 +876,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve On-Prem Host
-        api_response = api_instance.GetOnpremHost(id)
-        print("The response of OnPremAnycastManagerApi->GetOnpremHost:\n")
+        api_response = api_instance.get_onprem_host(id)
+        print("The response of OnPremAnycastManagerApi->get_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetOnpremHost: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_onprem_host: %s\n" % e)
 ```
 
 
@@ -913,8 +913,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetStatus**
-> ServiceStatusUpdateRequest GetStatus(ophid)
+# **get_status**
+> ServiceStatusUpdateRequest get_status(ophid)
 
 Retrieve Configuration Status
 
@@ -955,11 +955,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Configuration Status
-        api_response = api_instance.GetStatus(ophid)
-        print("The response of OnPremAnycastManagerApi->GetStatus:\n")
+        api_response = api_instance.get_status(ophid)
+        print("The response of OnPremAnycastManagerApi->get_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetStatus: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_status: %s\n" % e)
 ```
 
 
@@ -992,8 +992,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetStatus2**
-> ServiceStatusUpdateRequest GetStatus2(ophid)
+# **get_status2**
+> ServiceStatusUpdateRequest get_status2(ophid)
 
 Retrieve Configuration Status
 
@@ -1034,11 +1034,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Configuration Status
-        api_response = api_instance.GetStatus2(ophid)
-        print("The response of OnPremAnycastManagerApi->GetStatus2:\n")
+        api_response = api_instance.get_status2(ophid)
+        print("The response of OnPremAnycastManagerApi->get_status2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->GetStatus2: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->get_status2: %s\n" % e)
 ```
 
 
@@ -1071,8 +1071,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListAnycastConfigsWithRuntimeStatus**
-> GetAnycastConfigListResponse ListAnycastConfigsWithRuntimeStatus(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+# **list_anycast_configs_with_runtime_status**
+> GetAnycastConfigListResponse list_anycast_configs_with_runtime_status(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
 
 Read list of Anycast Configurations
 
@@ -1119,11 +1119,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Read list of Anycast Configurations
-        api_response = api_instance.ListAnycastConfigsWithRuntimeStatus(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
-        print("The response of OnPremAnycastManagerApi->ListAnycastConfigsWithRuntimeStatus:\n")
+        api_response = api_instance.list_anycast_configs_with_runtime_status(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+        print("The response of OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->ListAnycastConfigsWithRuntimeStatus: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status: %s\n" % e)
 ```
 
 
@@ -1162,8 +1162,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadAnycastConfigWithRuntimeStatus**
-> AnycastConfigResponse ReadAnycastConfigWithRuntimeStatus(id)
+# **read_anycast_config_with_runtime_status**
+> AnycastConfigResponse read_anycast_config_with_runtime_status(id)
 
 Read Anycast Configuration
 
@@ -1204,11 +1204,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Read Anycast Configuration
-        api_response = api_instance.ReadAnycastConfigWithRuntimeStatus(id)
-        print("The response of OnPremAnycastManagerApi->ReadAnycastConfigWithRuntimeStatus:\n")
+        api_response = api_instance.read_anycast_config_with_runtime_status(id)
+        print("The response of OnPremAnycastManagerApi->read_anycast_config_with_runtime_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->ReadAnycastConfigWithRuntimeStatus: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->read_anycast_config_with_runtime_status: %s\n" % e)
 ```
 
 
@@ -1241,8 +1241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateAnycastConfig**
-> AnycastConfigResponse UpdateAnycastConfig(id, body)
+# **update_anycast_config**
+> AnycastConfigResponse update_anycast_config(id, body)
 
 Create or Update Anycast Configuration
 
@@ -1285,11 +1285,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Create or Update Anycast Configuration
-        api_response = api_instance.UpdateAnycastConfig(id, body)
-        print("The response of OnPremAnycastManagerApi->UpdateAnycastConfig:\n")
+        api_response = api_instance.update_anycast_config(id, body)
+        print("The response of OnPremAnycastManagerApi->update_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->UpdateAnycastConfig: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->update_anycast_config: %s\n" % e)
 ```
 
 
@@ -1323,8 +1323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateOnpremHost**
-> OnpremHostResponse UpdateOnpremHost(id, body)
+# **update_onprem_host**
+> OnpremHostResponse update_onprem_host(id, body)
 
 Create or Update On-Prem Host
 
@@ -1367,11 +1367,11 @@ with anycast.ApiClient(configuration) as api_client:
 
     try:
         # Create or Update On-Prem Host
-        api_response = api_instance.UpdateOnpremHost(id, body)
-        print("The response of OnPremAnycastManagerApi->UpdateOnpremHost:\n")
+        api_response = api_instance.update_onprem_host(id, body)
+        print("The response of OnPremAnycastManagerApi->update_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->UpdateOnpremHost: %s\n" % e)
+        print("Exception when calling OnPremAnycastManagerApi->update_onprem_host: %s\n" % e)
 ```
 
 

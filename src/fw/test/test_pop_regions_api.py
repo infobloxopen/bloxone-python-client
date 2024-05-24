@@ -25,15 +25,15 @@ class TestPopRegionsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ListPoPRegions(self) -> None:
-        """Test case for ListPoPRegions
+    def test_list_po_p_regions(self) -> None:
+        """Test case for list_po_p_regions
 
         List PoP Regions.
         """
         pass
 
-    def test_ReadPoPRegion(self) -> None:
-        """Test case for ReadPoPRegion
+    def test_read_po_p_region(self) -> None:
+        """Test case for read_po_p_region
 
         Read PoP Region.
         """

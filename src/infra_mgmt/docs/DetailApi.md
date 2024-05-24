@@ -4,12 +4,12 @@ All URIs are relative to *http://csp.infoblox.com/api/infra/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**HostsList**](DetailApi.md#HostsList) | **GET** /detail_hosts | List all the Hosts along with its associated Services (applications).
-[**ServicesList**](DetailApi.md#ServicesList) | **GET** /detail_services | List all the Services (applications) along with its associated Hosts.
+[**hosts_list**](DetailApi.md#hosts_list) | **GET** /detail_hosts | List all the Hosts along with its associated Services (applications).
+[**services_list**](DetailApi.md#services_list) | **GET** /detail_services | List all the Services (applications) along with its associated Hosts.
 
 
-# **HostsList**
-> ListDetailHostsResponse HostsList(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+# **hosts_list**
+> ListDetailHostsResponse hosts_list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
 
 List all the Hosts along with its associated Services (applications).
 
@@ -55,11 +55,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List all the Hosts along with its associated Services (applications).
-        api_response = api_instance.HostsList(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of DetailApi->HostsList:\n")
+        api_response = api_instance.hosts_list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+        print("The response of DetailApi->hosts_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DetailApi->HostsList: %s\n" % e)
+        print("Exception when calling DetailApi->hosts_list: %s\n" % e)
 ```
 
 
@@ -99,8 +99,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ServicesList**
-> ListDetailServicesResponse ServicesList(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+# **services_list**
+> ListDetailServicesResponse services_list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
 
 List all the Services (applications) along with its associated Hosts.
 
@@ -146,11 +146,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List all the Services (applications) along with its associated Hosts.
-        api_response = api_instance.ServicesList(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of DetailApi->ServicesList:\n")
+        api_response = api_instance.services_list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+        print("The response of DetailApi->services_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DetailApi->ServicesList: %s\n" % e)
+        print("Exception when calling DetailApi->services_list: %s\n" % e)
 ```
 
 

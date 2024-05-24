@@ -59,11 +59,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Generate TSIG key with a random secret.
-        api_response = api_instance.GenerateTSIG(algorithm=algorithm)
-        print("The response of GenerateTsigApi->GenerateTSIG:\n")
+        api_response = api_instance.generate_tsig(algorithm=algorithm)
+        print("The response of GenerateTsigApi->generate_tsig:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling GenerateTsigApi->GenerateTSIG: %s\n" % e)
+        print("Exception when calling GenerateTsigApi->generate_tsig: %s\n" % e)
 
 ```
 
@@ -73,17 +73,17 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*GenerateTsigApi* | [**GenerateTSIG**](keys/docs/GenerateTsigApi.md#generatetsig) | **GET** /keys/generate_tsig | Generate TSIG key with a random secret.
-*KerberosApi* | [**Delete**](keys/docs/KerberosApi.md#delete) | **DELETE** /keys/kerberos/{id} | Delete the Kerberos key.
-*KerberosApi* | [**List**](keys/docs/KerberosApi.md#list) | **GET** /keys/kerberos | Retrieve Kerberos keys.
-*KerberosApi* | [**Read**](keys/docs/KerberosApi.md#read) | **GET** /keys/kerberos/{id} | Retrieve the Kerberos key.
-*KerberosApi* | [**Update**](keys/docs/KerberosApi.md#update) | **PATCH** /keys/kerberos/{id} | Update the Kerberos key.
-*TsigApi* | [**Create**](keys/docs/TsigApi.md#create) | **POST** /keys/tsig | Create the TSIG key.
-*TsigApi* | [**Delete**](keys/docs/TsigApi.md#delete) | **DELETE** /keys/tsig/{id} | Delete the TSIG key.
-*TsigApi* | [**List**](keys/docs/TsigApi.md#list) | **GET** /keys/tsig | Retrieve TSIG keys.
-*TsigApi* | [**Read**](keys/docs/TsigApi.md#read) | **GET** /keys/tsig/{id} | Retrieve the TSIG key.
-*TsigApi* | [**Update**](keys/docs/TsigApi.md#update) | **PATCH** /keys/tsig/{id} | Update the TSIG key.
-*UploadApi* | [**Upload**](keys/docs/UploadApi.md#upload) | **POST** /keys/upload | Upload content to the keys service.
+*GenerateTsigApi* | [**generate_tsig**](keys/docs/GenerateTsigApi.md#generate_tsig) | **GET** /keys/generate_tsig | Generate TSIG key with a random secret.
+*KerberosApi* | [**delete**](keys/docs/KerberosApi.md#delete) | **DELETE** /keys/kerberos/{id} | Delete the Kerberos key.
+*KerberosApi* | [**list**](keys/docs/KerberosApi.md#list) | **GET** /keys/kerberos | Retrieve Kerberos keys.
+*KerberosApi* | [**read**](keys/docs/KerberosApi.md#read) | **GET** /keys/kerberos/{id} | Retrieve the Kerberos key.
+*KerberosApi* | [**update**](keys/docs/KerberosApi.md#update) | **PATCH** /keys/kerberos/{id} | Update the Kerberos key.
+*TsigApi* | [**create**](keys/docs/TsigApi.md#create) | **POST** /keys/tsig | Create the TSIG key.
+*TsigApi* | [**delete**](keys/docs/TsigApi.md#delete) | **DELETE** /keys/tsig/{id} | Delete the TSIG key.
+*TsigApi* | [**list**](keys/docs/TsigApi.md#list) | **GET** /keys/tsig | Retrieve TSIG keys.
+*TsigApi* | [**read**](keys/docs/TsigApi.md#read) | **GET** /keys/tsig/{id} | Retrieve the TSIG key.
+*TsigApi* | [**update**](keys/docs/TsigApi.md#update) | **PATCH** /keys/tsig/{id} | Update the TSIG key.
+*UploadApi* | [**upload**](keys/docs/UploadApi.md#upload) | **POST** /keys/upload | Upload content to the keys service.
 
 
 ## Documentation For Models

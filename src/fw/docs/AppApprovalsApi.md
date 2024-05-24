@@ -4,13 +4,13 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListAppApprovals**](AppApprovalsApi.md#ListAppApprovals) | **GET** /app_approvals | 
-[**ReplaceAppApprovals**](AppApprovalsApi.md#ReplaceAppApprovals) | **PUT** /app_approvals | Update Application Approval.
-[**UpdateAppApprovals**](AppApprovalsApi.md#UpdateAppApprovals) | **PATCH** /app_approvals | 
+[**list_app_approvals**](AppApprovalsApi.md#list_app_approvals) | **GET** /app_approvals | 
+[**replace_app_approvals**](AppApprovalsApi.md#replace_app_approvals) | **PUT** /app_approvals | Update Application Approval.
+[**update_app_approvals**](AppApprovalsApi.md#update_app_approvals) | **PATCH** /app_approvals | 
 
 
-# **ListAppApprovals**
-> AppApprovalMultiResponse ListAppApprovals(filter=filter)
+# **list_app_approvals**
+> AppApprovalMultiResponse list_app_approvals(filter=filter)
 
 
 
@@ -37,11 +37,11 @@ with fw.ApiClient(configuration) as api_client:
     filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
 
     try:
-        api_response = api_instance.ListAppApprovals(filter=filter)
-        print("The response of AppApprovalsApi->ListAppApprovals:\n")
+        api_response = api_instance.list_app_approvals(filter=filter)
+        print("The response of AppApprovalsApi->list_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->ListAppApprovals: %s\n" % e)
+        print("Exception when calling AppApprovalsApi->list_app_approvals: %s\n" % e)
 ```
 
 
@@ -74,8 +74,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReplaceAppApprovals**
-> AppApprovalMultiResponse ReplaceAppApprovals(body)
+# **replace_app_approvals**
+> AppApprovalMultiResponse replace_app_approvals(body)
 
 Update Application Approval.
 
@@ -106,11 +106,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Application Approval.
-        api_response = api_instance.ReplaceAppApprovals(body)
-        print("The response of AppApprovalsApi->ReplaceAppApprovals:\n")
+        api_response = api_instance.replace_app_approvals(body)
+        print("The response of AppApprovalsApi->replace_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->ReplaceAppApprovals: %s\n" % e)
+        print("Exception when calling AppApprovalsApi->replace_app_approvals: %s\n" % e)
 ```
 
 
@@ -144,8 +144,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateAppApprovals**
-> AppApprovalMultiResponse UpdateAppApprovals(body)
+# **update_app_approvals**
+> AppApprovalMultiResponse update_app_approvals(body)
 
 
 
@@ -173,11 +173,11 @@ with fw.ApiClient(configuration) as api_client:
     body = fw.AppApprovalsUpdateRequest() # AppApprovalsUpdateRequest | 
 
     try:
-        api_response = api_instance.UpdateAppApprovals(body)
-        print("The response of AppApprovalsApi->UpdateAppApprovals:\n")
+        api_response = api_instance.update_app_approvals(body)
+        print("The response of AppApprovalsApi->update_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->UpdateAppApprovals: %s\n" % e)
+        print("Exception when calling AppApprovalsApi->update_app_approvals: %s\n" % e)
 ```
 
 

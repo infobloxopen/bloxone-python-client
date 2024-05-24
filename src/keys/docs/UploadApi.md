@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Upload**](UploadApi.md#Upload) | **POST** /keys/upload | Upload content to the keys service.
+[**upload**](UploadApi.md#upload) | **POST** /keys/upload | Upload content to the keys service.
 
 
-# **Upload**
-> DdiuploadResponse Upload(body)
+# **upload**
+> DdiuploadResponse upload(body)
 
 Upload content to the keys service.
 
@@ -50,11 +50,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Upload content to the keys service.
-        api_response = api_instance.Upload(body)
-        print("The response of UploadApi->Upload:\n")
+        api_response = api_instance.upload(body)
+        print("The response of UploadApi->upload:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UploadApi->Upload: %s\n" % e)
+        print("Exception when calling UploadApi->upload: %s\n" % e)
 ```
 
 

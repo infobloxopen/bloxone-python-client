@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](AddressApi.md#Create) | **POST** /ipam/address | Create the IP address.
-[**Delete**](AddressApi.md#Delete) | **DELETE** /ipam/address/{id} | Move the IP address to the recycle bin.
-[**List**](AddressApi.md#List) | **GET** /ipam/address | Retrieve IP addresses.
-[**Read**](AddressApi.md#Read) | **GET** /ipam/address/{id} | Retrieve the IP address.
-[**Update**](AddressApi.md#Update) | **PATCH** /ipam/address/{id} | Update the IP address.
+[**create**](AddressApi.md#create) | **POST** /ipam/address | Create the IP address.
+[**delete**](AddressApi.md#delete) | **DELETE** /ipam/address/{id} | Move the IP address to the recycle bin.
+[**list**](AddressApi.md#list) | **GET** /ipam/address | Retrieve IP addresses.
+[**read**](AddressApi.md#read) | **GET** /ipam/address/{id} | Retrieve the IP address.
+[**update**](AddressApi.md#update) | **PATCH** /ipam/address/{id} | Update the IP address.
 
 
-# **Create**
-> CreateAddressResponse Create(body)
+# **create**
+> CreateAddressResponse create(body)
 
 Create the IP address.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the IP address.
-        api_response = api_instance.Create(body)
-        print("The response of AddressApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of AddressApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressApi->Create: %s\n" % e)
+        print("Exception when calling AddressApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the IP address to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the IP address to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AddressApi->Delete: %s\n" % e)
+        print("Exception when calling AddressApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListAddressResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, scope=scope, address_state=address_state, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListAddressResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, scope=scope, address_state=address_state, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve IP addresses.
 
@@ -218,11 +218,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve IP addresses.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, scope=scope, address_state=address_state, torder_by=torder_by, tfilter=tfilter)
-        print("The response of AddressApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, scope=scope, address_state=address_state, torder_by=torder_by, tfilter=tfilter)
+        print("The response of AddressApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressApi->List: %s\n" % e)
+        print("Exception when calling AddressApi->list: %s\n" % e)
 ```
 
 
@@ -264,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadAddressResponse Read(id, fields=fields)
+# **read**
+> ReadAddressResponse read(id, fields=fields)
 
 Retrieve the IP address.
 
@@ -307,11 +307,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the IP address.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of AddressApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of AddressApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressApi->Read: %s\n" % e)
+        print("Exception when calling AddressApi->read: %s\n" % e)
 ```
 
 
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateAddressResponse Update(id, body)
+# **update**
+> UpdateAddressResponse update(id, body)
 
 Update the IP address.
 
@@ -389,11 +389,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the IP address.
-        api_response = api_instance.Update(id, body)
-        print("The response of AddressApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of AddressApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressApi->Update: %s\n" % e)
+        print("Exception when calling AddressApi->update: %s\n" % e)
 ```
 
 

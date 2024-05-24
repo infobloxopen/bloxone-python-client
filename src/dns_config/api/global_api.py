@@ -42,7 +42,7 @@ class GlobalApi:
         self.api_client = api_client
 
     @validate_call
-    def Read(
+    def read(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -89,7 +89,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(fields=fields,
+        _param = self._read_serialize(fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -108,7 +108,7 @@ class GlobalApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -155,7 +155,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(fields=fields,
+        _param = self._read_serialize(fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -174,7 +174,7 @@ class GlobalApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -221,7 +221,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(fields=fields,
+        _param = self._read_serialize(fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -234,7 +234,7 @@ class GlobalApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         fields,
         _request_auth,
@@ -287,7 +287,7 @@ class GlobalApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read2(
+    def read2(
         self,
         id: Annotated[
             StrictStr,
@@ -340,7 +340,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read2_serialize(id=id,
+        _param = self._read2_serialize(id=id,
                                        fields=fields,
                                        _request_auth=_request_auth,
                                        _content_type=_content_type,
@@ -360,7 +360,7 @@ class GlobalApi:
         ).data
 
     @validate_call
-    def Read2_with_http_info(
+    def read2_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -413,7 +413,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read2_serialize(id=id,
+        _param = self._read2_serialize(id=id,
                                        fields=fields,
                                        _request_auth=_request_auth,
                                        _content_type=_content_type,
@@ -433,7 +433,7 @@ class GlobalApi:
         )
 
     @validate_call
-    def Read2_without_preload_content(
+    def read2_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -486,7 +486,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read2_serialize(id=id,
+        _param = self._read2_serialize(id=id,
                                        fields=fields,
                                        _request_auth=_request_auth,
                                        _content_type=_content_type,
@@ -500,7 +500,7 @@ class GlobalApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read2_serialize(
+    def _read2_serialize(
         self,
         id,
         fields,
@@ -556,7 +556,7 @@ class GlobalApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Update(
+    def update(
         self,
         body: DNSGlobal,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -598,7 +598,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(body=body,
+        _param = self._update_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -617,7 +617,7 @@ class GlobalApi:
         ).data
 
     @validate_call
-    def Update_with_http_info(
+    def update_with_http_info(
         self,
         body: DNSGlobal,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -659,7 +659,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(body=body,
+        _param = self._update_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -678,7 +678,7 @@ class GlobalApi:
         )
 
     @validate_call
-    def Update_without_preload_content(
+    def update_without_preload_content(
         self,
         body: DNSGlobal,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -720,7 +720,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(body=body,
+        _param = self._update_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -733,7 +733,7 @@ class GlobalApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Update_serialize(
+    def _update_serialize(
         self,
         body,
         _request_auth,
@@ -794,7 +794,7 @@ class GlobalApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Update2(
+    def update2(
         self,
         id: Annotated[
             StrictStr,
@@ -842,7 +842,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update2_serialize(id=id,
+        _param = self._update2_serialize(id=id,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -862,7 +862,7 @@ class GlobalApi:
         ).data
 
     @validate_call
-    def Update2_with_http_info(
+    def update2_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -910,7 +910,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update2_serialize(id=id,
+        _param = self._update2_serialize(id=id,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -930,7 +930,7 @@ class GlobalApi:
         )
 
     @validate_call
-    def Update2_without_preload_content(
+    def update2_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -978,7 +978,7 @@ class GlobalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update2_serialize(id=id,
+        _param = self._update2_serialize(id=id,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -992,7 +992,7 @@ class GlobalApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Update2_serialize(
+    def _update2_serialize(
         self,
         id,
         body,

@@ -4,13 +4,13 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](AsmApi.md#Create) | **POST** /ipam/asm | Update subnet and ranges for Automated Scope Management.
-[**List**](AsmApi.md#List) | **GET** /ipam/asm | Retrieve suggested updates for Automated Scope Management.
-[**Read**](AsmApi.md#Read) | **GET** /ipam/asm/{id} | Retrieve the suggested update for Automated Scope Management.
+[**create**](AsmApi.md#create) | **POST** /ipam/asm | Update subnet and ranges for Automated Scope Management.
+[**list**](AsmApi.md#list) | **GET** /ipam/asm | Retrieve suggested updates for Automated Scope Management.
+[**read**](AsmApi.md#read) | **GET** /ipam/asm/{id} | Retrieve the suggested update for Automated Scope Management.
 
 
-# **Create**
-> CreateASMResponse Create(body)
+# **create**
+> CreateASMResponse create(body)
 
 Update subnet and ranges for Automated Scope Management.
 
@@ -52,11 +52,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update subnet and ranges for Automated Scope Management.
-        api_response = api_instance.Create(body)
-        print("The response of AsmApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of AsmApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->Create: %s\n" % e)
+        print("Exception when calling AsmApi->create: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListASMResponse List(fields=fields, subnet_id=subnet_id)
+# **list**
+> ListASMResponse list(fields=fields, subnet_id=subnet_id)
 
 Retrieve suggested updates for Automated Scope Management.
 
@@ -132,11 +132,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve suggested updates for Automated Scope Management.
-        api_response = api_instance.List(fields=fields, subnet_id=subnet_id)
-        print("The response of AsmApi->List:\n")
+        api_response = api_instance.list(fields=fields, subnet_id=subnet_id)
+        print("The response of AsmApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->List: %s\n" % e)
+        print("Exception when calling AsmApi->list: %s\n" % e)
 ```
 
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadASMResponse Read(id, fields=fields)
+# **read**
+> ReadASMResponse read(id, fields=fields)
 
 Retrieve the suggested update for Automated Scope Management.
 
@@ -213,11 +213,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the suggested update for Automated Scope Management.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of AsmApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of AsmApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->Read: %s\n" % e)
+        print("Exception when calling AsmApi->read: %s\n" % e)
 ```
 
 

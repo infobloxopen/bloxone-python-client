@@ -13,11 +13,11 @@
 
 import unittest
 
-from fw.models.atcfw_named_list_items_insert_or_update_response_success import AtcfwNamedListItemsInsertOrUpdateResponseSuccess
+from fw.models.named_list_items_insert_or_update_response_success import NamedListItemsInsertOrUpdateResponseSuccess
 
 
-class TestAtcfwNamedListItemsInsertOrUpdateResponseSuccess(unittest.TestCase):
-    """AtcfwNamedListItemsInsertOrUpdateResponseSuccess unit test stubs"""
+class TestNamedListItemsInsertOrUpdateResponseSuccess(unittest.TestCase):
+    """NamedListItemsInsertOrUpdateResponseSuccess unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,27 @@ class TestAtcfwNamedListItemsInsertOrUpdateResponseSuccess(unittest.TestCase):
         pass
 
     def make_instance(
-            self, include_optional
-    ) -> AtcfwNamedListItemsInsertOrUpdateResponseSuccess:
-        """Test AtcfwNamedListItemsInsertOrUpdateResponseSuccess
+            self,
+            include_optional) -> NamedListItemsInsertOrUpdateResponseSuccess:
+        """Test NamedListItemsInsertOrUpdateResponseSuccess
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AtcfwNamedListItemsInsertOrUpdateResponseSuccess`
+        # uncomment below to create an instance of `NamedListItemsInsertOrUpdateResponseSuccess`
         """
-        model = AtcfwNamedListItemsInsertOrUpdateResponseSuccess()
+        model = NamedListItemsInsertOrUpdateResponseSuccess()
         if include_optional:
-            return AtcfwNamedListItemsInsertOrUpdateResponseSuccess(
+            return NamedListItemsInsertOrUpdateResponseSuccess(
                 code = 'UPDATED',
                 status = 201
             )
         else:
-            return AtcfwNamedListItemsInsertOrUpdateResponseSuccess(
+            return NamedListItemsInsertOrUpdateResponseSuccess(
         )
         """
 
-    def testAtcfwNamedListItemsInsertOrUpdateResponseSuccess(self):
-        """Test AtcfwNamedListItemsInsertOrUpdateResponseSuccess"""
+    def testNamedListItemsInsertOrUpdateResponseSuccess(self):
+        """Test NamedListItemsInsertOrUpdateResponseSuccess"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

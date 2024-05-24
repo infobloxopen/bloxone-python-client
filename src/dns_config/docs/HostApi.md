@@ -4,13 +4,13 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](HostApi.md#List) | **GET** /dns/host | List DNS Host objects.
-[**Read**](HostApi.md#Read) | **GET** /dns/host/{id} | Read the DNS Host object.
-[**Update**](HostApi.md#Update) | **PATCH** /dns/host/{id} | Update the DNS Host object.
+[**list**](HostApi.md#list) | **GET** /dns/host | List DNS Host objects.
+[**read**](HostApi.md#read) | **GET** /dns/host/{id} | Read the DNS Host object.
+[**update**](HostApi.md#update) | **PATCH** /dns/host/{id} | Update the DNS Host object.
 
 
-# **List**
-> ListHostResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+# **list**
+> ListHostResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
 
 List DNS Host objects.
 
@@ -59,11 +59,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List DNS Host objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
-        print("The response of HostApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+        print("The response of HostApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostApi->List: %s\n" % e)
+        print("Exception when calling HostApi->list: %s\n" % e)
 ```
 
 
@@ -104,8 +104,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadHostResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadHostResponse read(id, fields=fields, inherit=inherit)
 
 Read the DNS Host object.
 
@@ -148,11 +148,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the DNS Host object.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of HostApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of HostApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostApi->Read: %s\n" % e)
+        print("Exception when calling HostApi->read: %s\n" % e)
 ```
 
 
@@ -187,8 +187,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateHostResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateHostResponse update(id, body, inherit=inherit)
 
 Update the DNS Host object.
 
@@ -232,11 +232,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the DNS Host object.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of HostApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of HostApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostApi->Update: %s\n" % e)
+        print("Exception when calling HostApi->update: %s\n" % e)
 ```
 
 

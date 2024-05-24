@@ -25,8 +25,8 @@ class TestConvertRnameApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ConvertRName(self) -> None:
-        """Test case for ConvertRName
+    def test_convert_r_name(self) -> None:
+        """Test case for convert_r_name
 
         Convert the object.
         """

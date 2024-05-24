@@ -41,7 +41,7 @@ class DetailApi:
         self.api_client = api_client
 
     @validate_call
-    def HostsList(
+    def hosts_list(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -139,18 +139,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._HostsList_serialize(filter=filter,
-                                           order_by=order_by,
-                                           offset=offset,
-                                           limit=limit,
-                                           page_token=page_token,
-                                           fields=fields,
-                                           tfilter=tfilter,
-                                           torder_by=torder_by,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._hosts_list_serialize(filter=filter,
+                                            order_by=order_by,
+                                            offset=offset,
+                                            limit=limit,
+                                            page_token=page_token,
+                                            fields=fields,
+                                            tfilter=tfilter,
+                                            torder_by=torder_by,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailHostsResponse",
@@ -165,7 +165,7 @@ class DetailApi:
         ).data
 
     @validate_call
-    def HostsList_with_http_info(
+    def hosts_list_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -263,18 +263,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._HostsList_serialize(filter=filter,
-                                           order_by=order_by,
-                                           offset=offset,
-                                           limit=limit,
-                                           page_token=page_token,
-                                           fields=fields,
-                                           tfilter=tfilter,
-                                           torder_by=torder_by,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._hosts_list_serialize(filter=filter,
+                                            order_by=order_by,
+                                            offset=offset,
+                                            limit=limit,
+                                            page_token=page_token,
+                                            fields=fields,
+                                            tfilter=tfilter,
+                                            torder_by=torder_by,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailHostsResponse",
@@ -289,7 +289,7 @@ class DetailApi:
         )
 
     @validate_call
-    def HostsList_without_preload_content(
+    def hosts_list_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -387,18 +387,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._HostsList_serialize(filter=filter,
-                                           order_by=order_by,
-                                           offset=offset,
-                                           limit=limit,
-                                           page_token=page_token,
-                                           fields=fields,
-                                           tfilter=tfilter,
-                                           torder_by=torder_by,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._hosts_list_serialize(filter=filter,
+                                            order_by=order_by,
+                                            offset=offset,
+                                            limit=limit,
+                                            page_token=page_token,
+                                            fields=fields,
+                                            tfilter=tfilter,
+                                            torder_by=torder_by,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailHostsResponse",
@@ -407,7 +407,7 @@ class DetailApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _HostsList_serialize(
+    def _hosts_list_serialize(
         self,
         filter,
         order_by,
@@ -495,7 +495,7 @@ class DetailApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ServicesList(
+    def services_list(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -593,18 +593,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ServicesList_serialize(filter=filter,
-                                              order_by=order_by,
-                                              offset=offset,
-                                              limit=limit,
-                                              page_token=page_token,
-                                              fields=fields,
-                                              tfilter=tfilter,
-                                              torder_by=torder_by,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._services_list_serialize(filter=filter,
+                                               order_by=order_by,
+                                               offset=offset,
+                                               limit=limit,
+                                               page_token=page_token,
+                                               fields=fields,
+                                               tfilter=tfilter,
+                                               torder_by=torder_by,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailServicesResponse",
@@ -619,7 +619,7 @@ class DetailApi:
         ).data
 
     @validate_call
-    def ServicesList_with_http_info(
+    def services_list_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -717,18 +717,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ServicesList_serialize(filter=filter,
-                                              order_by=order_by,
-                                              offset=offset,
-                                              limit=limit,
-                                              page_token=page_token,
-                                              fields=fields,
-                                              tfilter=tfilter,
-                                              torder_by=torder_by,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._services_list_serialize(filter=filter,
+                                               order_by=order_by,
+                                               offset=offset,
+                                               limit=limit,
+                                               page_token=page_token,
+                                               fields=fields,
+                                               tfilter=tfilter,
+                                               torder_by=torder_by,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailServicesResponse",
@@ -743,7 +743,7 @@ class DetailApi:
         )
 
     @validate_call
-    def ServicesList_without_preload_content(
+    def services_list_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -841,18 +841,18 @@ class DetailApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ServicesList_serialize(filter=filter,
-                                              order_by=order_by,
-                                              offset=offset,
-                                              limit=limit,
-                                              page_token=page_token,
-                                              fields=fields,
-                                              tfilter=tfilter,
-                                              torder_by=torder_by,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._services_list_serialize(filter=filter,
+                                               order_by=order_by,
+                                               offset=offset,
+                                               limit=limit,
+                                               page_token=page_token,
+                                               fields=fields,
+                                               tfilter=tfilter,
+                                               torder_by=torder_by,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDetailServicesResponse",
@@ -861,7 +861,7 @@ class DetailApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ServicesList_serialize(
+    def _services_list_serialize(
         self,
         filter,
         order_by,

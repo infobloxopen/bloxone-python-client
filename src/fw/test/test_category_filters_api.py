@@ -25,43 +25,43 @@ class TestCategoryFiltersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateCategoryFilter(self) -> None:
-        """Test case for CreateCategoryFilter
+    def test_create_category_filter(self) -> None:
+        """Test case for create_category_filter
 
         Create Category Filter.
         """
         pass
 
-    def test_DeleteCategoryFilters(self) -> None:
-        """Test case for DeleteCategoryFilters
+    def test_delete_category_filters(self) -> None:
+        """Test case for delete_category_filters
 
         Delete Category Filters By ID.
         """
         pass
 
-    def test_DeleteSingleCategoryFilters(self) -> None:
-        """Test case for DeleteSingleCategoryFilters
+    def test_delete_single_category_filters(self) -> None:
+        """Test case for delete_single_category_filters
 
         Delete Category Filters.
         """
         pass
 
-    def test_ListCategoryFilters(self) -> None:
-        """Test case for ListCategoryFilters
+    def test_list_category_filters(self) -> None:
+        """Test case for list_category_filters
 
         List Category Filters.
         """
         pass
 
-    def test_ReadCategoryFilter(self) -> None:
-        """Test case for ReadCategoryFilter
+    def test_read_category_filter(self) -> None:
+        """Test case for read_category_filter
 
         Read Category Filter.
         """
         pass
 
-    def test_UpdateCategoryFilter(self) -> None:
-        """Test case for UpdateCategoryFilter
+    def test_update_category_filter(self) -> None:
+        """Test case for update_category_filter
 
         Update Category Filter.
         """

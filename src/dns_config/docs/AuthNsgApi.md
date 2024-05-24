@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](AuthNsgApi.md#Create) | **POST** /dns/auth_nsg | Create the AuthNSG object.
-[**Delete**](AuthNsgApi.md#Delete) | **DELETE** /dns/auth_nsg/{id} | Move the AuthNSG object to Recyclebin.
-[**List**](AuthNsgApi.md#List) | **GET** /dns/auth_nsg | List AuthNSG objects.
-[**Read**](AuthNsgApi.md#Read) | **GET** /dns/auth_nsg/{id} | Read the AuthNSG object.
-[**Update**](AuthNsgApi.md#Update) | **PATCH** /dns/auth_nsg/{id} | Update the AuthNSG object.
+[**create**](AuthNsgApi.md#create) | **POST** /dns/auth_nsg | Create the AuthNSG object.
+[**delete**](AuthNsgApi.md#delete) | **DELETE** /dns/auth_nsg/{id} | Move the AuthNSG object to Recyclebin.
+[**list**](AuthNsgApi.md#list) | **GET** /dns/auth_nsg | List AuthNSG objects.
+[**read**](AuthNsgApi.md#read) | **GET** /dns/auth_nsg/{id} | Read the AuthNSG object.
+[**update**](AuthNsgApi.md#update) | **PATCH** /dns/auth_nsg/{id} | Update the AuthNSG object.
 
 
-# **Create**
-> CreateAuthNSGResponse Create(body)
+# **create**
+> CreateAuthNSGResponse create(body)
 
 Create the AuthNSG object.
 
@@ -54,11 +54,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the AuthNSG object.
-        api_response = api_instance.Create(body)
-        print("The response of AuthNsgApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of AuthNsgApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthNsgApi->Create: %s\n" % e)
+        print("Exception when calling AuthNsgApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the AuthNSG object to Recyclebin.
 
@@ -132,9 +132,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the AuthNSG object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AuthNsgApi->Delete: %s\n" % e)
+        print("Exception when calling AuthNsgApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListAuthNSGResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListAuthNSGResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List AuthNSG objects.
 
@@ -216,11 +216,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List AuthNSG objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of AuthNsgApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of AuthNsgApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthNsgApi->List: %s\n" % e)
+        print("Exception when calling AuthNsgApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadAuthNSGResponse Read(id, fields=fields)
+# **read**
+> ReadAuthNSGResponse read(id, fields=fields)
 
 Read the AuthNSG object.
 
@@ -303,11 +303,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the AuthNSG object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of AuthNsgApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of AuthNsgApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthNsgApi->Read: %s\n" % e)
+        print("Exception when calling AuthNsgApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateAuthNSGResponse Update(id, body)
+# **update**
+> UpdateAuthNSGResponse update(id, body)
 
 Update the AuthNSG object.
 
@@ -385,11 +385,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the AuthNSG object.
-        api_response = api_instance.Update(id, body)
-        print("The response of AuthNsgApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of AuthNsgApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthNsgApi->Update: %s\n" % e)
+        print("Exception when calling AuthNsgApi->update: %s\n" % e)
 ```
 
 

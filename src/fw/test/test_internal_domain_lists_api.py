@@ -25,50 +25,50 @@ class TestInternalDomainListsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateInternalDomains(self) -> None:
-        """Test case for CreateInternalDomains
+    def test_create_internal_domains(self) -> None:
+        """Test case for create_internal_domains
 
         Create Internal Domains.
         """
         pass
 
-    def test_DeleteInternalDomains(self) -> None:
-        """Test case for DeleteInternalDomains
+    def test_delete_internal_domains(self) -> None:
+        """Test case for delete_internal_domains
 
         Delete Internal Domains.
         """
         pass
 
-    def test_DeleteSingleInternalDomains(self) -> None:
-        """Test case for DeleteSingleInternalDomains
+    def test_delete_single_internal_domains(self) -> None:
+        """Test case for delete_single_internal_domains
 
         Delete Internal Domains.
         """
         pass
 
-    def test_InternalDomainsItemsPartialUpdate(self) -> None:
-        """Test case for InternalDomainsItemsPartialUpdate
+    def test_internal_domains_items_partial_update(self) -> None:
+        """Test case for internal_domains_items_partial_update
 
         Patch Internal Domains.
         """
         pass
 
-    def test_ListInternalDomains(self) -> None:
-        """Test case for ListInternalDomains
+    def test_list_internal_domains(self) -> None:
+        """Test case for list_internal_domains
 
         List Internal Domains.
         """
         pass
 
-    def test_ReadInternalDomains(self) -> None:
-        """Test case for ReadInternalDomains
+    def test_read_internal_domains(self) -> None:
+        """Test case for read_internal_domains
 
         Read Internal Domains.
         """
         pass
 
-    def test_UpdateInternalDomains(self) -> None:
-        """Test case for UpdateInternalDomains
+    def test_update_internal_domains(self) -> None:
+        """Test case for update_internal_domains
 
         Update Internal Domains.
         """

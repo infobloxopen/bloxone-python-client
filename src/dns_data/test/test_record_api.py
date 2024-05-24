@@ -25,43 +25,43 @@ class TestRecordApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create the DNS resource record.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Move the DNS resource record to recycle bin.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve DNS resource records.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the DNS resource record.
         """
         pass
 
-    def test_SOASerialIncrement(self) -> None:
-        """Test case for SOASerialIncrement
+    def test_soa_serial_increment(self) -> None:
+        """Test case for soa_serial_increment
 
         Increment serial number for the SOA record.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the DNS resource record.
         """

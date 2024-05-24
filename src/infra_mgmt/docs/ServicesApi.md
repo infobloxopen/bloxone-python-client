@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/api/infra/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Applications**](ServicesApi.md#Applications) | **GET** /applications | List applications (Service types) for a particular account.
-[**Create**](ServicesApi.md#Create) | **POST** /services | Create a Service resource.
-[**Delete**](ServicesApi.md#Delete) | **DELETE** /services/{id} | Delete a Service resource.
-[**List**](ServicesApi.md#List) | **GET** /services | List all the Service resources for an account.
-[**Read**](ServicesApi.md#Read) | **GET** /services/{id} | Read a Service resource.
-[**Update**](ServicesApi.md#Update) | **PUT** /services/{id} | Update a Service resource.
+[**applications**](ServicesApi.md#applications) | **GET** /applications | List applications (Service types) for a particular account.
+[**create**](ServicesApi.md#create) | **POST** /services | Create a Service resource.
+[**delete**](ServicesApi.md#delete) | **DELETE** /services/{id} | Delete a Service resource.
+[**list**](ServicesApi.md#list) | **GET** /services | List all the Service resources for an account.
+[**read**](ServicesApi.md#read) | **GET** /services/{id} | Read a Service resource.
+[**update**](ServicesApi.md#update) | **PUT** /services/{id} | Update a Service resource.
 
 
-# **Applications**
-> ApplicationsResponse Applications(account_id=account_id)
+# **applications**
+> ApplicationsResponse applications(account_id=account_id)
 
 List applications (Service types) for a particular account.
 
@@ -54,11 +54,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List applications (Service types) for a particular account.
-        api_response = api_instance.Applications(account_id=account_id)
-        print("The response of ServicesApi->Applications:\n")
+        api_response = api_instance.applications(account_id=account_id)
+        print("The response of ServicesApi->applications:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServicesApi->Applications: %s\n" % e)
+        print("Exception when calling ServicesApi->applications: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateServiceResponse Create(body)
+# **create**
+> CreateServiceResponse create(body)
 
 Create a Service resource.
 
@@ -134,11 +134,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Create a Service resource.
-        api_response = api_instance.Create(body)
-        print("The response of ServicesApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of ServicesApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServicesApi->Create: %s\n" % e)
+        print("Exception when calling ServicesApi->create: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete a Service resource.
 
@@ -212,9 +212,9 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Service resource.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ServicesApi->Delete: %s\n" % e)
+        print("Exception when calling ServicesApi->delete: %s\n" % e)
 ```
 
 
@@ -247,8 +247,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListServiceResponse List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListServiceResponse list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
 
 List all the Service resources for an account.
 
@@ -294,11 +294,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List all the Service resources for an account.
-        api_response = api_instance.List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of ServicesApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+        print("The response of ServicesApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServicesApi->List: %s\n" % e)
+        print("Exception when calling ServicesApi->list: %s\n" % e)
 ```
 
 
@@ -338,8 +338,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> GetServiceResponse Read(id)
+# **read**
+> GetServiceResponse read(id)
 
 Read a Service resource.
 
@@ -380,11 +380,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Read a Service resource.
-        api_response = api_instance.Read(id)
-        print("The response of ServicesApi->Read:\n")
+        api_response = api_instance.read(id)
+        print("The response of ServicesApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServicesApi->Read: %s\n" % e)
+        print("Exception when calling ServicesApi->read: %s\n" % e)
 ```
 
 
@@ -417,8 +417,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateServiceResponse Update(id, body)
+# **update**
+> UpdateServiceResponse update(id, body)
 
 Update a Service resource.
 
@@ -461,11 +461,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Update a Service resource.
-        api_response = api_instance.Update(id, body)
-        print("The response of ServicesApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of ServicesApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServicesApi->Update: %s\n" % e)
+        print("Exception when calling ServicesApi->update: %s\n" % e)
 ```
 
 

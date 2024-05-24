@@ -43,7 +43,7 @@ class InfraServicesApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateOrUpdateDfpService(
+    def create_or_update_dfp_service(
         self,
         payload_service_id: Annotated[
             StrictStr,
@@ -92,7 +92,7 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateOrUpdateDfpService_serialize(
+        _param = self._create_or_update_dfp_service_serialize(
             payload_service_id=payload_service_id,
             body=body,
             _request_auth=_request_auth,
@@ -116,7 +116,7 @@ class InfraServicesApi:
         ).data
 
     @validate_call
-    def CreateOrUpdateDfpService_with_http_info(
+    def create_or_update_dfp_service_with_http_info(
         self,
         payload_service_id: Annotated[
             StrictStr,
@@ -165,7 +165,7 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateOrUpdateDfpService_serialize(
+        _param = self._create_or_update_dfp_service_serialize(
             payload_service_id=payload_service_id,
             body=body,
             _request_auth=_request_auth,
@@ -189,7 +189,7 @@ class InfraServicesApi:
         )
 
     @validate_call
-    def CreateOrUpdateDfpService_without_preload_content(
+    def create_or_update_dfp_service_without_preload_content(
         self,
         payload_service_id: Annotated[
             StrictStr,
@@ -238,7 +238,7 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateOrUpdateDfpService_serialize(
+        _param = self._create_or_update_dfp_service_serialize(
             payload_service_id=payload_service_id,
             body=body,
             _request_auth=_request_auth,
@@ -256,7 +256,7 @@ class InfraServicesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateOrUpdateDfpService_serialize(
+    def _create_or_update_dfp_service_serialize(
         self,
         payload_service_id,
         body,
@@ -324,7 +324,7 @@ class InfraServicesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListDfpServices(
+    def list_dfp_services(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -403,15 +403,15 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListDfpServices_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_dfp_services_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpListResponse",
@@ -427,7 +427,7 @@ class InfraServicesApi:
         ).data
 
     @validate_call
-    def ListDfpServices_with_http_info(
+    def list_dfp_services_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -506,15 +506,15 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListDfpServices_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_dfp_services_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpListResponse",
@@ -530,7 +530,7 @@ class InfraServicesApi:
         )
 
     @validate_call
-    def ListDfpServices_without_preload_content(
+    def list_dfp_services_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -609,15 +609,15 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListDfpServices_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_dfp_services_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpListResponse",
@@ -627,7 +627,7 @@ class InfraServicesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListDfpServices_serialize(
+    def _list_dfp_services_serialize(
         self,
         filter,
         fields,
@@ -700,7 +700,7 @@ class InfraServicesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadDfpService(
+    def read_dfp_service(
         self,
         service_id: Annotated[
             StrictStr,
@@ -769,14 +769,14 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadDfpService_serialize(service_id=service_id,
-                                                id=id,
-                                                fields=fields,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_dfp_service_serialize(service_id=service_id,
+                                                  id=id,
+                                                  fields=fields,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpReadResponse",
@@ -793,7 +793,7 @@ class InfraServicesApi:
         ).data
 
     @validate_call
-    def ReadDfpService_with_http_info(
+    def read_dfp_service_with_http_info(
         self,
         service_id: Annotated[
             StrictStr,
@@ -862,14 +862,14 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadDfpService_serialize(service_id=service_id,
-                                                id=id,
-                                                fields=fields,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_dfp_service_serialize(service_id=service_id,
+                                                  id=id,
+                                                  fields=fields,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpReadResponse",
@@ -886,7 +886,7 @@ class InfraServicesApi:
         )
 
     @validate_call
-    def ReadDfpService_without_preload_content(
+    def read_dfp_service_without_preload_content(
         self,
         service_id: Annotated[
             StrictStr,
@@ -955,14 +955,14 @@ class InfraServicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadDfpService_serialize(service_id=service_id,
-                                                id=id,
-                                                fields=fields,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_dfp_service_serialize(service_id=service_id,
+                                                  id=id,
+                                                  fields=fields,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DfpReadResponse",
@@ -973,7 +973,7 @@ class InfraServicesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadDfpService_serialize(
+    def _read_dfp_service_serialize(
         self,
         service_id,
         id,

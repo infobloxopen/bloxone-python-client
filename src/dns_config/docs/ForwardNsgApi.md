@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](ForwardNsgApi.md#Create) | **POST** /dns/forward_nsg | Create the ForwardNSG object.
-[**Delete**](ForwardNsgApi.md#Delete) | **DELETE** /dns/forward_nsg/{id} | Move the ForwardNSG object to Recyclebin.
-[**List**](ForwardNsgApi.md#List) | **GET** /dns/forward_nsg | List ForwardNSG objects.
-[**Read**](ForwardNsgApi.md#Read) | **GET** /dns/forward_nsg/{id} | Read the ForwardNSG object.
-[**Update**](ForwardNsgApi.md#Update) | **PATCH** /dns/forward_nsg/{id} | Update the ForwardNSG object.
+[**create**](ForwardNsgApi.md#create) | **POST** /dns/forward_nsg | Create the ForwardNSG object.
+[**delete**](ForwardNsgApi.md#delete) | **DELETE** /dns/forward_nsg/{id} | Move the ForwardNSG object to Recyclebin.
+[**list**](ForwardNsgApi.md#list) | **GET** /dns/forward_nsg | List ForwardNSG objects.
+[**read**](ForwardNsgApi.md#read) | **GET** /dns/forward_nsg/{id} | Read the ForwardNSG object.
+[**update**](ForwardNsgApi.md#update) | **PATCH** /dns/forward_nsg/{id} | Update the ForwardNSG object.
 
 
-# **Create**
-> CreateForwardNSGResponse Create(body)
+# **create**
+> CreateForwardNSGResponse create(body)
 
 Create the ForwardNSG object.
 
@@ -54,11 +54,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the ForwardNSG object.
-        api_response = api_instance.Create(body)
-        print("The response of ForwardNsgApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of ForwardNsgApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardNsgApi->Create: %s\n" % e)
+        print("Exception when calling ForwardNsgApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the ForwardNSG object to Recyclebin.
 
@@ -132,9 +132,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the ForwardNSG object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ForwardNsgApi->Delete: %s\n" % e)
+        print("Exception when calling ForwardNsgApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListForwardNSGResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListForwardNSGResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List ForwardNSG objects.
 
@@ -216,11 +216,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List ForwardNSG objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of ForwardNsgApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of ForwardNsgApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardNsgApi->List: %s\n" % e)
+        print("Exception when calling ForwardNsgApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadForwardNSGResponse Read(id, fields=fields)
+# **read**
+> ReadForwardNSGResponse read(id, fields=fields)
 
 Read the ForwardNSG object.
 
@@ -303,11 +303,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the ForwardNSG object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of ForwardNsgApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of ForwardNsgApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardNsgApi->Read: %s\n" % e)
+        print("Exception when calling ForwardNsgApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateForwardNSGResponse Update(id, body)
+# **update**
+> UpdateForwardNSGResponse update(id, body)
 
 Update the ForwardNSG object.
 
@@ -385,11 +385,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the ForwardNSG object.
-        api_response = api_instance.Update(id, body)
-        print("The response of ForwardNsgApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of ForwardNsgApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardNsgApi->Update: %s\n" % e)
+        print("Exception when calling ForwardNsgApi->update: %s\n" % e)
 ```
 
 

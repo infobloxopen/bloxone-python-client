@@ -25,15 +25,15 @@ class TestDnsUsageApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve DNS usage for multiple objects.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the DNS usage.
         """

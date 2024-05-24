@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](AclApi.md#Create) | **POST** /dns/acl | Create the ACL object.
-[**Delete**](AclApi.md#Delete) | **DELETE** /dns/acl/{id} | Move the ACL object to Recyclebin.
-[**List**](AclApi.md#List) | **GET** /dns/acl | List ACL objects.
-[**Read**](AclApi.md#Read) | **GET** /dns/acl/{id} | Read the ACL object.
-[**Update**](AclApi.md#Update) | **PATCH** /dns/acl/{id} | Update the ACL object.
+[**create**](AclApi.md#create) | **POST** /dns/acl | Create the ACL object.
+[**delete**](AclApi.md#delete) | **DELETE** /dns/acl/{id} | Move the ACL object to Recyclebin.
+[**list**](AclApi.md#list) | **GET** /dns/acl | List ACL objects.
+[**read**](AclApi.md#read) | **GET** /dns/acl/{id} | Read the ACL object.
+[**update**](AclApi.md#update) | **PATCH** /dns/acl/{id} | Update the ACL object.
 
 
-# **Create**
-> CreateACLResponse Create(body)
+# **create**
+> CreateACLResponse create(body)
 
 Create the ACL object.
 
@@ -54,11 +54,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the ACL object.
-        api_response = api_instance.Create(body)
-        print("The response of AclApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of AclApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AclApi->Create: %s\n" % e)
+        print("Exception when calling AclApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the ACL object to Recyclebin.
 
@@ -132,9 +132,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the ACL object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AclApi->Delete: %s\n" % e)
+        print("Exception when calling AclApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListACLResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListACLResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List ACL objects.
 
@@ -216,11 +216,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List ACL objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of AclApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of AclApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AclApi->List: %s\n" % e)
+        print("Exception when calling AclApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadACLResponse Read(id, fields=fields)
+# **read**
+> ReadACLResponse read(id, fields=fields)
 
 Read the ACL object.
 
@@ -303,11 +303,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the ACL object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of AclApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of AclApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AclApi->Read: %s\n" % e)
+        print("Exception when calling AclApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateACLResponse Update(id, body)
+# **update**
+> UpdateACLResponse update(id, body)
 
 Update the ACL object.
 
@@ -385,11 +385,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the ACL object.
-        api_response = api_instance.Update(id, body)
-        print("The response of AclApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of AclApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AclApi->Update: %s\n" % e)
+        print("Exception when calling AclApi->update: %s\n" % e)
 ```
 
 

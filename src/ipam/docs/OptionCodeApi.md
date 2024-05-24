@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](OptionCodeApi.md#Create) | **POST** /dhcp/option_code | Create the DHCP option code.
-[**Delete**](OptionCodeApi.md#Delete) | **DELETE** /dhcp/option_code/{id} | Delete the DHCP option code.
-[**List**](OptionCodeApi.md#List) | **GET** /dhcp/option_code | Retrieve DHCP option codes.
-[**Read**](OptionCodeApi.md#Read) | **GET** /dhcp/option_code/{id} | Retrieve the DHCP option code.
-[**Update**](OptionCodeApi.md#Update) | **PATCH** /dhcp/option_code/{id} | Update the DHCP option code.
+[**create**](OptionCodeApi.md#create) | **POST** /dhcp/option_code | Create the DHCP option code.
+[**delete**](OptionCodeApi.md#delete) | **DELETE** /dhcp/option_code/{id} | Delete the DHCP option code.
+[**list**](OptionCodeApi.md#list) | **GET** /dhcp/option_code | Retrieve DHCP option codes.
+[**read**](OptionCodeApi.md#read) | **GET** /dhcp/option_code/{id} | Retrieve the DHCP option code.
+[**update**](OptionCodeApi.md#update) | **PATCH** /dhcp/option_code/{id} | Update the DHCP option code.
 
 
-# **Create**
-> CreateOptionCodeResponse Create(body)
+# **create**
+> CreateOptionCodeResponse create(body)
 
 Create the DHCP option code.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the DHCP option code.
-        api_response = api_instance.Create(body)
-        print("The response of OptionCodeApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of OptionCodeApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionCodeApi->Create: %s\n" % e)
+        print("Exception when calling OptionCodeApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete the DHCP option code.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Delete the DHCP option code.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling OptionCodeApi->Delete: %s\n" % e)
+        print("Exception when calling OptionCodeApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListOptionCodeResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
+# **list**
+> ListOptionCodeResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
 
 Retrieve DHCP option codes.
 
@@ -214,11 +214,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP option codes.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
-        print("The response of OptionCodeApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
+        print("The response of OptionCodeApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionCodeApi->List: %s\n" % e)
+        print("Exception when calling OptionCodeApi->list: %s\n" % e)
 ```
 
 
@@ -256,8 +256,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadOptionCodeResponse Read(id, fields=fields)
+# **read**
+> ReadOptionCodeResponse read(id, fields=fields)
 
 Retrieve the DHCP option code.
 
@@ -299,11 +299,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP option code.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of OptionCodeApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of OptionCodeApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionCodeApi->Read: %s\n" % e)
+        print("Exception when calling OptionCodeApi->read: %s\n" % e)
 ```
 
 
@@ -337,8 +337,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateOptionCodeResponse Update(id, body)
+# **update**
+> UpdateOptionCodeResponse update(id, body)
 
 Update the DHCP option code.
 
@@ -381,11 +381,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP option code.
-        api_response = api_instance.Update(id, body)
-        print("The response of OptionCodeApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of OptionCodeApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionCodeApi->Update: %s\n" % e)
+        print("Exception when calling OptionCodeApi->update: %s\n" % e)
 ```
 
 

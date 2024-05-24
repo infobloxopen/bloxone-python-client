@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](LeasesCommandApi.md#Create) | **POST** /dhcp/leases_command | Perform actions like clearing DHCP lease(s).
+[**create**](LeasesCommandApi.md#create) | **POST** /dhcp/leases_command | Perform actions like clearing DHCP lease(s).
 
 
-# **Create**
-> CreateLeasesCommandResponse Create(body)
+# **create**
+> CreateLeasesCommandResponse create(body)
 
 Perform actions like clearing DHCP lease(s).
 
@@ -50,11 +50,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Perform actions like clearing DHCP lease(s).
-        api_response = api_instance.Create(body)
-        print("The response of LeasesCommandApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of LeasesCommandApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LeasesCommandApi->Create: %s\n" % e)
+        print("Exception when calling LeasesCommandApi->create: %s\n" % e)
 ```
 
 

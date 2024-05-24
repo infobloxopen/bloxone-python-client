@@ -4,12 +4,12 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListPoPRegions**](PopRegionsApi.md#ListPoPRegions) | **GET** /pop_regions | List PoP Regions.
-[**ReadPoPRegion**](PopRegionsApi.md#ReadPoPRegion) | **GET** /pop_regions/{id} | Read PoP Region.
+[**list_po_p_regions**](PopRegionsApi.md#list_po_p_regions) | **GET** /pop_regions | List PoP Regions.
+[**read_po_p_region**](PopRegionsApi.md#read_po_p_region) | **GET** /pop_regions/{id} | Read PoP Region.
 
 
-# **ListPoPRegions**
-> ListPoPRegionsResponse ListPoPRegions(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_po_p_regions**
+> ListPoPRegionsResponse list_po_p_regions(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List PoP Regions.
 
@@ -45,11 +45,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List PoP Regions.
-        api_response = api_instance.ListPoPRegions(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of PopRegionsApi->ListPoPRegions:\n")
+        api_response = api_instance.list_po_p_regions(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of PopRegionsApi->list_po_p_regions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PopRegionsApi->ListPoPRegions: %s\n" % e)
+        print("Exception when calling PopRegionsApi->list_po_p_regions: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadPoPRegion**
-> ReadPoPRegionResponse ReadPoPRegion(id)
+# **read_po_p_region**
+> ReadPoPRegionResponse read_po_p_region(id)
 
 Read PoP Region.
 
@@ -120,11 +120,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read PoP Region.
-        api_response = api_instance.ReadPoPRegion(id)
-        print("The response of PopRegionsApi->ReadPoPRegion:\n")
+        api_response = api_instance.read_po_p_region(id)
+        print("The response of PopRegionsApi->read_po_p_region:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PopRegionsApi->ReadPoPRegion: %s\n" % e)
+        print("Exception when calling PopRegionsApi->read_po_p_region: %s\n" % e)
 ```
 
 

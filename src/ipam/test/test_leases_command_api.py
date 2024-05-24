@@ -25,8 +25,8 @@ class TestLeasesCommandApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Perform actions like clearing DHCP lease(s).
         """

@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](HardwareFilterApi.md#Create) | **POST** /dhcp/hardware_filter | Create the hardware filter.
-[**Delete**](HardwareFilterApi.md#Delete) | **DELETE** /dhcp/hardware_filter/{id} | Move the hardware filter to the recycle bin.
-[**List**](HardwareFilterApi.md#List) | **GET** /dhcp/hardware_filter | Retrieve hardware filters.
-[**Read**](HardwareFilterApi.md#Read) | **GET** /dhcp/hardware_filter/{id} | Retrieve the hardware filter.
-[**Update**](HardwareFilterApi.md#Update) | **PATCH** /dhcp/hardware_filter/{id} | Update the hardware filter.
+[**create**](HardwareFilterApi.md#create) | **POST** /dhcp/hardware_filter | Create the hardware filter.
+[**delete**](HardwareFilterApi.md#delete) | **DELETE** /dhcp/hardware_filter/{id} | Move the hardware filter to the recycle bin.
+[**list**](HardwareFilterApi.md#list) | **GET** /dhcp/hardware_filter | Retrieve hardware filters.
+[**read**](HardwareFilterApi.md#read) | **GET** /dhcp/hardware_filter/{id} | Retrieve the hardware filter.
+[**update**](HardwareFilterApi.md#update) | **PATCH** /dhcp/hardware_filter/{id} | Update the hardware filter.
 
 
-# **Create**
-> CreateHardwareFilterResponse Create(body)
+# **create**
+> CreateHardwareFilterResponse create(body)
 
 Create the hardware filter.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the hardware filter.
-        api_response = api_instance.Create(body)
-        print("The response of HardwareFilterApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of HardwareFilterApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HardwareFilterApi->Create: %s\n" % e)
+        print("Exception when calling HardwareFilterApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the hardware filter to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the hardware filter to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling HardwareFilterApi->Delete: %s\n" % e)
+        print("Exception when calling HardwareFilterApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListHardwareFilterResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListHardwareFilterResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve hardware filters.
 
@@ -216,11 +216,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve hardware filters.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
-        print("The response of HardwareFilterApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
+        print("The response of HardwareFilterApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HardwareFilterApi->List: %s\n" % e)
+        print("Exception when calling HardwareFilterApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadHardwareFilterResponse Read(id, fields=fields)
+# **read**
+> ReadHardwareFilterResponse read(id, fields=fields)
 
 Retrieve the hardware filter.
 
@@ -303,11 +303,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the hardware filter.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of HardwareFilterApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of HardwareFilterApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HardwareFilterApi->Read: %s\n" % e)
+        print("Exception when calling HardwareFilterApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateHardwareFilterResponse Update(id, body)
+# **update**
+> UpdateHardwareFilterResponse update(id, body)
 
 Update the hardware filter.
 
@@ -385,11 +385,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the hardware filter.
-        api_response = api_instance.Update(id, body)
-        print("The response of HardwareFilterApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of HardwareFilterApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HardwareFilterApi->Update: %s\n" % e)
+        print("Exception when calling HardwareFilterApi->update: %s\n" % e)
 ```
 
 

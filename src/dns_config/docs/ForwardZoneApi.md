@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Copy**](ForwardZoneApi.md#Copy) | **POST** /dns/forward_zone/copy | Copies the __ForwardZone__ object.
-[**Create**](ForwardZoneApi.md#Create) | **POST** /dns/forward_zone | Create the ForwardZone object.
-[**Delete**](ForwardZoneApi.md#Delete) | **DELETE** /dns/forward_zone/{id} | Move the Forward Zone object to Recyclebin.
-[**List**](ForwardZoneApi.md#List) | **GET** /dns/forward_zone | List Forward Zone objects.
-[**Read**](ForwardZoneApi.md#Read) | **GET** /dns/forward_zone/{id} | Read the Forward Zone object.
-[**Update**](ForwardZoneApi.md#Update) | **PATCH** /dns/forward_zone/{id} | Update the Forward Zone object.
+[**copy**](ForwardZoneApi.md#copy) | **POST** /dns/forward_zone/copy | Copies the __ForwardZone__ object.
+[**create**](ForwardZoneApi.md#create) | **POST** /dns/forward_zone | Create the ForwardZone object.
+[**delete**](ForwardZoneApi.md#delete) | **DELETE** /dns/forward_zone/{id} | Move the Forward Zone object to Recyclebin.
+[**list**](ForwardZoneApi.md#list) | **GET** /dns/forward_zone | List Forward Zone objects.
+[**read**](ForwardZoneApi.md#read) | **GET** /dns/forward_zone/{id} | Read the Forward Zone object.
+[**update**](ForwardZoneApi.md#update) | **PATCH** /dns/forward_zone/{id} | Update the Forward Zone object.
 
 
-# **Copy**
-> CopyForwardZoneResponse Copy(body)
+# **copy**
+> CopyForwardZoneResponse copy(body)
 
 Copies the __ForwardZone__ object.
 
@@ -55,11 +55,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Copies the __ForwardZone__ object.
-        api_response = api_instance.Copy(body)
-        print("The response of ForwardZoneApi->Copy:\n")
+        api_response = api_instance.copy(body)
+        print("The response of ForwardZoneApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->Copy: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->copy: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateForwardZoneResponse Create(body)
+# **create**
+> CreateForwardZoneResponse create(body)
 
 Create the ForwardZone object.
 
@@ -135,11 +135,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the ForwardZone object.
-        api_response = api_instance.Create(body)
-        print("The response of ForwardZoneApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of ForwardZoneApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->Create: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->create: %s\n" % e)
 ```
 
 
@@ -172,8 +172,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the Forward Zone object to Recyclebin.
 
@@ -213,9 +213,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the Forward Zone object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->Delete: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->delete: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListForwardZoneResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListForwardZoneResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List Forward Zone objects.
 
@@ -297,11 +297,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List Forward Zone objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of ForwardZoneApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of ForwardZoneApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->List: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->list: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadForwardZoneResponse Read(id, fields=fields)
+# **read**
+> ReadForwardZoneResponse read(id, fields=fields)
 
 Read the Forward Zone object.
 
@@ -384,11 +384,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the Forward Zone object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of ForwardZoneApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of ForwardZoneApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->Read: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->read: %s\n" % e)
 ```
 
 
@@ -422,8 +422,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateForwardZoneResponse Update(id, body)
+# **update**
+> UpdateForwardZoneResponse update(id, body)
 
 Update the Forward Zone object.
 
@@ -466,11 +466,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the Forward Zone object.
-        api_response = api_instance.Update(id, body)
-        print("The response of ForwardZoneApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of ForwardZoneApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ForwardZoneApi->Update: %s\n" % e)
+        print("Exception when calling ForwardZoneApi->update: %s\n" % e)
 ```
 
 

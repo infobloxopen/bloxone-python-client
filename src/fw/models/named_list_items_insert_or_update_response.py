@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from fw.models.atcfw_named_list_items_insert_or_update_response_success import AtcfwNamedListItemsInsertOrUpdateResponseSuccess
+from fw.models.named_list_items_insert_or_update_response_success import NamedListItemsInsertOrUpdateResponseSuccess
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class NamedListItemsInsertOrUpdateResponse(BaseModel):
     """
     The Named List Items create or update response.
     """ # noqa: E501
-    success: Optional[AtcfwNamedListItemsInsertOrUpdateResponseSuccess] = None
+    success: Optional[NamedListItemsInsertOrUpdateResponseSuccess] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["success"]
 
@@ -92,7 +92,7 @@ class NamedListItemsInsertOrUpdateResponse(BaseModel):
 
         _obj = cls.model_validate({
             "success":
-            AtcfwNamedListItemsInsertOrUpdateResponseSuccess.from_dict(
+            NamedListItemsInsertOrUpdateResponseSuccess.from_dict(
                 obj["success"]) if obj.get("success") is not None else None
         })
         # store additional fields in additional_properties

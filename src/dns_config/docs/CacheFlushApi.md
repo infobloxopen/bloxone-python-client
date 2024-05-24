@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](CacheFlushApi.md#Create) | **POST** /dns/cache_flush | Create the Cache Flush object.
+[**create**](CacheFlushApi.md#create) | **POST** /dns/cache_flush | Create the Cache Flush object.
 
 
-# **Create**
-> object Create(body)
+# **create**
+> object create(body)
 
 Create the Cache Flush object.
 
@@ -49,11 +49,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the Cache Flush object.
-        api_response = api_instance.Create(body)
-        print("The response of CacheFlushApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of CacheFlushApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CacheFlushApi->Create: %s\n" % e)
+        print("Exception when calling CacheFlushApi->create: %s\n" % e)
 ```
 
 

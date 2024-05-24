@@ -25,43 +25,43 @@ class TestServicesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Applications(self) -> None:
-        """Test case for Applications
+    def test_services_applications(self) -> None:
+        """Test case for services_applications
 
         List applications (Service types) for a particular account.
         """
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_services_create(self) -> None:
+        """Test case for services_create
 
         Create a Service resource.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_services_delete(self) -> None:
+        """Test case for services_delete
 
         Delete a Service resource.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_services_list(self) -> None:
+        """Test case for services_list
 
         List all the Service resources for an account.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_services_read(self) -> None:
+        """Test case for services_read
 
         Read a Service resource.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_services_update(self) -> None:
+        """Test case for services_update
 
         Update a Service resource.
         """

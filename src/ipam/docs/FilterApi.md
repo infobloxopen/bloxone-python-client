@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](FilterApi.md#List) | **GET** /dhcp/filter | Retrieve DHCP filters.
+[**list**](FilterApi.md#list) | **GET** /dhcp/filter | Retrieve DHCP filters.
 
 
-# **List**
-> ListFilterResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListFilterResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve DHCP filters.
 
@@ -56,11 +56,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP filters.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
-        print("The response of FilterApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+        print("The response of FilterApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FilterApi->List: %s\n" % e)
+        print("Exception when calling FilterApi->list: %s\n" % e)
 ```
 
 

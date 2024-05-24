@@ -4,16 +4,16 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApplicationFilter**](ApplicationFiltersApi.md#CreateApplicationFilter) | **POST** /application_filters | Create Application Filter.
-[**DeleteApplicationFilters**](ApplicationFiltersApi.md#DeleteApplicationFilters) | **DELETE** /application_filters | Delete Application Filters.
-[**DeleteSingleApplicationFilters**](ApplicationFiltersApi.md#DeleteSingleApplicationFilters) | **DELETE** /application_filters/{id} | Delete Application Filter Object by ID.
-[**ListApplicationFilters**](ApplicationFiltersApi.md#ListApplicationFilters) | **GET** /application_filters | List Application Filters.
-[**ReadApplicationFilter**](ApplicationFiltersApi.md#ReadApplicationFilter) | **GET** /application_filters/{id} | Read Application Filter.
-[**UpdateApplicationFilter**](ApplicationFiltersApi.md#UpdateApplicationFilter) | **PUT** /application_filters/{id} | Update Application Filter.
+[**create_application_filter**](ApplicationFiltersApi.md#create_application_filter) | **POST** /application_filters | Create Application Filter.
+[**delete_application_filters**](ApplicationFiltersApi.md#delete_application_filters) | **DELETE** /application_filters | Delete Application Filters.
+[**delete_single_application_filters**](ApplicationFiltersApi.md#delete_single_application_filters) | **DELETE** /application_filters/{id} | Delete Application Filter Object by ID.
+[**list_application_filters**](ApplicationFiltersApi.md#list_application_filters) | **GET** /application_filters | List Application Filters.
+[**read_application_filter**](ApplicationFiltersApi.md#read_application_filter) | **GET** /application_filters/{id} | Read Application Filter.
+[**update_application_filter**](ApplicationFiltersApi.md#update_application_filter) | **PUT** /application_filters/{id} | Update Application Filter.
 
 
-# **CreateApplicationFilter**
-> ApplicationFilterCreateResponse CreateApplicationFilter(body)
+# **create_application_filter**
+> ApplicationFilterCreateResponse create_application_filter(body)
 
 Create Application Filter.
 
@@ -44,11 +44,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Application Filter.
-        api_response = api_instance.CreateApplicationFilter(body)
-        print("The response of ApplicationFiltersApi->CreateApplicationFilter:\n")
+        api_response = api_instance.create_application_filter(body)
+        print("The response of ApplicationFiltersApi->create_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->CreateApplicationFilter: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->create_application_filter: %s\n" % e)
 ```
 
 
@@ -82,8 +82,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteApplicationFilters**
-> DeleteApplicationFilters(body)
+# **delete_application_filters**
+> delete_application_filters(body)
 
 Delete Application Filters.
 
@@ -113,9 +113,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Application Filters.
-        api_instance.DeleteApplicationFilters(body)
+        api_instance.delete_application_filters(body)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->DeleteApplicationFilters: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->delete_application_filters: %s\n" % e)
 ```
 
 
@@ -150,8 +150,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleApplicationFilters**
-> DeleteSingleApplicationFilters(id)
+# **delete_single_application_filters**
+> delete_single_application_filters(id)
 
 Delete Application Filter Object by ID.
 
@@ -180,9 +180,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Application Filter Object by ID.
-        api_instance.DeleteSingleApplicationFilters(id)
+        api_instance.delete_single_application_filters(id)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->DeleteSingleApplicationFilters: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->delete_single_application_filters: %s\n" % e)
 ```
 
 
@@ -217,8 +217,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListApplicationFilters**
-> ApplicationFilterMultiResponse ListApplicationFilters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_application_filters**
+> ApplicationFilterMultiResponse list_application_filters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List Application Filters.
 
@@ -254,11 +254,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Application Filters.
-        api_response = api_instance.ListApplicationFilters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of ApplicationFiltersApi->ListApplicationFilters:\n")
+        api_response = api_instance.list_application_filters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of ApplicationFiltersApi->list_application_filters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->ListApplicationFilters: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->list_application_filters: %s\n" % e)
 ```
 
 
@@ -298,8 +298,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadApplicationFilter**
-> ApplicationFilterReadResponse ReadApplicationFilter(id, fields=fields, name=name)
+# **read_application_filter**
+> ApplicationFilterReadResponse read_application_filter(id, fields=fields, name=name)
 
 Read Application Filter.
 
@@ -331,11 +331,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Application Filter.
-        api_response = api_instance.ReadApplicationFilter(id, fields=fields, name=name)
-        print("The response of ApplicationFiltersApi->ReadApplicationFilter:\n")
+        api_response = api_instance.read_application_filter(id, fields=fields, name=name)
+        print("The response of ApplicationFiltersApi->read_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->ReadApplicationFilter: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->read_application_filter: %s\n" % e)
 ```
 
 
@@ -371,8 +371,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateApplicationFilter**
-> ApplicationFilterUpdateResponse UpdateApplicationFilter(id, body)
+# **update_application_filter**
+> ApplicationFilterUpdateResponse update_application_filter(id, body)
 
 Update Application Filter.
 
@@ -404,11 +404,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Application Filter.
-        api_response = api_instance.UpdateApplicationFilter(id, body)
-        print("The response of ApplicationFiltersApi->UpdateApplicationFilter:\n")
+        api_response = api_instance.update_application_filter(id, body)
+        print("The response of ApplicationFiltersApi->update_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->UpdateApplicationFilter: %s\n" % e)
+        print("Exception when calling ApplicationFiltersApi->update_application_filter: %s\n" % e)
 ```
 
 

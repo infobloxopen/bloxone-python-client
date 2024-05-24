@@ -66,11 +66,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List all the Hosts along with its associated Services (applications).
-        api_response = api_instance.HostsList(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of DetailApi->HostsList:\n")
+        api_response = api_instance.hosts_list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+        print("The response of DetailApi->hosts_list:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DetailApi->HostsList: %s\n" % e)
+        print("Exception when calling DetailApi->hosts_list: %s\n" % e)
 
 ```
 
@@ -80,23 +80,23 @@ All URIs are relative to *http://csp.infoblox.com/api/infra/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DetailApi* | [**HostsList**](infra_mgmt/docs/DetailApi.md#hostslist) | **GET** /detail_hosts | List all the Hosts along with its associated Services (applications).
-*DetailApi* | [**ServicesList**](infra_mgmt/docs/DetailApi.md#serviceslist) | **GET** /detail_services | List all the Services (applications) along with its associated Hosts.
-*HostsApi* | [**AssignTags**](infra_mgmt/docs/HostsApi.md#assigntags) | **POST** /hosts/assign_tags | Assign tags for list of hosts.
-*HostsApi* | [**Create**](infra_mgmt/docs/HostsApi.md#create) | **POST** /hosts | Create a Host resource.
-*HostsApi* | [**Delete**](infra_mgmt/docs/HostsApi.md#delete) | **DELETE** /hosts/{id} | Delete a Host resource.
-*HostsApi* | [**Disconnect**](infra_mgmt/docs/HostsApi.md#disconnect) | **POST** /hosts/{id}/disconnect | Disconnect a Host by resource ID.
-*HostsApi* | [**List**](infra_mgmt/docs/HostsApi.md#list) | **GET** /hosts | List all the Host resources for an account.
-*HostsApi* | [**Read**](infra_mgmt/docs/HostsApi.md#read) | **GET** /hosts/{id} | Get a Host resource.
-*HostsApi* | [**Replace**](infra_mgmt/docs/HostsApi.md#replace) | **POST** /hosts/{from.resource_id}/replace/{to.resource_id} | Migrate a Host&#39;s configuration from one to another.
-*HostsApi* | [**UnassignTags**](infra_mgmt/docs/HostsApi.md#unassigntags) | **POST** /hosts/unassign_tags | Unassign tag for the list hosts.
-*HostsApi* | [**Update**](infra_mgmt/docs/HostsApi.md#update) | **PUT** /hosts/{id} | Update a Host resource.
-*ServicesApi* | [**Applications**](infra_mgmt/docs/ServicesApi.md#applications) | **GET** /applications | List applications (Service types) for a particular account.
-*ServicesApi* | [**Create**](infra_mgmt/docs/ServicesApi.md#create) | **POST** /services | Create a Service resource.
-*ServicesApi* | [**Delete**](infra_mgmt/docs/ServicesApi.md#delete) | **DELETE** /services/{id} | Delete a Service resource.
-*ServicesApi* | [**List**](infra_mgmt/docs/ServicesApi.md#list) | **GET** /services | List all the Service resources for an account.
-*ServicesApi* | [**Read**](infra_mgmt/docs/ServicesApi.md#read) | **GET** /services/{id} | Read a Service resource.
-*ServicesApi* | [**Update**](infra_mgmt/docs/ServicesApi.md#update) | **PUT** /services/{id} | Update a Service resource.
+*DetailApi* | [**hosts_list**](infra_mgmt/docs/DetailApi.md#hosts_list) | **GET** /detail_hosts | List all the Hosts along with its associated Services (applications).
+*DetailApi* | [**services_list**](infra_mgmt/docs/DetailApi.md#services_list) | **GET** /detail_services | List all the Services (applications) along with its associated Hosts.
+*HostsApi* | [**assign_tags**](infra_mgmt/docs/HostsApi.md#assign_tags) | **POST** /hosts/assign_tags | Assign tags for list of hosts.
+*HostsApi* | [**create**](infra_mgmt/docs/HostsApi.md#create) | **POST** /hosts | Create a Host resource.
+*HostsApi* | [**delete**](infra_mgmt/docs/HostsApi.md#delete) | **DELETE** /hosts/{id} | Delete a Host resource.
+*HostsApi* | [**disconnect**](infra_mgmt/docs/HostsApi.md#disconnect) | **POST** /hosts/{id}/disconnect | Disconnect a Host by resource ID.
+*HostsApi* | [**list**](infra_mgmt/docs/HostsApi.md#list) | **GET** /hosts | List all the Host resources for an account.
+*HostsApi* | [**read**](infra_mgmt/docs/HostsApi.md#read) | **GET** /hosts/{id} | Get a Host resource.
+*HostsApi* | [**replace**](infra_mgmt/docs/HostsApi.md#replace) | **POST** /hosts/{from.resource_id}/replace/{to.resource_id} | Migrate a Host&#39;s configuration from one to another.
+*HostsApi* | [**unassign_tags**](infra_mgmt/docs/HostsApi.md#unassign_tags) | **POST** /hosts/unassign_tags | Unassign tag for the list hosts.
+*HostsApi* | [**update**](infra_mgmt/docs/HostsApi.md#update) | **PUT** /hosts/{id} | Update a Host resource.
+*ServicesApi* | [**applications**](infra_mgmt/docs/ServicesApi.md#applications) | **GET** /applications | List applications (Service types) for a particular account.
+*ServicesApi* | [**create**](infra_mgmt/docs/ServicesApi.md#create) | **POST** /services | Create a Service resource.
+*ServicesApi* | [**delete**](infra_mgmt/docs/ServicesApi.md#delete) | **DELETE** /services/{id} | Delete a Service resource.
+*ServicesApi* | [**list**](infra_mgmt/docs/ServicesApi.md#list) | **GET** /services | List all the Service resources for an account.
+*ServicesApi* | [**read**](infra_mgmt/docs/ServicesApi.md#read) | **GET** /services/{id} | Read a Service resource.
+*ServicesApi* | [**update**](infra_mgmt/docs/ServicesApi.md#update) | **PUT** /services/{id} | Update a Service resource.
 
 
 ## Documentation For Models

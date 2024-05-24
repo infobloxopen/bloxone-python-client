@@ -25,43 +25,43 @@ class TestNetworkListsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateNetworkList(self) -> None:
-        """Test case for CreateNetworkList
+    def test_create_network_list(self) -> None:
+        """Test case for create_network_list
 
         Create Network List.
         """
         pass
 
-    def test_DeleteNetworkLists(self) -> None:
-        """Test case for DeleteNetworkLists
+    def test_delete_network_lists(self) -> None:
+        """Test case for delete_network_lists
 
         Delete Network Lists.
         """
         pass
 
-    def test_DeleteSingleNetworkLists(self) -> None:
-        """Test case for DeleteSingleNetworkLists
+    def test_delete_single_network_lists(self) -> None:
+        """Test case for delete_single_network_lists
 
         Delete Network Lists.
         """
         pass
 
-    def test_ListNetworkLists(self) -> None:
-        """Test case for ListNetworkLists
+    def test_list_network_lists(self) -> None:
+        """Test case for list_network_lists
 
         List Network Lists.
         """
         pass
 
-    def test_ReadNetworkList(self) -> None:
-        """Test case for ReadNetworkList
+    def test_read_network_list(self) -> None:
+        """Test case for read_network_list
 
         Read Network List.
         """
         pass
 
-    def test_UpdateNetworkList(self) -> None:
-        """Test case for UpdateNetworkList
+    def test_update_network_list(self) -> None:
+        """Test case for update_network_list
 
         Update Network List.
         """

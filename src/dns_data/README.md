@@ -60,11 +60,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Create the DNS resource record.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of RecordApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of RecordApi->create:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RecordApi->Create: %s\n" % e)
+        print("Exception when calling RecordApi->create: %s\n" % e)
 
 ```
 
@@ -74,12 +74,12 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*RecordApi* | [**Create**](dns_data/docs/RecordApi.md#create) | **POST** /dns/record | Create the DNS resource record.
-*RecordApi* | [**Delete**](dns_data/docs/RecordApi.md#delete) | **DELETE** /dns/record/{id} | Move the DNS resource record to recycle bin.
-*RecordApi* | [**List**](dns_data/docs/RecordApi.md#list) | **GET** /dns/record | Retrieve DNS resource records.
-*RecordApi* | [**Read**](dns_data/docs/RecordApi.md#read) | **GET** /dns/record/{id} | Retrieve the DNS resource record.
-*RecordApi* | [**SOASerialIncrement**](dns_data/docs/RecordApi.md#soaserialincrement) | **POST** /dns/record/{id}/serial_increment | Increment serial number for the SOA record.
-*RecordApi* | [**Update**](dns_data/docs/RecordApi.md#update) | **PATCH** /dns/record/{id} | Update the DNS resource record.
+*RecordApi* | [**create**](dns_data/docs/RecordApi.md#create) | **POST** /dns/record | Create the DNS resource record.
+*RecordApi* | [**delete**](dns_data/docs/RecordApi.md#delete) | **DELETE** /dns/record/{id} | Move the DNS resource record to recycle bin.
+*RecordApi* | [**list**](dns_data/docs/RecordApi.md#list) | **GET** /dns/record | Retrieve DNS resource records.
+*RecordApi* | [**read**](dns_data/docs/RecordApi.md#read) | **GET** /dns/record/{id} | Retrieve the DNS resource record.
+*RecordApi* | [**soa_serial_increment**](dns_data/docs/RecordApi.md#soa_serial_increment) | **POST** /dns/record/{id}/serial_increment | Increment serial number for the SOA record.
+*RecordApi* | [**update**](dns_data/docs/RecordApi.md#update) | **PATCH** /dns/record/{id} | Update the DNS resource record.
 
 
 ## Documentation For Models

@@ -25,8 +25,8 @@ class TestConvertDomainNameApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Convert(self) -> None:
-        """Test case for Convert
+    def test_convert(self) -> None:
+        """Test case for convert
 
         Convert the object.
         """

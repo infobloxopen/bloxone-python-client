@@ -4,14 +4,14 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Read**](GlobalApi.md#Read) | **GET** /dhcp/global | Retrieve the global configuration.
-[**ReadById**](GlobalApi.md#ReadById) | **GET** /dhcp/global/{id} | Retrieve the global configuration.
-[**Update**](GlobalApi.md#Update) | **PATCH** /dhcp/global | Update the global configuration.
-[**UpdateById**](GlobalApi.md#UpdateById) | **PATCH** /dhcp/global/{id} | Update the global configuration.
+[**read**](GlobalApi.md#read) | **GET** /dhcp/global | Retrieve the global configuration.
+[**read_by_id**](GlobalApi.md#read_by_id) | **GET** /dhcp/global/{id} | Retrieve the global configuration.
+[**update**](GlobalApi.md#update) | **PATCH** /dhcp/global | Update the global configuration.
+[**update_by_id**](GlobalApi.md#update_by_id) | **PATCH** /dhcp/global/{id} | Update the global configuration.
 
 
-# **Read**
-> ReadGlobalResponse Read(fields=fields)
+# **read**
+> ReadGlobalResponse read(fields=fields)
 
 Retrieve the global configuration.
 
@@ -52,11 +52,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the global configuration.
-        api_response = api_instance.Read(fields=fields)
-        print("The response of GlobalApi->Read:\n")
+        api_response = api_instance.read(fields=fields)
+        print("The response of GlobalApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->Read: %s\n" % e)
+        print("Exception when calling GlobalApi->read: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadById**
-> ReadGlobalResponse ReadById(id, fields=fields)
+# **read_by_id**
+> ReadGlobalResponse read_by_id(id, fields=fields)
 
 Retrieve the global configuration.
 
@@ -132,11 +132,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the global configuration.
-        api_response = api_instance.ReadById(id, fields=fields)
-        print("The response of GlobalApi->ReadById:\n")
+        api_response = api_instance.read_by_id(id, fields=fields)
+        print("The response of GlobalApi->read_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->ReadById: %s\n" % e)
+        print("Exception when calling GlobalApi->read_by_id: %s\n" % e)
 ```
 
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateGlobalResponse Update(body)
+# **update**
+> UpdateGlobalResponse update(body)
 
 Update the global configuration.
 
@@ -213,11 +213,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the global configuration.
-        api_response = api_instance.Update(body)
-        print("The response of GlobalApi->Update:\n")
+        api_response = api_instance.update(body)
+        print("The response of GlobalApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->Update: %s\n" % e)
+        print("Exception when calling GlobalApi->update: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateById**
-> UpdateGlobalResponse UpdateById(id, body)
+# **update_by_id**
+> UpdateGlobalResponse update_by_id(id, body)
 
 Update the global configuration.
 
@@ -294,11 +294,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the global configuration.
-        api_response = api_instance.UpdateById(id, body)
-        print("The response of GlobalApi->UpdateById:\n")
+        api_response = api_instance.update_by_id(id, body)
+        print("The response of GlobalApi->update_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->UpdateById: %s\n" % e)
+        print("Exception when calling GlobalApi->update_by_id: %s\n" % e)
 ```
 
 

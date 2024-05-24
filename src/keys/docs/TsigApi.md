@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](TsigApi.md#Create) | **POST** /keys/tsig | Create the TSIG key.
-[**Delete**](TsigApi.md#Delete) | **DELETE** /keys/tsig/{id} | Delete the TSIG key.
-[**List**](TsigApi.md#List) | **GET** /keys/tsig | Retrieve TSIG keys.
-[**Read**](TsigApi.md#Read) | **GET** /keys/tsig/{id} | Retrieve the TSIG key.
-[**Update**](TsigApi.md#Update) | **PATCH** /keys/tsig/{id} | Update the TSIG key.
+[**create**](TsigApi.md#create) | **POST** /keys/tsig | Create the TSIG key.
+[**delete**](TsigApi.md#delete) | **DELETE** /keys/tsig/{id} | Delete the TSIG key.
+[**list**](TsigApi.md#list) | **GET** /keys/tsig | Retrieve TSIG keys.
+[**read**](TsigApi.md#read) | **GET** /keys/tsig/{id} | Retrieve the TSIG key.
+[**update**](TsigApi.md#update) | **PATCH** /keys/tsig/{id} | Update the TSIG key.
 
 
-# **Create**
-> CreateTSIGKeyResponse Create(body)
+# **create**
+> CreateTSIGKeyResponse create(body)
 
 Create the TSIG key.
 
@@ -54,11 +54,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Create the TSIG key.
-        api_response = api_instance.Create(body)
-        print("The response of TsigApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of TsigApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TsigApi->Create: %s\n" % e)
+        print("Exception when calling TsigApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete the TSIG key.
 
@@ -132,9 +132,9 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Delete the TSIG key.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling TsigApi->Delete: %s\n" % e)
+        print("Exception when calling TsigApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListTSIGKeyResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListTSIGKeyResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 Retrieve TSIG keys.
 
@@ -216,11 +216,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve TSIG keys.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of TsigApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of TsigApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TsigApi->List: %s\n" % e)
+        print("Exception when calling TsigApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadTSIGKeyResponse Read(id, fields=fields)
+# **read**
+> ReadTSIGKeyResponse read(id, fields=fields)
 
 Retrieve the TSIG key.
 
@@ -303,11 +303,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the TSIG key.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of TsigApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of TsigApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TsigApi->Read: %s\n" % e)
+        print("Exception when calling TsigApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateTSIGKeyResponse Update(id, body)
+# **update**
+> UpdateTSIGKeyResponse update(id, body)
 
 Update the TSIG key.
 
@@ -385,11 +385,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Update the TSIG key.
-        api_response = api_instance.Update(id, body)
-        print("The response of TsigApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of TsigApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TsigApi->Update: %s\n" % e)
+        print("Exception when calling TsigApi->update: %s\n" % e)
 ```
 
 

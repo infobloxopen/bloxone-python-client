@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](LbdnApi.md#Create) | **POST** /dtc/lbdn | Create the __LBDN__ object.
-[**Delete**](LbdnApi.md#Delete) | **DELETE** /dtc/lbdn/{id} | Delete the __LBDN__ object.
-[**List**](LbdnApi.md#List) | **GET** /dtc/lbdn | List __LBDN__ objects.
-[**Read**](LbdnApi.md#Read) | **GET** /dtc/lbdn/{id} | Read the __LBDN__ object.
-[**Update**](LbdnApi.md#Update) | **PATCH** /dtc/lbdn/{id} | Update the __LBDN__ object.
+[**create**](LbdnApi.md#create) | **POST** /dtc/lbdn | Create the __LBDN__ object.
+[**delete**](LbdnApi.md#delete) | **DELETE** /dtc/lbdn/{id} | Delete the __LBDN__ object.
+[**list**](LbdnApi.md#list) | **GET** /dtc/lbdn | List __LBDN__ objects.
+[**read**](LbdnApi.md#read) | **GET** /dtc/lbdn/{id} | Read the __LBDN__ object.
+[**update**](LbdnApi.md#update) | **PATCH** /dtc/lbdn/{id} | Update the __LBDN__ object.
 
 
-# **Create**
-> CreateLBDNResponse Create(body)
+# **create**
+> CreateLBDNResponse create(body)
 
 Create the __LBDN__ object.
 
@@ -54,11 +54,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the __LBDN__ object.
-        api_response = api_instance.Create(body)
-        print("The response of LbdnApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of LbdnApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LbdnApi->Create: %s\n" % e)
+        print("Exception when calling LbdnApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete the __LBDN__ object.
 
@@ -132,9 +132,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Delete the __LBDN__ object.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling LbdnApi->Delete: %s\n" % e)
+        print("Exception when calling LbdnApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListLBDNResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListLBDNResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List __LBDN__ objects.
 
@@ -216,11 +216,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List __LBDN__ objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of LbdnApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of LbdnApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LbdnApi->List: %s\n" % e)
+        print("Exception when calling LbdnApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadLBDNResponse Read(id, fields=fields)
+# **read**
+> ReadLBDNResponse read(id, fields=fields)
 
 Read the __LBDN__ object.
 
@@ -303,11 +303,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the __LBDN__ object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of LbdnApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of LbdnApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LbdnApi->Read: %s\n" % e)
+        print("Exception when calling LbdnApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateLBDNResponse Update(id, body)
+# **update**
+> UpdateLBDNResponse update(id, body)
 
 Update the __LBDN__ object.
 
@@ -385,11 +385,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the __LBDN__ object.
-        api_response = api_instance.Update(id, body)
-        print("The response of LbdnApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of LbdnApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LbdnApi->Update: %s\n" % e)
+        print("Exception when calling LbdnApi->update: %s\n" % e)
 ```
 
 

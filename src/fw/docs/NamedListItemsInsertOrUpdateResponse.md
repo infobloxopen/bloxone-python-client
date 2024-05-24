@@ -6,7 +6,7 @@ The Named List Items create or update response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | [**AtcfwNamedListItemsInsertOrUpdateResponseSuccess**](AtcfwNamedListItemsInsertOrUpdateResponseSuccess.md) |  | [optional] 
+**success** | [**NamedListItemsInsertOrUpdateResponseSuccess**](NamedListItemsInsertOrUpdateResponseSuccess.md) |  | [optional] 
 
 ## Example
 

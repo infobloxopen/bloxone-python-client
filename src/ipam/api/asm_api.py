@@ -43,7 +43,7 @@ class AsmApi:
         self.api_client = api_client
 
     @validate_call
-    def Create(
+    def create(
         self,
         body: ASM,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -85,7 +85,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -104,7 +104,7 @@ class AsmApi:
         ).data
 
     @validate_call
-    def Create_with_http_info(
+    def create_with_http_info(
         self,
         body: ASM,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -146,7 +146,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -165,7 +165,7 @@ class AsmApi:
         )
 
     @validate_call
-    def Create_without_preload_content(
+    def create_without_preload_content(
         self,
         body: ASM,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -207,7 +207,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -220,7 +220,7 @@ class AsmApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Create_serialize(
+    def _create_serialize(
         self,
         body,
         _request_auth,
@@ -281,7 +281,7 @@ class AsmApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def List(
+    def list(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -331,7 +331,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       subnet_id=subnet_id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -351,7 +351,7 @@ class AsmApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -401,7 +401,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       subnet_id=subnet_id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -421,7 +421,7 @@ class AsmApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -471,7 +471,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       subnet_id=subnet_id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -485,7 +485,7 @@ class AsmApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         fields,
         subnet_id,
@@ -543,7 +543,7 @@ class AsmApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read(
+    def read(
         self,
         id: Annotated[
             StrictStr,
@@ -596,7 +596,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -616,7 +616,7 @@ class AsmApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -669,7 +669,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -689,7 +689,7 @@ class AsmApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -742,7 +742,7 @@ class AsmApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -756,7 +756,7 @@ class AsmApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         id,
         fields,

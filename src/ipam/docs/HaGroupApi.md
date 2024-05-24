@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](HaGroupApi.md#Create) | **POST** /dhcp/ha_group | Create the HA group.
-[**Delete**](HaGroupApi.md#Delete) | **DELETE** /dhcp/ha_group/{id} | Delete the HA group.
-[**List**](HaGroupApi.md#List) | **GET** /dhcp/ha_group | Retrieve HA groups.
-[**Read**](HaGroupApi.md#Read) | **GET** /dhcp/ha_group/{id} | Retrieve the HA group.
-[**Update**](HaGroupApi.md#Update) | **PATCH** /dhcp/ha_group/{id} | Update the HA group.
+[**create**](HaGroupApi.md#create) | **POST** /dhcp/ha_group | Create the HA group.
+[**delete**](HaGroupApi.md#delete) | **DELETE** /dhcp/ha_group/{id} | Delete the HA group.
+[**list**](HaGroupApi.md#list) | **GET** /dhcp/ha_group | Retrieve HA groups.
+[**read**](HaGroupApi.md#read) | **GET** /dhcp/ha_group/{id} | Retrieve the HA group.
+[**update**](HaGroupApi.md#update) | **PATCH** /dhcp/ha_group/{id} | Update the HA group.
 
 
-# **Create**
-> CreateHAGroupResponse Create(body)
+# **create**
+> CreateHAGroupResponse create(body)
 
 Create the HA group.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the HA group.
-        api_response = api_instance.Create(body)
-        print("The response of HaGroupApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of HaGroupApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HaGroupApi->Create: %s\n" % e)
+        print("Exception when calling HaGroupApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete the HA group.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Delete the HA group.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling HaGroupApi->Delete: %s\n" % e)
+        print("Exception when calling HaGroupApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListHAGroupResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, collect_stats=collect_stats)
+# **list**
+> ListHAGroupResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, collect_stats=collect_stats)
 
 Retrieve HA groups.
 
@@ -217,11 +217,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve HA groups.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, collect_stats=collect_stats)
-        print("The response of HaGroupApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, collect_stats=collect_stats)
+        print("The response of HaGroupApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HaGroupApi->List: %s\n" % e)
+        print("Exception when calling HaGroupApi->list: %s\n" % e)
 ```
 
 
@@ -262,8 +262,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadHAGroupResponse Read(id, fields=fields, collect_stats=collect_stats)
+# **read**
+> ReadHAGroupResponse read(id, fields=fields, collect_stats=collect_stats)
 
 Retrieve the HA group.
 
@@ -306,11 +306,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the HA group.
-        api_response = api_instance.Read(id, fields=fields, collect_stats=collect_stats)
-        print("The response of HaGroupApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, collect_stats=collect_stats)
+        print("The response of HaGroupApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HaGroupApi->Read: %s\n" % e)
+        print("Exception when calling HaGroupApi->read: %s\n" % e)
 ```
 
 
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateHAGroupResponse Update(id, body)
+# **update**
+> UpdateHAGroupResponse update(id, body)
 
 Update the HA group.
 
@@ -389,11 +389,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the HA group.
-        api_response = api_instance.Update(id, body)
-        print("The response of HaGroupApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of HaGroupApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HaGroupApi->Update: %s\n" % e)
+        print("Exception when calling HaGroupApi->update: %s\n" % e)
 ```
 
 

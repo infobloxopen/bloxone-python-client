@@ -4,11 +4,11 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListContentCategories**](ContentCategoriesApi.md#ListContentCategories) | **GET** /content_categories | List Content Categories.
+[**list_content_categories**](ContentCategoriesApi.md#list_content_categories) | **GET** /content_categories | List Content Categories.
 
 
-# **ListContentCategories**
-> ContentCategoryMultiResponse ListContentCategories(fields=fields)
+# **list_content_categories**
+> ContentCategoryMultiResponse list_content_categories(fields=fields)
 
 List Content Categories.
 
@@ -38,11 +38,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Content Categories.
-        api_response = api_instance.ListContentCategories(fields=fields)
-        print("The response of ContentCategoriesApi->ListContentCategories:\n")
+        api_response = api_instance.list_content_categories(fields=fields)
+        print("The response of ContentCategoriesApi->list_content_categories:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ContentCategoriesApi->ListContentCategories: %s\n" % e)
+        print("Exception when calling ContentCategoriesApi->list_content_categories: %s\n" % e)
 ```
 
 

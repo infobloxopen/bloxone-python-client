@@ -49,11 +49,11 @@ with dfp.ApiClient(configuration) as api_client:
 
     try:
         # Check Config.
-        api_response = api_instance.CheckConfig(body)
-        print("The response of AccountsApi->CheckConfig:\n")
+        api_response = api_instance.check_config(body)
+        print("The response of AccountsApi->check_config:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AccountsApi->CheckConfig: %s\n" % e)
+        print("Exception when calling AccountsApi->check_config: %s\n" % e)
 
 ```
 
@@ -63,10 +63,10 @@ All URIs are relative to *https://csp.infoblox.com/api/atcdfp/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountsApi* | [**CheckConfig**](dfp/docs/AccountsApi.md#checkconfig) | **POST** /config/check | Check Config.
-*InfraServicesApi* | [**CreateOrUpdateDfpService**](dfp/docs/InfraServicesApi.md#createorupdatedfpservice) | **PUT** /dfp_services/{payload.service_id} | Update DNS Forwarding Proxy services.
-*InfraServicesApi* | [**ListDfpServices**](dfp/docs/InfraServicesApi.md#listdfpservices) | **GET** /dfp_services | List DNS Forwarding Proxy services.
-*InfraServicesApi* | [**ReadDfpService**](dfp/docs/InfraServicesApi.md#readdfpservice) | **GET** /dfp_services/{service_id} | Read DNS Forwarding Proxy services.
+*AccountsApi* | [**check_config**](dfp/docs/AccountsApi.md#check_config) | **POST** /config/check | Check Config.
+*InfraServicesApi* | [**create_or_update_dfp_service**](dfp/docs/InfraServicesApi.md#create_or_update_dfp_service) | **PUT** /dfp_services/{payload.service_id} | Update DNS Forwarding Proxy services.
+*InfraServicesApi* | [**list_dfp_services**](dfp/docs/InfraServicesApi.md#list_dfp_services) | **GET** /dfp_services | List DNS Forwarding Proxy services.
+*InfraServicesApi* | [**read_dfp_service**](dfp/docs/InfraServicesApi.md#read_dfp_service) | **GET** /dfp_services/{service_id} | Read DNS Forwarding Proxy services.
 
 
 ## Documentation For Models

@@ -4,18 +4,18 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Copy**](SubnetApi.md#Copy) | **POST** /ipam/subnet/{id}/copy | Copy the subnet.
-[**Create**](SubnetApi.md#Create) | **POST** /ipam/subnet | Create the subnet.
-[**CreateNextAvailableIP**](SubnetApi.md#CreateNextAvailableIP) | **POST** /ipam/subnet/{id}/nextavailableip | Allocate the next available IP address.
-[**Delete**](SubnetApi.md#Delete) | **DELETE** /ipam/subnet/{id} | Move the subnet to the recycle bin.
-[**List**](SubnetApi.md#List) | **GET** /ipam/subnet | Retrieve subnets.
-[**ListNextAvailableIP**](SubnetApi.md#ListNextAvailableIP) | **GET** /ipam/subnet/{id}/nextavailableip | Retrieve the next available IP address.
-[**Read**](SubnetApi.md#Read) | **GET** /ipam/subnet/{id} | Retrieve the subnet.
-[**Update**](SubnetApi.md#Update) | **PATCH** /ipam/subnet/{id} | Update the subnet.
+[**copy**](SubnetApi.md#copy) | **POST** /ipam/subnet/{id}/copy | Copy the subnet.
+[**create**](SubnetApi.md#create) | **POST** /ipam/subnet | Create the subnet.
+[**create_next_available_ip**](SubnetApi.md#create_next_available_ip) | **POST** /ipam/subnet/{id}/nextavailableip | Allocate the next available IP address.
+[**delete**](SubnetApi.md#delete) | **DELETE** /ipam/subnet/{id} | Move the subnet to the recycle bin.
+[**list**](SubnetApi.md#list) | **GET** /ipam/subnet | Retrieve subnets.
+[**list_next_available_ip**](SubnetApi.md#list_next_available_ip) | **GET** /ipam/subnet/{id}/nextavailableip | Retrieve the next available IP address.
+[**read**](SubnetApi.md#read) | **GET** /ipam/subnet/{id} | Retrieve the subnet.
+[**update**](SubnetApi.md#update) | **PATCH** /ipam/subnet/{id} | Update the subnet.
 
 
-# **Copy**
-> CopySubnetResponse Copy(id, body)
+# **copy**
+> CopySubnetResponse copy(id, body)
 
 Copy the subnet.
 
@@ -58,11 +58,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Copy the subnet.
-        api_response = api_instance.Copy(id, body)
-        print("The response of SubnetApi->Copy:\n")
+        api_response = api_instance.copy(id, body)
+        print("The response of SubnetApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->Copy: %s\n" % e)
+        print("Exception when calling SubnetApi->copy: %s\n" % e)
 ```
 
 
@@ -96,8 +96,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateSubnetResponse Create(body, inherit=inherit)
+# **create**
+> CreateSubnetResponse create(body, inherit=inherit)
 
 Create the subnet.
 
@@ -140,11 +140,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the subnet.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of SubnetApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of SubnetApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->Create: %s\n" % e)
+        print("Exception when calling SubnetApi->create: %s\n" % e)
 ```
 
 
@@ -178,8 +178,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNextAvailableIP**
-> CreateNextAvailableIPResponse CreateNextAvailableIP(id, contiguous=contiguous, count=count)
+# **create_next_available_ip**
+> CreateNextAvailableIPResponse create_next_available_ip(id, contiguous=contiguous, count=count)
 
 Allocate the next available IP address.
 
@@ -222,11 +222,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Allocate the next available IP address.
-        api_response = api_instance.CreateNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of SubnetApi->CreateNextAvailableIP:\n")
+        api_response = api_instance.create_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of SubnetApi->create_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->CreateNextAvailableIP: %s\n" % e)
+        print("Exception when calling SubnetApi->create_next_available_ip: %s\n" % e)
 ```
 
 
@@ -261,8 +261,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the subnet to the recycle bin.
 
@@ -302,9 +302,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the subnet to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling SubnetApi->Delete: %s\n" % e)
+        print("Exception when calling SubnetApi->delete: %s\n" % e)
 ```
 
 
@@ -337,8 +337,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListSubnetResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListSubnetResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve subnets.
 
@@ -387,11 +387,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve subnets.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of SubnetApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of SubnetApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->List: %s\n" % e)
+        print("Exception when calling SubnetApi->list: %s\n" % e)
 ```
 
 
@@ -432,8 +432,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNextAvailableIP**
-> NextAvailableIPResponse ListNextAvailableIP(id, contiguous=contiguous, count=count)
+# **list_next_available_ip**
+> NextAvailableIPResponse list_next_available_ip(id, contiguous=contiguous, count=count)
 
 Retrieve the next available IP address.
 
@@ -476,11 +476,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the next available IP address.
-        api_response = api_instance.ListNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of SubnetApi->ListNextAvailableIP:\n")
+        api_response = api_instance.list_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of SubnetApi->list_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->ListNextAvailableIP: %s\n" % e)
+        print("Exception when calling SubnetApi->list_next_available_ip: %s\n" % e)
 ```
 
 
@@ -515,8 +515,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadSubnetResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadSubnetResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the subnet.
 
@@ -559,11 +559,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the subnet.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of SubnetApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of SubnetApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->Read: %s\n" % e)
+        print("Exception when calling SubnetApi->read: %s\n" % e)
 ```
 
 
@@ -598,8 +598,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateSubnetResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateSubnetResponse update(id, body, inherit=inherit)
 
 Update the subnet.
 
@@ -643,11 +643,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the subnet.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of SubnetApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of SubnetApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SubnetApi->Update: %s\n" % e)
+        print("Exception when calling SubnetApi->update: %s\n" % e)
 ```
 
 

@@ -49,11 +49,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Access Codes
-        api_response = api_instance.CreateAccessCode(body)
-        print("The response of AccessCodesApi->CreateAccessCode:\n")
+        api_response = api_instance.create_access_code(body)
+        print("The response of AccessCodesApi->create_access_code:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AccessCodesApi->CreateAccessCode: %s\n" % e)
+        print("Exception when calling AccessCodesApi->create_access_code: %s\n" % e)
 
 ```
 
@@ -63,63 +63,63 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccessCodesApi* | [**CreateAccessCode**](fw/docs/AccessCodesApi.md#createaccesscode) | **POST** /access_codes | Create Access Codes
-*AccessCodesApi* | [**DeleteAccessCodes**](fw/docs/AccessCodesApi.md#deleteaccesscodes) | **DELETE** /access_codes | Delete Access Codes
-*AccessCodesApi* | [**DeleteSingleAccessCodes**](fw/docs/AccessCodesApi.md#deletesingleaccesscodes) | **DELETE** /access_codes/{access_key} | Delete Access Code By ID
-*AccessCodesApi* | [**ListAccessCodes**](fw/docs/AccessCodesApi.md#listaccesscodes) | **GET** /access_codes | List Access Codes
-*AccessCodesApi* | [**ReadAccessCode**](fw/docs/AccessCodesApi.md#readaccesscode) | **GET** /access_codes/{access_key} | Read Access Codes
-*AccessCodesApi* | [**UpdateAccessCode**](fw/docs/AccessCodesApi.md#updateaccesscode) | **PUT** /access_codes/{payload.access_key} | Update Access Codes
-*AppApprovalsApi* | [**ListAppApprovals**](fw/docs/AppApprovalsApi.md#listappapprovals) | **GET** /app_approvals | 
-*AppApprovalsApi* | [**ReplaceAppApprovals**](fw/docs/AppApprovalsApi.md#replaceappapprovals) | **PUT** /app_approvals | Update Application Approval.
-*AppApprovalsApi* | [**UpdateAppApprovals**](fw/docs/AppApprovalsApi.md#updateappapprovals) | **PATCH** /app_approvals | 
-*ApplicationFiltersApi* | [**CreateApplicationFilter**](fw/docs/ApplicationFiltersApi.md#createapplicationfilter) | **POST** /application_filters | Create Application Filter.
-*ApplicationFiltersApi* | [**DeleteApplicationFilters**](fw/docs/ApplicationFiltersApi.md#deleteapplicationfilters) | **DELETE** /application_filters | Delete Application Filters.
-*ApplicationFiltersApi* | [**DeleteSingleApplicationFilters**](fw/docs/ApplicationFiltersApi.md#deletesingleapplicationfilters) | **DELETE** /application_filters/{id} | Delete Application Filter Object by ID.
-*ApplicationFiltersApi* | [**ListApplicationFilters**](fw/docs/ApplicationFiltersApi.md#listapplicationfilters) | **GET** /application_filters | List Application Filters.
-*ApplicationFiltersApi* | [**ReadApplicationFilter**](fw/docs/ApplicationFiltersApi.md#readapplicationfilter) | **GET** /application_filters/{id} | Read Application Filter.
-*ApplicationFiltersApi* | [**UpdateApplicationFilter**](fw/docs/ApplicationFiltersApi.md#updateapplicationfilter) | **PUT** /application_filters/{id} | Update Application Filter.
-*CategoryFiltersApi* | [**CreateCategoryFilter**](fw/docs/CategoryFiltersApi.md#createcategoryfilter) | **POST** /category_filters | Create Category Filter.
-*CategoryFiltersApi* | [**DeleteCategoryFilters**](fw/docs/CategoryFiltersApi.md#deletecategoryfilters) | **DELETE** /category_filters | Delete Category Filters By ID.
-*CategoryFiltersApi* | [**DeleteSingleCategoryFilters**](fw/docs/CategoryFiltersApi.md#deletesinglecategoryfilters) | **DELETE** /category_filters/{id} | Delete Category Filters.
-*CategoryFiltersApi* | [**ListCategoryFilters**](fw/docs/CategoryFiltersApi.md#listcategoryfilters) | **GET** /category_filters | List Category Filters.
-*CategoryFiltersApi* | [**ReadCategoryFilter**](fw/docs/CategoryFiltersApi.md#readcategoryfilter) | **GET** /category_filters/{id} | Read Category Filter.
-*CategoryFiltersApi* | [**UpdateCategoryFilter**](fw/docs/CategoryFiltersApi.md#updatecategoryfilter) | **PUT** /category_filters/{id} | Update Category Filter.
-*ContentCategoriesApi* | [**ListContentCategories**](fw/docs/ContentCategoriesApi.md#listcontentcategories) | **GET** /content_categories | List Content Categories.
-*InternalDomainListsApi* | [**CreateInternalDomains**](fw/docs/InternalDomainListsApi.md#createinternaldomains) | **POST** /internal_domain_lists | Create Internal Domains.
-*InternalDomainListsApi* | [**DeleteInternalDomains**](fw/docs/InternalDomainListsApi.md#deleteinternaldomains) | **DELETE** /internal_domain_lists | Delete Internal Domains.
-*InternalDomainListsApi* | [**DeleteSingleInternalDomains**](fw/docs/InternalDomainListsApi.md#deletesingleinternaldomains) | **DELETE** /internal_domain_lists/{id} | Delete Internal Domains.
-*InternalDomainListsApi* | [**InternalDomainsItemsPartialUpdate**](fw/docs/InternalDomainListsApi.md#internaldomainsitemspartialupdate) | **PATCH** /internal_domain_lists/{id}/items | Patch Internal Domains.
-*InternalDomainListsApi* | [**ListInternalDomains**](fw/docs/InternalDomainListsApi.md#listinternaldomains) | **GET** /internal_domain_lists | List Internal Domains.
-*InternalDomainListsApi* | [**ReadInternalDomains**](fw/docs/InternalDomainListsApi.md#readinternaldomains) | **GET** /internal_domain_lists/{id} | Read Internal Domains.
-*InternalDomainListsApi* | [**UpdateInternalDomains**](fw/docs/InternalDomainListsApi.md#updateinternaldomains) | **PUT** /internal_domain_lists/{id} | Update Internal Domains.
-*NamedListItemsApi* | [**DeleteNamedListItems**](fw/docs/NamedListItemsApi.md#deletenamedlistitems) | **DELETE** /named_lists/{id}/items | Delete Named List Items.
-*NamedListItemsApi* | [**InsertOrReplaceNamedListItems**](fw/docs/NamedListItemsApi.md#insertorreplacenamedlistitems) | **POST** /named_lists/{id}/items | Insert Named List Items.
-*NamedListItemsApi* | [**NamedListItemsPartialUpdate**](fw/docs/NamedListItemsApi.md#namedlistitemspartialupdate) | **PATCH** /named_lists/{id}/items | Partial Update Named List Items.
-*NamedListsApi* | [**CreateNamedList**](fw/docs/NamedListsApi.md#createnamedlist) | **POST** /named_lists | Create Named List.
-*NamedListsApi* | [**DeleteNamedLists**](fw/docs/NamedListsApi.md#deletenamedlists) | **DELETE** /named_lists | Delete Named Lists.
-*NamedListsApi* | [**DeleteSingleNamedLists**](fw/docs/NamedListsApi.md#deletesinglenamedlists) | **DELETE** /named_lists/{id} | Delete Named Lists.
-*NamedListsApi* | [**ListNamedLists**](fw/docs/NamedListsApi.md#listnamedlists) | **GET** /named_lists | List Named Lists.
-*NamedListsApi* | [**ListNamedListsCSV**](fw/docs/NamedListsApi.md#listnamedlistscsv) | **GET** /named_lists_download | List Named Lists in CSV format.
-*NamedListsApi* | [**MultiListUpdate**](fw/docs/NamedListsApi.md#multilistupdate) | **PATCH** /named_lists | Patch Multiple Named Lists.
-*NamedListsApi* | [**ReadNamedList**](fw/docs/NamedListsApi.md#readnamedlist) | **GET** /named_lists/{id} | Read Named List.
-*NamedListsApi* | [**UpdateNamedList**](fw/docs/NamedListsApi.md#updatenamedlist) | **PUT** /named_lists/{id} | Update Named List.
-*NamedListsApi* | [**UpdateNamedListPartial**](fw/docs/NamedListsApi.md#updatenamedlistpartial) | **PATCH** /named_lists/{id} | Patch TI List.
-*NetworkListsApi* | [**CreateNetworkList**](fw/docs/NetworkListsApi.md#createnetworklist) | **POST** /network_lists | Create Network List.
-*NetworkListsApi* | [**DeleteNetworkLists**](fw/docs/NetworkListsApi.md#deletenetworklists) | **DELETE** /network_lists | Delete Network Lists.
-*NetworkListsApi* | [**DeleteSingleNetworkLists**](fw/docs/NetworkListsApi.md#deletesinglenetworklists) | **DELETE** /network_lists/{id} | Delete Network Lists.
-*NetworkListsApi* | [**ListNetworkLists**](fw/docs/NetworkListsApi.md#listnetworklists) | **GET** /network_lists | List Network Lists.
-*NetworkListsApi* | [**ReadNetworkList**](fw/docs/NetworkListsApi.md#readnetworklist) | **GET** /network_lists/{id} | Read Network List.
-*NetworkListsApi* | [**UpdateNetworkList**](fw/docs/NetworkListsApi.md#updatenetworklist) | **PUT** /network_lists/{id} | Update Network List.
-*PopRegionsApi* | [**ListPoPRegions**](fw/docs/PopRegionsApi.md#listpopregions) | **GET** /pop_regions | List PoP Regions.
-*PopRegionsApi* | [**ReadPoPRegion**](fw/docs/PopRegionsApi.md#readpopregion) | **GET** /pop_regions/{id} | Read PoP Region.
-*SecurityPoliciesApi* | [**CreateSecurityPolicy**](fw/docs/SecurityPoliciesApi.md#createsecuritypolicy) | **POST** /security_policies | Create Security Policy.
-*SecurityPoliciesApi* | [**DeleteSecurityPolicy**](fw/docs/SecurityPoliciesApi.md#deletesecuritypolicy) | **DELETE** /security_policies | Delete Security Policies.
-*SecurityPoliciesApi* | [**DeleteSingleSecurityPolicy**](fw/docs/SecurityPoliciesApi.md#deletesinglesecuritypolicy) | **DELETE** /security_policies/{id} | Delete Security Policy.
-*SecurityPoliciesApi* | [**ListSecurityPolicies**](fw/docs/SecurityPoliciesApi.md#listsecuritypolicies) | **GET** /security_policies | List Security Policies.
-*SecurityPoliciesApi* | [**ReadSecurityPolicy**](fw/docs/SecurityPoliciesApi.md#readsecuritypolicy) | **GET** /security_policies/{id} | Read Security Policy.
-*SecurityPoliciesApi* | [**UpdateSecurityPolicy**](fw/docs/SecurityPoliciesApi.md#updatesecuritypolicy) | **PUT** /security_policies/{id} | Update Security Policy.
-*SecurityPolicyRulesApi* | [**ListSecurityPolicyRules**](fw/docs/SecurityPolicyRulesApi.md#listsecuritypolicyrules) | **GET** /security_policy_rules | List Security Policy Rules.
-*ThreatFeedsApi* | [**ListThreatFeeds**](fw/docs/ThreatFeedsApi.md#listthreatfeeds) | **GET** /threat_feeds | List Threat Feeds.
+*AccessCodesApi* | [**create_access_code**](fw/docs/AccessCodesApi.md#create_access_code) | **POST** /access_codes | Create Access Codes
+*AccessCodesApi* | [**delete_access_codes**](fw/docs/AccessCodesApi.md#delete_access_codes) | **DELETE** /access_codes | Delete Access Codes
+*AccessCodesApi* | [**delete_single_access_codes**](fw/docs/AccessCodesApi.md#delete_single_access_codes) | **DELETE** /access_codes/{access_key} | Delete Access Code By ID
+*AccessCodesApi* | [**list_access_codes**](fw/docs/AccessCodesApi.md#list_access_codes) | **GET** /access_codes | List Access Codes
+*AccessCodesApi* | [**read_access_code**](fw/docs/AccessCodesApi.md#read_access_code) | **GET** /access_codes/{access_key} | Read Access Codes
+*AccessCodesApi* | [**update_access_code**](fw/docs/AccessCodesApi.md#update_access_code) | **PUT** /access_codes/{payload.access_key} | Update Access Codes
+*AppApprovalsApi* | [**list_app_approvals**](fw/docs/AppApprovalsApi.md#list_app_approvals) | **GET** /app_approvals | 
+*AppApprovalsApi* | [**replace_app_approvals**](fw/docs/AppApprovalsApi.md#replace_app_approvals) | **PUT** /app_approvals | Update Application Approval.
+*AppApprovalsApi* | [**update_app_approvals**](fw/docs/AppApprovalsApi.md#update_app_approvals) | **PATCH** /app_approvals | 
+*ApplicationFiltersApi* | [**create_application_filter**](fw/docs/ApplicationFiltersApi.md#create_application_filter) | **POST** /application_filters | Create Application Filter.
+*ApplicationFiltersApi* | [**delete_application_filters**](fw/docs/ApplicationFiltersApi.md#delete_application_filters) | **DELETE** /application_filters | Delete Application Filters.
+*ApplicationFiltersApi* | [**delete_single_application_filters**](fw/docs/ApplicationFiltersApi.md#delete_single_application_filters) | **DELETE** /application_filters/{id} | Delete Application Filter Object by ID.
+*ApplicationFiltersApi* | [**list_application_filters**](fw/docs/ApplicationFiltersApi.md#list_application_filters) | **GET** /application_filters | List Application Filters.
+*ApplicationFiltersApi* | [**read_application_filter**](fw/docs/ApplicationFiltersApi.md#read_application_filter) | **GET** /application_filters/{id} | Read Application Filter.
+*ApplicationFiltersApi* | [**update_application_filter**](fw/docs/ApplicationFiltersApi.md#update_application_filter) | **PUT** /application_filters/{id} | Update Application Filter.
+*CategoryFiltersApi* | [**create_category_filter**](fw/docs/CategoryFiltersApi.md#create_category_filter) | **POST** /category_filters | Create Category Filter.
+*CategoryFiltersApi* | [**delete_category_filters**](fw/docs/CategoryFiltersApi.md#delete_category_filters) | **DELETE** /category_filters | Delete Category Filters By ID.
+*CategoryFiltersApi* | [**delete_single_category_filters**](fw/docs/CategoryFiltersApi.md#delete_single_category_filters) | **DELETE** /category_filters/{id} | Delete Category Filters.
+*CategoryFiltersApi* | [**list_category_filters**](fw/docs/CategoryFiltersApi.md#list_category_filters) | **GET** /category_filters | List Category Filters.
+*CategoryFiltersApi* | [**read_category_filter**](fw/docs/CategoryFiltersApi.md#read_category_filter) | **GET** /category_filters/{id} | Read Category Filter.
+*CategoryFiltersApi* | [**update_category_filter**](fw/docs/CategoryFiltersApi.md#update_category_filter) | **PUT** /category_filters/{id} | Update Category Filter.
+*ContentCategoriesApi* | [**list_content_categories**](fw/docs/ContentCategoriesApi.md#list_content_categories) | **GET** /content_categories | List Content Categories.
+*InternalDomainListsApi* | [**create_internal_domains**](fw/docs/InternalDomainListsApi.md#create_internal_domains) | **POST** /internal_domain_lists | Create Internal Domains.
+*InternalDomainListsApi* | [**delete_internal_domains**](fw/docs/InternalDomainListsApi.md#delete_internal_domains) | **DELETE** /internal_domain_lists | Delete Internal Domains.
+*InternalDomainListsApi* | [**delete_single_internal_domains**](fw/docs/InternalDomainListsApi.md#delete_single_internal_domains) | **DELETE** /internal_domain_lists/{id} | Delete Internal Domains.
+*InternalDomainListsApi* | [**internal_domains_items_partial_update**](fw/docs/InternalDomainListsApi.md#internal_domains_items_partial_update) | **PATCH** /internal_domain_lists/{id}/items | Patch Internal Domains.
+*InternalDomainListsApi* | [**list_internal_domains**](fw/docs/InternalDomainListsApi.md#list_internal_domains) | **GET** /internal_domain_lists | List Internal Domains.
+*InternalDomainListsApi* | [**read_internal_domains**](fw/docs/InternalDomainListsApi.md#read_internal_domains) | **GET** /internal_domain_lists/{id} | Read Internal Domains.
+*InternalDomainListsApi* | [**update_internal_domains**](fw/docs/InternalDomainListsApi.md#update_internal_domains) | **PUT** /internal_domain_lists/{id} | Update Internal Domains.
+*NamedListItemsApi* | [**delete_named_list_items**](fw/docs/NamedListItemsApi.md#delete_named_list_items) | **DELETE** /named_lists/{id}/items | Delete Named List Items.
+*NamedListItemsApi* | [**insert_or_replace_named_list_items**](fw/docs/NamedListItemsApi.md#insert_or_replace_named_list_items) | **POST** /named_lists/{id}/items | Insert Named List Items.
+*NamedListItemsApi* | [**named_list_items_partial_update**](fw/docs/NamedListItemsApi.md#named_list_items_partial_update) | **PATCH** /named_lists/{id}/items | Partial Update Named List Items.
+*NamedListsApi* | [**create_named_list**](fw/docs/NamedListsApi.md#create_named_list) | **POST** /named_lists | Create Named List.
+*NamedListsApi* | [**delete_named_lists**](fw/docs/NamedListsApi.md#delete_named_lists) | **DELETE** /named_lists | Delete Named Lists.
+*NamedListsApi* | [**delete_single_named_lists**](fw/docs/NamedListsApi.md#delete_single_named_lists) | **DELETE** /named_lists/{id} | Delete Named Lists.
+*NamedListsApi* | [**list_named_lists**](fw/docs/NamedListsApi.md#list_named_lists) | **GET** /named_lists | List Named Lists.
+*NamedListsApi* | [**list_named_lists_csv**](fw/docs/NamedListsApi.md#list_named_lists_csv) | **GET** /named_lists_download | List Named Lists in CSV format.
+*NamedListsApi* | [**multi_list_update**](fw/docs/NamedListsApi.md#multi_list_update) | **PATCH** /named_lists | Patch Multiple Named Lists.
+*NamedListsApi* | [**read_named_list**](fw/docs/NamedListsApi.md#read_named_list) | **GET** /named_lists/{id} | Read Named List.
+*NamedListsApi* | [**update_named_list**](fw/docs/NamedListsApi.md#update_named_list) | **PUT** /named_lists/{id} | Update Named List.
+*NamedListsApi* | [**update_named_list_partial**](fw/docs/NamedListsApi.md#update_named_list_partial) | **PATCH** /named_lists/{id} | Patch TI List.
+*NetworkListsApi* | [**create_network_list**](fw/docs/NetworkListsApi.md#create_network_list) | **POST** /network_lists | Create Network List.
+*NetworkListsApi* | [**delete_network_lists**](fw/docs/NetworkListsApi.md#delete_network_lists) | **DELETE** /network_lists | Delete Network Lists.
+*NetworkListsApi* | [**delete_single_network_lists**](fw/docs/NetworkListsApi.md#delete_single_network_lists) | **DELETE** /network_lists/{id} | Delete Network Lists.
+*NetworkListsApi* | [**list_network_lists**](fw/docs/NetworkListsApi.md#list_network_lists) | **GET** /network_lists | List Network Lists.
+*NetworkListsApi* | [**read_network_list**](fw/docs/NetworkListsApi.md#read_network_list) | **GET** /network_lists/{id} | Read Network List.
+*NetworkListsApi* | [**update_network_list**](fw/docs/NetworkListsApi.md#update_network_list) | **PUT** /network_lists/{id} | Update Network List.
+*PopRegionsApi* | [**list_po_p_regions**](fw/docs/PopRegionsApi.md#list_po_p_regions) | **GET** /pop_regions | List PoP Regions.
+*PopRegionsApi* | [**read_po_p_region**](fw/docs/PopRegionsApi.md#read_po_p_region) | **GET** /pop_regions/{id} | Read PoP Region.
+*SecurityPoliciesApi* | [**create_security_policy**](fw/docs/SecurityPoliciesApi.md#create_security_policy) | **POST** /security_policies | Create Security Policy.
+*SecurityPoliciesApi* | [**delete_security_policy**](fw/docs/SecurityPoliciesApi.md#delete_security_policy) | **DELETE** /security_policies | Delete Security Policies.
+*SecurityPoliciesApi* | [**delete_single_security_policy**](fw/docs/SecurityPoliciesApi.md#delete_single_security_policy) | **DELETE** /security_policies/{id} | Delete Security Policy.
+*SecurityPoliciesApi* | [**list_security_policies**](fw/docs/SecurityPoliciesApi.md#list_security_policies) | **GET** /security_policies | List Security Policies.
+*SecurityPoliciesApi* | [**read_security_policy**](fw/docs/SecurityPoliciesApi.md#read_security_policy) | **GET** /security_policies/{id} | Read Security Policy.
+*SecurityPoliciesApi* | [**update_security_policy**](fw/docs/SecurityPoliciesApi.md#update_security_policy) | **PUT** /security_policies/{id} | Update Security Policy.
+*SecurityPolicyRulesApi* | [**list_security_policy_rules**](fw/docs/SecurityPolicyRulesApi.md#list_security_policy_rules) | **GET** /security_policy_rules | List Security Policy Rules.
+*ThreatFeedsApi* | [**list_threat_feeds**](fw/docs/ThreatFeedsApi.md#list_threat_feeds) | **GET** /threat_feeds | List Threat Feeds.
 
 
 ## Documentation For Models
@@ -161,7 +161,6 @@ Class | Method | HTTP request | Description
  - [ApplicationFiltersDeleteRequest](fw/docs/ApplicationFiltersDeleteRequest.md)
  - [ApplicationFiltersDeleteSingleApplicationFilters400Response](fw/docs/ApplicationFiltersDeleteSingleApplicationFilters400Response.md)
  - [ApplicationFiltersDeleteSingleApplicationFilters400ResponseError](fw/docs/ApplicationFiltersDeleteSingleApplicationFilters400ResponseError.md)
- - [AtcfwNamedListItemsInsertOrUpdateResponseSuccess](fw/docs/AtcfwNamedListItemsInsertOrUpdateResponseSuccess.md)
  - [CategoryFilter](fw/docs/CategoryFilter.md)
  - [CategoryFilterCreateResponse](fw/docs/CategoryFilterCreateResponse.md)
  - [CategoryFilterMultiResponse](fw/docs/CategoryFilterMultiResponse.md)
@@ -219,6 +218,7 @@ Class | Method | HTTP request | Description
  - [NamedListItemsInsertOrReplaceNamedListItems400ResponseError](fw/docs/NamedListItemsInsertOrReplaceNamedListItems400ResponseError.md)
  - [NamedListItemsInsertOrUpdate](fw/docs/NamedListItemsInsertOrUpdate.md)
  - [NamedListItemsInsertOrUpdateResponse](fw/docs/NamedListItemsInsertOrUpdateResponse.md)
+ - [NamedListItemsInsertOrUpdateResponseSuccess](fw/docs/NamedListItemsInsertOrUpdateResponseSuccess.md)
  - [NamedListItemsNamedListItemsPartialUpdate400Response](fw/docs/NamedListItemsNamedListItemsPartialUpdate400Response.md)
  - [NamedListItemsNamedListItemsPartialUpdate400ResponseError](fw/docs/NamedListItemsNamedListItemsPartialUpdate400ResponseError.md)
  - [NamedListItemsPartialUpdate](fw/docs/NamedListItemsPartialUpdate.md)

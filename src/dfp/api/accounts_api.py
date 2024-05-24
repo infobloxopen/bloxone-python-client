@@ -38,7 +38,7 @@ class AccountsApi:
         self.api_client = api_client
 
     @validate_call
-    def CheckConfig(
+    def check_config(
         self,
         body: TypesConfigCheckRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -80,11 +80,11 @@ class AccountsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CheckConfig_serialize(body=body,
-                                             _request_auth=_request_auth,
-                                             _content_type=_content_type,
-                                             _headers=_headers,
-                                             _host_index=_host_index)
+        _param = self._check_config_serialize(body=body,
+                                              _request_auth=_request_auth,
+                                              _content_type=_content_type,
+                                              _headers=_headers,
+                                              _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TypesConfigCheckResponse",
@@ -99,7 +99,7 @@ class AccountsApi:
         ).data
 
     @validate_call
-    def CheckConfig_with_http_info(
+    def check_config_with_http_info(
         self,
         body: TypesConfigCheckRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -141,11 +141,11 @@ class AccountsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CheckConfig_serialize(body=body,
-                                             _request_auth=_request_auth,
-                                             _content_type=_content_type,
-                                             _headers=_headers,
-                                             _host_index=_host_index)
+        _param = self._check_config_serialize(body=body,
+                                              _request_auth=_request_auth,
+                                              _content_type=_content_type,
+                                              _headers=_headers,
+                                              _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TypesConfigCheckResponse",
@@ -160,7 +160,7 @@ class AccountsApi:
         )
 
     @validate_call
-    def CheckConfig_without_preload_content(
+    def check_config_without_preload_content(
         self,
         body: TypesConfigCheckRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -202,11 +202,11 @@ class AccountsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CheckConfig_serialize(body=body,
-                                             _request_auth=_request_auth,
-                                             _content_type=_content_type,
-                                             _headers=_headers,
-                                             _host_index=_host_index)
+        _param = self._check_config_serialize(body=body,
+                                              _request_auth=_request_auth,
+                                              _content_type=_content_type,
+                                              _headers=_headers,
+                                              _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TypesConfigCheckResponse",
@@ -215,7 +215,7 @@ class AccountsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CheckConfig_serialize(
+    def _check_config_serialize(
         self,
         body,
         _request_auth,

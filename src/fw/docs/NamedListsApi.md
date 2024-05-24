@@ -4,19 +4,19 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateNamedList**](NamedListsApi.md#CreateNamedList) | **POST** /named_lists | Create Named List.
-[**DeleteNamedLists**](NamedListsApi.md#DeleteNamedLists) | **DELETE** /named_lists | Delete Named Lists.
-[**DeleteSingleNamedLists**](NamedListsApi.md#DeleteSingleNamedLists) | **DELETE** /named_lists/{id} | Delete Named Lists.
-[**ListNamedLists**](NamedListsApi.md#ListNamedLists) | **GET** /named_lists | List Named Lists.
-[**ListNamedListsCSV**](NamedListsApi.md#ListNamedListsCSV) | **GET** /named_lists_download | List Named Lists in CSV format.
-[**MultiListUpdate**](NamedListsApi.md#MultiListUpdate) | **PATCH** /named_lists | Patch Multiple Named Lists.
-[**ReadNamedList**](NamedListsApi.md#ReadNamedList) | **GET** /named_lists/{id} | Read Named List.
-[**UpdateNamedList**](NamedListsApi.md#UpdateNamedList) | **PUT** /named_lists/{id} | Update Named List.
-[**UpdateNamedListPartial**](NamedListsApi.md#UpdateNamedListPartial) | **PATCH** /named_lists/{id} | Patch TI List.
+[**create_named_list**](NamedListsApi.md#create_named_list) | **POST** /named_lists | Create Named List.
+[**delete_named_lists**](NamedListsApi.md#delete_named_lists) | **DELETE** /named_lists | Delete Named Lists.
+[**delete_single_named_lists**](NamedListsApi.md#delete_single_named_lists) | **DELETE** /named_lists/{id} | Delete Named Lists.
+[**list_named_lists**](NamedListsApi.md#list_named_lists) | **GET** /named_lists | List Named Lists.
+[**list_named_lists_csv**](NamedListsApi.md#list_named_lists_csv) | **GET** /named_lists_download | List Named Lists in CSV format.
+[**multi_list_update**](NamedListsApi.md#multi_list_update) | **PATCH** /named_lists | Patch Multiple Named Lists.
+[**read_named_list**](NamedListsApi.md#read_named_list) | **GET** /named_lists/{id} | Read Named List.
+[**update_named_list**](NamedListsApi.md#update_named_list) | **PUT** /named_lists/{id} | Update Named List.
+[**update_named_list_partial**](NamedListsApi.md#update_named_list_partial) | **PATCH** /named_lists/{id} | Patch TI List.
 
 
-# **CreateNamedList**
-> NamedListCreateResponse CreateNamedList(body)
+# **create_named_list**
+> NamedListCreateResponse create_named_list(body)
 
 Create Named List.
 
@@ -47,11 +47,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Named List.
-        api_response = api_instance.CreateNamedList(body)
-        print("The response of NamedListsApi->CreateNamedList:\n")
+        api_response = api_instance.create_named_list(body)
+        print("The response of NamedListsApi->create_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->CreateNamedList: %s\n" % e)
+        print("Exception when calling NamedListsApi->create_named_list: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteNamedLists**
-> DeleteNamedLists(body)
+# **delete_named_lists**
+> delete_named_lists(body)
 
 Delete Named Lists.
 
@@ -118,9 +118,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Named Lists.
-        api_instance.DeleteNamedLists(body)
+        api_instance.delete_named_lists(body)
     except Exception as e:
-        print("Exception when calling NamedListsApi->DeleteNamedLists: %s\n" % e)
+        print("Exception when calling NamedListsApi->delete_named_lists: %s\n" % e)
 ```
 
 
@@ -156,8 +156,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleNamedLists**
-> DeleteSingleNamedLists(id)
+# **delete_single_named_lists**
+> delete_single_named_lists(id)
 
 Delete Named Lists.
 
@@ -186,9 +186,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Named Lists.
-        api_instance.DeleteSingleNamedLists(id)
+        api_instance.delete_single_named_lists(id)
     except Exception as e:
-        print("Exception when calling NamedListsApi->DeleteSingleNamedLists: %s\n" % e)
+        print("Exception when calling NamedListsApi->delete_single_named_lists: %s\n" % e)
 ```
 
 
@@ -224,8 +224,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNamedLists**
-> NamedListReadMultiResponse ListNamedLists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_named_lists**
+> NamedListReadMultiResponse list_named_lists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List Named Lists.
 
@@ -261,11 +261,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Named Lists.
-        api_response = api_instance.ListNamedLists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of NamedListsApi->ListNamedLists:\n")
+        api_response = api_instance.list_named_lists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of NamedListsApi->list_named_lists:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->ListNamedLists: %s\n" % e)
+        print("Exception when calling NamedListsApi->list_named_lists: %s\n" % e)
 ```
 
 
@@ -305,8 +305,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNamedListsCSV**
-> NamedListCSVListResponse ListNamedListsCSV(filter=filter, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list_named_lists_csv**
+> NamedListCSVListResponse list_named_lists_csv(filter=filter, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List Named Lists in CSV format.
 
@@ -339,11 +339,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Named Lists in CSV format.
-        api_response = api_instance.ListNamedListsCSV(filter=filter, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of NamedListsApi->ListNamedListsCSV:\n")
+        api_response = api_instance.list_named_lists_csv(filter=filter, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of NamedListsApi->list_named_lists_csv:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->ListNamedListsCSV: %s\n" % e)
+        print("Exception when calling NamedListsApi->list_named_lists_csv: %s\n" % e)
 ```
 
 
@@ -380,8 +380,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MultiListUpdate**
-> object MultiListUpdate(body)
+# **multi_list_update**
+> object multi_list_update(body)
 
 Patch Multiple Named Lists.
 
@@ -411,11 +411,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Patch Multiple Named Lists.
-        api_response = api_instance.MultiListUpdate(body)
-        print("The response of NamedListsApi->MultiListUpdate:\n")
+        api_response = api_instance.multi_list_update(body)
+        print("The response of NamedListsApi->multi_list_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->MultiListUpdate: %s\n" % e)
+        print("Exception when calling NamedListsApi->multi_list_update: %s\n" % e)
 ```
 
 
@@ -451,8 +451,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadNamedList**
-> NamedListReadResponse ReadNamedList(id, fields=fields, offset=offset, limit=limit, page_token=page_token, name=name, type=type)
+# **read_named_list**
+> NamedListReadResponse read_named_list(id, fields=fields, offset=offset, limit=limit, page_token=page_token, name=name, type=type)
 
 Read Named List.
 
@@ -488,11 +488,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Named List.
-        api_response = api_instance.ReadNamedList(id, fields=fields, offset=offset, limit=limit, page_token=page_token, name=name, type=type)
-        print("The response of NamedListsApi->ReadNamedList:\n")
+        api_response = api_instance.read_named_list(id, fields=fields, offset=offset, limit=limit, page_token=page_token, name=name, type=type)
+        print("The response of NamedListsApi->read_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->ReadNamedList: %s\n" % e)
+        print("Exception when calling NamedListsApi->read_named_list: %s\n" % e)
 ```
 
 
@@ -533,8 +533,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateNamedList**
-> NamedListUpdateResponse UpdateNamedList(id, body)
+# **update_named_list**
+> NamedListUpdateResponse update_named_list(id, body)
 
 Update Named List.
 
@@ -566,11 +566,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Named List.
-        api_response = api_instance.UpdateNamedList(id, body)
-        print("The response of NamedListsApi->UpdateNamedList:\n")
+        api_response = api_instance.update_named_list(id, body)
+        print("The response of NamedListsApi->update_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->UpdateNamedList: %s\n" % e)
+        print("Exception when calling NamedListsApi->update_named_list: %s\n" % e)
 ```
 
 
@@ -608,8 +608,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateNamedListPartial**
-> NamedListUpdateResponse UpdateNamedListPartial(id, body)
+# **update_named_list_partial**
+> NamedListUpdateResponse update_named_list_partial(id, body)
 
 Patch TI List.
 
@@ -641,11 +641,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Patch TI List.
-        api_response = api_instance.UpdateNamedListPartial(id, body)
-        print("The response of NamedListsApi->UpdateNamedListPartial:\n")
+        api_response = api_instance.update_named_list_partial(id, body)
+        print("The response of NamedListsApi->update_named_list_partial:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->UpdateNamedListPartial: %s\n" % e)
+        print("Exception when calling NamedListsApi->update_named_list_partial: %s\n" % e)
 ```
 
 

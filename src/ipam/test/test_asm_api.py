@@ -25,22 +25,22 @@ class TestAsmApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Update subnet and ranges for Automated Scope Management.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve suggested updates for Automated Scope Management.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the suggested update for Automated Scope Management.
         """

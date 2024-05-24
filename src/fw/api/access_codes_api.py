@@ -45,7 +45,7 @@ class AccessCodesApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateAccessCode(
+    def create_access_code(
         self,
         body: Annotated[AccessCode,
                         Field(description="The Bypass Code object.")],
@@ -88,11 +88,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAccessCode_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._create_access_code_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "AccessCodeCreateResponse",
@@ -111,7 +112,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def CreateAccessCode_with_http_info(
+    def create_access_code_with_http_info(
         self,
         body: Annotated[AccessCode,
                         Field(description="The Bypass Code object.")],
@@ -154,11 +155,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAccessCode_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._create_access_code_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "AccessCodeCreateResponse",
@@ -177,7 +179,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def CreateAccessCode_without_preload_content(
+    def create_access_code_without_preload_content(
         self,
         body: Annotated[AccessCode,
                         Field(description="The Bypass Code object.")],
@@ -220,11 +222,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAccessCode_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._create_access_code_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "AccessCodeCreateResponse",
@@ -237,7 +240,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateAccessCode_serialize(
+    def _create_access_code_serialize(
         self,
         body,
         _request_auth,
@@ -298,7 +301,7 @@ class AccessCodesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteAccessCodes(
+    def delete_access_codes(
         self,
         body: AccessCodeDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -340,11 +343,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAccessCodes_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._delete_access_codes_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -361,7 +365,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def DeleteAccessCodes_with_http_info(
+    def delete_access_codes_with_http_info(
         self,
         body: AccessCodeDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -403,11 +407,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAccessCodes_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._delete_access_codes_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -424,7 +429,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def DeleteAccessCodes_without_preload_content(
+    def delete_access_codes_without_preload_content(
         self,
         body: AccessCodeDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -466,11 +471,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAccessCodes_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._delete_access_codes_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -481,7 +487,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteAccessCodes_serialize(
+    def _delete_access_codes_serialize(
         self,
         body,
         _request_auth,
@@ -542,7 +548,7 @@ class AccessCodesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleAccessCodes(
+    def delete_single_access_codes(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -586,7 +592,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleAccessCodes_serialize(
+        _param = self._delete_single_access_codes_serialize(
             access_key=access_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -608,7 +614,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def DeleteSingleAccessCodes_with_http_info(
+    def delete_single_access_codes_with_http_info(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -652,7 +658,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleAccessCodes_serialize(
+        _param = self._delete_single_access_codes_serialize(
             access_key=access_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -674,7 +680,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def DeleteSingleAccessCodes_without_preload_content(
+    def delete_single_access_codes_without_preload_content(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -718,7 +724,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleAccessCodes_serialize(
+        _param = self._delete_single_access_codes_serialize(
             access_key=access_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -734,7 +740,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleAccessCodes_serialize(
+    def _delete_single_access_codes_serialize(
         self,
         access_key,
         _request_auth,
@@ -786,7 +792,7 @@ class AccessCodesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListAccessCodes(
+    def list_access_codes(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -857,14 +863,14 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAccessCodes_serialize(filter=filter,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_access_codes_serialize(filter=filter,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeMultiResponse",
@@ -880,7 +886,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def ListAccessCodes_with_http_info(
+    def list_access_codes_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -951,14 +957,14 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAccessCodes_serialize(filter=filter,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_access_codes_serialize(filter=filter,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeMultiResponse",
@@ -974,7 +980,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def ListAccessCodes_without_preload_content(
+    def list_access_codes_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1045,14 +1051,14 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAccessCodes_serialize(filter=filter,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_access_codes_serialize(filter=filter,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeMultiResponse",
@@ -1062,7 +1068,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListAccessCodes_serialize(
+    def _list_access_codes_serialize(
         self,
         filter,
         offset,
@@ -1130,7 +1136,7 @@ class AccessCodesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadAccessCode(
+    def read_access_code(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -1178,12 +1184,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAccessCode_serialize(access_key=access_key,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_access_code_serialize(access_key=access_key,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeReadResponse",
@@ -1200,7 +1206,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def ReadAccessCode_with_http_info(
+    def read_access_code_with_http_info(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -1248,12 +1254,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAccessCode_serialize(access_key=access_key,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_access_code_serialize(access_key=access_key,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeReadResponse",
@@ -1270,7 +1276,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def ReadAccessCode_without_preload_content(
+    def read_access_code_without_preload_content(
         self,
         access_key: Annotated[StrictStr,
                               Field(
@@ -1318,12 +1324,12 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAccessCode_serialize(access_key=access_key,
-                                                name=name,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._read_access_code_serialize(access_key=access_key,
+                                                  name=name,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AccessCodeReadResponse",
@@ -1334,7 +1340,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadAccessCode_serialize(
+    def _read_access_code_serialize(
         self,
         access_key,
         name,
@@ -1391,7 +1397,7 @@ class AccessCodesApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateAccessCode(
+    def update_access_code(
         self,
         payload_access_key: Annotated[
             StrictStr,
@@ -1439,7 +1445,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAccessCode_serialize(
+        _param = self._update_access_code_serialize(
             payload_access_key=payload_access_key,
             body=body,
             _request_auth=_request_auth,
@@ -1464,7 +1470,7 @@ class AccessCodesApi:
         ).data
 
     @validate_call
-    def UpdateAccessCode_with_http_info(
+    def update_access_code_with_http_info(
         self,
         payload_access_key: Annotated[
             StrictStr,
@@ -1512,7 +1518,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAccessCode_serialize(
+        _param = self._update_access_code_serialize(
             payload_access_key=payload_access_key,
             body=body,
             _request_auth=_request_auth,
@@ -1537,7 +1543,7 @@ class AccessCodesApi:
         )
 
     @validate_call
-    def UpdateAccessCode_without_preload_content(
+    def update_access_code_without_preload_content(
         self,
         payload_access_key: Annotated[
             StrictStr,
@@ -1585,7 +1591,7 @@ class AccessCodesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAccessCode_serialize(
+        _param = self._update_access_code_serialize(
             payload_access_key=payload_access_key,
             body=body,
             _request_auth=_request_auth,
@@ -1604,7 +1610,7 @@ class AccessCodesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateAccessCode_serialize(
+    def _update_access_code_serialize(
         self,
         payload_access_key,
         body,

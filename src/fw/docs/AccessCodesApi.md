@@ -4,16 +4,16 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAccessCode**](AccessCodesApi.md#CreateAccessCode) | **POST** /access_codes | Create Access Codes
-[**DeleteAccessCodes**](AccessCodesApi.md#DeleteAccessCodes) | **DELETE** /access_codes | Delete Access Codes
-[**DeleteSingleAccessCodes**](AccessCodesApi.md#DeleteSingleAccessCodes) | **DELETE** /access_codes/{access_key} | Delete Access Code By ID
-[**ListAccessCodes**](AccessCodesApi.md#ListAccessCodes) | **GET** /access_codes | List Access Codes
-[**ReadAccessCode**](AccessCodesApi.md#ReadAccessCode) | **GET** /access_codes/{access_key} | Read Access Codes
-[**UpdateAccessCode**](AccessCodesApi.md#UpdateAccessCode) | **PUT** /access_codes/{payload.access_key} | Update Access Codes
+[**create_access_code**](AccessCodesApi.md#create_access_code) | **POST** /access_codes | Create Access Codes
+[**delete_access_codes**](AccessCodesApi.md#delete_access_codes) | **DELETE** /access_codes | Delete Access Codes
+[**delete_single_access_codes**](AccessCodesApi.md#delete_single_access_codes) | **DELETE** /access_codes/{access_key} | Delete Access Code By ID
+[**list_access_codes**](AccessCodesApi.md#list_access_codes) | **GET** /access_codes | List Access Codes
+[**read_access_code**](AccessCodesApi.md#read_access_code) | **GET** /access_codes/{access_key} | Read Access Codes
+[**update_access_code**](AccessCodesApi.md#update_access_code) | **PUT** /access_codes/{payload.access_key} | Update Access Codes
 
 
-# **CreateAccessCode**
-> AccessCodeCreateResponse CreateAccessCode(body)
+# **create_access_code**
+> AccessCodeCreateResponse create_access_code(body)
 
 Create Access Codes
 
@@ -44,11 +44,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Access Codes
-        api_response = api_instance.CreateAccessCode(body)
-        print("The response of AccessCodesApi->CreateAccessCode:\n")
+        api_response = api_instance.create_access_code(body)
+        print("The response of AccessCodesApi->create_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->CreateAccessCode: %s\n" % e)
+        print("Exception when calling AccessCodesApi->create_access_code: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteAccessCodes**
-> DeleteAccessCodes(body)
+# **delete_access_codes**
+> delete_access_codes(body)
 
 Delete Access Codes
 
@@ -116,9 +116,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Access Codes
-        api_instance.DeleteAccessCodes(body)
+        api_instance.delete_access_codes(body)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->DeleteAccessCodes: %s\n" % e)
+        print("Exception when calling AccessCodesApi->delete_access_codes: %s\n" % e)
 ```
 
 
@@ -153,8 +153,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleAccessCodes**
-> DeleteSingleAccessCodes(access_key)
+# **delete_single_access_codes**
+> delete_single_access_codes(access_key)
 
 Delete Access Code By ID
 
@@ -183,9 +183,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Access Code By ID
-        api_instance.DeleteSingleAccessCodes(access_key)
+        api_instance.delete_single_access_codes(access_key)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->DeleteSingleAccessCodes: %s\n" % e)
+        print("Exception when calling AccessCodesApi->delete_single_access_codes: %s\n" % e)
 ```
 
 
@@ -220,8 +220,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListAccessCodes**
-> AccessCodeMultiResponse ListAccessCodes(filter=filter, offset=offset, limit=limit, page_token=page_token)
+# **list_access_codes**
+> AccessCodeMultiResponse list_access_codes(filter=filter, offset=offset, limit=limit, page_token=page_token)
 
 List Access Codes
 
@@ -254,11 +254,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Access Codes
-        api_response = api_instance.ListAccessCodes(filter=filter, offset=offset, limit=limit, page_token=page_token)
-        print("The response of AccessCodesApi->ListAccessCodes:\n")
+        api_response = api_instance.list_access_codes(filter=filter, offset=offset, limit=limit, page_token=page_token)
+        print("The response of AccessCodesApi->list_access_codes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->ListAccessCodes: %s\n" % e)
+        print("Exception when calling AccessCodesApi->list_access_codes: %s\n" % e)
 ```
 
 
@@ -295,8 +295,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadAccessCode**
-> AccessCodeReadResponse ReadAccessCode(access_key, name=name)
+# **read_access_code**
+> AccessCodeReadResponse read_access_code(access_key, name=name)
 
 Read Access Codes
 
@@ -327,11 +327,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Access Codes
-        api_response = api_instance.ReadAccessCode(access_key, name=name)
-        print("The response of AccessCodesApi->ReadAccessCode:\n")
+        api_response = api_instance.read_access_code(access_key, name=name)
+        print("The response of AccessCodesApi->read_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->ReadAccessCode: %s\n" % e)
+        print("Exception when calling AccessCodesApi->read_access_code: %s\n" % e)
 ```
 
 
@@ -367,8 +367,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateAccessCode**
-> AccessCodeUpdateResponse UpdateAccessCode(payload_access_key, body)
+# **update_access_code**
+> AccessCodeUpdateResponse update_access_code(payload_access_key, body)
 
 Update Access Codes
 
@@ -400,11 +400,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Access Codes
-        api_response = api_instance.UpdateAccessCode(payload_access_key, body)
-        print("The response of AccessCodesApi->UpdateAccessCode:\n")
+        api_response = api_instance.update_access_code(payload_access_key, body)
+        print("The response of AccessCodesApi->update_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->UpdateAccessCode: %s\n" % e)
+        print("Exception when calling AccessCodesApi->update_access_code: %s\n" % e)
 ```
 
 

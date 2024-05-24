@@ -40,7 +40,7 @@ class ContentCategoriesApi:
         self.api_client = api_client
 
     @validate_call
-    def ListContentCategories(
+    def list_content_categories(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -87,7 +87,7 @@ class ContentCategoriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListContentCategories_serialize(
+        _param = self._list_content_categories_serialize(
             fields=fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -108,7 +108,7 @@ class ContentCategoriesApi:
         ).data
 
     @validate_call
-    def ListContentCategories_with_http_info(
+    def list_content_categories_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -155,7 +155,7 @@ class ContentCategoriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListContentCategories_serialize(
+        _param = self._list_content_categories_serialize(
             fields=fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -176,7 +176,7 @@ class ContentCategoriesApi:
         )
 
     @validate_call
-    def ListContentCategories_without_preload_content(
+    def list_content_categories_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -223,7 +223,7 @@ class ContentCategoriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListContentCategories_serialize(
+        _param = self._list_content_categories_serialize(
             fields=fields,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -238,7 +238,7 @@ class ContentCategoriesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListContentCategories_serialize(
+    def _list_content_categories_serialize(
         self,
         fields,
         _request_auth,

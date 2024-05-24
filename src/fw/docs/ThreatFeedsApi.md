@@ -4,11 +4,11 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListThreatFeeds**](ThreatFeedsApi.md#ListThreatFeeds) | **GET** /threat_feeds | List Threat Feeds.
+[**list_threat_feeds**](ThreatFeedsApi.md#list_threat_feeds) | **GET** /threat_feeds | List Threat Feeds.
 
 
-# **ListThreatFeeds**
-> ThreatFeedMultiResponse ListThreatFeeds(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+# **list_threat_feeds**
+> ThreatFeedMultiResponse list_threat_feeds(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
 
 List Threat Feeds.
 
@@ -42,11 +42,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Threat Feeds.
-        api_response = api_instance.ListThreatFeeds(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
-        print("The response of ThreatFeedsApi->ListThreatFeeds:\n")
+        api_response = api_instance.list_threat_feeds(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+        print("The response of ThreatFeedsApi->list_threat_feeds:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ThreatFeedsApi->ListThreatFeeds: %s\n" % e)
+        print("Exception when calling ThreatFeedsApi->list_threat_feeds: %s\n" % e)
 ```
 
 

@@ -25,29 +25,29 @@ class TestGlobalApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Read the Global configuration object.
         """
         pass
 
-    def test_Read2(self) -> None:
-        """Test case for Read2
+    def test_read2(self) -> None:
+        """Test case for read2
 
         Read the Global configuration object.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the Global configuration object.
         """
         pass
 
-    def test_Update2(self) -> None:
-        """Test case for Update2
+    def test_update2(self) -> None:
+        """Test case for update2
 
         Update the Global configuration object.
         """

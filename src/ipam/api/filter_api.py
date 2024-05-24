@@ -40,7 +40,7 @@ class FilterApi:
         self.api_client = api_client
 
     @validate_call
-    def List(
+    def list(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -139,7 +139,7 @@ class FilterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -165,7 +165,7 @@ class FilterApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -264,7 +264,7 @@ class FilterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -290,7 +290,7 @@ class FilterApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -389,7 +389,7 @@ class FilterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -409,7 +409,7 @@ class FilterApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         fields,
         filter,

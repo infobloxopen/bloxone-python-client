@@ -40,7 +40,7 @@ class SecurityPolicyRulesApi:
         self.api_client = api_client
 
     @validate_call
-    def ListSecurityPolicyRules(
+    def list_security_policy_rules(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -119,7 +119,7 @@ class SecurityPolicyRulesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicyRules_serialize(
+        _param = self._list_security_policy_rules_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -144,7 +144,7 @@ class SecurityPolicyRulesApi:
         ).data
 
     @validate_call
-    def ListSecurityPolicyRules_with_http_info(
+    def list_security_policy_rules_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -223,7 +223,7 @@ class SecurityPolicyRulesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicyRules_serialize(
+        _param = self._list_security_policy_rules_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -248,7 +248,7 @@ class SecurityPolicyRulesApi:
         )
 
     @validate_call
-    def ListSecurityPolicyRules_without_preload_content(
+    def list_security_policy_rules_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -327,7 +327,7 @@ class SecurityPolicyRulesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListSecurityPolicyRules_serialize(
+        _param = self._list_security_policy_rules_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -346,7 +346,7 @@ class SecurityPolicyRulesApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListSecurityPolicyRules_serialize(
+    def _list_security_policy_rules_serialize(
         self,
         filter,
         fields,

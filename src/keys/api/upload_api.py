@@ -38,7 +38,7 @@ class UploadApi:
         self.api_client = api_client
 
     @validate_call
-    def Upload(
+    def upload(
         self,
         body: UploadRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -80,7 +80,7 @@ class UploadApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Upload_serialize(body=body,
+        _param = self._upload_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -99,7 +99,7 @@ class UploadApi:
         ).data
 
     @validate_call
-    def Upload_with_http_info(
+    def upload_with_http_info(
         self,
         body: UploadRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -141,7 +141,7 @@ class UploadApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Upload_serialize(body=body,
+        _param = self._upload_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -160,7 +160,7 @@ class UploadApi:
         )
 
     @validate_call
-    def Upload_without_preload_content(
+    def upload_without_preload_content(
         self,
         body: UploadRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -202,7 +202,7 @@ class UploadApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Upload_serialize(body=body,
+        _param = self._upload_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -215,7 +215,7 @@ class UploadApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Upload_serialize(
+    def _upload_serialize(
         self,
         body,
         _request_auth,

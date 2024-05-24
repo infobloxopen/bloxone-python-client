@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](IpamHostApi.md#Create) | **POST** /ipam/host | Create the IPAM host.
-[**Delete**](IpamHostApi.md#Delete) | **DELETE** /ipam/host/{id} | Move the IPAM host to the recycle bin.
-[**List**](IpamHostApi.md#List) | **GET** /ipam/host | Retrieve the IPAM hosts.
-[**Read**](IpamHostApi.md#Read) | **GET** /ipam/host/{id} | Retrieve the IPAM host.
-[**Update**](IpamHostApi.md#Update) | **PATCH** /ipam/host/{id} | Update the IPAM host.
+[**create**](IpamHostApi.md#create) | **POST** /ipam/host | Create the IPAM host.
+[**delete**](IpamHostApi.md#delete) | **DELETE** /ipam/host/{id} | Move the IPAM host to the recycle bin.
+[**list**](IpamHostApi.md#list) | **GET** /ipam/host | Retrieve the IPAM hosts.
+[**read**](IpamHostApi.md#read) | **GET** /ipam/host/{id} | Retrieve the IPAM host.
+[**update**](IpamHostApi.md#update) | **PATCH** /ipam/host/{id} | Update the IPAM host.
 
 
-# **Create**
-> CreateIpamHostResponse Create(body)
+# **create**
+> CreateIpamHostResponse create(body)
 
 Create the IPAM host.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the IPAM host.
-        api_response = api_instance.Create(body)
-        print("The response of IpamHostApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of IpamHostApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpamHostApi->Create: %s\n" % e)
+        print("Exception when calling IpamHostApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the IPAM host to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the IPAM host to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling IpamHostApi->Delete: %s\n" % e)
+        print("Exception when calling IpamHostApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListIpamHostResponse List(fields=fields, order_by=order_by, filter=filter, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListIpamHostResponse list(fields=fields, order_by=order_by, filter=filter, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve the IPAM hosts.
 
@@ -216,11 +216,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the IPAM hosts.
-        api_response = api_instance.List(fields=fields, order_by=order_by, filter=filter, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
-        print("The response of IpamHostApi->List:\n")
+        api_response = api_instance.list(fields=fields, order_by=order_by, filter=filter, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter)
+        print("The response of IpamHostApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpamHostApi->List: %s\n" % e)
+        print("Exception when calling IpamHostApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadIpamHostResponse Read(id, order_by=order_by, fields=fields)
+# **read**
+> ReadIpamHostResponse read(id, order_by=order_by, fields=fields)
 
 Retrieve the IPAM host.
 
@@ -304,11 +304,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the IPAM host.
-        api_response = api_instance.Read(id, order_by=order_by, fields=fields)
-        print("The response of IpamHostApi->Read:\n")
+        api_response = api_instance.read(id, order_by=order_by, fields=fields)
+        print("The response of IpamHostApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpamHostApi->Read: %s\n" % e)
+        print("Exception when calling IpamHostApi->read: %s\n" % e)
 ```
 
 
@@ -343,8 +343,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateIpamHostResponse Update(id, body)
+# **update**
+> UpdateIpamHostResponse update(id, body)
 
 Update the IPAM host.
 
@@ -387,11 +387,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the IPAM host.
-        api_response = api_instance.Update(id, body)
-        print("The response of IpamHostApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of IpamHostApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpamHostApi->Update: %s\n" % e)
+        print("Exception when calling IpamHostApi->update: %s\n" % e)
 ```
 
 

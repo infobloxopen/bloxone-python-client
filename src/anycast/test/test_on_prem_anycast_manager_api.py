@@ -25,120 +25,120 @@ class TestOnPremAnycastManagerApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateAnycastConfig(self) -> None:
-        """Test case for CreateAnycastConfig
+    def test_create_anycast_config(self) -> None:
+        """Test case for create_anycast_config
 
         Create Anycast Configuration
         """
         pass
 
-    def test_CreateAnycastVersion(self) -> None:
-        """Test case for CreateAnycastVersion
+    def test_create_anycast_version(self) -> None:
+        """Test case for create_anycast_version
 
         Create Anycast Version
         """
         pass
 
-    def test_DeleteAnycastConfig(self) -> None:
-        """Test case for DeleteAnycastConfig
+    def test_delete_anycast_config(self) -> None:
+        """Test case for delete_anycast_config
 
         Delete Anycast Configuration
         """
         pass
 
-    def test_DeleteAnycastVersion(self) -> None:
-        """Test case for DeleteAnycastVersion
+    def test_delete_anycast_version(self) -> None:
+        """Test case for delete_anycast_version
 
         Delete anycast version
         """
         pass
 
-    def test_DeleteOnpremHost(self) -> None:
-        """Test case for DeleteOnpremHost
+    def test_delete_onprem_host(self) -> None:
+        """Test case for delete_onprem_host
 
         Delete On-Prem Host
         """
         pass
 
-    def test_GetAnycastConfig(self) -> None:
-        """Test case for GetAnycastConfig
+    def test_get_anycast_config(self) -> None:
+        """Test case for get_anycast_config
 
         Retrieve Anycast Configuration
         """
         pass
 
-    def test_GetAnycastConfigList(self) -> None:
-        """Test case for GetAnycastConfigList
+    def test_get_anycast_config_list(self) -> None:
+        """Test case for get_anycast_config_list
 
         Retrieve Multiple Anycast Configurations
         """
         pass
 
-    def test_GetAnycastVersion(self) -> None:
-        """Test case for GetAnycastVersion
+    def test_get_anycast_version(self) -> None:
+        """Test case for get_anycast_version
 
         Retrieve Anycast Version
         """
         pass
 
-    def test_GetOnpremConfig(self) -> None:
-        """Test case for GetOnpremConfig
+    def test_get_onprem_config(self) -> None:
+        """Test case for get_onprem_config
 
         Retrieve Generated, Per-Host Anycast Configuration
         """
         pass
 
-    def test_GetOnpremConfig2(self) -> None:
-        """Test case for GetOnpremConfig2
+    def test_get_onprem_config2(self) -> None:
+        """Test case for get_onprem_config2
 
         Retrieve Generated, Per-Host Anycast Configuration
         """
         pass
 
-    def test_GetOnpremHost(self) -> None:
-        """Test case for GetOnpremHost
+    def test_get_onprem_host(self) -> None:
+        """Test case for get_onprem_host
 
         Retrieve On-Prem Host
         """
         pass
 
-    def test_GetStatus(self) -> None:
-        """Test case for GetStatus
+    def test_get_status(self) -> None:
+        """Test case for get_status
 
         Retrieve Configuration Status
         """
         pass
 
-    def test_GetStatus2(self) -> None:
-        """Test case for GetStatus2
+    def test_get_status2(self) -> None:
+        """Test case for get_status2
 
         Retrieve Configuration Status
         """
         pass
 
-    def test_ListAnycastConfigsWithRuntimeStatus(self) -> None:
-        """Test case for ListAnycastConfigsWithRuntimeStatus
+    def test_list_anycast_configs_with_runtime_status(self) -> None:
+        """Test case for list_anycast_configs_with_runtime_status
 
         Read list of Anycast Configurations
         """
         pass
 
-    def test_ReadAnycastConfigWithRuntimeStatus(self) -> None:
-        """Test case for ReadAnycastConfigWithRuntimeStatus
+    def test_read_anycast_config_with_runtime_status(self) -> None:
+        """Test case for read_anycast_config_with_runtime_status
 
         Read Anycast Configuration
         """
         pass
 
-    def test_UpdateAnycastConfig(self) -> None:
-        """Test case for UpdateAnycastConfig
+    def test_update_anycast_config(self) -> None:
+        """Test case for update_anycast_config
 
         Create or Update Anycast Configuration
         """
         pass
 
-    def test_UpdateOnpremHost(self) -> None:
-        """Test case for UpdateOnpremHost
+    def test_update_onprem_host(self) -> None:
+        """Test case for update_onprem_host
 
         Create or Update On-Prem Host
         """

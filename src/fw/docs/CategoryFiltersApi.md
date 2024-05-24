@@ -4,16 +4,16 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCategoryFilter**](CategoryFiltersApi.md#CreateCategoryFilter) | **POST** /category_filters | Create Category Filter.
-[**DeleteCategoryFilters**](CategoryFiltersApi.md#DeleteCategoryFilters) | **DELETE** /category_filters | Delete Category Filters By ID.
-[**DeleteSingleCategoryFilters**](CategoryFiltersApi.md#DeleteSingleCategoryFilters) | **DELETE** /category_filters/{id} | Delete Category Filters.
-[**ListCategoryFilters**](CategoryFiltersApi.md#ListCategoryFilters) | **GET** /category_filters | List Category Filters.
-[**ReadCategoryFilter**](CategoryFiltersApi.md#ReadCategoryFilter) | **GET** /category_filters/{id} | Read Category Filter.
-[**UpdateCategoryFilter**](CategoryFiltersApi.md#UpdateCategoryFilter) | **PUT** /category_filters/{id} | Update Category Filter.
+[**create_category_filter**](CategoryFiltersApi.md#create_category_filter) | **POST** /category_filters | Create Category Filter.
+[**delete_category_filters**](CategoryFiltersApi.md#delete_category_filters) | **DELETE** /category_filters | Delete Category Filters By ID.
+[**delete_single_category_filters**](CategoryFiltersApi.md#delete_single_category_filters) | **DELETE** /category_filters/{id} | Delete Category Filters.
+[**list_category_filters**](CategoryFiltersApi.md#list_category_filters) | **GET** /category_filters | List Category Filters.
+[**read_category_filter**](CategoryFiltersApi.md#read_category_filter) | **GET** /category_filters/{id} | Read Category Filter.
+[**update_category_filter**](CategoryFiltersApi.md#update_category_filter) | **PUT** /category_filters/{id} | Update Category Filter.
 
 
-# **CreateCategoryFilter**
-> CategoryFilterCreateResponse CreateCategoryFilter(body)
+# **create_category_filter**
+> CategoryFilterCreateResponse create_category_filter(body)
 
 Create Category Filter.
 
@@ -44,11 +44,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Category Filter.
-        api_response = api_instance.CreateCategoryFilter(body)
-        print("The response of CategoryFiltersApi->CreateCategoryFilter:\n")
+        api_response = api_instance.create_category_filter(body)
+        print("The response of CategoryFiltersApi->create_category_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->CreateCategoryFilter: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->create_category_filter: %s\n" % e)
 ```
 
 
@@ -84,8 +84,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteCategoryFilters**
-> DeleteCategoryFilters(body)
+# **delete_category_filters**
+> delete_category_filters(body)
 
 Delete Category Filters By ID.
 
@@ -115,9 +115,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Category Filters By ID.
-        api_instance.DeleteCategoryFilters(body)
+        api_instance.delete_category_filters(body)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->DeleteCategoryFilters: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->delete_category_filters: %s\n" % e)
 ```
 
 
@@ -152,8 +152,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleCategoryFilters**
-> DeleteSingleCategoryFilters(id)
+# **delete_single_category_filters**
+> delete_single_category_filters(id)
 
 Delete Category Filters.
 
@@ -182,9 +182,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Category Filters.
-        api_instance.DeleteSingleCategoryFilters(id)
+        api_instance.delete_single_category_filters(id)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->DeleteSingleCategoryFilters: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->delete_single_category_filters: %s\n" % e)
 ```
 
 
@@ -219,8 +219,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListCategoryFilters**
-> CategoryFilterMultiResponse ListCategoryFilters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_category_filters**
+> CategoryFilterMultiResponse list_category_filters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List Category Filters.
 
@@ -256,11 +256,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Category Filters.
-        api_response = api_instance.ListCategoryFilters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of CategoryFiltersApi->ListCategoryFilters:\n")
+        api_response = api_instance.list_category_filters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of CategoryFiltersApi->list_category_filters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->ListCategoryFilters: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->list_category_filters: %s\n" % e)
 ```
 
 
@@ -300,8 +300,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadCategoryFilter**
-> CategoryFilterReadResponse ReadCategoryFilter(id, fields=fields, name=name)
+# **read_category_filter**
+> CategoryFilterReadResponse read_category_filter(id, fields=fields, name=name)
 
 Read Category Filter.
 
@@ -333,11 +333,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Category Filter.
-        api_response = api_instance.ReadCategoryFilter(id, fields=fields, name=name)
-        print("The response of CategoryFiltersApi->ReadCategoryFilter:\n")
+        api_response = api_instance.read_category_filter(id, fields=fields, name=name)
+        print("The response of CategoryFiltersApi->read_category_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->ReadCategoryFilter: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->read_category_filter: %s\n" % e)
 ```
 
 
@@ -374,8 +374,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateCategoryFilter**
-> CategoryFilterUpdateResponse UpdateCategoryFilter(id, body)
+# **update_category_filter**
+> CategoryFilterUpdateResponse update_category_filter(id, body)
 
 Update Category Filter.
 
@@ -407,11 +407,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Category Filter.
-        api_response = api_instance.UpdateCategoryFilter(id, body)
-        print("The response of CategoryFiltersApi->UpdateCategoryFilter:\n")
+        api_response = api_instance.update_category_filter(id, body)
+        print("The response of CategoryFiltersApi->update_category_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CategoryFiltersApi->UpdateCategoryFilter: %s\n" % e)
+        print("Exception when calling CategoryFiltersApi->update_category_filter: %s\n" % e)
 ```
 
 

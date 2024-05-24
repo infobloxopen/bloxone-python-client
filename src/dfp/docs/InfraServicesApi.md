@@ -4,13 +4,13 @@ All URIs are relative to *https://csp.infoblox.com/api/atcdfp/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOrUpdateDfpService**](InfraServicesApi.md#CreateOrUpdateDfpService) | **PUT** /dfp_services/{payload.service_id} | Update DNS Forwarding Proxy services.
-[**ListDfpServices**](InfraServicesApi.md#ListDfpServices) | **GET** /dfp_services | List DNS Forwarding Proxy services.
-[**ReadDfpService**](InfraServicesApi.md#ReadDfpService) | **GET** /dfp_services/{service_id} | Read DNS Forwarding Proxy services.
+[**create_or_update_dfp_service**](InfraServicesApi.md#create_or_update_dfp_service) | **PUT** /dfp_services/{payload.service_id} | Update DNS Forwarding Proxy services.
+[**list_dfp_services**](InfraServicesApi.md#list_dfp_services) | **GET** /dfp_services | List DNS Forwarding Proxy services.
+[**read_dfp_service**](InfraServicesApi.md#read_dfp_service) | **GET** /dfp_services/{service_id} | Read DNS Forwarding Proxy services.
 
 
-# **CreateOrUpdateDfpService**
-> DfpCreateOrUpdateResponse CreateOrUpdateDfpService(payload_service_id, body)
+# **create_or_update_dfp_service**
+> DfpCreateOrUpdateResponse create_or_update_dfp_service(payload_service_id, body)
 
 Update DNS Forwarding Proxy services.
 
@@ -42,11 +42,11 @@ with dfp.ApiClient(configuration) as api_client:
 
     try:
         # Update DNS Forwarding Proxy services.
-        api_response = api_instance.CreateOrUpdateDfpService(payload_service_id, body)
-        print("The response of InfraServicesApi->CreateOrUpdateDfpService:\n")
+        api_response = api_instance.create_or_update_dfp_service(payload_service_id, body)
+        print("The response of InfraServicesApi->create_or_update_dfp_service:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InfraServicesApi->CreateOrUpdateDfpService: %s\n" % e)
+        print("Exception when calling InfraServicesApi->create_or_update_dfp_service: %s\n" % e)
 ```
 
 
@@ -83,8 +83,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListDfpServices**
-> DfpListResponse ListDfpServices(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+# **list_dfp_services**
+> DfpListResponse list_dfp_services(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
 
 List DNS Forwarding Proxy services.
 
@@ -118,11 +118,11 @@ with dfp.ApiClient(configuration) as api_client:
 
     try:
         # List DNS Forwarding Proxy services.
-        api_response = api_instance.ListDfpServices(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
-        print("The response of InfraServicesApi->ListDfpServices:\n")
+        api_response = api_instance.list_dfp_services(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+        print("The response of InfraServicesApi->list_dfp_services:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InfraServicesApi->ListDfpServices: %s\n" % e)
+        print("Exception when calling InfraServicesApi->list_dfp_services: %s\n" % e)
 ```
 
 
@@ -160,8 +160,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadDfpService**
-> DfpReadResponse ReadDfpService(service_id, id=id, fields=fields, name=name)
+# **read_dfp_service**
+> DfpReadResponse read_dfp_service(service_id, id=id, fields=fields, name=name)
 
 Read DNS Forwarding Proxy services.
 
@@ -194,11 +194,11 @@ with dfp.ApiClient(configuration) as api_client:
 
     try:
         # Read DNS Forwarding Proxy services.
-        api_response = api_instance.ReadDfpService(service_id, id=id, fields=fields, name=name)
-        print("The response of InfraServicesApi->ReadDfpService:\n")
+        api_response = api_instance.read_dfp_service(service_id, id=id, fields=fields, name=name)
+        print("The response of InfraServicesApi->read_dfp_service:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InfraServicesApi->ReadDfpService: %s\n" % e)
+        print("Exception when calling InfraServicesApi->read_dfp_service: %s\n" % e)
 ```
 
 

@@ -48,7 +48,7 @@ class HostsApi:
         self.api_client = api_client
 
     @validate_call
-    def AssignTags(
+    def assign_tags(
         self,
         body: AssignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -90,11 +90,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._AssignTags_serialize(body=body,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._assign_tags_serialize(body=body,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -109,7 +109,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def AssignTags_with_http_info(
+    def assign_tags_with_http_info(
         self,
         body: AssignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -151,11 +151,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._AssignTags_serialize(body=body,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._assign_tags_serialize(body=body,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -170,7 +170,7 @@ class HostsApi:
         )
 
     @validate_call
-    def AssignTags_without_preload_content(
+    def assign_tags_without_preload_content(
         self,
         body: AssignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -212,11 +212,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._AssignTags_serialize(body=body,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._assign_tags_serialize(body=body,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -225,7 +225,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _AssignTags_serialize(
+    def _assign_tags_serialize(
         self,
         body,
         _request_auth,
@@ -286,7 +286,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Create(
+    def create(
         self,
         body: Host,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -328,7 +328,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -347,7 +347,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Create_with_http_info(
+    def create_with_http_info(
         self,
         body: Host,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -389,7 +389,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -408,7 +408,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Create_without_preload_content(
+    def create_without_preload_content(
         self,
         body: Host,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -450,7 +450,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -463,7 +463,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Create_serialize(
+    def _create_serialize(
         self,
         body,
         _request_auth,
@@ -524,7 +524,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Delete(
+    def delete(
         self,
         id: Annotated[
             StrictStr,
@@ -569,7 +569,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -588,7 +588,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Delete_with_http_info(
+    def delete_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -633,7 +633,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -652,7 +652,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Delete_without_preload_content(
+    def delete_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -697,7 +697,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -710,7 +710,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Delete_serialize(
+    def _delete_serialize(
         self,
         id,
         _request_auth,
@@ -757,7 +757,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Disconnect(
+    def disconnect(
         self,
         id: Annotated[
             StrictStr,
@@ -805,7 +805,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Disconnect_serialize(id=id,
+        _param = self._disconnect_serialize(id=id,
                                             body=body,
                                             _request_auth=_request_auth,
                                             _content_type=_content_type,
@@ -825,7 +825,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Disconnect_with_http_info(
+    def disconnect_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -873,7 +873,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Disconnect_serialize(id=id,
+        _param = self._disconnect_serialize(id=id,
                                             body=body,
                                             _request_auth=_request_auth,
                                             _content_type=_content_type,
@@ -893,7 +893,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Disconnect_without_preload_content(
+    def disconnect_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -941,7 +941,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Disconnect_serialize(id=id,
+        _param = self._disconnect_serialize(id=id,
                                             body=body,
                                             _request_auth=_request_auth,
                                             _content_type=_content_type,
@@ -955,7 +955,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Disconnect_serialize(
+    def _disconnect_serialize(
         self,
         id,
         body,
@@ -1019,7 +1019,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def List(
+    def list(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1117,7 +1117,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -1143,7 +1143,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1241,7 +1241,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -1267,7 +1267,7 @@ class HostsApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1365,7 +1365,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -1385,7 +1385,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         filter,
         order_by,
@@ -1473,7 +1473,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read(
+    def read(
         self,
         id: Annotated[
             StrictStr,
@@ -1518,7 +1518,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -1537,7 +1537,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1582,7 +1582,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -1601,7 +1601,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1646,7 +1646,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -1659,7 +1659,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         id,
         _request_auth,
@@ -1710,7 +1710,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Replace(
+    def replace(
         self,
         from_resource_id: Annotated[
             StrictStr,
@@ -1763,7 +1763,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Replace_serialize(from_resource_id=from_resource_id,
+        _param = self._replace_serialize(from_resource_id=from_resource_id,
                                          to_resource_id=to_resource_id,
                                          body=body,
                                          _request_auth=_request_auth,
@@ -1784,7 +1784,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Replace_with_http_info(
+    def replace_with_http_info(
         self,
         from_resource_id: Annotated[
             StrictStr,
@@ -1837,7 +1837,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Replace_serialize(from_resource_id=from_resource_id,
+        _param = self._replace_serialize(from_resource_id=from_resource_id,
                                          to_resource_id=to_resource_id,
                                          body=body,
                                          _request_auth=_request_auth,
@@ -1858,7 +1858,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Replace_without_preload_content(
+    def replace_without_preload_content(
         self,
         from_resource_id: Annotated[
             StrictStr,
@@ -1911,7 +1911,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Replace_serialize(from_resource_id=from_resource_id,
+        _param = self._replace_serialize(from_resource_id=from_resource_id,
                                          to_resource_id=to_resource_id,
                                          body=body,
                                          _request_auth=_request_auth,
@@ -1926,7 +1926,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Replace_serialize(
+    def _replace_serialize(
         self,
         from_resource_id,
         to_resource_id,
@@ -1996,7 +1996,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UnassignTags(
+    def unassign_tags(
         self,
         body: UnassignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2038,11 +2038,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UnassignTags_serialize(body=body,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._unassign_tags_serialize(body=body,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -2057,7 +2057,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def UnassignTags_with_http_info(
+    def unassign_tags_with_http_info(
         self,
         body: UnassignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2099,11 +2099,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UnassignTags_serialize(body=body,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._unassign_tags_serialize(body=body,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -2118,7 +2118,7 @@ class HostsApi:
         )
 
     @validate_call
-    def UnassignTags_without_preload_content(
+    def unassign_tags_without_preload_content(
         self,
         body: UnassignTagsRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2160,11 +2160,11 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UnassignTags_serialize(body=body,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._unassign_tags_serialize(body=body,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -2173,7 +2173,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UnassignTags_serialize(
+    def _unassign_tags_serialize(
         self,
         body,
         _request_auth,
@@ -2234,7 +2234,7 @@ class HostsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Update(
+    def update(
         self,
         id: Annotated[
             StrictStr,
@@ -2282,7 +2282,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -2302,7 +2302,7 @@ class HostsApi:
         ).data
 
     @validate_call
-    def Update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -2350,7 +2350,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -2370,7 +2370,7 @@ class HostsApi:
         )
 
     @validate_call
-    def Update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -2418,7 +2418,7 @@ class HostsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -2432,7 +2432,7 @@ class HostsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Update_serialize(
+    def _update_serialize(
         self,
         id,
         body,

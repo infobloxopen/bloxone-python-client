@@ -45,7 +45,7 @@ class ApplicationFiltersApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateApplicationFilter(
+    def create_application_filter(
         self,
         body: Annotated[ApplicationFilter,
                         Field(description="The Application Filter object.")],
@@ -88,7 +88,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateApplicationFilter_serialize(
+        _param = self._create_application_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -109,7 +109,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def CreateApplicationFilter_with_http_info(
+    def create_application_filter_with_http_info(
         self,
         body: Annotated[ApplicationFilter,
                         Field(description="The Application Filter object.")],
@@ -152,7 +152,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateApplicationFilter_serialize(
+        _param = self._create_application_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -173,7 +173,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def CreateApplicationFilter_without_preload_content(
+    def create_application_filter_without_preload_content(
         self,
         body: Annotated[ApplicationFilter,
                         Field(description="The Application Filter object.")],
@@ -216,7 +216,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateApplicationFilter_serialize(
+        _param = self._create_application_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -231,7 +231,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateApplicationFilter_serialize(
+    def _create_application_filter_serialize(
         self,
         body,
         _request_auth,
@@ -292,7 +292,7 @@ class ApplicationFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteApplicationFilters(
+    def delete_application_filters(
         self,
         body: ApplicationFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -334,7 +334,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteApplicationFilters_serialize(
+        _param = self._delete_application_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -356,7 +356,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def DeleteApplicationFilters_with_http_info(
+    def delete_application_filters_with_http_info(
         self,
         body: ApplicationFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -398,7 +398,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteApplicationFilters_serialize(
+        _param = self._delete_application_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -420,7 +420,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def DeleteApplicationFilters_without_preload_content(
+    def delete_application_filters_without_preload_content(
         self,
         body: ApplicationFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -462,7 +462,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteApplicationFilters_serialize(
+        _param = self._delete_application_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -478,7 +478,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteApplicationFilters_serialize(
+    def _delete_application_filters_serialize(
         self,
         body,
         _request_auth,
@@ -539,7 +539,7 @@ class ApplicationFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleApplicationFilters(
+    def delete_single_application_filters(
         self,
         id: Annotated[
             StrictInt,
@@ -583,7 +583,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleApplicationFilters_serialize(
+        _param = self._delete_single_application_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -606,7 +606,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def DeleteSingleApplicationFilters_with_http_info(
+    def delete_single_application_filters_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -650,7 +650,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleApplicationFilters_serialize(
+        _param = self._delete_single_application_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -673,7 +673,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def DeleteSingleApplicationFilters_without_preload_content(
+    def delete_single_application_filters_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -717,7 +717,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleApplicationFilters_serialize(
+        _param = self._delete_single_application_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -734,7 +734,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleApplicationFilters_serialize(
+    def _delete_single_application_filters_serialize(
         self,
         id,
         _request_auth,
@@ -785,7 +785,7 @@ class ApplicationFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListApplicationFilters(
+    def list_application_filters(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -872,7 +872,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListApplicationFilters_serialize(
+        _param = self._list_application_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -899,7 +899,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def ListApplicationFilters_with_http_info(
+    def list_application_filters_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -986,7 +986,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListApplicationFilters_serialize(
+        _param = self._list_application_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1013,7 +1013,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def ListApplicationFilters_without_preload_content(
+    def list_application_filters_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1100,7 +1100,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListApplicationFilters_serialize(
+        _param = self._list_application_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1121,7 +1121,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListApplicationFilters_serialize(
+    def _list_application_filters_serialize(
         self,
         filter,
         fields,
@@ -1204,7 +1204,7 @@ class ApplicationFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadApplicationFilter(
+    def read_application_filter(
         self,
         id: Annotated[
             StrictInt,
@@ -1261,7 +1261,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadApplicationFilter_serialize(
+        _param = self._read_application_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1284,7 +1284,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def ReadApplicationFilter_with_http_info(
+    def read_application_filter_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1341,7 +1341,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadApplicationFilter_serialize(
+        _param = self._read_application_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1364,7 +1364,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def ReadApplicationFilter_without_preload_content(
+    def read_application_filter_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1421,7 +1421,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadApplicationFilter_serialize(
+        _param = self._read_application_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1438,7 +1438,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadApplicationFilter_serialize(
+    def _read_application_filter_serialize(
         self,
         id,
         fields,
@@ -1499,7 +1499,7 @@ class ApplicationFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateApplicationFilter(
+    def update_application_filter(
         self,
         id: Annotated[
             StrictInt,
@@ -1547,7 +1547,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateApplicationFilter_serialize(
+        _param = self._update_application_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1569,7 +1569,7 @@ class ApplicationFiltersApi:
         ).data
 
     @validate_call
-    def UpdateApplicationFilter_with_http_info(
+    def update_application_filter_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1617,7 +1617,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateApplicationFilter_serialize(
+        _param = self._update_application_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1639,7 +1639,7 @@ class ApplicationFiltersApi:
         )
 
     @validate_call
-    def UpdateApplicationFilter_without_preload_content(
+    def update_application_filter_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1687,7 +1687,7 @@ class ApplicationFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateApplicationFilter_serialize(
+        _param = self._update_application_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1703,7 +1703,7 @@ class ApplicationFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateApplicationFilter_serialize(
+    def _update_application_filter_serialize(
         self,
         id,
         body,

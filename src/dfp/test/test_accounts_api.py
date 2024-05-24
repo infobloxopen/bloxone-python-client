@@ -25,8 +25,8 @@ class TestAccountsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CheckConfig(self) -> None:
-        """Test case for CheckConfig
+    def test_check_config(self) -> None:
+        """Test case for check_config
 
         Check Config.
         """

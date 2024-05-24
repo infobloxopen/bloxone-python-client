@@ -25,43 +25,43 @@ class TestAccessCodesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateAccessCode(self) -> None:
-        """Test case for CreateAccessCode
+    def test_create_access_code(self) -> None:
+        """Test case for create_access_code
 
         Create Access Codes
         """
         pass
 
-    def test_DeleteAccessCodes(self) -> None:
-        """Test case for DeleteAccessCodes
+    def test_delete_access_codes(self) -> None:
+        """Test case for delete_access_codes
 
         Delete Access Codes
         """
         pass
 
-    def test_DeleteSingleAccessCodes(self) -> None:
-        """Test case for DeleteSingleAccessCodes
+    def test_delete_single_access_codes(self) -> None:
+        """Test case for delete_single_access_codes
 
         Delete Access Code By ID
         """
         pass
 
-    def test_ListAccessCodes(self) -> None:
-        """Test case for ListAccessCodes
+    def test_list_access_codes(self) -> None:
+        """Test case for list_access_codes
 
         List Access Codes
         """
         pass
 
-    def test_ReadAccessCode(self) -> None:
-        """Test case for ReadAccessCode
+    def test_read_access_code(self) -> None:
+        """Test case for read_access_code
 
         Read Access Codes
         """
         pass
 
-    def test_UpdateAccessCode(self) -> None:
-        """Test case for UpdateAccessCode
+    def test_update_access_code(self) -> None:
+        """Test case for update_access_code
 
         Update Access Codes
         """

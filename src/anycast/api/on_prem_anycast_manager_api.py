@@ -47,7 +47,7 @@ class OnPremAnycastManagerApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateAnycastConfig(
+    def create_anycast_config(
         self,
         body: AnycastConfig,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -89,7 +89,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastConfig_serialize(
+        _param = self._create_anycast_config_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -109,7 +109,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def CreateAnycastConfig_with_http_info(
+    def create_anycast_config_with_http_info(
         self,
         body: AnycastConfig,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -151,7 +151,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastConfig_serialize(
+        _param = self._create_anycast_config_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -171,7 +171,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def CreateAnycastConfig_without_preload_content(
+    def create_anycast_config_without_preload_content(
         self,
         body: AnycastConfig,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -213,7 +213,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastConfig_serialize(
+        _param = self._create_anycast_config_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -227,7 +227,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateAnycastConfig_serialize(
+    def _create_anycast_config_serialize(
         self,
         body,
         _request_auth,
@@ -288,7 +288,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def CreateAnycastVersion(
+    def create_anycast_version(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -330,7 +330,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastVersion_serialize(
+        _param = self._create_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -350,7 +350,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def CreateAnycastVersion_with_http_info(
+    def create_anycast_version_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -392,7 +392,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastVersion_serialize(
+        _param = self._create_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -412,7 +412,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def CreateAnycastVersion_without_preload_content(
+    def create_anycast_version_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -454,7 +454,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateAnycastVersion_serialize(
+        _param = self._create_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -468,7 +468,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateAnycastVersion_serialize(
+    def _create_anycast_version_serialize(
         self,
         id,
         _request_auth,
@@ -519,7 +519,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteAnycastConfig(
+    def delete_anycast_config(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -561,7 +561,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastConfig_serialize(
+        _param = self._delete_anycast_config_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -581,7 +581,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def DeleteAnycastConfig_with_http_info(
+    def delete_anycast_config_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -623,7 +623,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastConfig_serialize(
+        _param = self._delete_anycast_config_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -643,7 +643,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def DeleteAnycastConfig_without_preload_content(
+    def delete_anycast_config_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -685,7 +685,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastConfig_serialize(
+        _param = self._delete_anycast_config_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -699,7 +699,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteAnycastConfig_serialize(
+    def _delete_anycast_config_serialize(
         self,
         id,
         _request_auth,
@@ -750,7 +750,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteAnycastVersion(
+    def delete_anycast_version(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -792,7 +792,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastVersion_serialize(
+        _param = self._delete_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -812,7 +812,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def DeleteAnycastVersion_with_http_info(
+    def delete_anycast_version_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -854,7 +854,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastVersion_serialize(
+        _param = self._delete_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -874,7 +874,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def DeleteAnycastVersion_without_preload_content(
+    def delete_anycast_version_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -916,7 +916,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteAnycastVersion_serialize(
+        _param = self._delete_anycast_version_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -930,7 +930,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteAnycastVersion_serialize(
+    def _delete_anycast_version_serialize(
         self,
         id,
         _request_auth,
@@ -981,7 +981,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteOnpremHost(
+    def delete_onprem_host(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1023,11 +1023,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteOnpremHost_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_onprem_host_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -1042,7 +1043,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def DeleteOnpremHost_with_http_info(
+    def delete_onprem_host_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1084,11 +1085,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteOnpremHost_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_onprem_host_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -1103,7 +1105,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def DeleteOnpremHost_without_preload_content(
+    def delete_onprem_host_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1145,11 +1147,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteOnpremHost_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_onprem_host_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
@@ -1158,7 +1161,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteOnpremHost_serialize(
+    def _delete_onprem_host_serialize(
         self,
         id,
         _request_auth,
@@ -1209,7 +1212,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetAnycastConfig(
+    def get_anycast_config(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1251,11 +1254,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfig_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_anycast_config_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastConfigResponse",
@@ -1270,7 +1274,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetAnycastConfig_with_http_info(
+    def get_anycast_config_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1312,11 +1316,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfig_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_anycast_config_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastConfigResponse",
@@ -1331,7 +1336,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetAnycastConfig_without_preload_content(
+    def get_anycast_config_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1373,11 +1378,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfig_serialize(id=id,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_anycast_config_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastConfigResponse",
@@ -1386,7 +1392,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetAnycastConfig_serialize(
+    def _get_anycast_config_serialize(
         self,
         id,
         _request_auth,
@@ -1437,7 +1443,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetAnycastConfigList(
+    def get_anycast_config_list(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -1497,7 +1503,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfigList_serialize(
+        _param = self._get_anycast_config_list_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -1523,7 +1529,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetAnycastConfigList_with_http_info(
+    def get_anycast_config_list_with_http_info(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -1583,7 +1589,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfigList_serialize(
+        _param = self._get_anycast_config_list_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -1609,7 +1615,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetAnycastConfigList_without_preload_content(
+    def get_anycast_config_list_without_preload_content(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -1669,7 +1675,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastConfigList_serialize(
+        _param = self._get_anycast_config_list_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -1689,7 +1695,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetAnycastConfigList_serialize(
+    def _get_anycast_config_list_serialize(
         self,
         account_id,
         service,
@@ -1772,7 +1778,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetAnycastVersion(
+    def get_anycast_version(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1814,11 +1820,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastVersion_serialize(id=id,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._get_anycast_version_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastVersion",
@@ -1833,7 +1840,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetAnycastVersion_with_http_info(
+    def get_anycast_version_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1875,11 +1882,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastVersion_serialize(id=id,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._get_anycast_version_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastVersion",
@@ -1894,7 +1902,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetAnycastVersion_without_preload_content(
+    def get_anycast_version_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1936,11 +1944,12 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetAnycastVersion_serialize(id=id,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._get_anycast_version_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AnycastVersion",
@@ -1949,7 +1958,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetAnycastVersion_serialize(
+    def _get_anycast_version_serialize(
         self,
         id,
         _request_auth,
@@ -2000,7 +2009,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetOnpremConfig(
+    def get_onprem_config(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2051,14 +2060,14 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig_serialize(ophid=ophid,
-                                                 version=version,
-                                                 app_name=app_name,
-                                                 app_version=app_version,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._get_onprem_config_serialize(ophid=ophid,
+                                                   version=version,
+                                                   app_name=app_name,
+                                                   app_version=app_version,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2073,7 +2082,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetOnpremConfig_with_http_info(
+    def get_onprem_config_with_http_info(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2124,14 +2133,14 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig_serialize(ophid=ophid,
-                                                 version=version,
-                                                 app_name=app_name,
-                                                 app_version=app_version,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._get_onprem_config_serialize(ophid=ophid,
+                                                   version=version,
+                                                   app_name=app_name,
+                                                   app_version=app_version,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2146,7 +2155,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetOnpremConfig_without_preload_content(
+    def get_onprem_config_without_preload_content(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2197,14 +2206,14 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig_serialize(ophid=ophid,
-                                                 version=version,
-                                                 app_name=app_name,
-                                                 app_version=app_version,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._get_onprem_config_serialize(ophid=ophid,
+                                                   version=version,
+                                                   app_name=app_name,
+                                                   app_version=app_version,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2213,7 +2222,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetOnpremConfig_serialize(
+    def _get_onprem_config_serialize(
         self,
         ophid,
         version,
@@ -2279,7 +2288,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetOnpremConfig2(
+    def get_onprem_config2(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2330,14 +2339,15 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig2_serialize(ophid=ophid,
-                                                  version=version,
-                                                  app_name=app_name,
-                                                  app_version=app_version,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_onprem_config2_serialize(
+            ophid=ophid,
+            version=version,
+            app_name=app_name,
+            app_version=app_version,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2352,7 +2362,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetOnpremConfig2_with_http_info(
+    def get_onprem_config2_with_http_info(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2403,14 +2413,15 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig2_serialize(ophid=ophid,
-                                                  version=version,
-                                                  app_name=app_name,
-                                                  app_version=app_version,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_onprem_config2_serialize(
+            ophid=ophid,
+            version=version,
+            app_name=app_name,
+            app_version=app_version,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2425,7 +2436,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetOnpremConfig2_without_preload_content(
+    def get_onprem_config2_without_preload_content(
         self,
         ophid: StrictStr,
         version: StrictStr,
@@ -2476,14 +2487,15 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremConfig2_serialize(ophid=ophid,
-                                                  version=version,
-                                                  app_name=app_name,
-                                                  app_version=app_version,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._get_onprem_config2_serialize(
+            ophid=ophid,
+            version=version,
+            app_name=app_name,
+            app_version=app_version,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceConfig",
@@ -2492,7 +2504,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetOnpremConfig2_serialize(
+    def _get_onprem_config2_serialize(
         self,
         ophid,
         version,
@@ -2558,7 +2570,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetOnpremHost(
+    def get_onprem_host(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2600,11 +2612,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremHost_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._get_onprem_host_serialize(id=id,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -2619,7 +2631,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetOnpremHost_with_http_info(
+    def get_onprem_host_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2661,11 +2673,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremHost_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._get_onprem_host_serialize(id=id,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -2680,7 +2692,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetOnpremHost_without_preload_content(
+    def get_onprem_host_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2722,11 +2734,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetOnpremHost_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._get_onprem_host_serialize(id=id,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -2735,7 +2747,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetOnpremHost_serialize(
+    def _get_onprem_host_serialize(
         self,
         id,
         _request_auth,
@@ -2786,7 +2798,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetStatus(
+    def get_status(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2828,11 +2840,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus_serialize(ophid=ophid,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._get_status_serialize(ophid=ophid,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -2847,7 +2859,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetStatus_with_http_info(
+    def get_status_with_http_info(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2889,11 +2901,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus_serialize(ophid=ophid,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._get_status_serialize(ophid=ophid,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -2908,7 +2920,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetStatus_without_preload_content(
+    def get_status_without_preload_content(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -2950,11 +2962,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus_serialize(ophid=ophid,
-                                           _request_auth=_request_auth,
-                                           _content_type=_content_type,
-                                           _headers=_headers,
-                                           _host_index=_host_index)
+        _param = self._get_status_serialize(ophid=ophid,
+                                            _request_auth=_request_auth,
+                                            _content_type=_content_type,
+                                            _headers=_headers,
+                                            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -2963,7 +2975,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetStatus_serialize(
+    def _get_status_serialize(
         self,
         ophid,
         _request_auth,
@@ -3015,7 +3027,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def GetStatus2(
+    def get_status2(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3057,11 +3069,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus2_serialize(ophid=ophid,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._get_status2_serialize(ophid=ophid,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -3076,7 +3088,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def GetStatus2_with_http_info(
+    def get_status2_with_http_info(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3118,11 +3130,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus2_serialize(ophid=ophid,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._get_status2_serialize(ophid=ophid,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -3137,7 +3149,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def GetStatus2_without_preload_content(
+    def get_status2_without_preload_content(
         self,
         ophid: StrictStr,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3179,11 +3191,11 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GetStatus2_serialize(ophid=ophid,
-                                            _request_auth=_request_auth,
-                                            _content_type=_content_type,
-                                            _headers=_headers,
-                                            _host_index=_host_index)
+        _param = self._get_status2_serialize(ophid=ophid,
+                                             _request_auth=_request_auth,
+                                             _content_type=_content_type,
+                                             _headers=_headers,
+                                             _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServiceStatusUpdateRequest",
@@ -3192,7 +3204,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GetStatus2_serialize(
+    def _get_status2_serialize(
         self,
         ophid,
         _request_auth,
@@ -3244,7 +3256,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListAnycastConfigsWithRuntimeStatus(
+    def list_anycast_configs_with_runtime_status(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -3304,7 +3316,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAnycastConfigsWithRuntimeStatus_serialize(
+        _param = self._list_anycast_configs_with_runtime_status_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -3330,7 +3342,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def ListAnycastConfigsWithRuntimeStatus_with_http_info(
+    def list_anycast_configs_with_runtime_status_with_http_info(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -3390,7 +3402,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAnycastConfigsWithRuntimeStatus_serialize(
+        _param = self._list_anycast_configs_with_runtime_status_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -3416,7 +3428,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def ListAnycastConfigsWithRuntimeStatus_without_preload_content(
+    def list_anycast_configs_with_runtime_status_without_preload_content(
         self,
         account_id: Optional[StrictInt] = None,
         service: Optional[StrictStr] = None,
@@ -3476,7 +3488,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAnycastConfigsWithRuntimeStatus_serialize(
+        _param = self._list_anycast_configs_with_runtime_status_serialize(
             account_id=account_id,
             service=service,
             host_id=host_id,
@@ -3496,7 +3508,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListAnycastConfigsWithRuntimeStatus_serialize(
+    def _list_anycast_configs_with_runtime_status_serialize(
         self,
         account_id,
         service,
@@ -3579,7 +3591,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadAnycastConfigWithRuntimeStatus(
+    def read_anycast_config_with_runtime_status(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3621,7 +3633,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAnycastConfigWithRuntimeStatus_serialize(
+        _param = self._read_anycast_config_with_runtime_status_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3641,7 +3653,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def ReadAnycastConfigWithRuntimeStatus_with_http_info(
+    def read_anycast_config_with_runtime_status_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3683,7 +3695,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAnycastConfigWithRuntimeStatus_serialize(
+        _param = self._read_anycast_config_with_runtime_status_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3703,7 +3715,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def ReadAnycastConfigWithRuntimeStatus_without_preload_content(
+    def read_anycast_config_with_runtime_status_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -3745,7 +3757,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadAnycastConfigWithRuntimeStatus_serialize(
+        _param = self._read_anycast_config_with_runtime_status_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3759,7 +3771,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadAnycastConfigWithRuntimeStatus_serialize(
+    def _read_anycast_config_with_runtime_status_serialize(
         self,
         id,
         _request_auth,
@@ -3810,7 +3822,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateAnycastConfig(
+    def update_anycast_config(
         self,
         id: StrictInt,
         body: AnycastConfig,
@@ -3855,7 +3867,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAnycastConfig_serialize(
+        _param = self._update_anycast_config_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -3876,7 +3888,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def UpdateAnycastConfig_with_http_info(
+    def update_anycast_config_with_http_info(
         self,
         id: StrictInt,
         body: AnycastConfig,
@@ -3921,7 +3933,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAnycastConfig_serialize(
+        _param = self._update_anycast_config_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -3942,7 +3954,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def UpdateAnycastConfig_without_preload_content(
+    def update_anycast_config_without_preload_content(
         self,
         id: StrictInt,
         body: AnycastConfig,
@@ -3987,7 +3999,7 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAnycastConfig_serialize(
+        _param = self._update_anycast_config_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -4002,7 +4014,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateAnycastConfig_serialize(
+    def _update_anycast_config_serialize(
         self,
         id,
         body,
@@ -4066,7 +4078,7 @@ class OnPremAnycastManagerApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateOnpremHost(
+    def update_onprem_host(
         self,
         id: Annotated[StrictInt,
                       Field(description="Numeric host identifier")],
@@ -4112,12 +4124,13 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateOnpremHost_serialize(id=id,
-                                                  body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._update_onprem_host_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -4132,7 +4145,7 @@ class OnPremAnycastManagerApi:
         ).data
 
     @validate_call
-    def UpdateOnpremHost_with_http_info(
+    def update_onprem_host_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="Numeric host identifier")],
@@ -4178,12 +4191,13 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateOnpremHost_serialize(id=id,
-                                                  body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._update_onprem_host_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -4198,7 +4212,7 @@ class OnPremAnycastManagerApi:
         )
 
     @validate_call
-    def UpdateOnpremHost_without_preload_content(
+    def update_onprem_host_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="Numeric host identifier")],
@@ -4244,12 +4258,13 @@ class OnPremAnycastManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateOnpremHost_serialize(id=id,
-                                                  body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._update_onprem_host_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "OnpremHostResponse",
@@ -4258,7 +4273,7 @@ class OnPremAnycastManagerApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateOnpremHost_serialize(
+    def _update_onprem_host_serialize(
         self,
         id,
         body,
