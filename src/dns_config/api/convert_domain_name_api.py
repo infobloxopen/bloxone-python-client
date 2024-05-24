@@ -39,7 +39,7 @@ class ConvertDomainNameApi:
         self.api_client = api_client
 
     @validate_call
-    def Convert(
+    def convert(
         self,
         domain_name: Annotated[
             StrictStr,
@@ -86,7 +86,7 @@ class ConvertDomainNameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Convert_serialize(domain_name=domain_name,
+        _param = self._convert_serialize(domain_name=domain_name,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
                                          _headers=_headers,
@@ -105,7 +105,7 @@ class ConvertDomainNameApi:
         ).data
 
     @validate_call
-    def Convert_with_http_info(
+    def convert_with_http_info(
         self,
         domain_name: Annotated[
             StrictStr,
@@ -152,7 +152,7 @@ class ConvertDomainNameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Convert_serialize(domain_name=domain_name,
+        _param = self._convert_serialize(domain_name=domain_name,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
                                          _headers=_headers,
@@ -171,7 +171,7 @@ class ConvertDomainNameApi:
         )
 
     @validate_call
-    def Convert_without_preload_content(
+    def convert_without_preload_content(
         self,
         domain_name: Annotated[
             StrictStr,
@@ -218,7 +218,7 @@ class ConvertDomainNameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Convert_serialize(domain_name=domain_name,
+        _param = self._convert_serialize(domain_name=domain_name,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
                                          _headers=_headers,
@@ -231,7 +231,7 @@ class ConvertDomainNameApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Convert_serialize(
+    def _convert_serialize(
         self,
         domain_name,
         _request_auth,

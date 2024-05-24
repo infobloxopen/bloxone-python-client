@@ -4,11 +4,11 @@ All URIs are relative to *https://csp.infoblox.com/api/atcdfp/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CheckConfig**](AccountsApi.md#CheckConfig) | **POST** /config/check | Check Config.
+[**check_config**](AccountsApi.md#check_config) | **POST** /config/check | Check Config.
 
 
-# **CheckConfig**
-> TypesConfigCheckResponse CheckConfig(body)
+# **check_config**
+> TypesConfigCheckResponse check_config(body)
 
 Check Config.
 
@@ -39,11 +39,11 @@ with dfp.ApiClient(configuration) as api_client:
 
     try:
         # Check Config.
-        api_response = api_instance.CheckConfig(body)
-        print("The response of AccountsApi->CheckConfig:\n")
+        api_response = api_instance.check_config(body)
+        print("The response of AccountsApi->check_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountsApi->CheckConfig: %s\n" % e)
+        print("Exception when calling AccountsApi->check_config: %s\n" % e)
 ```
 
 

@@ -43,7 +43,7 @@ class NamedListItemsApi:
         self.api_client = api_client
 
     @validate_call
-    def DeleteNamedListItems(
+    def delete_named_list_items(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -89,7 +89,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedListItems_serialize(
+        _param = self._delete_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -113,7 +113,7 @@ class NamedListItemsApi:
         ).data
 
     @validate_call
-    def DeleteNamedListItems_with_http_info(
+    def delete_named_list_items_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -159,7 +159,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedListItems_serialize(
+        _param = self._delete_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -183,7 +183,7 @@ class NamedListItemsApi:
         )
 
     @validate_call
-    def DeleteNamedListItems_without_preload_content(
+    def delete_named_list_items_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -229,7 +229,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedListItems_serialize(
+        _param = self._delete_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -247,7 +247,7 @@ class NamedListItemsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteNamedListItems_serialize(
+    def _delete_named_list_items_serialize(
         self,
         id,
         body,
@@ -311,7 +311,7 @@ class NamedListItemsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def InsertOrReplaceNamedListItems(
+    def insert_or_replace_named_list_items(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -359,7 +359,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InsertOrReplaceNamedListItems_serialize(
+        _param = self._insert_or_replace_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -383,7 +383,7 @@ class NamedListItemsApi:
         ).data
 
     @validate_call
-    def InsertOrReplaceNamedListItems_with_http_info(
+    def insert_or_replace_named_list_items_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -431,7 +431,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InsertOrReplaceNamedListItems_serialize(
+        _param = self._insert_or_replace_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -455,7 +455,7 @@ class NamedListItemsApi:
         )
 
     @validate_call
-    def InsertOrReplaceNamedListItems_without_preload_content(
+    def insert_or_replace_named_list_items_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -503,7 +503,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InsertOrReplaceNamedListItems_serialize(
+        _param = self._insert_or_replace_named_list_items_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -521,7 +521,7 @@ class NamedListItemsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _InsertOrReplaceNamedListItems_serialize(
+    def _insert_or_replace_named_list_items_serialize(
         self,
         id,
         body,
@@ -585,7 +585,7 @@ class NamedListItemsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def NamedListItemsPartialUpdate(
+    def named_list_items_partial_update(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -633,7 +633,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._NamedListItemsPartialUpdate_serialize(
+        _param = self._named_list_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -657,7 +657,7 @@ class NamedListItemsApi:
         ).data
 
     @validate_call
-    def NamedListItemsPartialUpdate_with_http_info(
+    def named_list_items_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -705,7 +705,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._NamedListItemsPartialUpdate_serialize(
+        _param = self._named_list_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -729,7 +729,7 @@ class NamedListItemsApi:
         )
 
     @validate_call
-    def NamedListItemsPartialUpdate_without_preload_content(
+    def named_list_items_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -777,7 +777,7 @@ class NamedListItemsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._NamedListItemsPartialUpdate_serialize(
+        _param = self._named_list_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -795,7 +795,7 @@ class NamedListItemsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _NamedListItemsPartialUpdate_serialize(
+    def _named_list_items_partial_update_serialize(
         self,
         id,
         body,

@@ -25,43 +25,43 @@ class TestApplicationFiltersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateApplicationFilter(self) -> None:
-        """Test case for CreateApplicationFilter
+    def test_create_application_filter(self) -> None:
+        """Test case for create_application_filter
 
         Create Application Filter.
         """
         pass
 
-    def test_DeleteApplicationFilters(self) -> None:
-        """Test case for DeleteApplicationFilters
+    def test_delete_application_filters(self) -> None:
+        """Test case for delete_application_filters
 
         Delete Application Filters.
         """
         pass
 
-    def test_DeleteSingleApplicationFilters(self) -> None:
-        """Test case for DeleteSingleApplicationFilters
+    def test_delete_single_application_filters(self) -> None:
+        """Test case for delete_single_application_filters
 
         Delete Application Filter Object by ID.
         """
         pass
 
-    def test_ListApplicationFilters(self) -> None:
-        """Test case for ListApplicationFilters
+    def test_list_application_filters(self) -> None:
+        """Test case for list_application_filters
 
         List Application Filters.
         """
         pass
 
-    def test_ReadApplicationFilter(self) -> None:
-        """Test case for ReadApplicationFilter
+    def test_read_application_filter(self) -> None:
+        """Test case for read_application_filter
 
         Read Application Filter.
         """
         pass
 
-    def test_UpdateApplicationFilter(self) -> None:
-        """Test case for UpdateApplicationFilter
+    def test_update_application_filter(self) -> None:
+        """Test case for update_application_filter
 
         Update Application Filter.
         """

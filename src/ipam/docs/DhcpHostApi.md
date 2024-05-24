@@ -4,14 +4,14 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](DhcpHostApi.md#List) | **GET** /dhcp/host | Retrieve DHCP hosts.
-[**ListAssociations**](DhcpHostApi.md#ListAssociations) | **GET** /dhcp/host/{id}/associations | Retrieve DHCP host associations.
-[**Read**](DhcpHostApi.md#Read) | **GET** /dhcp/host/{id} | Retrieve the DHCP host.
-[**Update**](DhcpHostApi.md#Update) | **PATCH** /dhcp/host/{id} | Update the DHCP hosts.
+[**list**](DhcpHostApi.md#list) | **GET** /dhcp/host | Retrieve DHCP hosts.
+[**list_associations**](DhcpHostApi.md#list_associations) | **GET** /dhcp/host/{id}/associations | Retrieve DHCP host associations.
+[**read**](DhcpHostApi.md#read) | **GET** /dhcp/host/{id} | Retrieve the DHCP host.
+[**update**](DhcpHostApi.md#update) | **PATCH** /dhcp/host/{id} | Update the DHCP hosts.
 
 
-# **List**
-> ListHostResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListHostResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 Retrieve DHCP hosts.
 
@@ -59,11 +59,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP hosts.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of DhcpHostApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of DhcpHostApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DhcpHostApi->List: %s\n" % e)
+        print("Exception when calling DhcpHostApi->list: %s\n" % e)
 ```
 
 
@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListAssociations**
-> HostAssociationsResponse ListAssociations(id)
+# **list_associations**
+> HostAssociationsResponse list_associations(id)
 
 Retrieve DHCP host associations.
 
@@ -145,11 +145,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP host associations.
-        api_response = api_instance.ListAssociations(id)
-        print("The response of DhcpHostApi->ListAssociations:\n")
+        api_response = api_instance.list_associations(id)
+        print("The response of DhcpHostApi->list_associations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DhcpHostApi->ListAssociations: %s\n" % e)
+        print("Exception when calling DhcpHostApi->list_associations: %s\n" % e)
 ```
 
 
@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadHostResponse Read(id, fields=fields)
+# **read**
+> ReadHostResponse read(id, fields=fields)
 
 Retrieve the DHCP host.
 
@@ -225,11 +225,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP host.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of DhcpHostApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of DhcpHostApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DhcpHostApi->Read: %s\n" % e)
+        print("Exception when calling DhcpHostApi->read: %s\n" % e)
 ```
 
 
@@ -263,8 +263,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateHostResponse Update(id, body)
+# **update**
+> UpdateHostResponse update(id, body)
 
 Update the DHCP hosts.
 
@@ -307,11 +307,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP hosts.
-        api_response = api_instance.Update(id, body)
-        print("The response of DhcpHostApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of DhcpHostApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DhcpHostApi->Update: %s\n" % e)
+        print("Exception when calling DhcpHostApi->update: %s\n" % e)
 ```
 
 

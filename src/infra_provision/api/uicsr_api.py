@@ -43,7 +43,7 @@ class UICSRApi:
         self.api_client = api_client
 
     @validate_call
-    def Approve(
+    def approve(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -92,7 +92,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Approve_serialize(activation_code=activation_code,
+        _param = self._approve_serialize(activation_code=activation_code,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -112,7 +112,7 @@ class UICSRApi:
         ).data
 
     @validate_call
-    def Approve_with_http_info(
+    def approve_with_http_info(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -161,7 +161,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Approve_serialize(activation_code=activation_code,
+        _param = self._approve_serialize(activation_code=activation_code,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -181,7 +181,7 @@ class UICSRApi:
         )
 
     @validate_call
-    def Approve_without_preload_content(
+    def approve_without_preload_content(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -230,7 +230,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Approve_serialize(activation_code=activation_code,
+        _param = self._approve_serialize(activation_code=activation_code,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -244,7 +244,7 @@ class UICSRApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Approve_serialize(
+    def _approve_serialize(
         self,
         activation_code,
         body,
@@ -309,7 +309,7 @@ class UICSRApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Deny(
+    def deny(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -358,7 +358,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Deny_serialize(activation_code=activation_code,
+        _param = self._deny_serialize(activation_code=activation_code,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -378,7 +378,7 @@ class UICSRApi:
         ).data
 
     @validate_call
-    def Deny_with_http_info(
+    def deny_with_http_info(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -427,7 +427,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Deny_serialize(activation_code=activation_code,
+        _param = self._deny_serialize(activation_code=activation_code,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -447,7 +447,7 @@ class UICSRApi:
         )
 
     @validate_call
-    def Deny_without_preload_content(
+    def deny_without_preload_content(
         self,
         activation_code: Annotated[
             StrictStr,
@@ -496,7 +496,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Deny_serialize(activation_code=activation_code,
+        _param = self._deny_serialize(activation_code=activation_code,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -510,7 +510,7 @@ class UICSRApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Deny_serialize(
+    def _deny_serialize(
         self,
         activation_code,
         body,
@@ -575,7 +575,7 @@ class UICSRApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def List(
+    def list(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -665,7 +665,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -690,7 +690,7 @@ class UICSRApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -780,7 +780,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -805,7 +805,7 @@ class UICSRApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -895,7 +895,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(filter=filter,
+        _param = self._list_serialize(filter=filter,
                                       order_by=order_by,
                                       offset=offset,
                                       limit=limit,
@@ -914,7 +914,7 @@ class UICSRApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         filter,
         order_by,
@@ -997,7 +997,7 @@ class UICSRApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Revoke(
+    def revoke(
         self,
         cert_serial: Annotated[
             StrictStr,
@@ -1047,7 +1047,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke_serialize(cert_serial=cert_serial,
+        _param = self._revoke_serialize(cert_serial=cert_serial,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1067,7 +1067,7 @@ class UICSRApi:
         ).data
 
     @validate_call
-    def Revoke_with_http_info(
+    def revoke_with_http_info(
         self,
         cert_serial: Annotated[
             StrictStr,
@@ -1117,7 +1117,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke_serialize(cert_serial=cert_serial,
+        _param = self._revoke_serialize(cert_serial=cert_serial,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1137,7 +1137,7 @@ class UICSRApi:
         )
 
     @validate_call
-    def Revoke_without_preload_content(
+    def revoke_without_preload_content(
         self,
         cert_serial: Annotated[
             StrictStr,
@@ -1187,7 +1187,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke_serialize(cert_serial=cert_serial,
+        _param = self._revoke_serialize(cert_serial=cert_serial,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1201,7 +1201,7 @@ class UICSRApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Revoke_serialize(
+    def _revoke_serialize(
         self,
         cert_serial,
         body,
@@ -1266,7 +1266,7 @@ class UICSRApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Revoke2(
+    def revoke2(
         self,
         ophid: Annotated[
             StrictStr,
@@ -1316,7 +1316,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke2_serialize(ophid=ophid,
+        _param = self._revoke2_serialize(ophid=ophid,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -1336,7 +1336,7 @@ class UICSRApi:
         ).data
 
     @validate_call
-    def Revoke2_with_http_info(
+    def revoke2_with_http_info(
         self,
         ophid: Annotated[
             StrictStr,
@@ -1386,7 +1386,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke2_serialize(ophid=ophid,
+        _param = self._revoke2_serialize(ophid=ophid,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -1406,7 +1406,7 @@ class UICSRApi:
         )
 
     @validate_call
-    def Revoke2_without_preload_content(
+    def revoke2_without_preload_content(
         self,
         ophid: Annotated[
             StrictStr,
@@ -1456,7 +1456,7 @@ class UICSRApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Revoke2_serialize(ophid=ophid,
+        _param = self._revoke2_serialize(ophid=ophid,
                                          body=body,
                                          _request_auth=_request_auth,
                                          _content_type=_content_type,
@@ -1470,7 +1470,7 @@ class UICSRApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Revoke2_serialize(
+    def _revoke2_serialize(
         self,
         ophid,
         body,

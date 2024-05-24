@@ -25,43 +25,43 @@ class TestSecurityPoliciesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateSecurityPolicy(self) -> None:
-        """Test case for CreateSecurityPolicy
+    def test_create_security_policy(self) -> None:
+        """Test case for create_security_policy
 
         Create Security Policy.
         """
         pass
 
-    def test_DeleteSecurityPolicy(self) -> None:
-        """Test case for DeleteSecurityPolicy
+    def test_delete_security_policy(self) -> None:
+        """Test case for delete_security_policy
 
         Delete Security Policies.
         """
         pass
 
-    def test_DeleteSingleSecurityPolicy(self) -> None:
-        """Test case for DeleteSingleSecurityPolicy
+    def test_delete_single_security_policy(self) -> None:
+        """Test case for delete_single_security_policy
 
         Delete Security Policy.
         """
         pass
 
-    def test_ListSecurityPolicies(self) -> None:
-        """Test case for ListSecurityPolicies
+    def test_list_security_policies(self) -> None:
+        """Test case for list_security_policies
 
         List Security Policies.
         """
         pass
 
-    def test_ReadSecurityPolicy(self) -> None:
-        """Test case for ReadSecurityPolicy
+    def test_read_security_policy(self) -> None:
+        """Test case for read_security_policy
 
         Read Security Policy.
         """
         pass
 
-    def test_UpdateSecurityPolicy(self) -> None:
-        """Test case for UpdateSecurityPolicy
+    def test_update_security_policy(self) -> None:
+        """Test case for update_security_policy
 
         Update Security Policy.
         """

@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](ServerApi.md#Create) | **POST** /dns/server | Create the Server object.
-[**Delete**](ServerApi.md#Delete) | **DELETE** /dns/server/{id} | Move the Server object to Recyclebin.
-[**List**](ServerApi.md#List) | **GET** /dns/server | List Server objects.
-[**Read**](ServerApi.md#Read) | **GET** /dns/server/{id} | Read the Server object.
-[**Update**](ServerApi.md#Update) | **PATCH** /dns/server/{id} | Update the Server object.
+[**create**](ServerApi.md#create) | **POST** /dns/server | Create the Server object.
+[**delete**](ServerApi.md#delete) | **DELETE** /dns/server/{id} | Move the Server object to Recyclebin.
+[**list**](ServerApi.md#list) | **GET** /dns/server | List Server objects.
+[**read**](ServerApi.md#read) | **GET** /dns/server/{id} | Read the Server object.
+[**update**](ServerApi.md#update) | **PATCH** /dns/server/{id} | Update the Server object.
 
 
-# **Create**
-> CreateServerResponse Create(body, inherit=inherit)
+# **create**
+> CreateServerResponse create(body, inherit=inherit)
 
 Create the Server object.
 
@@ -55,11 +55,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the Server object.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of ServerApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of ServerApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Create: %s\n" % e)
+        print("Exception when calling ServerApi->create: %s\n" % e)
 ```
 
 
@@ -93,8 +93,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the Server object to Recyclebin.
 
@@ -134,9 +134,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the Server object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ServerApi->Delete: %s\n" % e)
+        print("Exception when calling ServerApi->delete: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListServerResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+# **list**
+> ListServerResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
 
 List Server objects.
 
@@ -219,11 +219,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List Server objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
-        print("The response of ServerApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+        print("The response of ServerApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->List: %s\n" % e)
+        print("Exception when calling ServerApi->list: %s\n" % e)
 ```
 
 
@@ -264,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadServerResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadServerResponse read(id, fields=fields, inherit=inherit)
 
 Read the Server object.
 
@@ -308,11 +308,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the Server object.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of ServerApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of ServerApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Read: %s\n" % e)
+        print("Exception when calling ServerApi->read: %s\n" % e)
 ```
 
 
@@ -347,8 +347,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateServerResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateServerResponse update(id, body, inherit=inherit)
 
 Update the Server object.
 
@@ -392,11 +392,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the Server object.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of ServerApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of ServerApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServerApi->Update: %s\n" % e)
+        print("Exception when calling ServerApi->update: %s\n" % e)
 ```
 
 

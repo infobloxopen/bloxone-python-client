@@ -25,8 +25,8 @@ class TestThreatFeedsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ListThreatFeeds(self) -> None:
-        """Test case for ListThreatFeeds
+    def test_list_threat_feeds(self) -> None:
+        """Test case for list_threat_feeds
 
         List Threat Feeds.
         """

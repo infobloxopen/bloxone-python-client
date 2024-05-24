@@ -56,7 +56,7 @@ class Service(BaseModel):
     service_type: StrictStr = Field(
         description=
         "The type of the Service deployed on the Host (`dns`, `cdc`, etc.).")
-    tags: Optional[Dict[str, Any]] = Field(
+    tags: Optional[Dict[str, StrictStr]] = Field(
         default=None, description="Tags associated with this Service.")
     updated_at: Optional[datetime] = Field(
         default=None, description="Timestamp of the latest update on Service.")

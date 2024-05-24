@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](OptionGroupApi.md#Create) | **POST** /dhcp/option_group | Create the DHCP option group.
-[**Delete**](OptionGroupApi.md#Delete) | **DELETE** /dhcp/option_group/{id} | Move the DHCP option group to the recycle bin.
-[**List**](OptionGroupApi.md#List) | **GET** /dhcp/option_group | Retrieve DHCP option groups.
-[**Read**](OptionGroupApi.md#Read) | **GET** /dhcp/option_group/{id} | Retrieve the DHCP option group.
-[**Update**](OptionGroupApi.md#Update) | **PATCH** /dhcp/option_group/{id} | Update the DHCP option group.
+[**create**](OptionGroupApi.md#create) | **POST** /dhcp/option_group | Create the DHCP option group.
+[**delete**](OptionGroupApi.md#delete) | **DELETE** /dhcp/option_group/{id} | Move the DHCP option group to the recycle bin.
+[**list**](OptionGroupApi.md#list) | **GET** /dhcp/option_group | Retrieve DHCP option groups.
+[**read**](OptionGroupApi.md#read) | **GET** /dhcp/option_group/{id} | Retrieve the DHCP option group.
+[**update**](OptionGroupApi.md#update) | **PATCH** /dhcp/option_group/{id} | Update the DHCP option group.
 
 
-# **Create**
-> CreateOptionGroupResponse Create(body)
+# **create**
+> CreateOptionGroupResponse create(body)
 
 Create the DHCP option group.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the DHCP option group.
-        api_response = api_instance.Create(body)
-        print("The response of OptionGroupApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of OptionGroupApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionGroupApi->Create: %s\n" % e)
+        print("Exception when calling OptionGroupApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the DHCP option group to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the DHCP option group to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling OptionGroupApi->Delete: %s\n" % e)
+        print("Exception when calling OptionGroupApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListOptionGroupResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListOptionGroupResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve DHCP option groups.
 
@@ -216,11 +216,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP option groups.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
-        print("The response of OptionGroupApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+        print("The response of OptionGroupApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionGroupApi->List: %s\n" % e)
+        print("Exception when calling OptionGroupApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadOptionGroupResponse Read(id, fields=fields)
+# **read**
+> ReadOptionGroupResponse read(id, fields=fields)
 
 Retrieve the DHCP option group.
 
@@ -303,11 +303,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP option group.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of OptionGroupApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of OptionGroupApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionGroupApi->Read: %s\n" % e)
+        print("Exception when calling OptionGroupApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateOptionGroupResponse Update(id, body)
+# **update**
+> UpdateOptionGroupResponse update(id, body)
 
 Update the DHCP option group.
 
@@ -385,11 +385,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP option group.
-        api_response = api_instance.Update(id, body)
-        print("The response of OptionGroupApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of OptionGroupApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionGroupApi->Update: %s\n" % e)
+        print("Exception when calling OptionGroupApi->update: %s\n" % e)
 ```
 
 

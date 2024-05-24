@@ -4,14 +4,14 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Delete**](KerberosApi.md#Delete) | **DELETE** /keys/kerberos/{id} | Delete the Kerberos key.
-[**List**](KerberosApi.md#List) | **GET** /keys/kerberos | Retrieve Kerberos keys.
-[**Read**](KerberosApi.md#Read) | **GET** /keys/kerberos/{id} | Retrieve the Kerberos key.
-[**Update**](KerberosApi.md#Update) | **PATCH** /keys/kerberos/{id} | Update the Kerberos key.
+[**delete**](KerberosApi.md#delete) | **DELETE** /keys/kerberos/{id} | Delete the Kerberos key.
+[**list**](KerberosApi.md#list) | **GET** /keys/kerberos | Retrieve Kerberos keys.
+[**read**](KerberosApi.md#read) | **GET** /keys/kerberos/{id} | Retrieve the Kerberos key.
+[**update**](KerberosApi.md#update) | **PATCH** /keys/kerberos/{id} | Update the Kerberos key.
 
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete the Kerberos key.
 
@@ -51,9 +51,9 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Delete the Kerberos key.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling KerberosApi->Delete: %s\n" % e)
+        print("Exception when calling KerberosApi->delete: %s\n" % e)
 ```
 
 
@@ -86,8 +86,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListKerberosKeyResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListKerberosKeyResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 Retrieve Kerberos keys.
 
@@ -135,11 +135,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Kerberos keys.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of KerberosApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of KerberosApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->List: %s\n" % e)
+        print("Exception when calling KerberosApi->list: %s\n" % e)
 ```
 
 
@@ -179,8 +179,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadKerberosKeyResponse Read(id, fields=fields)
+# **read**
+> ReadKerberosKeyResponse read(id, fields=fields)
 
 Retrieve the Kerberos key.
 
@@ -222,11 +222,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the Kerberos key.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of KerberosApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of KerberosApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->Read: %s\n" % e)
+        print("Exception when calling KerberosApi->read: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateKerberosKeyResponse Update(id, body)
+# **update**
+> UpdateKerberosKeyResponse update(id, body)
 
 Update the Kerberos key.
 
@@ -304,11 +304,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Update the Kerberos key.
-        api_response = api_instance.Update(id, body)
-        print("The response of KerberosApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of KerberosApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->Update: %s\n" % e)
+        print("Exception when calling KerberosApi->update: %s\n" % e)
 ```
 
 

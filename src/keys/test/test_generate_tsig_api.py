@@ -25,8 +25,8 @@ class TestGenerateTsigApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_GenerateTSIG(self) -> None:
-        """Test case for GenerateTSIG
+    def test_generate_tsig(self) -> None:
+        """Test case for generate_tsig
 
         Generate TSIG key with a random secret.
         """

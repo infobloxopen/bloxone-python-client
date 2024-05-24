@@ -4,12 +4,12 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](DnsUsageApi.md#List) | **GET** /ipam/dns_usage | Retrieve DNS usage for multiple objects.
-[**Read**](DnsUsageApi.md#Read) | **GET** /ipam/dns_usage/{id} | Retrieve the DNS usage.
+[**list**](DnsUsageApi.md#list) | **GET** /ipam/dns_usage | Retrieve DNS usage for multiple objects.
+[**read**](DnsUsageApi.md#read) | **GET** /ipam/dns_usage/{id} | Retrieve the DNS usage.
 
 
-# **List**
-> ListDNSUsageResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
+# **list**
+> ListDNSUsageResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
 
 Retrieve DNS usage for multiple objects.
 
@@ -55,11 +55,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DNS usage for multiple objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
-        print("The response of DnsUsageApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by)
+        print("The response of DnsUsageApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DnsUsageApi->List: %s\n" % e)
+        print("Exception when calling DnsUsageApi->list: %s\n" % e)
 ```
 
 
@@ -97,8 +97,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadDNSUsageResponse Read(id, fields=fields)
+# **read**
+> ReadDNSUsageResponse read(id, fields=fields)
 
 Retrieve the DNS usage.
 
@@ -140,11 +140,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DNS usage.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of DnsUsageApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of DnsUsageApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DnsUsageApi->Read: %s\n" % e)
+        print("Exception when calling DnsUsageApi->read: %s\n" % e)
 ```
 
 

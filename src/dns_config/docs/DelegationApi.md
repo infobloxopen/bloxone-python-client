@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](DelegationApi.md#Create) | **POST** /dns/delegation | Create the Delegation object.
-[**Delete**](DelegationApi.md#Delete) | **DELETE** /dns/delegation/{id} | Moves the Delegation object to Recyclebin.
-[**List**](DelegationApi.md#List) | **GET** /dns/delegation | List Delegation objects.
-[**Read**](DelegationApi.md#Read) | **GET** /dns/delegation/{id} | Read the Delegation object.
-[**Update**](DelegationApi.md#Update) | **PATCH** /dns/delegation/{id} | Update the Delegation object.
+[**create**](DelegationApi.md#create) | **POST** /dns/delegation | Create the Delegation object.
+[**delete**](DelegationApi.md#delete) | **DELETE** /dns/delegation/{id} | Moves the Delegation object to Recyclebin.
+[**list**](DelegationApi.md#list) | **GET** /dns/delegation | List Delegation objects.
+[**read**](DelegationApi.md#read) | **GET** /dns/delegation/{id} | Read the Delegation object.
+[**update**](DelegationApi.md#update) | **PATCH** /dns/delegation/{id} | Update the Delegation object.
 
 
-# **Create**
-> CreateDelegationResponse Create(body)
+# **create**
+> CreateDelegationResponse create(body)
 
 Create the Delegation object.
 
@@ -54,11 +54,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the Delegation object.
-        api_response = api_instance.Create(body)
-        print("The response of DelegationApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of DelegationApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DelegationApi->Create: %s\n" % e)
+        print("Exception when calling DelegationApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Moves the Delegation object to Recyclebin.
 
@@ -132,9 +132,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Moves the Delegation object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling DelegationApi->Delete: %s\n" % e)
+        print("Exception when calling DelegationApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListDelegationResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListDelegationResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
 
 List Delegation objects.
 
@@ -216,11 +216,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List Delegation objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of DelegationApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
+        print("The response of DelegationApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DelegationApi->List: %s\n" % e)
+        print("Exception when calling DelegationApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadDelegationResponse Read(id, fields=fields)
+# **read**
+> ReadDelegationResponse read(id, fields=fields)
 
 Read the Delegation object.
 
@@ -303,11 +303,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the Delegation object.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of DelegationApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of DelegationApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DelegationApi->Read: %s\n" % e)
+        print("Exception when calling DelegationApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateDelegationResponse Update(id, body)
+# **update**
+> UpdateDelegationResponse update(id, body)
 
 Update the Delegation object.
 
@@ -385,11 +385,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the Delegation object.
-        api_response = api_instance.Update(id, body)
-        print("The response of DelegationApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of DelegationApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DelegationApi->Update: %s\n" % e)
+        print("Exception when calling DelegationApi->update: %s\n" % e)
 ```
 
 

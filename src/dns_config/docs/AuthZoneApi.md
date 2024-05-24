@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Copy**](AuthZoneApi.md#Copy) | **POST** /dns/auth_zone/copy | Copies the __AuthZone__ object.
-[**Create**](AuthZoneApi.md#Create) | **POST** /dns/auth_zone | Create the AuthZone object.
-[**Delete**](AuthZoneApi.md#Delete) | **DELETE** /dns/auth_zone/{id} | Moves the AuthZone object to Recyclebin.
-[**List**](AuthZoneApi.md#List) | **GET** /dns/auth_zone | List AuthZone objects.
-[**Read**](AuthZoneApi.md#Read) | **GET** /dns/auth_zone/{id} | Read the AuthZone object.
-[**Update**](AuthZoneApi.md#Update) | **PATCH** /dns/auth_zone/{id} | Update the AuthZone object.
+[**copy**](AuthZoneApi.md#copy) | **POST** /dns/auth_zone/copy | Copies the __AuthZone__ object.
+[**create**](AuthZoneApi.md#create) | **POST** /dns/auth_zone | Create the AuthZone object.
+[**delete**](AuthZoneApi.md#delete) | **DELETE** /dns/auth_zone/{id} | Moves the AuthZone object to Recyclebin.
+[**list**](AuthZoneApi.md#list) | **GET** /dns/auth_zone | List AuthZone objects.
+[**read**](AuthZoneApi.md#read) | **GET** /dns/auth_zone/{id} | Read the AuthZone object.
+[**update**](AuthZoneApi.md#update) | **PATCH** /dns/auth_zone/{id} | Update the AuthZone object.
 
 
-# **Copy**
-> CopyAuthZoneResponse Copy(body)
+# **copy**
+> CopyAuthZoneResponse copy(body)
 
 Copies the __AuthZone__ object.
 
@@ -55,11 +55,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Copies the __AuthZone__ object.
-        api_response = api_instance.Copy(body)
-        print("The response of AuthZoneApi->Copy:\n")
+        api_response = api_instance.copy(body)
+        print("The response of AuthZoneApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->Copy: %s\n" % e)
+        print("Exception when calling AuthZoneApi->copy: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateAuthZoneResponse Create(body, inherit=inherit)
+# **create**
+> CreateAuthZoneResponse create(body, inherit=inherit)
 
 Create the AuthZone object.
 
@@ -136,11 +136,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the AuthZone object.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of AuthZoneApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of AuthZoneApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->Create: %s\n" % e)
+        print("Exception when calling AuthZoneApi->create: %s\n" % e)
 ```
 
 
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Moves the AuthZone object to Recyclebin.
 
@@ -215,9 +215,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Moves the AuthZone object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->Delete: %s\n" % e)
+        print("Exception when calling AuthZoneApi->delete: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListAuthZoneResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+# **list**
+> ListAuthZoneResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
 
 List AuthZone objects.
 
@@ -300,11 +300,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List AuthZone objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
-        print("The response of AuthZoneApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+        print("The response of AuthZoneApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->List: %s\n" % e)
+        print("Exception when calling AuthZoneApi->list: %s\n" % e)
 ```
 
 
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadAuthZoneResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadAuthZoneResponse read(id, fields=fields, inherit=inherit)
 
 Read the AuthZone object.
 
@@ -389,11 +389,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the AuthZone object.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of AuthZoneApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of AuthZoneApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->Read: %s\n" % e)
+        print("Exception when calling AuthZoneApi->read: %s\n" % e)
 ```
 
 
@@ -428,8 +428,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateAuthZoneResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateAuthZoneResponse update(id, body, inherit=inherit)
 
 Update the AuthZone object.
 
@@ -473,11 +473,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the AuthZone object.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of AuthZoneApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of AuthZoneApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthZoneApi->Update: %s\n" % e)
+        print("Exception when calling AuthZoneApi->update: %s\n" % e)
 ```
 
 

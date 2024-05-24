@@ -25,64 +25,64 @@ class TestHostsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_AssignTags(self) -> None:
-        """Test case for AssignTags
+    def test_hosts_assign_tags(self) -> None:
+        """Test case for hosts_assign_tags
 
         Assign tags for list of hosts.
         """
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_hosts_create(self) -> None:
+        """Test case for hosts_create
 
         Create a Host resource.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_hosts_delete(self) -> None:
+        """Test case for hosts_delete
 
         Delete a Host resource.
         """
         pass
 
-    def test_Disconnect(self) -> None:
-        """Test case for Disconnect
+    def test_hosts_disconnect(self) -> None:
+        """Test case for hosts_disconnect
 
         Disconnect a Host by resource ID.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_hosts_list(self) -> None:
+        """Test case for hosts_list
 
         List all the Host resources for an account.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_hosts_read(self) -> None:
+        """Test case for hosts_read
 
         Get a Host resource.
         """
         pass
 
-    def test_Replace(self) -> None:
-        """Test case for Replace
+    def test_hosts_replace(self) -> None:
+        """Test case for hosts_replace
 
         Migrate a Host's configuration from one to another.
         """
         pass
 
-    def test_UnassignTags(self) -> None:
-        """Test case for UnassignTags
+    def test_hosts_unassign_tags(self) -> None:
+        """Test case for hosts_unassign_tags
 
         Unassign tag for the list hosts.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_hosts_update(self) -> None:
+        """Test case for hosts_update
 
         Update a Host resource.
         """

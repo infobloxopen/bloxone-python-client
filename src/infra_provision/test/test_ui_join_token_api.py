@@ -25,43 +25,43 @@ class TestUIJoinTokenApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         User can create a join token. Join token is random character string which is used for instant validation of new hosts.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
         """
         pass
 
-    def test_DeleteSet(self) -> None:
-        """Test case for DeleteSet
+    def test_delete_set(self) -> None:
+        """Test case for delete_set
 
         User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         User can list the join tokens for an account.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         User can get the join token providing its resource id in the parameter.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         User can modify the tags or expiration time of a join token.
         """

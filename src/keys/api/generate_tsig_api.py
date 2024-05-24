@@ -40,7 +40,7 @@ class GenerateTsigApi:
         self.api_client = api_client
 
     @validate_call
-    def GenerateTSIG(
+    def generate_tsig(
         self,
         algorithm: Annotated[
             Optional[StrictStr],
@@ -87,11 +87,11 @@ class GenerateTsigApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GenerateTSIG_serialize(algorithm=algorithm,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._generate_tsig_serialize(algorithm=algorithm,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenerateTSIGResponse",
@@ -106,7 +106,7 @@ class GenerateTsigApi:
         ).data
 
     @validate_call
-    def GenerateTSIG_with_http_info(
+    def generate_tsig_with_http_info(
         self,
         algorithm: Annotated[
             Optional[StrictStr],
@@ -153,11 +153,11 @@ class GenerateTsigApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GenerateTSIG_serialize(algorithm=algorithm,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._generate_tsig_serialize(algorithm=algorithm,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenerateTSIGResponse",
@@ -172,7 +172,7 @@ class GenerateTsigApi:
         )
 
     @validate_call
-    def GenerateTSIG_without_preload_content(
+    def generate_tsig_without_preload_content(
         self,
         algorithm: Annotated[
             Optional[StrictStr],
@@ -219,11 +219,11 @@ class GenerateTsigApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._GenerateTSIG_serialize(algorithm=algorithm,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._generate_tsig_serialize(algorithm=algorithm,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GenerateTSIGResponse",
@@ -232,7 +232,7 @@ class GenerateTsigApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _GenerateTSIG_serialize(
+    def _generate_tsig_serialize(
         self,
         algorithm,
         _request_auth,

@@ -25,8 +25,8 @@ class TestSecurityPolicyRulesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ListSecurityPolicyRules(self) -> None:
-        """Test case for ListSecurityPolicyRules
+    def test_list_security_policy_rules(self) -> None:
+        """Test case for list_security_policy_rules
 
         List Security Policy Rules.
         """

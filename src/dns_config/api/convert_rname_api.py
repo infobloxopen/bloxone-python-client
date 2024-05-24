@@ -39,7 +39,7 @@ class ConvertRnameApi:
         self.api_client = api_client
 
     @validate_call
-    def ConvertRName(
+    def convert_r_name(
         self,
         email_address: Annotated[StrictStr,
                                  Field(description="Input email address.")],
@@ -82,11 +82,11 @@ class ConvertRnameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ConvertRName_serialize(email_address=email_address,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._convert_r_name_serialize(email_address=email_address,
+                                                _request_auth=_request_auth,
+                                                _content_type=_content_type,
+                                                _headers=_headers,
+                                                _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConvertRNameResponse",
@@ -101,7 +101,7 @@ class ConvertRnameApi:
         ).data
 
     @validate_call
-    def ConvertRName_with_http_info(
+    def convert_r_name_with_http_info(
         self,
         email_address: Annotated[StrictStr,
                                  Field(description="Input email address.")],
@@ -144,11 +144,11 @@ class ConvertRnameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ConvertRName_serialize(email_address=email_address,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._convert_r_name_serialize(email_address=email_address,
+                                                _request_auth=_request_auth,
+                                                _content_type=_content_type,
+                                                _headers=_headers,
+                                                _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConvertRNameResponse",
@@ -163,7 +163,7 @@ class ConvertRnameApi:
         )
 
     @validate_call
-    def ConvertRName_without_preload_content(
+    def convert_r_name_without_preload_content(
         self,
         email_address: Annotated[StrictStr,
                                  Field(description="Input email address.")],
@@ -206,11 +206,11 @@ class ConvertRnameApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ConvertRName_serialize(email_address=email_address,
-                                              _request_auth=_request_auth,
-                                              _content_type=_content_type,
-                                              _headers=_headers,
-                                              _host_index=_host_index)
+        _param = self._convert_r_name_serialize(email_address=email_address,
+                                                _request_auth=_request_auth,
+                                                _content_type=_content_type,
+                                                _headers=_headers,
+                                                _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ConvertRNameResponse",
@@ -219,7 +219,7 @@ class ConvertRnameApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ConvertRName_serialize(
+    def _convert_r_name_serialize(
         self,
         email_address,
         _request_auth,

@@ -25,8 +25,8 @@ class TestContentCategoriesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_ListContentCategories(self) -> None:
-        """Test case for ListContentCategories
+    def test_list_content_categories(self) -> None:
+        """Test case for list_content_categories
 
         List Content Categories.
         """

@@ -4,11 +4,11 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListSecurityPolicyRules**](SecurityPolicyRulesApi.md#ListSecurityPolicyRules) | **GET** /security_policy_rules | List Security Policy Rules.
+[**list_security_policy_rules**](SecurityPolicyRulesApi.md#list_security_policy_rules) | **GET** /security_policy_rules | List Security Policy Rules.
 
 
-# **ListSecurityPolicyRules**
-> SecurityPolicyRuleMultiResponse ListSecurityPolicyRules(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+# **list_security_policy_rules**
+> SecurityPolicyRuleMultiResponse list_security_policy_rules(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
 
 List Security Policy Rules.
 
@@ -42,11 +42,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Security Policy Rules.
-        api_response = api_instance.ListSecurityPolicyRules(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
-        print("The response of SecurityPolicyRulesApi->ListSecurityPolicyRules:\n")
+        api_response = api_instance.list_security_policy_rules(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+        print("The response of SecurityPolicyRulesApi->list_security_policy_rules:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SecurityPolicyRulesApi->ListSecurityPolicyRules: %s\n" % e)
+        print("Exception when calling SecurityPolicyRulesApi->list_security_policy_rules: %s\n" % e)
 ```
 
 

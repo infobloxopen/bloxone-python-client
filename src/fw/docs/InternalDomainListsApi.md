@@ -4,17 +4,17 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateInternalDomains**](InternalDomainListsApi.md#CreateInternalDomains) | **POST** /internal_domain_lists | Create Internal Domains.
-[**DeleteInternalDomains**](InternalDomainListsApi.md#DeleteInternalDomains) | **DELETE** /internal_domain_lists | Delete Internal Domains.
-[**DeleteSingleInternalDomains**](InternalDomainListsApi.md#DeleteSingleInternalDomains) | **DELETE** /internal_domain_lists/{id} | Delete Internal Domains.
-[**InternalDomainsItemsPartialUpdate**](InternalDomainListsApi.md#InternalDomainsItemsPartialUpdate) | **PATCH** /internal_domain_lists/{id}/items | Patch Internal Domains.
-[**ListInternalDomains**](InternalDomainListsApi.md#ListInternalDomains) | **GET** /internal_domain_lists | List Internal Domains.
-[**ReadInternalDomains**](InternalDomainListsApi.md#ReadInternalDomains) | **GET** /internal_domain_lists/{id} | Read Internal Domains.
-[**UpdateInternalDomains**](InternalDomainListsApi.md#UpdateInternalDomains) | **PUT** /internal_domain_lists/{id} | Update Internal Domains.
+[**create_internal_domains**](InternalDomainListsApi.md#create_internal_domains) | **POST** /internal_domain_lists | Create Internal Domains.
+[**delete_internal_domains**](InternalDomainListsApi.md#delete_internal_domains) | **DELETE** /internal_domain_lists | Delete Internal Domains.
+[**delete_single_internal_domains**](InternalDomainListsApi.md#delete_single_internal_domains) | **DELETE** /internal_domain_lists/{id} | Delete Internal Domains.
+[**internal_domains_items_partial_update**](InternalDomainListsApi.md#internal_domains_items_partial_update) | **PATCH** /internal_domain_lists/{id}/items | Patch Internal Domains.
+[**list_internal_domains**](InternalDomainListsApi.md#list_internal_domains) | **GET** /internal_domain_lists | List Internal Domains.
+[**read_internal_domains**](InternalDomainListsApi.md#read_internal_domains) | **GET** /internal_domain_lists/{id} | Read Internal Domains.
+[**update_internal_domains**](InternalDomainListsApi.md#update_internal_domains) | **PUT** /internal_domain_lists/{id} | Update Internal Domains.
 
 
-# **CreateInternalDomains**
-> InternalDomainsCreateResponse CreateInternalDomains(body)
+# **create_internal_domains**
+> InternalDomainsCreateResponse create_internal_domains(body)
 
 Create Internal Domains.
 
@@ -45,11 +45,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Internal Domains.
-        api_response = api_instance.CreateInternalDomains(body)
-        print("The response of InternalDomainListsApi->CreateInternalDomains:\n")
+        api_response = api_instance.create_internal_domains(body)
+        print("The response of InternalDomainListsApi->create_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->CreateInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->create_internal_domains: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteInternalDomains**
-> DeleteInternalDomains(body)
+# **delete_internal_domains**
+> delete_internal_domains(body)
 
 Delete Internal Domains.
 
@@ -116,9 +116,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Internal Domains.
-        api_instance.DeleteInternalDomains(body)
+        api_instance.delete_internal_domains(body)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->DeleteInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->delete_internal_domains: %s\n" % e)
 ```
 
 
@@ -154,8 +154,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleInternalDomains**
-> DeleteSingleInternalDomains(id)
+# **delete_single_internal_domains**
+> delete_single_internal_domains(id)
 
 Delete Internal Domains.
 
@@ -184,9 +184,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Internal Domains.
-        api_instance.DeleteSingleInternalDomains(id)
+        api_instance.delete_single_internal_domains(id)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->DeleteSingleInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->delete_single_internal_domains: %s\n" % e)
 ```
 
 
@@ -222,8 +222,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **InternalDomainsItemsPartialUpdate**
-> object InternalDomainsItemsPartialUpdate(id, body)
+# **internal_domains_items_partial_update**
+> object internal_domains_items_partial_update(id, body)
 
 Patch Internal Domains.
 
@@ -254,11 +254,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Patch Internal Domains.
-        api_response = api_instance.InternalDomainsItemsPartialUpdate(id, body)
-        print("The response of InternalDomainListsApi->InternalDomainsItemsPartialUpdate:\n")
+        api_response = api_instance.internal_domains_items_partial_update(id, body)
+        print("The response of InternalDomainListsApi->internal_domains_items_partial_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->InternalDomainsItemsPartialUpdate: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->internal_domains_items_partial_update: %s\n" % e)
 ```
 
 
@@ -295,8 +295,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListInternalDomains**
-> InternalDomainsMultiResponse ListInternalDomains(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_internal_domains**
+> InternalDomainsMultiResponse list_internal_domains(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List Internal Domains.
 
@@ -332,11 +332,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Internal Domains.
-        api_response = api_instance.ListInternalDomains(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of InternalDomainListsApi->ListInternalDomains:\n")
+        api_response = api_instance.list_internal_domains(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of InternalDomainListsApi->list_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->ListInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->list_internal_domains: %s\n" % e)
 ```
 
 
@@ -376,8 +376,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadInternalDomains**
-> InternalDomainsReadResponse ReadInternalDomains(id, fields=fields, name=name, offset=offset, limit=limit, page_token=page_token)
+# **read_internal_domains**
+> InternalDomainsReadResponse read_internal_domains(id, fields=fields, name=name, offset=offset, limit=limit, page_token=page_token)
 
 Read Internal Domains.
 
@@ -412,11 +412,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Internal Domains.
-        api_response = api_instance.ReadInternalDomains(id, fields=fields, name=name, offset=offset, limit=limit, page_token=page_token)
-        print("The response of InternalDomainListsApi->ReadInternalDomains:\n")
+        api_response = api_instance.read_internal_domains(id, fields=fields, name=name, offset=offset, limit=limit, page_token=page_token)
+        print("The response of InternalDomainListsApi->read_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->ReadInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->read_internal_domains: %s\n" % e)
 ```
 
 
@@ -456,8 +456,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateInternalDomains**
-> InternalDomainsUpdateResponse UpdateInternalDomains(id, body)
+# **update_internal_domains**
+> InternalDomainsUpdateResponse update_internal_domains(id, body)
 
 Update Internal Domains.
 
@@ -489,11 +489,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Internal Domains.
-        api_response = api_instance.UpdateInternalDomains(id, body)
-        print("The response of InternalDomainListsApi->UpdateInternalDomains:\n")
+        api_response = api_instance.update_internal_domains(id, body)
+        print("The response of InternalDomainListsApi->update_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->UpdateInternalDomains: %s\n" % e)
+        print("Exception when calling InternalDomainListsApi->update_internal_domains: %s\n" % e)
 ```
 
 

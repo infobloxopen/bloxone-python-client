@@ -59,11 +59,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the ACL object.
-        api_response = api_instance.Create(body)
-        print("The response of AclApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of AclApi->create:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AclApi->Create: %s\n" % e)
+        print("Exception when calling AclApi->create: %s\n" % e)
 
 ```
 
@@ -73,64 +73,64 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AclApi* | [**Create**](dns_config/docs/AclApi.md#create) | **POST** /dns/acl | Create the ACL object.
-*AclApi* | [**Delete**](dns_config/docs/AclApi.md#delete) | **DELETE** /dns/acl/{id} | Move the ACL object to Recyclebin.
-*AclApi* | [**List**](dns_config/docs/AclApi.md#list) | **GET** /dns/acl | List ACL objects.
-*AclApi* | [**Read**](dns_config/docs/AclApi.md#read) | **GET** /dns/acl/{id} | Read the ACL object.
-*AclApi* | [**Update**](dns_config/docs/AclApi.md#update) | **PATCH** /dns/acl/{id} | Update the ACL object.
-*AuthNsgApi* | [**Create**](dns_config/docs/AuthNsgApi.md#create) | **POST** /dns/auth_nsg | Create the AuthNSG object.
-*AuthNsgApi* | [**Delete**](dns_config/docs/AuthNsgApi.md#delete) | **DELETE** /dns/auth_nsg/{id} | Move the AuthNSG object to Recyclebin.
-*AuthNsgApi* | [**List**](dns_config/docs/AuthNsgApi.md#list) | **GET** /dns/auth_nsg | List AuthNSG objects.
-*AuthNsgApi* | [**Read**](dns_config/docs/AuthNsgApi.md#read) | **GET** /dns/auth_nsg/{id} | Read the AuthNSG object.
-*AuthNsgApi* | [**Update**](dns_config/docs/AuthNsgApi.md#update) | **PATCH** /dns/auth_nsg/{id} | Update the AuthNSG object.
-*AuthZoneApi* | [**Copy**](dns_config/docs/AuthZoneApi.md#copy) | **POST** /dns/auth_zone/copy | Copies the __AuthZone__ object.
-*AuthZoneApi* | [**Create**](dns_config/docs/AuthZoneApi.md#create) | **POST** /dns/auth_zone | Create the AuthZone object.
-*AuthZoneApi* | [**Delete**](dns_config/docs/AuthZoneApi.md#delete) | **DELETE** /dns/auth_zone/{id} | Moves the AuthZone object to Recyclebin.
-*AuthZoneApi* | [**List**](dns_config/docs/AuthZoneApi.md#list) | **GET** /dns/auth_zone | List AuthZone objects.
-*AuthZoneApi* | [**Read**](dns_config/docs/AuthZoneApi.md#read) | **GET** /dns/auth_zone/{id} | Read the AuthZone object.
-*AuthZoneApi* | [**Update**](dns_config/docs/AuthZoneApi.md#update) | **PATCH** /dns/auth_zone/{id} | Update the AuthZone object.
-*CacheFlushApi* | [**Create**](dns_config/docs/CacheFlushApi.md#create) | **POST** /dns/cache_flush | Create the Cache Flush object.
-*ConvertDomainNameApi* | [**Convert**](dns_config/docs/ConvertDomainNameApi.md#convert) | **GET** /dns/convert_domain_name/{domain_name} | Convert the object.
-*ConvertRnameApi* | [**ConvertRName**](dns_config/docs/ConvertRnameApi.md#convertrname) | **GET** /dns/convert_rname/{email_address} | Convert the object.
-*DelegationApi* | [**Create**](dns_config/docs/DelegationApi.md#create) | **POST** /dns/delegation | Create the Delegation object.
-*DelegationApi* | [**Delete**](dns_config/docs/DelegationApi.md#delete) | **DELETE** /dns/delegation/{id} | Moves the Delegation object to Recyclebin.
-*DelegationApi* | [**List**](dns_config/docs/DelegationApi.md#list) | **GET** /dns/delegation | List Delegation objects.
-*DelegationApi* | [**Read**](dns_config/docs/DelegationApi.md#read) | **GET** /dns/delegation/{id} | Read the Delegation object.
-*DelegationApi* | [**Update**](dns_config/docs/DelegationApi.md#update) | **PATCH** /dns/delegation/{id} | Update the Delegation object.
-*ForwardNsgApi* | [**Create**](dns_config/docs/ForwardNsgApi.md#create) | **POST** /dns/forward_nsg | Create the ForwardNSG object.
-*ForwardNsgApi* | [**Delete**](dns_config/docs/ForwardNsgApi.md#delete) | **DELETE** /dns/forward_nsg/{id} | Move the ForwardNSG object to Recyclebin.
-*ForwardNsgApi* | [**List**](dns_config/docs/ForwardNsgApi.md#list) | **GET** /dns/forward_nsg | List ForwardNSG objects.
-*ForwardNsgApi* | [**Read**](dns_config/docs/ForwardNsgApi.md#read) | **GET** /dns/forward_nsg/{id} | Read the ForwardNSG object.
-*ForwardNsgApi* | [**Update**](dns_config/docs/ForwardNsgApi.md#update) | **PATCH** /dns/forward_nsg/{id} | Update the ForwardNSG object.
-*ForwardZoneApi* | [**Copy**](dns_config/docs/ForwardZoneApi.md#copy) | **POST** /dns/forward_zone/copy | Copies the __ForwardZone__ object.
-*ForwardZoneApi* | [**Create**](dns_config/docs/ForwardZoneApi.md#create) | **POST** /dns/forward_zone | Create the ForwardZone object.
-*ForwardZoneApi* | [**Delete**](dns_config/docs/ForwardZoneApi.md#delete) | **DELETE** /dns/forward_zone/{id} | Move the Forward Zone object to Recyclebin.
-*ForwardZoneApi* | [**List**](dns_config/docs/ForwardZoneApi.md#list) | **GET** /dns/forward_zone | List Forward Zone objects.
-*ForwardZoneApi* | [**Read**](dns_config/docs/ForwardZoneApi.md#read) | **GET** /dns/forward_zone/{id} | Read the Forward Zone object.
-*ForwardZoneApi* | [**Update**](dns_config/docs/ForwardZoneApi.md#update) | **PATCH** /dns/forward_zone/{id} | Update the Forward Zone object.
-*GlobalApi* | [**Read**](dns_config/docs/GlobalApi.md#read) | **GET** /dns/global | Read the Global configuration object.
-*GlobalApi* | [**Read2**](dns_config/docs/GlobalApi.md#read2) | **GET** /dns/global/{id} | Read the Global configuration object.
-*GlobalApi* | [**Update**](dns_config/docs/GlobalApi.md#update) | **PATCH** /dns/global | Update the Global configuration object.
-*GlobalApi* | [**Update2**](dns_config/docs/GlobalApi.md#update2) | **PATCH** /dns/global/{id} | Update the Global configuration object.
-*HostApi* | [**List**](dns_config/docs/HostApi.md#list) | **GET** /dns/host | List DNS Host objects.
-*HostApi* | [**Read**](dns_config/docs/HostApi.md#read) | **GET** /dns/host/{id} | Read the DNS Host object.
-*HostApi* | [**Update**](dns_config/docs/HostApi.md#update) | **PATCH** /dns/host/{id} | Update the DNS Host object.
-*LbdnApi* | [**Create**](dns_config/docs/LbdnApi.md#create) | **POST** /dtc/lbdn | Create the __LBDN__ object.
-*LbdnApi* | [**Delete**](dns_config/docs/LbdnApi.md#delete) | **DELETE** /dtc/lbdn/{id} | Delete the __LBDN__ object.
-*LbdnApi* | [**List**](dns_config/docs/LbdnApi.md#list) | **GET** /dtc/lbdn | List __LBDN__ objects.
-*LbdnApi* | [**Read**](dns_config/docs/LbdnApi.md#read) | **GET** /dtc/lbdn/{id} | Read the __LBDN__ object.
-*LbdnApi* | [**Update**](dns_config/docs/LbdnApi.md#update) | **PATCH** /dtc/lbdn/{id} | Update the __LBDN__ object.
-*ServerApi* | [**Create**](dns_config/docs/ServerApi.md#create) | **POST** /dns/server | Create the Server object.
-*ServerApi* | [**Delete**](dns_config/docs/ServerApi.md#delete) | **DELETE** /dns/server/{id} | Move the Server object to Recyclebin.
-*ServerApi* | [**List**](dns_config/docs/ServerApi.md#list) | **GET** /dns/server | List Server objects.
-*ServerApi* | [**Read**](dns_config/docs/ServerApi.md#read) | **GET** /dns/server/{id} | Read the Server object.
-*ServerApi* | [**Update**](dns_config/docs/ServerApi.md#update) | **PATCH** /dns/server/{id} | Update the Server object.
-*ViewApi* | [**BulkCopy**](dns_config/docs/ViewApi.md#bulkcopy) | **POST** /dns/view/bulk_copy | Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
-*ViewApi* | [**Create**](dns_config/docs/ViewApi.md#create) | **POST** /dns/view | Create the View object.
-*ViewApi* | [**Delete**](dns_config/docs/ViewApi.md#delete) | **DELETE** /dns/view/{id} | Move the View object to Recyclebin.
-*ViewApi* | [**List**](dns_config/docs/ViewApi.md#list) | **GET** /dns/view | List View objects.
-*ViewApi* | [**Read**](dns_config/docs/ViewApi.md#read) | **GET** /dns/view/{id} | Read the View object.
-*ViewApi* | [**Update**](dns_config/docs/ViewApi.md#update) | **PATCH** /dns/view/{id} | Update the View object.
+*AclApi* | [**create**](dns_config/docs/AclApi.md#create) | **POST** /dns/acl | Create the ACL object.
+*AclApi* | [**delete**](dns_config/docs/AclApi.md#delete) | **DELETE** /dns/acl/{id} | Move the ACL object to Recyclebin.
+*AclApi* | [**list**](dns_config/docs/AclApi.md#list) | **GET** /dns/acl | List ACL objects.
+*AclApi* | [**read**](dns_config/docs/AclApi.md#read) | **GET** /dns/acl/{id} | Read the ACL object.
+*AclApi* | [**update**](dns_config/docs/AclApi.md#update) | **PATCH** /dns/acl/{id} | Update the ACL object.
+*AuthNsgApi* | [**create**](dns_config/docs/AuthNsgApi.md#create) | **POST** /dns/auth_nsg | Create the AuthNSG object.
+*AuthNsgApi* | [**delete**](dns_config/docs/AuthNsgApi.md#delete) | **DELETE** /dns/auth_nsg/{id} | Move the AuthNSG object to Recyclebin.
+*AuthNsgApi* | [**list**](dns_config/docs/AuthNsgApi.md#list) | **GET** /dns/auth_nsg | List AuthNSG objects.
+*AuthNsgApi* | [**read**](dns_config/docs/AuthNsgApi.md#read) | **GET** /dns/auth_nsg/{id} | Read the AuthNSG object.
+*AuthNsgApi* | [**update**](dns_config/docs/AuthNsgApi.md#update) | **PATCH** /dns/auth_nsg/{id} | Update the AuthNSG object.
+*AuthZoneApi* | [**copy**](dns_config/docs/AuthZoneApi.md#copy) | **POST** /dns/auth_zone/copy | Copies the __AuthZone__ object.
+*AuthZoneApi* | [**create**](dns_config/docs/AuthZoneApi.md#create) | **POST** /dns/auth_zone | Create the AuthZone object.
+*AuthZoneApi* | [**delete**](dns_config/docs/AuthZoneApi.md#delete) | **DELETE** /dns/auth_zone/{id} | Moves the AuthZone object to Recyclebin.
+*AuthZoneApi* | [**list**](dns_config/docs/AuthZoneApi.md#list) | **GET** /dns/auth_zone | List AuthZone objects.
+*AuthZoneApi* | [**read**](dns_config/docs/AuthZoneApi.md#read) | **GET** /dns/auth_zone/{id} | Read the AuthZone object.
+*AuthZoneApi* | [**update**](dns_config/docs/AuthZoneApi.md#update) | **PATCH** /dns/auth_zone/{id} | Update the AuthZone object.
+*CacheFlushApi* | [**create**](dns_config/docs/CacheFlushApi.md#create) | **POST** /dns/cache_flush | Create the Cache Flush object.
+*ConvertDomainNameApi* | [**convert**](dns_config/docs/ConvertDomainNameApi.md#convert) | **GET** /dns/convert_domain_name/{domain_name} | Convert the object.
+*ConvertRnameApi* | [**convert_r_name**](dns_config/docs/ConvertRnameApi.md#convert_r_name) | **GET** /dns/convert_rname/{email_address} | Convert the object.
+*DelegationApi* | [**create**](dns_config/docs/DelegationApi.md#create) | **POST** /dns/delegation | Create the Delegation object.
+*DelegationApi* | [**delete**](dns_config/docs/DelegationApi.md#delete) | **DELETE** /dns/delegation/{id} | Moves the Delegation object to Recyclebin.
+*DelegationApi* | [**list**](dns_config/docs/DelegationApi.md#list) | **GET** /dns/delegation | List Delegation objects.
+*DelegationApi* | [**read**](dns_config/docs/DelegationApi.md#read) | **GET** /dns/delegation/{id} | Read the Delegation object.
+*DelegationApi* | [**update**](dns_config/docs/DelegationApi.md#update) | **PATCH** /dns/delegation/{id} | Update the Delegation object.
+*ForwardNsgApi* | [**create**](dns_config/docs/ForwardNsgApi.md#create) | **POST** /dns/forward_nsg | Create the ForwardNSG object.
+*ForwardNsgApi* | [**delete**](dns_config/docs/ForwardNsgApi.md#delete) | **DELETE** /dns/forward_nsg/{id} | Move the ForwardNSG object to Recyclebin.
+*ForwardNsgApi* | [**list**](dns_config/docs/ForwardNsgApi.md#list) | **GET** /dns/forward_nsg | List ForwardNSG objects.
+*ForwardNsgApi* | [**read**](dns_config/docs/ForwardNsgApi.md#read) | **GET** /dns/forward_nsg/{id} | Read the ForwardNSG object.
+*ForwardNsgApi* | [**update**](dns_config/docs/ForwardNsgApi.md#update) | **PATCH** /dns/forward_nsg/{id} | Update the ForwardNSG object.
+*ForwardZoneApi* | [**copy**](dns_config/docs/ForwardZoneApi.md#copy) | **POST** /dns/forward_zone/copy | Copies the __ForwardZone__ object.
+*ForwardZoneApi* | [**create**](dns_config/docs/ForwardZoneApi.md#create) | **POST** /dns/forward_zone | Create the ForwardZone object.
+*ForwardZoneApi* | [**delete**](dns_config/docs/ForwardZoneApi.md#delete) | **DELETE** /dns/forward_zone/{id} | Move the Forward Zone object to Recyclebin.
+*ForwardZoneApi* | [**list**](dns_config/docs/ForwardZoneApi.md#list) | **GET** /dns/forward_zone | List Forward Zone objects.
+*ForwardZoneApi* | [**read**](dns_config/docs/ForwardZoneApi.md#read) | **GET** /dns/forward_zone/{id} | Read the Forward Zone object.
+*ForwardZoneApi* | [**update**](dns_config/docs/ForwardZoneApi.md#update) | **PATCH** /dns/forward_zone/{id} | Update the Forward Zone object.
+*GlobalApi* | [**read**](dns_config/docs/GlobalApi.md#read) | **GET** /dns/global | Read the Global configuration object.
+*GlobalApi* | [**read2**](dns_config/docs/GlobalApi.md#read2) | **GET** /dns/global/{id} | Read the Global configuration object.
+*GlobalApi* | [**update**](dns_config/docs/GlobalApi.md#update) | **PATCH** /dns/global | Update the Global configuration object.
+*GlobalApi* | [**update2**](dns_config/docs/GlobalApi.md#update2) | **PATCH** /dns/global/{id} | Update the Global configuration object.
+*HostApi* | [**list**](dns_config/docs/HostApi.md#list) | **GET** /dns/host | List DNS Host objects.
+*HostApi* | [**read**](dns_config/docs/HostApi.md#read) | **GET** /dns/host/{id} | Read the DNS Host object.
+*HostApi* | [**update**](dns_config/docs/HostApi.md#update) | **PATCH** /dns/host/{id} | Update the DNS Host object.
+*LbdnApi* | [**create**](dns_config/docs/LbdnApi.md#create) | **POST** /dtc/lbdn | Create the __LBDN__ object.
+*LbdnApi* | [**delete**](dns_config/docs/LbdnApi.md#delete) | **DELETE** /dtc/lbdn/{id} | Delete the __LBDN__ object.
+*LbdnApi* | [**list**](dns_config/docs/LbdnApi.md#list) | **GET** /dtc/lbdn | List __LBDN__ objects.
+*LbdnApi* | [**read**](dns_config/docs/LbdnApi.md#read) | **GET** /dtc/lbdn/{id} | Read the __LBDN__ object.
+*LbdnApi* | [**update**](dns_config/docs/LbdnApi.md#update) | **PATCH** /dtc/lbdn/{id} | Update the __LBDN__ object.
+*ServerApi* | [**create**](dns_config/docs/ServerApi.md#create) | **POST** /dns/server | Create the Server object.
+*ServerApi* | [**delete**](dns_config/docs/ServerApi.md#delete) | **DELETE** /dns/server/{id} | Move the Server object to Recyclebin.
+*ServerApi* | [**list**](dns_config/docs/ServerApi.md#list) | **GET** /dns/server | List Server objects.
+*ServerApi* | [**read**](dns_config/docs/ServerApi.md#read) | **GET** /dns/server/{id} | Read the Server object.
+*ServerApi* | [**update**](dns_config/docs/ServerApi.md#update) | **PATCH** /dns/server/{id} | Update the Server object.
+*ViewApi* | [**bulk_copy**](dns_config/docs/ViewApi.md#bulk_copy) | **POST** /dns/view/bulk_copy | Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
+*ViewApi* | [**create**](dns_config/docs/ViewApi.md#create) | **POST** /dns/view | Create the View object.
+*ViewApi* | [**delete**](dns_config/docs/ViewApi.md#delete) | **DELETE** /dns/view/{id} | Move the View object to Recyclebin.
+*ViewApi* | [**list**](dns_config/docs/ViewApi.md#list) | **GET** /dns/view | List View objects.
+*ViewApi* | [**read**](dns_config/docs/ViewApi.md#read) | **GET** /dns/view/{id} | Read the View object.
+*ViewApi* | [**update**](dns_config/docs/ViewApi.md#update) | **PATCH** /dns/view/{id} | Update the View object.
 
 
 ## Documentation For Models

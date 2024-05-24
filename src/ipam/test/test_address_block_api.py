@@ -25,85 +25,85 @@ class TestAddressBlockApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Copy(self) -> None:
-        """Test case for Copy
+    def test_copy(self) -> None:
+        """Test case for copy
 
         Copy the address block.
         """
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create the address block.
         """
         pass
 
-    def test_CreateNextAvailableAB(self) -> None:
-        """Test case for CreateNextAvailableAB
+    def test_create_next_available_ab(self) -> None:
+        """Test case for create_next_available_ab
 
         Create the Next Available Address Block object.
         """
         pass
 
-    def test_CreateNextAvailableIP(self) -> None:
-        """Test case for CreateNextAvailableIP
+    def test_create_next_available_ip(self) -> None:
+        """Test case for create_next_available_ip
 
         Allocate the next available IP address.
         """
         pass
 
-    def test_CreateNextAvailableSubnet(self) -> None:
-        """Test case for CreateNextAvailableSubnet
+    def test_create_next_available_subnet(self) -> None:
+        """Test case for create_next_available_subnet
 
         Create the Next Available Subnet object.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Move the address block to the recycle bin.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve the address blocks.
         """
         pass
 
-    def test_ListNextAvailableAB(self) -> None:
-        """Test case for ListNextAvailableAB
+    def test_list_next_available_ab(self) -> None:
+        """Test case for list_next_available_ab
 
         List Next Available Address Block objects.
         """
         pass
 
-    def test_ListNextAvailableIP(self) -> None:
-        """Test case for ListNextAvailableIP
+    def test_list_next_available_ip(self) -> None:
+        """Test case for list_next_available_ip
 
         Retrieve the next available IP address.
         """
         pass
 
-    def test_ListNextAvailableSubnet(self) -> None:
-        """Test case for ListNextAvailableSubnet
+    def test_list_next_available_subnet(self) -> None:
+        """Test case for list_next_available_subnet
 
         List Next Available Subnet objects.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the address block.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the address block.
         """

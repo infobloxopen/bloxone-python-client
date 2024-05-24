@@ -4,19 +4,19 @@ All URIs are relative to *http://csp.infoblox.com/api/infra/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignTags**](HostsApi.md#AssignTags) | **POST** /hosts/assign_tags | Assign tags for list of hosts.
-[**Create**](HostsApi.md#Create) | **POST** /hosts | Create a Host resource.
-[**Delete**](HostsApi.md#Delete) | **DELETE** /hosts/{id} | Delete a Host resource.
-[**Disconnect**](HostsApi.md#Disconnect) | **POST** /hosts/{id}/disconnect | Disconnect a Host by resource ID.
-[**List**](HostsApi.md#List) | **GET** /hosts | List all the Host resources for an account.
-[**Read**](HostsApi.md#Read) | **GET** /hosts/{id} | Get a Host resource.
-[**Replace**](HostsApi.md#Replace) | **POST** /hosts/{from.resource_id}/replace/{to.resource_id} | Migrate a Host&#39;s configuration from one to another.
-[**UnassignTags**](HostsApi.md#UnassignTags) | **POST** /hosts/unassign_tags | Unassign tag for the list hosts.
-[**Update**](HostsApi.md#Update) | **PUT** /hosts/{id} | Update a Host resource.
+[**assign_tags**](HostsApi.md#assign_tags) | **POST** /hosts/assign_tags | Assign tags for list of hosts.
+[**create**](HostsApi.md#create) | **POST** /hosts | Create a Host resource.
+[**delete**](HostsApi.md#delete) | **DELETE** /hosts/{id} | Delete a Host resource.
+[**disconnect**](HostsApi.md#disconnect) | **POST** /hosts/{id}/disconnect | Disconnect a Host by resource ID.
+[**list**](HostsApi.md#list) | **GET** /hosts | List all the Host resources for an account.
+[**read**](HostsApi.md#read) | **GET** /hosts/{id} | Get a Host resource.
+[**replace**](HostsApi.md#replace) | **POST** /hosts/{from.resource_id}/replace/{to.resource_id} | Migrate a Host&#39;s configuration from one to another.
+[**unassign_tags**](HostsApi.md#unassign_tags) | **POST** /hosts/unassign_tags | Unassign tag for the list hosts.
+[**update**](HostsApi.md#update) | **PUT** /hosts/{id} | Update a Host resource.
 
 
-# **AssignTags**
-> object AssignTags(body)
+# **assign_tags**
+> object assign_tags(body)
 
 Assign tags for list of hosts.
 
@@ -57,11 +57,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Assign tags for list of hosts.
-        api_response = api_instance.AssignTags(body)
-        print("The response of HostsApi->AssignTags:\n")
+        api_response = api_instance.assign_tags(body)
+        print("The response of HostsApi->assign_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->AssignTags: %s\n" % e)
+        print("Exception when calling HostsApi->assign_tags: %s\n" % e)
 ```
 
 
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateHostResponse Create(body)
+# **create**
+> CreateHostResponse create(body)
 
 Create a Host resource.
 
@@ -137,11 +137,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Create a Host resource.
-        api_response = api_instance.Create(body)
-        print("The response of HostsApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of HostsApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->Create: %s\n" % e)
+        print("Exception when calling HostsApi->create: %s\n" % e)
 ```
 
 
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Delete a Host resource.
 
@@ -215,9 +215,9 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Host resource.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling HostsApi->Delete: %s\n" % e)
+        print("Exception when calling HostsApi->delete: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Disconnect**
-> object Disconnect(id, body)
+# **disconnect**
+> object disconnect(id, body)
 
 Disconnect a Host by resource ID.
 
@@ -293,11 +293,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Disconnect a Host by resource ID.
-        api_response = api_instance.Disconnect(id, body)
-        print("The response of HostsApi->Disconnect:\n")
+        api_response = api_instance.disconnect(id, body)
+        print("The response of HostsApi->disconnect:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->Disconnect: %s\n" % e)
+        print("Exception when calling HostsApi->disconnect: %s\n" % e)
 ```
 
 
@@ -331,8 +331,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListHostResponse List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListHostResponse list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
 
 List all the Host resources for an account.
 
@@ -378,11 +378,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # List all the Host resources for an account.
-        api_response = api_instance.List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of HostsApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
+        print("The response of HostsApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->List: %s\n" % e)
+        print("Exception when calling HostsApi->list: %s\n" % e)
 ```
 
 
@@ -422,8 +422,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> GetHostResponse Read(id)
+# **read**
+> GetHostResponse read(id)
 
 Get a Host resource.
 
@@ -464,11 +464,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Get a Host resource.
-        api_response = api_instance.Read(id)
-        print("The response of HostsApi->Read:\n")
+        api_response = api_instance.read(id)
+        print("The response of HostsApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->Read: %s\n" % e)
+        print("Exception when calling HostsApi->read: %s\n" % e)
 ```
 
 
@@ -501,8 +501,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Replace**
-> object Replace(from_resource_id, to_resource_id, body)
+# **replace**
+> object replace(from_resource_id, to_resource_id, body)
 
 Migrate a Host's configuration from one to another.
 
@@ -543,11 +543,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Migrate a Host's configuration from one to another.
-        api_response = api_instance.Replace(from_resource_id, to_resource_id, body)
-        print("The response of HostsApi->Replace:\n")
+        api_response = api_instance.replace(from_resource_id, to_resource_id, body)
+        print("The response of HostsApi->replace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->Replace: %s\n" % e)
+        print("Exception when calling HostsApi->replace: %s\n" % e)
 ```
 
 
@@ -582,8 +582,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UnassignTags**
-> object UnassignTags(body)
+# **unassign_tags**
+> object unassign_tags(body)
 
 Unassign tag for the list hosts.
 
@@ -624,11 +624,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Unassign tag for the list hosts.
-        api_response = api_instance.UnassignTags(body)
-        print("The response of HostsApi->UnassignTags:\n")
+        api_response = api_instance.unassign_tags(body)
+        print("The response of HostsApi->unassign_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->UnassignTags: %s\n" % e)
+        print("Exception when calling HostsApi->unassign_tags: %s\n" % e)
 ```
 
 
@@ -661,8 +661,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateHostResponse Update(id, body)
+# **update**
+> UpdateHostResponse update(id, body)
 
 Update a Host resource.
 
@@ -705,11 +705,11 @@ with infra_mgmt.ApiClient(configuration) as api_client:
 
     try:
         # Update a Host resource.
-        api_response = api_instance.Update(id, body)
-        print("The response of HostsApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of HostsApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->Update: %s\n" % e)
+        print("Exception when calling HostsApi->update: %s\n" % e)
 ```
 
 

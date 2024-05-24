@@ -25,36 +25,36 @@ class TestDelegationApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create the Delegation object.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Moves the Delegation object to Recyclebin.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         List Delegation objects.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Read the Delegation object.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the Delegation object.
         """

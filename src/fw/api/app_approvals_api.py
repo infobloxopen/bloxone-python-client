@@ -42,7 +42,7 @@ class AppApprovalsApi:
         self.api_client = api_client
 
     @validate_call
-    def ListAppApprovals(
+    def list_app_approvals(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -61,7 +61,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppApprovalMultiResponse:
-        """ListAppApprovals
+        """list_app_approvals
 
 
         :param filter:   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |        
@@ -88,11 +88,12 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAppApprovals_serialize(filter=filter,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_app_approvals_serialize(
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AppApprovalMultiResponse",
@@ -107,7 +108,7 @@ class AppApprovalsApi:
         ).data
 
     @validate_call
-    def ListAppApprovals_with_http_info(
+    def list_app_approvals_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -126,7 +127,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppApprovalMultiResponse]:
-        """ListAppApprovals
+        """list_app_approvals
 
 
         :param filter:   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |        
@@ -153,11 +154,12 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAppApprovals_serialize(filter=filter,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_app_approvals_serialize(
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AppApprovalMultiResponse",
@@ -172,7 +174,7 @@ class AppApprovalsApi:
         )
 
     @validate_call
-    def ListAppApprovals_without_preload_content(
+    def list_app_approvals_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -191,7 +193,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """ListAppApprovals
+        """list_app_approvals
 
 
         :param filter:   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |        
@@ -218,11 +220,12 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListAppApprovals_serialize(filter=filter,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_app_approvals_serialize(
+            filter=filter,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AppApprovalMultiResponse",
@@ -231,7 +234,7 @@ class AppApprovalsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListAppApprovals_serialize(
+    def _list_app_approvals_serialize(
         self,
         filter,
         _request_auth,
@@ -284,7 +287,7 @@ class AppApprovalsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReplaceAppApprovals(
+    def replace_app_approvals(
         self,
         body: AppApprovalsReplaceRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -326,7 +329,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReplaceAppApprovals_serialize(
+        _param = self._replace_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -347,7 +350,7 @@ class AppApprovalsApi:
         ).data
 
     @validate_call
-    def ReplaceAppApprovals_with_http_info(
+    def replace_app_approvals_with_http_info(
         self,
         body: AppApprovalsReplaceRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -389,7 +392,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReplaceAppApprovals_serialize(
+        _param = self._replace_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -410,7 +413,7 @@ class AppApprovalsApi:
         )
 
     @validate_call
-    def ReplaceAppApprovals_without_preload_content(
+    def replace_app_approvals_without_preload_content(
         self,
         body: AppApprovalsReplaceRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -452,7 +455,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReplaceAppApprovals_serialize(
+        _param = self._replace_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -467,7 +470,7 @@ class AppApprovalsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReplaceAppApprovals_serialize(
+    def _replace_app_approvals_serialize(
         self,
         body,
         _request_auth,
@@ -528,7 +531,7 @@ class AppApprovalsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateAppApprovals(
+    def update_app_approvals(
         self,
         body: AppApprovalsUpdateRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -542,7 +545,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppApprovalMultiResponse:
-        """UpdateAppApprovals
+        """update_app_approvals
 
 
         :param body: (required)
@@ -569,7 +572,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAppApprovals_serialize(
+        _param = self._update_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -589,7 +592,7 @@ class AppApprovalsApi:
         ).data
 
     @validate_call
-    def UpdateAppApprovals_with_http_info(
+    def update_app_approvals_with_http_info(
         self,
         body: AppApprovalsUpdateRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -603,7 +606,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppApprovalMultiResponse]:
-        """UpdateAppApprovals
+        """update_app_approvals
 
 
         :param body: (required)
@@ -630,7 +633,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAppApprovals_serialize(
+        _param = self._update_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -650,7 +653,7 @@ class AppApprovalsApi:
         )
 
     @validate_call
-    def UpdateAppApprovals_without_preload_content(
+    def update_app_approvals_without_preload_content(
         self,
         body: AppApprovalsUpdateRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -664,7 +667,7 @@ class AppApprovalsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """UpdateAppApprovals
+        """update_app_approvals
 
 
         :param body: (required)
@@ -691,7 +694,7 @@ class AppApprovalsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateAppApprovals_serialize(
+        _param = self._update_app_approvals_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -705,7 +708,7 @@ class AppApprovalsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateAppApprovals_serialize(
+    def _update_app_approvals_serialize(
         self,
         body,
         _request_auth,

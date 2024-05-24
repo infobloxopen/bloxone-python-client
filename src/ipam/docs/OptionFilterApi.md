@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](OptionFilterApi.md#Create) | **POST** /dhcp/option_filter | Create the DHCP option filter.
-[**Delete**](OptionFilterApi.md#Delete) | **DELETE** /dhcp/option_filter/{id} | Move the DHCP option filter to the recycle bin.
-[**List**](OptionFilterApi.md#List) | **GET** /dhcp/option_filter | Retrieve DHCP option filters.
-[**Read**](OptionFilterApi.md#Read) | **GET** /dhcp/option_filter/{id} | Retrieve the DHCP option filter.
-[**Update**](OptionFilterApi.md#Update) | **PATCH** /dhcp/option_filter/{id} | Update the DHCP option filter.
+[**create**](OptionFilterApi.md#create) | **POST** /dhcp/option_filter | Create the DHCP option filter.
+[**delete**](OptionFilterApi.md#delete) | **DELETE** /dhcp/option_filter/{id} | Move the DHCP option filter to the recycle bin.
+[**list**](OptionFilterApi.md#list) | **GET** /dhcp/option_filter | Retrieve DHCP option filters.
+[**read**](OptionFilterApi.md#read) | **GET** /dhcp/option_filter/{id} | Retrieve the DHCP option filter.
+[**update**](OptionFilterApi.md#update) | **PATCH** /dhcp/option_filter/{id} | Update the DHCP option filter.
 
 
-# **Create**
-> CreateOptionFilterResponse Create(body)
+# **create**
+> CreateOptionFilterResponse create(body)
 
 Create the DHCP option filter.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the DHCP option filter.
-        api_response = api_instance.Create(body)
-        print("The response of OptionFilterApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of OptionFilterApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionFilterApi->Create: %s\n" % e)
+        print("Exception when calling OptionFilterApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the DHCP option filter to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the DHCP option filter to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling OptionFilterApi->Delete: %s\n" % e)
+        print("Exception when calling OptionFilterApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListOptionFilterResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListOptionFilterResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve DHCP option filters.
 
@@ -216,11 +216,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP option filters.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
-        print("The response of OptionFilterApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+        print("The response of OptionFilterApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionFilterApi->List: %s\n" % e)
+        print("Exception when calling OptionFilterApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadOptionFilterResponse Read(id, fields=fields)
+# **read**
+> ReadOptionFilterResponse read(id, fields=fields)
 
 Retrieve the DHCP option filter.
 
@@ -303,11 +303,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP option filter.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of OptionFilterApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of OptionFilterApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionFilterApi->Read: %s\n" % e)
+        print("Exception when calling OptionFilterApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateOptionFilterResponse Update(id, body)
+# **update**
+> UpdateOptionFilterResponse update(id, body)
 
 Update the DHCP option filter.
 
@@ -385,11 +385,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP option filter.
-        api_response = api_instance.Update(id, body)
-        print("The response of OptionFilterApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of OptionFilterApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionFilterApi->Update: %s\n" % e)
+        print("Exception when calling OptionFilterApi->update: %s\n" % e)
 ```
 
 

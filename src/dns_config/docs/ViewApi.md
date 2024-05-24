@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BulkCopy**](ViewApi.md#BulkCopy) | **POST** /dns/view/bulk_copy | Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
-[**Create**](ViewApi.md#Create) | **POST** /dns/view | Create the View object.
-[**Delete**](ViewApi.md#Delete) | **DELETE** /dns/view/{id} | Move the View object to Recyclebin.
-[**List**](ViewApi.md#List) | **GET** /dns/view | List View objects.
-[**Read**](ViewApi.md#Read) | **GET** /dns/view/{id} | Read the View object.
-[**Update**](ViewApi.md#Update) | **PATCH** /dns/view/{id} | Update the View object.
+[**bulk_copy**](ViewApi.md#bulk_copy) | **POST** /dns/view/bulk_copy | Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
+[**create**](ViewApi.md#create) | **POST** /dns/view | Create the View object.
+[**delete**](ViewApi.md#delete) | **DELETE** /dns/view/{id} | Move the View object to Recyclebin.
+[**list**](ViewApi.md#list) | **GET** /dns/view | List View objects.
+[**read**](ViewApi.md#read) | **GET** /dns/view/{id} | Read the View object.
+[**update**](ViewApi.md#update) | **PATCH** /dns/view/{id} | Update the View object.
 
 
-# **BulkCopy**
-> BulkCopyResponse BulkCopy(body)
+# **bulk_copy**
+> BulkCopyResponse bulk_copy(body)
 
 Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
 
@@ -55,11 +55,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Copies the specified __AuthZone__ and __ForwardZone__ objects in the __View__.
-        api_response = api_instance.BulkCopy(body)
-        print("The response of ViewApi->BulkCopy:\n")
+        api_response = api_instance.bulk_copy(body)
+        print("The response of ViewApi->bulk_copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewApi->BulkCopy: %s\n" % e)
+        print("Exception when calling ViewApi->bulk_copy: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateViewResponse Create(body, inherit=inherit)
+# **create**
+> CreateViewResponse create(body, inherit=inherit)
 
 Create the View object.
 
@@ -136,11 +136,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Create the View object.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of ViewApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of ViewApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewApi->Create: %s\n" % e)
+        print("Exception when calling ViewApi->create: %s\n" % e)
 ```
 
 
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the View object to Recyclebin.
 
@@ -215,9 +215,9 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Move the View object to Recyclebin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling ViewApi->Delete: %s\n" % e)
+        print("Exception when calling ViewApi->delete: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListViewResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+# **list**
+> ListViewResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
 
 List View objects.
 
@@ -300,11 +300,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # List View objects.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
-        print("The response of ViewApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+        print("The response of ViewApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewApi->List: %s\n" % e)
+        print("Exception when calling ViewApi->list: %s\n" % e)
 ```
 
 
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadViewResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadViewResponse read(id, fields=fields, inherit=inherit)
 
 Read the View object.
 
@@ -389,11 +389,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Read the View object.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of ViewApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of ViewApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewApi->Read: %s\n" % e)
+        print("Exception when calling ViewApi->read: %s\n" % e)
 ```
 
 
@@ -428,8 +428,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateViewResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateViewResponse update(id, body, inherit=inherit)
 
 Update the View object.
 
@@ -473,11 +473,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Update the View object.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of ViewApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of ViewApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewApi->Update: %s\n" % e)
+        print("Exception when calling ViewApi->update: %s\n" % e)
 ```
 
 

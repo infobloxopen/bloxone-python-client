@@ -4,17 +4,17 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](RangeApi.md#Create) | **POST** /ipam/range | Create the range.
-[**CreateNextAvailableIP**](RangeApi.md#CreateNextAvailableIP) | **POST** /ipam/range/{id}/nextavailableip | Allocate the next available IP address.
-[**Delete**](RangeApi.md#Delete) | **DELETE** /ipam/range/{id} | Move the range to the recycle bin.
-[**List**](RangeApi.md#List) | **GET** /ipam/range | Retrieve ranges.
-[**ListNextAvailableIP**](RangeApi.md#ListNextAvailableIP) | **GET** /ipam/range/{id}/nextavailableip | Retrieve the next available IP address.
-[**Read**](RangeApi.md#Read) | **GET** /ipam/range/{id} | Retrieve the range.
-[**Update**](RangeApi.md#Update) | **PATCH** /ipam/range/{id} | Update the range.
+[**create**](RangeApi.md#create) | **POST** /ipam/range | Create the range.
+[**create_next_available_ip**](RangeApi.md#create_next_available_ip) | **POST** /ipam/range/{id}/nextavailableip | Allocate the next available IP address.
+[**delete**](RangeApi.md#delete) | **DELETE** /ipam/range/{id} | Move the range to the recycle bin.
+[**list**](RangeApi.md#list) | **GET** /ipam/range | Retrieve ranges.
+[**list_next_available_ip**](RangeApi.md#list_next_available_ip) | **GET** /ipam/range/{id}/nextavailableip | Retrieve the next available IP address.
+[**read**](RangeApi.md#read) | **GET** /ipam/range/{id} | Retrieve the range.
+[**update**](RangeApi.md#update) | **PATCH** /ipam/range/{id} | Update the range.
 
 
-# **Create**
-> CreateRangeResponse Create(body, inherit=inherit)
+# **create**
+> CreateRangeResponse create(body, inherit=inherit)
 
 Create the range.
 
@@ -57,11 +57,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the range.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of RangeApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of RangeApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->Create: %s\n" % e)
+        print("Exception when calling RangeApi->create: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNextAvailableIP**
-> CreateNextAvailableIPResponse CreateNextAvailableIP(id, contiguous=contiguous, count=count)
+# **create_next_available_ip**
+> CreateNextAvailableIPResponse create_next_available_ip(id, contiguous=contiguous, count=count)
 
 Allocate the next available IP address.
 
@@ -139,11 +139,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Allocate the next available IP address.
-        api_response = api_instance.CreateNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of RangeApi->CreateNextAvailableIP:\n")
+        api_response = api_instance.create_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of RangeApi->create_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->CreateNextAvailableIP: %s\n" % e)
+        print("Exception when calling RangeApi->create_next_available_ip: %s\n" % e)
 ```
 
 
@@ -178,8 +178,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the range to the recycle bin.
 
@@ -219,9 +219,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the range to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling RangeApi->Delete: %s\n" % e)
+        print("Exception when calling RangeApi->delete: %s\n" % e)
 ```
 
 
@@ -254,8 +254,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListRangeResponse List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListRangeResponse list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve ranges.
 
@@ -304,11 +304,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve ranges.
-        api_response = api_instance.List(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of RangeApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of RangeApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->List: %s\n" % e)
+        print("Exception when calling RangeApi->list: %s\n" % e)
 ```
 
 
@@ -349,8 +349,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNextAvailableIP**
-> NextAvailableIPResponse ListNextAvailableIP(id, contiguous=contiguous, count=count)
+# **list_next_available_ip**
+> NextAvailableIPResponse list_next_available_ip(id, contiguous=contiguous, count=count)
 
 Retrieve the next available IP address.
 
@@ -393,11 +393,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the next available IP address.
-        api_response = api_instance.ListNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of RangeApi->ListNextAvailableIP:\n")
+        api_response = api_instance.list_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of RangeApi->list_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->ListNextAvailableIP: %s\n" % e)
+        print("Exception when calling RangeApi->list_next_available_ip: %s\n" % e)
 ```
 
 
@@ -432,8 +432,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadRangeResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadRangeResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the range.
 
@@ -476,11 +476,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the range.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of RangeApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of RangeApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->Read: %s\n" % e)
+        print("Exception when calling RangeApi->read: %s\n" % e)
 ```
 
 
@@ -515,8 +515,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateRangeResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateRangeResponse update(id, body, inherit=inherit)
 
 Update the range.
 
@@ -560,11 +560,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the range.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of RangeApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of RangeApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->Update: %s\n" % e)
+        print("Exception when calling RangeApi->update: %s\n" % e)
 ```
 
 

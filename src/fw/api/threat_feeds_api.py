@@ -40,7 +40,7 @@ class ThreatFeedsApi:
         self.api_client = api_client
 
     @validate_call
-    def ListThreatFeeds(
+    def list_threat_feeds(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -119,15 +119,15 @@ class ThreatFeedsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListThreatFeeds_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_threat_feeds_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ThreatFeedMultiResponse",
@@ -143,7 +143,7 @@ class ThreatFeedsApi:
         ).data
 
     @validate_call
-    def ListThreatFeeds_with_http_info(
+    def list_threat_feeds_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -222,15 +222,15 @@ class ThreatFeedsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListThreatFeeds_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_threat_feeds_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ThreatFeedMultiResponse",
@@ -246,7 +246,7 @@ class ThreatFeedsApi:
         )
 
     @validate_call
-    def ListThreatFeeds_without_preload_content(
+    def list_threat_feeds_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -325,15 +325,15 @@ class ThreatFeedsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListThreatFeeds_serialize(filter=filter,
-                                                 fields=fields,
-                                                 offset=offset,
-                                                 limit=limit,
-                                                 page_token=page_token,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._list_threat_feeds_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ThreatFeedMultiResponse",
@@ -343,7 +343,7 @@ class ThreatFeedsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListThreatFeeds_serialize(
+    def _list_threat_feeds_serialize(
         self,
         filter,
         fields,

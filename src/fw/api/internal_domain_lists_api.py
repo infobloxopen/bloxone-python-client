@@ -46,7 +46,7 @@ class InternalDomainListsApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateInternalDomains(
+    def create_internal_domains(
         self,
         body: Annotated[InternalDomains,
                         Field(description="The Internal Domains object.")],
@@ -89,7 +89,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateInternalDomains_serialize(
+        _param = self._create_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -112,7 +112,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def CreateInternalDomains_with_http_info(
+    def create_internal_domains_with_http_info(
         self,
         body: Annotated[InternalDomains,
                         Field(description="The Internal Domains object.")],
@@ -155,7 +155,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateInternalDomains_serialize(
+        _param = self._create_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -178,7 +178,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def CreateInternalDomains_without_preload_content(
+    def create_internal_domains_without_preload_content(
         self,
         body: Annotated[InternalDomains,
                         Field(description="The Internal Domains object.")],
@@ -221,7 +221,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateInternalDomains_serialize(
+        _param = self._create_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -238,7 +238,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateInternalDomains_serialize(
+    def _create_internal_domains_serialize(
         self,
         body,
         _request_auth,
@@ -299,7 +299,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteInternalDomains(
+    def delete_internal_domains(
         self,
         body: InternalDomainsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -341,7 +341,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteInternalDomains_serialize(
+        _param = self._delete_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -364,7 +364,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def DeleteInternalDomains_with_http_info(
+    def delete_internal_domains_with_http_info(
         self,
         body: InternalDomainsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -406,7 +406,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteInternalDomains_serialize(
+        _param = self._delete_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -429,7 +429,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def DeleteInternalDomains_without_preload_content(
+    def delete_internal_domains_without_preload_content(
         self,
         body: InternalDomainsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -471,7 +471,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteInternalDomains_serialize(
+        _param = self._delete_internal_domains_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -488,7 +488,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteInternalDomains_serialize(
+    def _delete_internal_domains_serialize(
         self,
         body,
         _request_auth,
@@ -549,7 +549,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleInternalDomains(
+    def delete_single_internal_domains(
         self,
         id: Annotated[
             StrictInt,
@@ -593,7 +593,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleInternalDomains_serialize(
+        _param = self._delete_single_internal_domains_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -616,7 +616,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def DeleteSingleInternalDomains_with_http_info(
+    def delete_single_internal_domains_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -660,7 +660,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleInternalDomains_serialize(
+        _param = self._delete_single_internal_domains_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -683,7 +683,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def DeleteSingleInternalDomains_without_preload_content(
+    def delete_single_internal_domains_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -727,7 +727,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleInternalDomains_serialize(
+        _param = self._delete_single_internal_domains_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -744,7 +744,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleInternalDomains_serialize(
+    def _delete_single_internal_domains_serialize(
         self,
         id,
         _request_auth,
@@ -795,7 +795,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def InternalDomainsItemsPartialUpdate(
+    def internal_domains_items_partial_update(
         self,
         id: Annotated[
             StrictInt,
@@ -844,7 +844,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InternalDomainsItemsPartialUpdate_serialize(
+        _param = self._internal_domains_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -870,7 +870,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def InternalDomainsItemsPartialUpdate_with_http_info(
+    def internal_domains_items_partial_update_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -919,7 +919,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InternalDomainsItemsPartialUpdate_serialize(
+        _param = self._internal_domains_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -945,7 +945,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def InternalDomainsItemsPartialUpdate_without_preload_content(
+    def internal_domains_items_partial_update_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -994,7 +994,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._InternalDomainsItemsPartialUpdate_serialize(
+        _param = self._internal_domains_items_partial_update_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1014,7 +1014,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _InternalDomainsItemsPartialUpdate_serialize(
+    def _internal_domains_items_partial_update_serialize(
         self,
         id,
         body,
@@ -1078,7 +1078,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListInternalDomains(
+    def list_internal_domains(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1165,7 +1165,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListInternalDomains_serialize(
+        _param = self._list_internal_domains_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1192,7 +1192,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def ListInternalDomains_with_http_info(
+    def list_internal_domains_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1279,7 +1279,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListInternalDomains_serialize(
+        _param = self._list_internal_domains_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1306,7 +1306,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def ListInternalDomains_without_preload_content(
+    def list_internal_domains_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1393,7 +1393,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListInternalDomains_serialize(
+        _param = self._list_internal_domains_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1414,7 +1414,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListInternalDomains_serialize(
+    def _list_internal_domains_serialize(
         self,
         filter,
         fields,
@@ -1497,7 +1497,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadInternalDomains(
+    def read_internal_domains(
         self,
         id: Annotated[
             StrictInt,
@@ -1580,7 +1580,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadInternalDomains_serialize(
+        _param = self._read_internal_domains_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1607,7 +1607,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def ReadInternalDomains_with_http_info(
+    def read_internal_domains_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1690,7 +1690,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadInternalDomains_serialize(
+        _param = self._read_internal_domains_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1717,7 +1717,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def ReadInternalDomains_without_preload_content(
+    def read_internal_domains_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1800,7 +1800,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadInternalDomains_serialize(
+        _param = self._read_internal_domains_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1821,7 +1821,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadInternalDomains_serialize(
+    def _read_internal_domains_serialize(
         self,
         id,
         fields,
@@ -1897,7 +1897,7 @@ class InternalDomainListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateInternalDomains(
+    def update_internal_domains(
         self,
         id: Annotated[
             StrictInt,
@@ -1945,7 +1945,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateInternalDomains_serialize(
+        _param = self._update_internal_domains_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1970,7 +1970,7 @@ class InternalDomainListsApi:
         ).data
 
     @validate_call
-    def UpdateInternalDomains_with_http_info(
+    def update_internal_domains_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -2018,7 +2018,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateInternalDomains_serialize(
+        _param = self._update_internal_domains_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -2043,7 +2043,7 @@ class InternalDomainListsApi:
         )
 
     @validate_call
-    def UpdateInternalDomains_without_preload_content(
+    def update_internal_domains_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -2091,7 +2091,7 @@ class InternalDomainListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateInternalDomains_serialize(
+        _param = self._update_internal_domains_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -2110,7 +2110,7 @@ class InternalDomainListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateInternalDomains_serialize(
+    def _update_internal_domains_serialize(
         self,
         id,
         body,

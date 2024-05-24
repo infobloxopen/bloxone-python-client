@@ -25,22 +25,22 @@ class TestNamedListItemsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_DeleteNamedListItems(self) -> None:
-        """Test case for DeleteNamedListItems
+    def test_delete_named_list_items(self) -> None:
+        """Test case for delete_named_list_items
 
         Delete Named List Items.
         """
         pass
 
-    def test_InsertOrReplaceNamedListItems(self) -> None:
-        """Test case for InsertOrReplaceNamedListItems
+    def test_insert_or_replace_named_list_items(self) -> None:
+        """Test case for insert_or_replace_named_list_items
 
         Insert Named List Items.
         """
         pass
 
-    def test_NamedListItemsPartialUpdate(self) -> None:
-        """Test case for NamedListItemsPartialUpdate
+    def test_named_list_items_partial_update(self) -> None:
+        """Test case for named_list_items_partial_update
 
         Partial Update Named List Items.
         """

@@ -25,50 +25,50 @@ class TestIpSpaceApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_BulkCopy(self) -> None:
-        """Test case for BulkCopy
+    def test_bulk_copy(self) -> None:
+        """Test case for bulk_copy
 
         Copy the specified address block and subnets in the IP space.
         """
         pass
 
-    def test_Copy(self) -> None:
-        """Test case for Copy
+    def test_copy(self) -> None:
+        """Test case for copy
 
         Copy the IP space.
         """
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create the IP space.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Move the IP space to the recycle bin.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve IP spaces.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the IP space.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the IP space.
         """

@@ -25,22 +25,22 @@ class TestInfraServicesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_CreateOrUpdateDfpService(self) -> None:
-        """Test case for CreateOrUpdateDfpService
+    def test_create_or_update_dfp_service(self) -> None:
+        """Test case for create_or_update_dfp_service
 
         Update DNS Forwarding Proxy services.
         """
         pass
 
-    def test_ListDfpServices(self) -> None:
-        """Test case for ListDfpServices
+    def test_list_dfp_services(self) -> None:
+        """Test case for list_dfp_services
 
         List DNS Forwarding Proxy services.
         """
         pass
 
-    def test_ReadDfpService(self) -> None:
-        """Test case for ReadDfpService
+    def test_read_dfp_service(self) -> None:
+        """Test case for read_dfp_service
 
         Read DNS Forwarding Proxy services.
         """

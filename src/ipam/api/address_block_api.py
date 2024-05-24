@@ -52,7 +52,7 @@ class AddressBlockApi:
         self.api_client = api_client
 
     @validate_call
-    def Copy(
+    def copy(
         self,
         id: Annotated[
             StrictStr,
@@ -100,7 +100,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(id=id,
+        _param = self._copy_serialize(id=id,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -120,7 +120,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def Copy_with_http_info(
+    def copy_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -168,7 +168,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(id=id,
+        _param = self._copy_serialize(id=id,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -188,7 +188,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def Copy_without_preload_content(
+    def copy_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -236,7 +236,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(id=id,
+        _param = self._copy_serialize(id=id,
                                       body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -250,7 +250,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Copy_serialize(
+    def _copy_serialize(
         self,
         id,
         body,
@@ -314,7 +314,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Create(
+    def create(
         self,
         body: AddressBlock,
         inherit: Annotated[
@@ -364,7 +364,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -384,7 +384,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def Create_with_http_info(
+    def create_with_http_info(
         self,
         body: AddressBlock,
         inherit: Annotated[
@@ -434,7 +434,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -454,7 +454,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def Create_without_preload_content(
+    def create_without_preload_content(
         self,
         body: AddressBlock,
         inherit: Annotated[
@@ -504,7 +504,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -518,7 +518,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Create_serialize(
+    def _create_serialize(
         self,
         body,
         inherit,
@@ -584,7 +584,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def CreateNextAvailableAB(
+    def create_next_available_ab(
         self,
         id: Annotated[
             StrictStr,
@@ -654,7 +654,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableAB_serialize(
+        _param = self._create_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -678,7 +678,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def CreateNextAvailableAB_with_http_info(
+    def create_next_available_ab_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -748,7 +748,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableAB_serialize(
+        _param = self._create_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -772,7 +772,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def CreateNextAvailableAB_without_preload_content(
+    def create_next_available_ab_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -842,7 +842,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableAB_serialize(
+        _param = self._create_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -860,7 +860,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateNextAvailableAB_serialize(
+    def _create_next_available_ab_serialize(
         self,
         id,
         cidr,
@@ -931,7 +931,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def CreateNextAvailableIP(
+    def create_next_available_ip(
         self,
         id: Annotated[
             StrictStr,
@@ -991,7 +991,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableIP_serialize(
+        _param = self._create_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -1013,7 +1013,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def CreateNextAvailableIP_with_http_info(
+    def create_next_available_ip_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1073,7 +1073,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableIP_serialize(
+        _param = self._create_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -1095,7 +1095,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def CreateNextAvailableIP_without_preload_content(
+    def create_next_available_ip_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1155,7 +1155,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableIP_serialize(
+        _param = self._create_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -1171,7 +1171,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateNextAvailableIP_serialize(
+    def _create_next_available_ip_serialize(
         self,
         id,
         contiguous,
@@ -1232,7 +1232,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def CreateNextAvailableSubnet(
+    def create_next_available_subnet(
         self,
         id: Annotated[
             StrictStr,
@@ -1307,7 +1307,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableSubnet_serialize(
+        _param = self._create_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -1332,7 +1332,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def CreateNextAvailableSubnet_with_http_info(
+    def create_next_available_subnet_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1407,7 +1407,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableSubnet_serialize(
+        _param = self._create_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -1432,7 +1432,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def CreateNextAvailableSubnet_without_preload_content(
+    def create_next_available_subnet_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1507,7 +1507,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNextAvailableSubnet_serialize(
+        _param = self._create_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -1526,7 +1526,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateNextAvailableSubnet_serialize(
+    def _create_next_available_subnet_serialize(
         self,
         id,
         cidr,
@@ -1602,7 +1602,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Delete(
+    def delete(
         self,
         id: Annotated[
             StrictStr,
@@ -1647,7 +1647,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -1666,7 +1666,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def Delete_with_http_info(
+    def delete_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1711,7 +1711,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -1730,7 +1730,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def Delete_without_preload_content(
+    def delete_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1775,7 +1775,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -1788,7 +1788,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Delete_serialize(
+    def _delete_serialize(
         self,
         id,
         _request_auth,
@@ -1835,7 +1835,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def List(
+    def list(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -1942,7 +1942,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -1969,7 +1969,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -2076,7 +2076,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -2103,7 +2103,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -2210,7 +2210,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -2231,7 +2231,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         fields,
         filter,
@@ -2324,7 +2324,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNextAvailableAB(
+    def list_next_available_ab(
         self,
         id: Annotated[
             StrictStr,
@@ -2394,7 +2394,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableAB_serialize(
+        _param = self._list_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -2418,7 +2418,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def ListNextAvailableAB_with_http_info(
+    def list_next_available_ab_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -2488,7 +2488,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableAB_serialize(
+        _param = self._list_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -2512,7 +2512,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def ListNextAvailableAB_without_preload_content(
+    def list_next_available_ab_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -2582,7 +2582,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableAB_serialize(
+        _param = self._list_next_available_ab_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -2600,7 +2600,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNextAvailableAB_serialize(
+    def _list_next_available_ab_serialize(
         self,
         id,
         cidr,
@@ -2671,7 +2671,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNextAvailableIP(
+    def list_next_available_ip(
         self,
         id: Annotated[
             StrictStr,
@@ -2731,7 +2731,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableIP_serialize(
+        _param = self._list_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -2753,7 +2753,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def ListNextAvailableIP_with_http_info(
+    def list_next_available_ip_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -2813,7 +2813,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableIP_serialize(
+        _param = self._list_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -2835,7 +2835,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def ListNextAvailableIP_without_preload_content(
+    def list_next_available_ip_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -2895,7 +2895,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableIP_serialize(
+        _param = self._list_next_available_ip_serialize(
             id=id,
             contiguous=contiguous,
             count=count,
@@ -2911,7 +2911,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNextAvailableIP_serialize(
+    def _list_next_available_ip_serialize(
         self,
         id,
         contiguous,
@@ -2972,7 +2972,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNextAvailableSubnet(
+    def list_next_available_subnet(
         self,
         id: Annotated[
             StrictStr,
@@ -3048,7 +3048,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableSubnet_serialize(
+        _param = self._list_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -3073,7 +3073,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def ListNextAvailableSubnet_with_http_info(
+    def list_next_available_subnet_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -3149,7 +3149,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableSubnet_serialize(
+        _param = self._list_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -3174,7 +3174,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def ListNextAvailableSubnet_without_preload_content(
+    def list_next_available_subnet_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -3250,7 +3250,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNextAvailableSubnet_serialize(
+        _param = self._list_next_available_subnet_serialize(
             id=id,
             cidr=cidr,
             count=count,
@@ -3269,7 +3269,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNextAvailableSubnet_serialize(
+    def _list_next_available_subnet_serialize(
         self,
         id,
         cidr,
@@ -3345,7 +3345,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read(
+    def read(
         self,
         id: Annotated[
             StrictStr,
@@ -3406,7 +3406,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       inherit=inherit,
                                       _request_auth=_request_auth,
@@ -3427,7 +3427,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -3488,7 +3488,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       inherit=inherit,
                                       _request_auth=_request_auth,
@@ -3509,7 +3509,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -3570,7 +3570,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       inherit=inherit,
                                       _request_auth=_request_auth,
@@ -3585,7 +3585,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         id,
         fields,
@@ -3646,7 +3646,7 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Update(
+    def update(
         self,
         id: Annotated[
             StrictStr,
@@ -3702,7 +3702,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
@@ -3723,7 +3723,7 @@ class AddressBlockApi:
         ).data
 
     @validate_call
-    def Update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -3779,7 +3779,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
@@ -3800,7 +3800,7 @@ class AddressBlockApi:
         )
 
     @validate_call
-    def Update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -3856,7 +3856,7 @@ class AddressBlockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         inherit=inherit,
                                         _request_auth=_request_auth,
@@ -3871,7 +3871,7 @@ class AddressBlockApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Update_serialize(
+    def _update_serialize(
         self,
         id,
         body,

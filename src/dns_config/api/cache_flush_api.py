@@ -38,7 +38,7 @@ class CacheFlushApi:
         self.api_client = api_client
 
     @validate_call
-    def Create(
+    def create(
         self,
         body: CacheFlush,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -80,7 +80,7 @@ class CacheFlushApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -99,7 +99,7 @@ class CacheFlushApi:
         ).data
 
     @validate_call
-    def Create_with_http_info(
+    def create_with_http_info(
         self,
         body: CacheFlush,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -141,7 +141,7 @@ class CacheFlushApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -160,7 +160,7 @@ class CacheFlushApi:
         )
 
     @validate_call
-    def Create_without_preload_content(
+    def create_without_preload_content(
         self,
         body: CacheFlush,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -202,7 +202,7 @@ class CacheFlushApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -215,7 +215,7 @@ class CacheFlushApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Create_serialize(
+    def _create_serialize(
         self,
         body,
         _request_auth,

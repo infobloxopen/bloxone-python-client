@@ -4,22 +4,22 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Copy**](AddressBlockApi.md#Copy) | **POST** /ipam/address_block/{id}/copy | Copy the address block.
-[**Create**](AddressBlockApi.md#Create) | **POST** /ipam/address_block | Create the address block.
-[**CreateNextAvailableAB**](AddressBlockApi.md#CreateNextAvailableAB) | **POST** /ipam/address_block/{id}/nextavailableaddressblock | Create the Next Available Address Block object.
-[**CreateNextAvailableIP**](AddressBlockApi.md#CreateNextAvailableIP) | **POST** /ipam/address_block/{id}/nextavailableip | Allocate the next available IP address.
-[**CreateNextAvailableSubnet**](AddressBlockApi.md#CreateNextAvailableSubnet) | **POST** /ipam/address_block/{id}/nextavailablesubnet | Create the Next Available Subnet object.
-[**Delete**](AddressBlockApi.md#Delete) | **DELETE** /ipam/address_block/{id} | Move the address block to the recycle bin.
-[**List**](AddressBlockApi.md#List) | **GET** /ipam/address_block | Retrieve the address blocks.
-[**ListNextAvailableAB**](AddressBlockApi.md#ListNextAvailableAB) | **GET** /ipam/address_block/{id}/nextavailableaddressblock | List Next Available Address Block objects.
-[**ListNextAvailableIP**](AddressBlockApi.md#ListNextAvailableIP) | **GET** /ipam/address_block/{id}/nextavailableip | Retrieve the next available IP address.
-[**ListNextAvailableSubnet**](AddressBlockApi.md#ListNextAvailableSubnet) | **GET** /ipam/address_block/{id}/nextavailablesubnet | List Next Available Subnet objects.
-[**Read**](AddressBlockApi.md#Read) | **GET** /ipam/address_block/{id} | Retrieve the address block.
-[**Update**](AddressBlockApi.md#Update) | **PATCH** /ipam/address_block/{id} | Update the address block.
+[**copy**](AddressBlockApi.md#copy) | **POST** /ipam/address_block/{id}/copy | Copy the address block.
+[**create**](AddressBlockApi.md#create) | **POST** /ipam/address_block | Create the address block.
+[**create_next_available_ab**](AddressBlockApi.md#create_next_available_ab) | **POST** /ipam/address_block/{id}/nextavailableaddressblock | Create the Next Available Address Block object.
+[**create_next_available_ip**](AddressBlockApi.md#create_next_available_ip) | **POST** /ipam/address_block/{id}/nextavailableip | Allocate the next available IP address.
+[**create_next_available_subnet**](AddressBlockApi.md#create_next_available_subnet) | **POST** /ipam/address_block/{id}/nextavailablesubnet | Create the Next Available Subnet object.
+[**delete**](AddressBlockApi.md#delete) | **DELETE** /ipam/address_block/{id} | Move the address block to the recycle bin.
+[**list**](AddressBlockApi.md#list) | **GET** /ipam/address_block | Retrieve the address blocks.
+[**list_next_available_ab**](AddressBlockApi.md#list_next_available_ab) | **GET** /ipam/address_block/{id}/nextavailableaddressblock | List Next Available Address Block objects.
+[**list_next_available_ip**](AddressBlockApi.md#list_next_available_ip) | **GET** /ipam/address_block/{id}/nextavailableip | Retrieve the next available IP address.
+[**list_next_available_subnet**](AddressBlockApi.md#list_next_available_subnet) | **GET** /ipam/address_block/{id}/nextavailablesubnet | List Next Available Subnet objects.
+[**read**](AddressBlockApi.md#read) | **GET** /ipam/address_block/{id} | Retrieve the address block.
+[**update**](AddressBlockApi.md#update) | **PATCH** /ipam/address_block/{id} | Update the address block.
 
 
-# **Copy**
-> CopyAddressBlockResponse Copy(id, body)
+# **copy**
+> CopyAddressBlockResponse copy(id, body)
 
 Copy the address block.
 
@@ -62,11 +62,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Copy the address block.
-        api_response = api_instance.Copy(id, body)
-        print("The response of AddressBlockApi->Copy:\n")
+        api_response = api_instance.copy(id, body)
+        print("The response of AddressBlockApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->Copy: %s\n" % e)
+        print("Exception when calling AddressBlockApi->copy: %s\n" % e)
 ```
 
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateAddressBlockResponse Create(body, inherit=inherit)
+# **create**
+> CreateAddressBlockResponse create(body, inherit=inherit)
 
 Create the address block.
 
@@ -144,11 +144,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the address block.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of AddressBlockApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of AddressBlockApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->Create: %s\n" % e)
+        print("Exception when calling AddressBlockApi->create: %s\n" % e)
 ```
 
 
@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNextAvailableAB**
-> CreateNextAvailableABResponse CreateNextAvailableAB(id, cidr, count=count, name=name, comment=comment)
+# **create_next_available_ab**
+> CreateNextAvailableABResponse create_next_available_ab(id, cidr, count=count, name=name, comment=comment)
 
 Create the Next Available Address Block object.
 
@@ -228,11 +228,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the Next Available Address Block object.
-        api_response = api_instance.CreateNextAvailableAB(id, cidr, count=count, name=name, comment=comment)
-        print("The response of AddressBlockApi->CreateNextAvailableAB:\n")
+        api_response = api_instance.create_next_available_ab(id, cidr, count=count, name=name, comment=comment)
+        print("The response of AddressBlockApi->create_next_available_ab:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->CreateNextAvailableAB: %s\n" % e)
+        print("Exception when calling AddressBlockApi->create_next_available_ab: %s\n" % e)
 ```
 
 
@@ -269,8 +269,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNextAvailableIP**
-> CreateNextAvailableIPResponse CreateNextAvailableIP(id, contiguous=contiguous, count=count)
+# **create_next_available_ip**
+> CreateNextAvailableIPResponse create_next_available_ip(id, contiguous=contiguous, count=count)
 
 Allocate the next available IP address.
 
@@ -313,11 +313,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Allocate the next available IP address.
-        api_response = api_instance.CreateNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of AddressBlockApi->CreateNextAvailableIP:\n")
+        api_response = api_instance.create_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of AddressBlockApi->create_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->CreateNextAvailableIP: %s\n" % e)
+        print("Exception when calling AddressBlockApi->create_next_available_ip: %s\n" % e)
 ```
 
 
@@ -352,8 +352,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNextAvailableSubnet**
-> CreateNextAvailableSubnetResponse CreateNextAvailableSubnet(id, cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
+# **create_next_available_subnet**
+> CreateNextAvailableSubnetResponse create_next_available_subnet(id, cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
 
 Create the Next Available Subnet object.
 
@@ -399,11 +399,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the Next Available Subnet object.
-        api_response = api_instance.CreateNextAvailableSubnet(id, cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
-        print("The response of AddressBlockApi->CreateNextAvailableSubnet:\n")
+        api_response = api_instance.create_next_available_subnet(id, cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
+        print("The response of AddressBlockApi->create_next_available_subnet:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->CreateNextAvailableSubnet: %s\n" % e)
+        print("Exception when calling AddressBlockApi->create_next_available_subnet: %s\n" % e)
 ```
 
 
@@ -441,8 +441,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the address block to the recycle bin.
 
@@ -482,9 +482,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the address block to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->Delete: %s\n" % e)
+        print("Exception when calling AddressBlockApi->delete: %s\n" % e)
 ```
 
 
@@ -517,8 +517,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListAddressBlockResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListAddressBlockResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve the address blocks.
 
@@ -567,11 +567,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the address blocks.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of AddressBlockApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of AddressBlockApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->List: %s\n" % e)
+        print("Exception when calling AddressBlockApi->list: %s\n" % e)
 ```
 
 
@@ -612,8 +612,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNextAvailableAB**
-> NextAvailableABResponse ListNextAvailableAB(id, cidr=cidr, count=count, name=name, comment=comment)
+# **list_next_available_ab**
+> NextAvailableABResponse list_next_available_ab(id, cidr=cidr, count=count, name=name, comment=comment)
 
 List Next Available Address Block objects.
 
@@ -658,11 +658,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # List Next Available Address Block objects.
-        api_response = api_instance.ListNextAvailableAB(id, cidr=cidr, count=count, name=name, comment=comment)
-        print("The response of AddressBlockApi->ListNextAvailableAB:\n")
+        api_response = api_instance.list_next_available_ab(id, cidr=cidr, count=count, name=name, comment=comment)
+        print("The response of AddressBlockApi->list_next_available_ab:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->ListNextAvailableAB: %s\n" % e)
+        print("Exception when calling AddressBlockApi->list_next_available_ab: %s\n" % e)
 ```
 
 
@@ -699,8 +699,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNextAvailableIP**
-> NextAvailableIPResponse ListNextAvailableIP(id, contiguous=contiguous, count=count)
+# **list_next_available_ip**
+> NextAvailableIPResponse list_next_available_ip(id, contiguous=contiguous, count=count)
 
 Retrieve the next available IP address.
 
@@ -743,11 +743,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the next available IP address.
-        api_response = api_instance.ListNextAvailableIP(id, contiguous=contiguous, count=count)
-        print("The response of AddressBlockApi->ListNextAvailableIP:\n")
+        api_response = api_instance.list_next_available_ip(id, contiguous=contiguous, count=count)
+        print("The response of AddressBlockApi->list_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->ListNextAvailableIP: %s\n" % e)
+        print("Exception when calling AddressBlockApi->list_next_available_ip: %s\n" % e)
 ```
 
 
@@ -782,8 +782,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNextAvailableSubnet**
-> NextAvailableSubnetResponse ListNextAvailableSubnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
+# **list_next_available_subnet**
+> NextAvailableSubnetResponse list_next_available_subnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
 
 List Next Available Subnet objects.
 
@@ -829,11 +829,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # List Next Available Subnet objects.
-        api_response = api_instance.ListNextAvailableSubnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
-        print("The response of AddressBlockApi->ListNextAvailableSubnet:\n")
+        api_response = api_instance.list_next_available_subnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
+        print("The response of AddressBlockApi->list_next_available_subnet:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->ListNextAvailableSubnet: %s\n" % e)
+        print("Exception when calling AddressBlockApi->list_next_available_subnet: %s\n" % e)
 ```
 
 
@@ -871,8 +871,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadAddressBlockResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadAddressBlockResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the address block.
 
@@ -915,11 +915,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the address block.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of AddressBlockApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of AddressBlockApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->Read: %s\n" % e)
+        print("Exception when calling AddressBlockApi->read: %s\n" % e)
 ```
 
 
@@ -954,8 +954,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateAddressBlockResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateAddressBlockResponse update(id, body, inherit=inherit)
 
 Update the address block.
 
@@ -999,11 +999,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the address block.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of AddressBlockApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of AddressBlockApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->Update: %s\n" % e)
+        print("Exception when calling AddressBlockApi->update: %s\n" % e)
 ```
 
 

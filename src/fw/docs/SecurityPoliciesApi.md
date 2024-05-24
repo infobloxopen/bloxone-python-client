@@ -4,16 +4,16 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSecurityPolicy**](SecurityPoliciesApi.md#CreateSecurityPolicy) | **POST** /security_policies | Create Security Policy.
-[**DeleteSecurityPolicy**](SecurityPoliciesApi.md#DeleteSecurityPolicy) | **DELETE** /security_policies | Delete Security Policies.
-[**DeleteSingleSecurityPolicy**](SecurityPoliciesApi.md#DeleteSingleSecurityPolicy) | **DELETE** /security_policies/{id} | Delete Security Policy.
-[**ListSecurityPolicies**](SecurityPoliciesApi.md#ListSecurityPolicies) | **GET** /security_policies | List Security Policies.
-[**ReadSecurityPolicy**](SecurityPoliciesApi.md#ReadSecurityPolicy) | **GET** /security_policies/{id} | Read Security Policy.
-[**UpdateSecurityPolicy**](SecurityPoliciesApi.md#UpdateSecurityPolicy) | **PUT** /security_policies/{id} | Update Security Policy.
+[**create_security_policy**](SecurityPoliciesApi.md#create_security_policy) | **POST** /security_policies | Create Security Policy.
+[**delete_security_policy**](SecurityPoliciesApi.md#delete_security_policy) | **DELETE** /security_policies | Delete Security Policies.
+[**delete_single_security_policy**](SecurityPoliciesApi.md#delete_single_security_policy) | **DELETE** /security_policies/{id} | Delete Security Policy.
+[**list_security_policies**](SecurityPoliciesApi.md#list_security_policies) | **GET** /security_policies | List Security Policies.
+[**read_security_policy**](SecurityPoliciesApi.md#read_security_policy) | **GET** /security_policies/{id} | Read Security Policy.
+[**update_security_policy**](SecurityPoliciesApi.md#update_security_policy) | **PUT** /security_policies/{id} | Update Security Policy.
 
 
-# **CreateSecurityPolicy**
-> SecurityPolicyCreateResponse CreateSecurityPolicy(body)
+# **create_security_policy**
+> SecurityPolicyCreateResponse create_security_policy(body)
 
 Create Security Policy.
 
@@ -44,11 +44,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Security Policy.
-        api_response = api_instance.CreateSecurityPolicy(body)
-        print("The response of SecurityPoliciesApi->CreateSecurityPolicy:\n")
+        api_response = api_instance.create_security_policy(body)
+        print("The response of SecurityPoliciesApi->create_security_policy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->CreateSecurityPolicy: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->create_security_policy: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSecurityPolicy**
-> DeleteSecurityPolicy(body)
+# **delete_security_policy**
+> delete_security_policy(body)
 
 Delete Security Policies.
 
@@ -116,9 +116,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Security Policies.
-        api_instance.DeleteSecurityPolicy(body)
+        api_instance.delete_security_policy(body)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->DeleteSecurityPolicy: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->delete_security_policy: %s\n" % e)
 ```
 
 
@@ -153,8 +153,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleSecurityPolicy**
-> DeleteSingleSecurityPolicy(id)
+# **delete_single_security_policy**
+> delete_single_security_policy(id)
 
 Delete Security Policy.
 
@@ -183,9 +183,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Security Policy.
-        api_instance.DeleteSingleSecurityPolicy(id)
+        api_instance.delete_single_security_policy(id)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->DeleteSingleSecurityPolicy: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->delete_single_security_policy: %s\n" % e)
 ```
 
 
@@ -220,8 +220,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListSecurityPolicies**
-> SecurityPolicyMultiResponse ListSecurityPolicies(filter=filter, fields=fields, include_access_codes=include_access_codes, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list_security_policies**
+> SecurityPolicyMultiResponse list_security_policies(filter=filter, fields=fields, include_access_codes=include_access_codes, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 List Security Policies.
 
@@ -258,11 +258,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Security Policies.
-        api_response = api_instance.ListSecurityPolicies(filter=filter, fields=fields, include_access_codes=include_access_codes, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of SecurityPoliciesApi->ListSecurityPolicies:\n")
+        api_response = api_instance.list_security_policies(filter=filter, fields=fields, include_access_codes=include_access_codes, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of SecurityPoliciesApi->list_security_policies:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->ListSecurityPolicies: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->list_security_policies: %s\n" % e)
 ```
 
 
@@ -303,8 +303,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadSecurityPolicy**
-> SecurityPolicyReadResponse ReadSecurityPolicy(id, fields=fields, name=name)
+# **read_security_policy**
+> SecurityPolicyReadResponse read_security_policy(id, fields=fields, name=name)
 
 Read Security Policy.
 
@@ -336,11 +336,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Security Policy.
-        api_response = api_instance.ReadSecurityPolicy(id, fields=fields, name=name)
-        print("The response of SecurityPoliciesApi->ReadSecurityPolicy:\n")
+        api_response = api_instance.read_security_policy(id, fields=fields, name=name)
+        print("The response of SecurityPoliciesApi->read_security_policy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->ReadSecurityPolicy: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->read_security_policy: %s\n" % e)
 ```
 
 
@@ -377,8 +377,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateSecurityPolicy**
-> SecurityPolicyUpdateResponse UpdateSecurityPolicy(id, body)
+# **update_security_policy**
+> SecurityPolicyUpdateResponse update_security_policy(id, body)
 
 Update Security Policy.
 
@@ -410,11 +410,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Security Policy.
-        api_response = api_instance.UpdateSecurityPolicy(id, body)
-        print("The response of SecurityPoliciesApi->UpdateSecurityPolicy:\n")
+        api_response = api_instance.update_security_policy(id, body)
+        print("The response of SecurityPoliciesApi->update_security_policy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SecurityPoliciesApi->UpdateSecurityPolicy: %s\n" % e)
+        print("Exception when calling SecurityPoliciesApi->update_security_policy: %s\n" % e)
 ```
 
 

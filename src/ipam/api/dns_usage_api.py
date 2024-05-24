@@ -41,7 +41,7 @@ class DnsUsageApi:
         self.api_client = api_client
 
     @validate_call
-    def List(
+    def list(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -128,7 +128,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -152,7 +152,7 @@ class DnsUsageApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -239,7 +239,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -263,7 +263,7 @@ class DnsUsageApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -350,7 +350,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -368,7 +368,7 @@ class DnsUsageApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         fields,
         filter,
@@ -446,7 +446,7 @@ class DnsUsageApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read(
+    def read(
         self,
         id: Annotated[
             StrictStr,
@@ -499,7 +499,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -519,7 +519,7 @@ class DnsUsageApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -572,7 +572,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -592,7 +592,7 @@ class DnsUsageApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -645,7 +645,7 @@ class DnsUsageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -659,7 +659,7 @@ class DnsUsageApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         id,
         fields,

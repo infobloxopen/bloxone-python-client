@@ -48,7 +48,7 @@ class NamedListsApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateNamedList(
+    def create_named_list(
         self,
         body: Annotated[NamedList,
                         Field(description="The Named List object.")],
@@ -91,11 +91,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNamedList_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._create_named_list_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListCreateResponse",
@@ -113,7 +113,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def CreateNamedList_with_http_info(
+    def create_named_list_with_http_info(
         self,
         body: Annotated[NamedList,
                         Field(description="The Named List object.")],
@@ -156,11 +156,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNamedList_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._create_named_list_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListCreateResponse",
@@ -178,7 +178,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def CreateNamedList_without_preload_content(
+    def create_named_list_without_preload_content(
         self,
         body: Annotated[NamedList,
                         Field(description="The Named List object.")],
@@ -221,11 +221,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNamedList_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._create_named_list_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListCreateResponse",
@@ -237,7 +237,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateNamedList_serialize(
+    def _create_named_list_serialize(
         self,
         body,
         _request_auth,
@@ -298,7 +298,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteNamedLists(
+    def delete_named_lists(
         self,
         body: NamedListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -340,11 +340,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedLists_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_named_lists_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -362,7 +363,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def DeleteNamedLists_with_http_info(
+    def delete_named_lists_with_http_info(
         self,
         body: NamedListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -404,11 +405,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedLists_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_named_lists_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -426,7 +428,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def DeleteNamedLists_without_preload_content(
+    def delete_named_lists_without_preload_content(
         self,
         body: NamedListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -468,11 +470,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNamedLists_serialize(body=body,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._delete_named_lists_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
@@ -484,7 +487,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteNamedLists_serialize(
+    def _delete_named_lists_serialize(
         self,
         body,
         _request_auth,
@@ -545,7 +548,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleNamedLists(
+    def delete_single_named_lists(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifiers.")],
@@ -588,7 +591,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNamedLists_serialize(
+        _param = self._delete_single_named_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -612,7 +615,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def DeleteSingleNamedLists_with_http_info(
+    def delete_single_named_lists_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifiers.")],
@@ -655,7 +658,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNamedLists_serialize(
+        _param = self._delete_single_named_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -679,7 +682,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def DeleteSingleNamedLists_without_preload_content(
+    def delete_single_named_lists_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifiers.")],
@@ -722,7 +725,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNamedLists_serialize(
+        _param = self._delete_single_named_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -740,7 +743,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleNamedLists_serialize(
+    def _delete_single_named_lists_serialize(
         self,
         id,
         _request_auth,
@@ -791,7 +794,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNamedLists(
+    def list_named_lists(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -878,17 +881,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedLists_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_named_lists_serialize(filter=filter,
+                                                  fields=fields,
+                                                  offset=offset,
+                                                  limit=limit,
+                                                  page_token=page_token,
+                                                  tfilter=tfilter,
+                                                  torder_by=torder_by,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadMultiResponse",
@@ -904,7 +907,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def ListNamedLists_with_http_info(
+    def list_named_lists_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -991,17 +994,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedLists_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_named_lists_serialize(filter=filter,
+                                                  fields=fields,
+                                                  offset=offset,
+                                                  limit=limit,
+                                                  page_token=page_token,
+                                                  tfilter=tfilter,
+                                                  torder_by=torder_by,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadMultiResponse",
@@ -1017,7 +1020,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def ListNamedLists_without_preload_content(
+    def list_named_lists_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1104,17 +1107,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedLists_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_named_lists_serialize(filter=filter,
+                                                  fields=fields,
+                                                  offset=offset,
+                                                  limit=limit,
+                                                  page_token=page_token,
+                                                  tfilter=tfilter,
+                                                  torder_by=torder_by,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadMultiResponse",
@@ -1124,7 +1127,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNamedLists_serialize(
+    def _list_named_lists_serialize(
         self,
         filter,
         fields,
@@ -1207,7 +1210,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNamedListsCSV(
+    def list_named_lists_csv(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1270,14 +1273,15 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedListsCSV_serialize(filter=filter,
-                                                   order_by=order_by,
-                                                   tfilter=tfilter,
-                                                   torder_by=torder_by,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._list_named_lists_csv_serialize(
+            filter=filter,
+            order_by=order_by,
+            tfilter=tfilter,
+            torder_by=torder_by,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListCSVListResponse",
@@ -1293,7 +1297,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def ListNamedListsCSV_with_http_info(
+    def list_named_lists_csv_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1356,14 +1360,15 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedListsCSV_serialize(filter=filter,
-                                                   order_by=order_by,
-                                                   tfilter=tfilter,
-                                                   torder_by=torder_by,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._list_named_lists_csv_serialize(
+            filter=filter,
+            order_by=order_by,
+            tfilter=tfilter,
+            torder_by=torder_by,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListCSVListResponse",
@@ -1379,7 +1384,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def ListNamedListsCSV_without_preload_content(
+    def list_named_lists_csv_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1442,14 +1447,15 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNamedListsCSV_serialize(filter=filter,
-                                                   order_by=order_by,
-                                                   tfilter=tfilter,
-                                                   torder_by=torder_by,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._list_named_lists_csv_serialize(
+            filter=filter,
+            order_by=order_by,
+            tfilter=tfilter,
+            torder_by=torder_by,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListCSVListResponse",
@@ -1459,7 +1465,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNamedListsCSV_serialize(
+    def _list_named_lists_csv_serialize(
         self,
         filter,
         order_by,
@@ -1527,7 +1533,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def MultiListUpdate(
+    def multi_list_update(
         self,
         body: MultiListUpdate,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1569,11 +1575,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._MultiListUpdate_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._multi_list_update_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "object",
@@ -1592,7 +1598,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def MultiListUpdate_with_http_info(
+    def multi_list_update_with_http_info(
         self,
         body: MultiListUpdate,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1634,11 +1640,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._MultiListUpdate_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._multi_list_update_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "object",
@@ -1657,7 +1663,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def MultiListUpdate_without_preload_content(
+    def multi_list_update_without_preload_content(
         self,
         body: MultiListUpdate,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1699,11 +1705,11 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._MultiListUpdate_serialize(body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._multi_list_update_serialize(body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "object",
@@ -1716,7 +1722,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _MultiListUpdate_serialize(
+    def _multi_list_update_serialize(
         self,
         body,
         _request_auth,
@@ -1777,7 +1783,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadNamedList(
+    def read_named_list(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List identifier.")],
@@ -1868,17 +1874,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNamedList_serialize(id=id,
-                                               fields=fields,
-                                               offset=offset,
-                                               limit=limit,
-                                               page_token=page_token,
-                                               name=name,
-                                               type=type,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_named_list_serialize(id=id,
+                                                 fields=fields,
+                                                 offset=offset,
+                                                 limit=limit,
+                                                 page_token=page_token,
+                                                 name=name,
+                                                 type=type,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadResponse",
@@ -1895,7 +1901,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def ReadNamedList_with_http_info(
+    def read_named_list_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List identifier.")],
@@ -1986,17 +1992,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNamedList_serialize(id=id,
-                                               fields=fields,
-                                               offset=offset,
-                                               limit=limit,
-                                               page_token=page_token,
-                                               name=name,
-                                               type=type,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_named_list_serialize(id=id,
+                                                 fields=fields,
+                                                 offset=offset,
+                                                 limit=limit,
+                                                 page_token=page_token,
+                                                 name=name,
+                                                 type=type,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadResponse",
@@ -2013,7 +2019,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def ReadNamedList_without_preload_content(
+    def read_named_list_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List identifier.")],
@@ -2104,17 +2110,17 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNamedList_serialize(id=id,
-                                               fields=fields,
-                                               offset=offset,
-                                               limit=limit,
-                                               page_token=page_token,
-                                               name=name,
-                                               type=type,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_named_list_serialize(id=id,
+                                                 fields=fields,
+                                                 offset=offset,
+                                                 limit=limit,
+                                                 page_token=page_token,
+                                                 name=name,
+                                                 type=type,
+                                                 _request_auth=_request_auth,
+                                                 _content_type=_content_type,
+                                                 _headers=_headers,
+                                                 _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NamedListReadResponse",
@@ -2125,7 +2131,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadNamedList_serialize(
+    def _read_named_list_serialize(
         self,
         id,
         fields,
@@ -2206,7 +2212,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateNamedList(
+    def update_named_list(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2253,12 +2259,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedList_serialize(id=id,
-                                                 body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._update_named_list_serialize(id=id,
+                                                   body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListUpdateResponse",
@@ -2277,7 +2283,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def UpdateNamedList_with_http_info(
+    def update_named_list_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2324,12 +2330,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedList_serialize(id=id,
-                                                 body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._update_named_list_serialize(id=id,
+                                                   body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListUpdateResponse",
@@ -2348,7 +2354,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def UpdateNamedList_without_preload_content(
+    def update_named_list_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2395,12 +2401,12 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedList_serialize(id=id,
-                                                 body=body,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._update_named_list_serialize(id=id,
+                                                   body=body,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NamedListUpdateResponse",
@@ -2413,7 +2419,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateNamedList_serialize(
+    def _update_named_list_serialize(
         self,
         id,
         body,
@@ -2477,7 +2483,7 @@ class NamedListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateNamedListPartial(
+    def update_named_list_partial(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2524,7 +2530,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedListPartial_serialize(
+        _param = self._update_named_list_partial_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -2549,7 +2555,7 @@ class NamedListsApi:
         ).data
 
     @validate_call
-    def UpdateNamedListPartial_with_http_info(
+    def update_named_list_partial_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2596,7 +2602,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedListPartial_serialize(
+        _param = self._update_named_list_partial_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -2621,7 +2627,7 @@ class NamedListsApi:
         )
 
     @validate_call
-    def UpdateNamedListPartial_without_preload_content(
+    def update_named_list_partial_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The Named List object identifier.")],
@@ -2668,7 +2674,7 @@ class NamedListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNamedListPartial_serialize(
+        _param = self._update_named_list_partial_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -2687,7 +2693,7 @@ class NamedListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateNamedListPartial_serialize(
+    def _update_named_list_partial_serialize(
         self,
         id,
         body,

@@ -4,16 +4,16 @@ All URIs are relative to *https://csp.infoblox.com/api/atcfw/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateNetworkList**](NetworkListsApi.md#CreateNetworkList) | **POST** /network_lists | Create Network List.
-[**DeleteNetworkLists**](NetworkListsApi.md#DeleteNetworkLists) | **DELETE** /network_lists | Delete Network Lists.
-[**DeleteSingleNetworkLists**](NetworkListsApi.md#DeleteSingleNetworkLists) | **DELETE** /network_lists/{id} | Delete Network Lists.
-[**ListNetworkLists**](NetworkListsApi.md#ListNetworkLists) | **GET** /network_lists | List Network Lists.
-[**ReadNetworkList**](NetworkListsApi.md#ReadNetworkList) | **GET** /network_lists/{id} | Read Network List.
-[**UpdateNetworkList**](NetworkListsApi.md#UpdateNetworkList) | **PUT** /network_lists/{id} | Update Network List.
+[**create_network_list**](NetworkListsApi.md#create_network_list) | **POST** /network_lists | Create Network List.
+[**delete_network_lists**](NetworkListsApi.md#delete_network_lists) | **DELETE** /network_lists | Delete Network Lists.
+[**delete_single_network_lists**](NetworkListsApi.md#delete_single_network_lists) | **DELETE** /network_lists/{id} | Delete Network Lists.
+[**list_network_lists**](NetworkListsApi.md#list_network_lists) | **GET** /network_lists | List Network Lists.
+[**read_network_list**](NetworkListsApi.md#read_network_list) | **GET** /network_lists/{id} | Read Network List.
+[**update_network_list**](NetworkListsApi.md#update_network_list) | **PUT** /network_lists/{id} | Update Network List.
 
 
-# **CreateNetworkList**
-> NetworkListCreateResponse CreateNetworkList(body)
+# **create_network_list**
+> NetworkListCreateResponse create_network_list(body)
 
 Create Network List.
 
@@ -44,11 +44,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Create Network List.
-        api_response = api_instance.CreateNetworkList(body)
-        print("The response of NetworkListsApi->CreateNetworkList:\n")
+        api_response = api_instance.create_network_list(body)
+        print("The response of NetworkListsApi->create_network_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->CreateNetworkList: %s\n" % e)
+        print("Exception when calling NetworkListsApi->create_network_list: %s\n" % e)
 ```
 
 
@@ -84,8 +84,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteNetworkLists**
-> DeleteNetworkLists(body)
+# **delete_network_lists**
+> delete_network_lists(body)
 
 Delete Network Lists.
 
@@ -115,9 +115,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Network Lists.
-        api_instance.DeleteNetworkLists(body)
+        api_instance.delete_network_lists(body)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->DeleteNetworkLists: %s\n" % e)
+        print("Exception when calling NetworkListsApi->delete_network_lists: %s\n" % e)
 ```
 
 
@@ -153,8 +153,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSingleNetworkLists**
-> DeleteSingleNetworkLists(id)
+# **delete_single_network_lists**
+> delete_single_network_lists(id)
 
 Delete Network Lists.
 
@@ -183,9 +183,9 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Delete Network Lists.
-        api_instance.DeleteSingleNetworkLists(id)
+        api_instance.delete_single_network_lists(id)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->DeleteSingleNetworkLists: %s\n" % e)
+        print("Exception when calling NetworkListsApi->delete_single_network_lists: %s\n" % e)
 ```
 
 
@@ -221,8 +221,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNetworkLists**
-> NetworkListMultiResponse ListNetworkLists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+# **list_network_lists**
+> NetworkListMultiResponse list_network_lists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
 
 List Network Lists.
 
@@ -256,11 +256,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # List Network Lists.
-        api_response = api_instance.ListNetworkLists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
-        print("The response of NetworkListsApi->ListNetworkLists:\n")
+        api_response = api_instance.list_network_lists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token)
+        print("The response of NetworkListsApi->list_network_lists:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->ListNetworkLists: %s\n" % e)
+        print("Exception when calling NetworkListsApi->list_network_lists: %s\n" % e)
 ```
 
 
@@ -298,8 +298,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReadNetworkList**
-> NetworkListReadResponse ReadNetworkList(id, fields=fields, name=name)
+# **read_network_list**
+> NetworkListReadResponse read_network_list(id, fields=fields, name=name)
 
 Read Network List.
 
@@ -331,11 +331,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Read Network List.
-        api_response = api_instance.ReadNetworkList(id, fields=fields, name=name)
-        print("The response of NetworkListsApi->ReadNetworkList:\n")
+        api_response = api_instance.read_network_list(id, fields=fields, name=name)
+        print("The response of NetworkListsApi->read_network_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->ReadNetworkList: %s\n" % e)
+        print("Exception when calling NetworkListsApi->read_network_list: %s\n" % e)
 ```
 
 
@@ -372,8 +372,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateNetworkList**
-> NetworkListUpdateResponse UpdateNetworkList(id, body)
+# **update_network_list**
+> NetworkListUpdateResponse update_network_list(id, body)
 
 Update Network List.
 
@@ -405,11 +405,11 @@ with fw.ApiClient(configuration) as api_client:
 
     try:
         # Update Network List.
-        api_response = api_instance.UpdateNetworkList(id, body)
-        print("The response of NetworkListsApi->UpdateNetworkList:\n")
+        api_response = api_instance.update_network_list(id, body)
+        print("The response of NetworkListsApi->update_network_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkListsApi->UpdateNetworkList: %s\n" % e)
+        print("Exception when calling NetworkListsApi->update_network_list: %s\n" % e)
 ```
 
 

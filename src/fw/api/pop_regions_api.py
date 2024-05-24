@@ -41,7 +41,7 @@ class PopRegionsApi:
         self.api_client = api_client
 
     @validate_call
-    def ListPoPRegions(
+    def list_po_p_regions(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -128,17 +128,17 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListPoPRegions_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_po_p_regions_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   tfilter=tfilter,
+                                                   torder_by=torder_by,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListPoPRegionsResponse",
@@ -154,7 +154,7 @@ class PopRegionsApi:
         ).data
 
     @validate_call
-    def ListPoPRegions_with_http_info(
+    def list_po_p_regions_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -241,17 +241,17 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListPoPRegions_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_po_p_regions_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   tfilter=tfilter,
+                                                   torder_by=torder_by,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListPoPRegionsResponse",
@@ -267,7 +267,7 @@ class PopRegionsApi:
         )
 
     @validate_call
-    def ListPoPRegions_without_preload_content(
+    def list_po_p_regions_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -354,17 +354,17 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListPoPRegions_serialize(filter=filter,
-                                                fields=fields,
-                                                offset=offset,
-                                                limit=limit,
-                                                page_token=page_token,
-                                                tfilter=tfilter,
-                                                torder_by=torder_by,
-                                                _request_auth=_request_auth,
-                                                _content_type=_content_type,
-                                                _headers=_headers,
-                                                _host_index=_host_index)
+        _param = self._list_po_p_regions_serialize(filter=filter,
+                                                   fields=fields,
+                                                   offset=offset,
+                                                   limit=limit,
+                                                   page_token=page_token,
+                                                   tfilter=tfilter,
+                                                   torder_by=torder_by,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListPoPRegionsResponse",
@@ -374,7 +374,7 @@ class PopRegionsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListPoPRegions_serialize(
+    def _list_po_p_regions_serialize(
         self,
         filter,
         fields,
@@ -457,7 +457,7 @@ class PopRegionsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadPoPRegion(
+    def read_po_p_region(
         self,
         id: Annotated[StrictInt,
                       Field(description="The PoP region object identifier")],
@@ -500,11 +500,11 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadPoPRegion_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_po_p_region_serialize(id=id,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReadPoPRegionResponse",
@@ -521,7 +521,7 @@ class PopRegionsApi:
         ).data
 
     @validate_call
-    def ReadPoPRegion_with_http_info(
+    def read_po_p_region_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(description="The PoP region object identifier")],
@@ -564,11 +564,11 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadPoPRegion_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_po_p_region_serialize(id=id,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReadPoPRegionResponse",
@@ -585,7 +585,7 @@ class PopRegionsApi:
         )
 
     @validate_call
-    def ReadPoPRegion_without_preload_content(
+    def read_po_p_region_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(description="The PoP region object identifier")],
@@ -628,11 +628,11 @@ class PopRegionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadPoPRegion_serialize(id=id,
-                                               _request_auth=_request_auth,
-                                               _content_type=_content_type,
-                                               _headers=_headers,
-                                               _host_index=_host_index)
+        _param = self._read_po_p_region_serialize(id=id,
+                                                  _request_auth=_request_auth,
+                                                  _content_type=_content_type,
+                                                  _headers=_headers,
+                                                  _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ReadPoPRegionResponse",
@@ -643,7 +643,7 @@ class PopRegionsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadPoPRegion_serialize(
+    def _read_po_p_region_serialize(
         self,
         id,
         _request_auth,

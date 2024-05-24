@@ -46,7 +46,7 @@ class ForwardZoneApi:
         self.api_client = api_client
 
     @validate_call
-    def Copy(
+    def copy(
         self,
         body: CopyForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -88,7 +88,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(body=body,
+        _param = self._copy_serialize(body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -107,7 +107,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def Copy_with_http_info(
+    def copy_with_http_info(
         self,
         body: CopyForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -149,7 +149,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(body=body,
+        _param = self._copy_serialize(body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -168,7 +168,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def Copy_without_preload_content(
+    def copy_without_preload_content(
         self,
         body: CopyForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -210,7 +210,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Copy_serialize(body=body,
+        _param = self._copy_serialize(body=body,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
                                       _headers=_headers,
@@ -223,7 +223,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Copy_serialize(
+    def _copy_serialize(
         self,
         body,
         _request_auth,
@@ -284,7 +284,7 @@ class ForwardZoneApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Create(
+    def create(
         self,
         body: ForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -326,7 +326,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -345,7 +345,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def Create_with_http_info(
+    def create_with_http_info(
         self,
         body: ForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -387,7 +387,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -406,7 +406,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def Create_without_preload_content(
+    def create_without_preload_content(
         self,
         body: ForwardZone,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -448,7 +448,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Create_serialize(body=body,
+        _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -461,7 +461,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Create_serialize(
+    def _create_serialize(
         self,
         body,
         _request_auth,
@@ -522,7 +522,7 @@ class ForwardZoneApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Delete(
+    def delete(
         self,
         id: Annotated[
             StrictStr,
@@ -567,7 +567,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -586,7 +586,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def Delete_with_http_info(
+    def delete_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -631,7 +631,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -650,7 +650,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def Delete_without_preload_content(
+    def delete_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -695,7 +695,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Delete_serialize(id=id,
+        _param = self._delete_serialize(id=id,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
                                         _headers=_headers,
@@ -708,7 +708,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Delete_serialize(
+    def _delete_serialize(
         self,
         id,
         _request_auth,
@@ -755,7 +755,7 @@ class ForwardZoneApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def List(
+    def list(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -854,7 +854,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -880,7 +880,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def List_with_http_info(
+    def list_with_http_info(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -979,7 +979,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -1005,7 +1005,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def List_without_preload_content(
+    def list_without_preload_content(
         self,
         fields: Annotated[
             Optional[StrictStr],
@@ -1104,7 +1104,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._List_serialize(fields=fields,
+        _param = self._list_serialize(fields=fields,
                                       filter=filter,
                                       offset=offset,
                                       limit=limit,
@@ -1124,7 +1124,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _List_serialize(
+    def _list_serialize(
         self,
         fields,
         filter,
@@ -1212,7 +1212,7 @@ class ForwardZoneApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Read(
+    def read(
         self,
         id: Annotated[
             StrictStr,
@@ -1265,7 +1265,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -1285,7 +1285,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def Read_with_http_info(
+    def read_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1338,7 +1338,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -1358,7 +1358,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def Read_without_preload_content(
+    def read_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1411,7 +1411,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Read_serialize(id=id,
+        _param = self._read_serialize(id=id,
                                       fields=fields,
                                       _request_auth=_request_auth,
                                       _content_type=_content_type,
@@ -1425,7 +1425,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Read_serialize(
+    def _read_serialize(
         self,
         id,
         fields,
@@ -1481,7 +1481,7 @@ class ForwardZoneApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def Update(
+    def update(
         self,
         id: Annotated[
             StrictStr,
@@ -1529,7 +1529,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1549,7 +1549,7 @@ class ForwardZoneApi:
         ).data
 
     @validate_call
-    def Update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictStr,
@@ -1597,7 +1597,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1617,7 +1617,7 @@ class ForwardZoneApi:
         )
 
     @validate_call
-    def Update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictStr,
@@ -1665,7 +1665,7 @@ class ForwardZoneApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._Update_serialize(id=id,
+        _param = self._update_serialize(id=id,
                                         body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
@@ -1679,7 +1679,7 @@ class ForwardZoneApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _Update_serialize(
+    def _update_serialize(
         self,
         id,
         body,

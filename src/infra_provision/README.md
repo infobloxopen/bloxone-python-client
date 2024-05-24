@@ -60,11 +60,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
-        api_response = api_instance.Approve(activation_code, body)
-        print("The response of UICSRApi->Approve:\n")
+        api_response = api_instance.approve(activation_code, body)
+        print("The response of UICSRApi->approve:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UICSRApi->Approve: %s\n" % e)
+        print("Exception when calling UICSRApi->approve: %s\n" % e)
 
 ```
 
@@ -74,17 +74,17 @@ All URIs are relative to *http://csp.infoblox.com/host-activation/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*UICSRApi* | [**Approve**](infra_provision/docs/UICSRApi.md#approve) | **POST** /csr/{activation_code}/approve | Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
-*UICSRApi* | [**Deny**](infra_provision/docs/UICSRApi.md#deny) | **POST** /csr/{activation_code}/deny | Marks the certificate signing request as denied.
-*UICSRApi* | [**List**](infra_provision/docs/UICSRApi.md#list) | **GET** /csr | User can list the certificate signing requests for an account.
-*UICSRApi* | [**Revoke**](infra_provision/docs/UICSRApi.md#revoke) | **POST** /cert/{cert_serial}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
-*UICSRApi* | [**Revoke2**](infra_provision/docs/UICSRApi.md#revoke2) | **POST** /host/{ophid}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
-*UIJoinTokenApi* | [**Create**](infra_provision/docs/UIJoinTokenApi.md#create) | **POST** /jointoken | User can create a join token. Join token is random character string which is used for instant validation of new hosts.
-*UIJoinTokenApi* | [**Delete**](infra_provision/docs/UIJoinTokenApi.md#delete) | **DELETE** /jointoken/{id} | User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
-*UIJoinTokenApi* | [**DeleteSet**](infra_provision/docs/UIJoinTokenApi.md#deleteset) | **DELETE** /jointokens | User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
-*UIJoinTokenApi* | [**List**](infra_provision/docs/UIJoinTokenApi.md#list) | **GET** /jointoken | User can list the join tokens for an account.
-*UIJoinTokenApi* | [**Read**](infra_provision/docs/UIJoinTokenApi.md#read) | **GET** /jointoken/{id} | User can get the join token providing its resource id in the parameter.
-*UIJoinTokenApi* | [**Update**](infra_provision/docs/UIJoinTokenApi.md#update) | **PATCH** /jointoken/{id} | User can modify the tags or expiration time of a join token.
+*UICSRApi* | [**approve**](infra_provision/docs/UICSRApi.md#approve) | **POST** /csr/{activation_code}/approve | Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
+*UICSRApi* | [**deny**](infra_provision/docs/UICSRApi.md#deny) | **POST** /csr/{activation_code}/deny | Marks the certificate signing request as denied.
+*UICSRApi* | [**list**](infra_provision/docs/UICSRApi.md#list) | **GET** /csr | User can list the certificate signing requests for an account.
+*UICSRApi* | [**revoke**](infra_provision/docs/UICSRApi.md#revoke) | **POST** /cert/{cert_serial}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
+*UICSRApi* | [**revoke2**](infra_provision/docs/UICSRApi.md#revoke2) | **POST** /host/{ophid}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
+*UIJoinTokenApi* | [**create**](infra_provision/docs/UIJoinTokenApi.md#create) | **POST** /jointoken | User can create a join token. Join token is random character string which is used for instant validation of new hosts.
+*UIJoinTokenApi* | [**delete**](infra_provision/docs/UIJoinTokenApi.md#delete) | **DELETE** /jointoken/{id} | User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
+*UIJoinTokenApi* | [**delete_set**](infra_provision/docs/UIJoinTokenApi.md#delete_set) | **DELETE** /jointokens | User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
+*UIJoinTokenApi* | [**list**](infra_provision/docs/UIJoinTokenApi.md#list) | **GET** /jointoken | User can list the join tokens for an account.
+*UIJoinTokenApi* | [**read**](infra_provision/docs/UIJoinTokenApi.md#read) | **GET** /jointoken/{id} | User can get the join token providing its resource id in the parameter.
+*UIJoinTokenApi* | [**update**](infra_provision/docs/UIJoinTokenApi.md#update) | **PATCH** /jointoken/{id} | User can modify the tags or expiration time of a join token.
 
 
 ## Documentation For Models

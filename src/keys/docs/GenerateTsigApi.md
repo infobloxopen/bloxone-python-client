@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GenerateTSIG**](GenerateTsigApi.md#GenerateTSIG) | **GET** /keys/generate_tsig | Generate TSIG key with a random secret.
+[**generate_tsig**](GenerateTsigApi.md#generate_tsig) | **GET** /keys/generate_tsig | Generate TSIG key with a random secret.
 
 
-# **GenerateTSIG**
-> GenerateTSIGResponse GenerateTSIG(algorithm=algorithm)
+# **generate_tsig**
+> GenerateTSIGResponse generate_tsig(algorithm=algorithm)
 
 Generate TSIG key with a random secret.
 
@@ -49,11 +49,11 @@ with keys.ApiClient(configuration) as api_client:
 
     try:
         # Generate TSIG key with a random secret.
-        api_response = api_instance.GenerateTSIG(algorithm=algorithm)
-        print("The response of GenerateTsigApi->GenerateTSIG:\n")
+        api_response = api_instance.generate_tsig(algorithm=algorithm)
+        print("The response of GenerateTsigApi->generate_tsig:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GenerateTsigApi->GenerateTSIG: %s\n" % e)
+        print("Exception when calling GenerateTsigApi->generate_tsig: %s\n" % e)
 ```
 
 

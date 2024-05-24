@@ -45,7 +45,7 @@ class NetworkListsApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateNetworkList(
+    def create_network_list(
         self,
         body: Annotated[NetworkList,
                         Field(description="The Network List object.")],
@@ -88,11 +88,12 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNetworkList_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._create_network_list_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListCreateResponse",
@@ -110,7 +111,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def CreateNetworkList_with_http_info(
+    def create_network_list_with_http_info(
         self,
         body: Annotated[NetworkList,
                         Field(description="The Network List object.")],
@@ -153,11 +154,12 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNetworkList_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._create_network_list_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListCreateResponse",
@@ -175,7 +177,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def CreateNetworkList_without_preload_content(
+    def create_network_list_without_preload_content(
         self,
         body: Annotated[NetworkList,
                         Field(description="The Network List object.")],
@@ -218,11 +220,12 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateNetworkList_serialize(body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._create_network_list_serialize(
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListCreateResponse",
@@ -234,7 +237,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateNetworkList_serialize(
+    def _create_network_list_serialize(
         self,
         body,
         _request_auth,
@@ -295,7 +298,7 @@ class NetworkListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteNetworkLists(
+    def delete_network_lists(
         self,
         body: NetworkListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -337,7 +340,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNetworkLists_serialize(
+        _param = self._delete_network_lists_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -360,7 +363,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def DeleteNetworkLists_with_http_info(
+    def delete_network_lists_with_http_info(
         self,
         body: NetworkListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -402,7 +405,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNetworkLists_serialize(
+        _param = self._delete_network_lists_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -425,7 +428,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def DeleteNetworkLists_without_preload_content(
+    def delete_network_lists_without_preload_content(
         self,
         body: NetworkListsDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -467,7 +470,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteNetworkLists_serialize(
+        _param = self._delete_network_lists_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -484,7 +487,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteNetworkLists_serialize(
+    def _delete_network_lists_serialize(
         self,
         body,
         _request_auth,
@@ -545,7 +548,7 @@ class NetworkListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleNetworkLists(
+    def delete_single_network_lists(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -589,7 +592,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNetworkLists_serialize(
+        _param = self._delete_single_network_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -613,7 +616,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def DeleteSingleNetworkLists_with_http_info(
+    def delete_single_network_lists_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -657,7 +660,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNetworkLists_serialize(
+        _param = self._delete_single_network_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -681,7 +684,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def DeleteSingleNetworkLists_without_preload_content(
+    def delete_single_network_lists_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -725,7 +728,7 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleNetworkLists_serialize(
+        _param = self._delete_single_network_lists_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -743,7 +746,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleNetworkLists_serialize(
+    def _delete_single_network_lists_serialize(
         self,
         id,
         _request_auth,
@@ -794,7 +797,7 @@ class NetworkListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListNetworkLists(
+    def list_network_lists(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -873,15 +876,16 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNetworkLists_serialize(filter=filter,
-                                                  fields=fields,
-                                                  offset=offset,
-                                                  limit=limit,
-                                                  page_token=page_token,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_network_lists_serialize(
+            filter=filter,
+            fields=fields,
+            offset=offset,
+            limit=limit,
+            page_token=page_token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListMultiResponse",
@@ -897,7 +901,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def ListNetworkLists_with_http_info(
+    def list_network_lists_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -976,15 +980,16 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNetworkLists_serialize(filter=filter,
-                                                  fields=fields,
-                                                  offset=offset,
-                                                  limit=limit,
-                                                  page_token=page_token,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_network_lists_serialize(
+            filter=filter,
+            fields=fields,
+            offset=offset,
+            limit=limit,
+            page_token=page_token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListMultiResponse",
@@ -1000,7 +1005,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def ListNetworkLists_without_preload_content(
+    def list_network_lists_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1079,15 +1084,16 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListNetworkLists_serialize(filter=filter,
-                                                  fields=fields,
-                                                  offset=offset,
-                                                  limit=limit,
-                                                  page_token=page_token,
-                                                  _request_auth=_request_auth,
-                                                  _content_type=_content_type,
-                                                  _headers=_headers,
-                                                  _host_index=_host_index)
+        _param = self._list_network_lists_serialize(
+            filter=filter,
+            fields=fields,
+            offset=offset,
+            limit=limit,
+            page_token=page_token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListMultiResponse",
@@ -1097,7 +1103,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListNetworkLists_serialize(
+    def _list_network_lists_serialize(
         self,
         filter,
         fields,
@@ -1170,7 +1176,7 @@ class NetworkListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadNetworkList(
+    def read_network_list(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1227,13 +1233,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNetworkList_serialize(id=id,
-                                                 fields=fields,
-                                                 name=name,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._read_network_list_serialize(id=id,
+                                                   fields=fields,
+                                                   name=name,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListReadResponse",
@@ -1250,7 +1256,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def ReadNetworkList_with_http_info(
+    def read_network_list_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1307,13 +1313,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNetworkList_serialize(id=id,
-                                                 fields=fields,
-                                                 name=name,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._read_network_list_serialize(id=id,
+                                                   fields=fields,
+                                                   name=name,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListReadResponse",
@@ -1330,7 +1336,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def ReadNetworkList_without_preload_content(
+    def read_network_list_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1387,13 +1393,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadNetworkList_serialize(id=id,
-                                                 fields=fields,
-                                                 name=name,
-                                                 _request_auth=_request_auth,
-                                                 _content_type=_content_type,
-                                                 _headers=_headers,
-                                                 _host_index=_host_index)
+        _param = self._read_network_list_serialize(id=id,
+                                                   fields=fields,
+                                                   name=name,
+                                                   _request_auth=_request_auth,
+                                                   _content_type=_content_type,
+                                                   _headers=_headers,
+                                                   _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NetworkListReadResponse",
@@ -1404,7 +1410,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadNetworkList_serialize(
+    def _read_network_list_serialize(
         self,
         id,
         fields,
@@ -1465,7 +1471,7 @@ class NetworkListsApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateNetworkList(
+    def update_network_list(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1513,12 +1519,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNetworkList_serialize(id=id,
-                                                   body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._update_network_list_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListUpdateResponse",
@@ -1537,7 +1544,7 @@ class NetworkListsApi:
         ).data
 
     @validate_call
-    def UpdateNetworkList_with_http_info(
+    def update_network_list_with_http_info(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1585,12 +1592,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNetworkList_serialize(id=id,
-                                                   body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._update_network_list_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListUpdateResponse",
@@ -1609,7 +1617,7 @@ class NetworkListsApi:
         )
 
     @validate_call
-    def UpdateNetworkList_without_preload_content(
+    def update_network_list_without_preload_content(
         self,
         id: Annotated[StrictInt,
                       Field(
@@ -1657,12 +1665,13 @@ class NetworkListsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateNetworkList_serialize(id=id,
-                                                   body=body,
-                                                   _request_auth=_request_auth,
-                                                   _content_type=_content_type,
-                                                   _headers=_headers,
-                                                   _host_index=_host_index)
+        _param = self._update_network_list_serialize(
+            id=id,
+            body=body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "NetworkListUpdateResponse",
@@ -1675,7 +1684,7 @@ class NetworkListsApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateNetworkList_serialize(
+    def _update_network_list_serialize(
         self,
         id,
         body,

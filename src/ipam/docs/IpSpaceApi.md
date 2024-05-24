@@ -4,17 +4,17 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BulkCopy**](IpSpaceApi.md#BulkCopy) | **POST** /ipam/ip_space/bulk_copy | Copy the specified address block and subnets in the IP space.
-[**Copy**](IpSpaceApi.md#Copy) | **POST** /ipam/ip_space/{id}/copy | Copy the IP space.
-[**Create**](IpSpaceApi.md#Create) | **POST** /ipam/ip_space | Create the IP space.
-[**Delete**](IpSpaceApi.md#Delete) | **DELETE** /ipam/ip_space/{id} | Move the IP space to the recycle bin.
-[**List**](IpSpaceApi.md#List) | **GET** /ipam/ip_space | Retrieve IP spaces.
-[**Read**](IpSpaceApi.md#Read) | **GET** /ipam/ip_space/{id} | Retrieve the IP space.
-[**Update**](IpSpaceApi.md#Update) | **PATCH** /ipam/ip_space/{id} | Update the IP space.
+[**bulk_copy**](IpSpaceApi.md#bulk_copy) | **POST** /ipam/ip_space/bulk_copy | Copy the specified address block and subnets in the IP space.
+[**copy**](IpSpaceApi.md#copy) | **POST** /ipam/ip_space/{id}/copy | Copy the IP space.
+[**create**](IpSpaceApi.md#create) | **POST** /ipam/ip_space | Create the IP space.
+[**delete**](IpSpaceApi.md#delete) | **DELETE** /ipam/ip_space/{id} | Move the IP space to the recycle bin.
+[**list**](IpSpaceApi.md#list) | **GET** /ipam/ip_space | Retrieve IP spaces.
+[**read**](IpSpaceApi.md#read) | **GET** /ipam/ip_space/{id} | Retrieve the IP space.
+[**update**](IpSpaceApi.md#update) | **PATCH** /ipam/ip_space/{id} | Update the IP space.
 
 
-# **BulkCopy**
-> BulkCopyIPSpaceResponse BulkCopy(body)
+# **bulk_copy**
+> BulkCopyIPSpaceResponse bulk_copy(body)
 
 Copy the specified address block and subnets in the IP space.
 
@@ -56,11 +56,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Copy the specified address block and subnets in the IP space.
-        api_response = api_instance.BulkCopy(body)
-        print("The response of IpSpaceApi->BulkCopy:\n")
+        api_response = api_instance.bulk_copy(body)
+        print("The response of IpSpaceApi->bulk_copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->BulkCopy: %s\n" % e)
+        print("Exception when calling IpSpaceApi->bulk_copy: %s\n" % e)
 ```
 
 
@@ -93,8 +93,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Copy**
-> CopyIPSpaceResponse Copy(id, body)
+# **copy**
+> CopyIPSpaceResponse copy(id, body)
 
 Copy the IP space.
 
@@ -137,11 +137,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Copy the IP space.
-        api_response = api_instance.Copy(id, body)
-        print("The response of IpSpaceApi->Copy:\n")
+        api_response = api_instance.copy(id, body)
+        print("The response of IpSpaceApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->Copy: %s\n" % e)
+        print("Exception when calling IpSpaceApi->copy: %s\n" % e)
 ```
 
 
@@ -175,8 +175,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Create**
-> CreateIPSpaceResponse Create(body, inherit=inherit)
+# **create**
+> CreateIPSpaceResponse create(body, inherit=inherit)
 
 Create the IP space.
 
@@ -219,11 +219,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the IP space.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of IpSpaceApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of IpSpaceApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->Create: %s\n" % e)
+        print("Exception when calling IpSpaceApi->create: %s\n" % e)
 ```
 
 
@@ -257,8 +257,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the IP space to the recycle bin.
 
@@ -298,9 +298,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the IP space to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->Delete: %s\n" % e)
+        print("Exception when calling IpSpaceApi->delete: %s\n" % e)
 ```
 
 
@@ -333,8 +333,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListIPSpaceResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+# **list**
+> ListIPSpaceResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
 
 Retrieve IP spaces.
 
@@ -383,11 +383,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve IP spaces.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of IpSpaceApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
+        print("The response of IpSpaceApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->List: %s\n" % e)
+        print("Exception when calling IpSpaceApi->list: %s\n" % e)
 ```
 
 
@@ -428,8 +428,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadIPSpaceResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadIPSpaceResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the IP space.
 
@@ -472,11 +472,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the IP space.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of IpSpaceApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of IpSpaceApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->Read: %s\n" % e)
+        print("Exception when calling IpSpaceApi->read: %s\n" % e)
 ```
 
 
@@ -511,8 +511,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateIPSpaceResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateIPSpaceResponse update(id, body, inherit=inherit)
 
 Update the IP space.
 
@@ -556,11 +556,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the IP space.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of IpSpaceApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of IpSpaceApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IpSpaceApi->Update: %s\n" % e)
+        print("Exception when calling IpSpaceApi->update: %s\n" % e)
 ```
 
 

@@ -25,8 +25,8 @@ class TestUploadApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Upload(self) -> None:
-        """Test case for Upload
+    def test_upload(self) -> None:
+        """Test case for upload
 
         Upload content to the keys service.
         """

@@ -4,11 +4,11 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Convert**](ConvertDomainNameApi.md#Convert) | **GET** /dns/convert_domain_name/{domain_name} | Convert the object.
+[**convert**](ConvertDomainNameApi.md#convert) | **GET** /dns/convert_domain_name/{domain_name} | Convert the object.
 
 
-# **Convert**
-> ConvertDomainNameResponse Convert(domain_name)
+# **convert**
+> ConvertDomainNameResponse convert(domain_name)
 
 Convert the object.
 
@@ -49,11 +49,11 @@ with dns_config.ApiClient(configuration) as api_client:
 
     try:
         # Convert the object.
-        api_response = api_instance.Convert(domain_name)
-        print("The response of ConvertDomainNameApi->Convert:\n")
+        api_response = api_instance.convert(domain_name)
+        print("The response of ConvertDomainNameApi->convert:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConvertDomainNameApi->Convert: %s\n" % e)
+        print("Exception when calling ConvertDomainNameApi->convert: %s\n" % e)
 ```
 
 

@@ -45,7 +45,7 @@ class CategoryFiltersApi:
         self.api_client = api_client
 
     @validate_call
-    def CreateCategoryFilter(
+    def create_category_filter(
         self,
         body: Annotated[CategoryFilter,
                         Field(description="The Category Filter object.")],
@@ -88,7 +88,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateCategoryFilter_serialize(
+        _param = self._create_category_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -111,7 +111,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def CreateCategoryFilter_with_http_info(
+    def create_category_filter_with_http_info(
         self,
         body: Annotated[CategoryFilter,
                         Field(description="The Category Filter object.")],
@@ -154,7 +154,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateCategoryFilter_serialize(
+        _param = self._create_category_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -177,7 +177,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def CreateCategoryFilter_without_preload_content(
+    def create_category_filter_without_preload_content(
         self,
         body: Annotated[CategoryFilter,
                         Field(description="The Category Filter object.")],
@@ -220,7 +220,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._CreateCategoryFilter_serialize(
+        _param = self._create_category_filter_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -237,7 +237,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _CreateCategoryFilter_serialize(
+    def _create_category_filter_serialize(
         self,
         body,
         _request_auth,
@@ -298,7 +298,7 @@ class CategoryFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteCategoryFilters(
+    def delete_category_filters(
         self,
         body: CategoryFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -340,7 +340,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteCategoryFilters_serialize(
+        _param = self._delete_category_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -362,7 +362,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def DeleteCategoryFilters_with_http_info(
+    def delete_category_filters_with_http_info(
         self,
         body: CategoryFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -404,7 +404,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteCategoryFilters_serialize(
+        _param = self._delete_category_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -426,7 +426,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def DeleteCategoryFilters_without_preload_content(
+    def delete_category_filters_without_preload_content(
         self,
         body: CategoryFiltersDeleteRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -468,7 +468,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteCategoryFilters_serialize(
+        _param = self._delete_category_filters_serialize(
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -484,7 +484,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteCategoryFilters_serialize(
+    def _delete_category_filters_serialize(
         self,
         body,
         _request_auth,
@@ -545,7 +545,7 @@ class CategoryFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def DeleteSingleCategoryFilters(
+    def delete_single_category_filters(
         self,
         id: Annotated[
             StrictInt,
@@ -589,7 +589,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleCategoryFilters_serialize(
+        _param = self._delete_single_category_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -612,7 +612,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def DeleteSingleCategoryFilters_with_http_info(
+    def delete_single_category_filters_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -656,7 +656,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleCategoryFilters_serialize(
+        _param = self._delete_single_category_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -679,7 +679,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def DeleteSingleCategoryFilters_without_preload_content(
+    def delete_single_category_filters_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -723,7 +723,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._DeleteSingleCategoryFilters_serialize(
+        _param = self._delete_single_category_filters_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -740,7 +740,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _DeleteSingleCategoryFilters_serialize(
+    def _delete_single_category_filters_serialize(
         self,
         id,
         _request_auth,
@@ -791,7 +791,7 @@ class CategoryFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ListCategoryFilters(
+    def list_category_filters(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -878,7 +878,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListCategoryFilters_serialize(
+        _param = self._list_category_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -905,7 +905,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def ListCategoryFilters_with_http_info(
+    def list_category_filters_with_http_info(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -992,7 +992,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListCategoryFilters_serialize(
+        _param = self._list_category_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1019,7 +1019,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def ListCategoryFilters_without_preload_content(
+    def list_category_filters_without_preload_content(
         self,
         filter: Annotated[
             Optional[StrictStr],
@@ -1106,7 +1106,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ListCategoryFilters_serialize(
+        _param = self._list_category_filters_serialize(
             filter=filter,
             fields=fields,
             offset=offset,
@@ -1127,7 +1127,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ListCategoryFilters_serialize(
+    def _list_category_filters_serialize(
         self,
         filter,
         fields,
@@ -1210,7 +1210,7 @@ class CategoryFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def ReadCategoryFilter(
+    def read_category_filter(
         self,
         id: Annotated[
             StrictInt,
@@ -1265,7 +1265,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadCategoryFilter_serialize(
+        _param = self._read_category_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1289,7 +1289,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def ReadCategoryFilter_with_http_info(
+    def read_category_filter_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1344,7 +1344,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadCategoryFilter_serialize(
+        _param = self._read_category_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1368,7 +1368,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def ReadCategoryFilter_without_preload_content(
+    def read_category_filter_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1423,7 +1423,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ReadCategoryFilter_serialize(
+        _param = self._read_category_filter_serialize(
             id=id,
             fields=fields,
             name=name,
@@ -1441,7 +1441,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _ReadCategoryFilter_serialize(
+    def _read_category_filter_serialize(
         self,
         id,
         fields,
@@ -1502,7 +1502,7 @@ class CategoryFiltersApi:
             _request_auth=_request_auth)
 
     @validate_call
-    def UpdateCategoryFilter(
+    def update_category_filter(
         self,
         id: Annotated[
             StrictInt,
@@ -1550,7 +1550,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateCategoryFilter_serialize(
+        _param = self._update_category_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1575,7 +1575,7 @@ class CategoryFiltersApi:
         ).data
 
     @validate_call
-    def UpdateCategoryFilter_with_http_info(
+    def update_category_filter_with_http_info(
         self,
         id: Annotated[
             StrictInt,
@@ -1623,7 +1623,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateCategoryFilter_serialize(
+        _param = self._update_category_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1648,7 +1648,7 @@ class CategoryFiltersApi:
         )
 
     @validate_call
-    def UpdateCategoryFilter_without_preload_content(
+    def update_category_filter_without_preload_content(
         self,
         id: Annotated[
             StrictInt,
@@ -1696,7 +1696,7 @@ class CategoryFiltersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._UpdateCategoryFilter_serialize(
+        _param = self._update_category_filter_serialize(
             id=id,
             body=body,
             _request_auth=_request_auth,
@@ -1715,7 +1715,7 @@ class CategoryFiltersApi:
             *_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _UpdateCategoryFilter_serialize(
+    def _update_category_filter_serialize(
         self,
         id,
         body,

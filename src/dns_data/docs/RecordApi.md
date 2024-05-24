@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](RecordApi.md#Create) | **POST** /dns/record | Create the DNS resource record.
-[**Delete**](RecordApi.md#Delete) | **DELETE** /dns/record/{id} | Move the DNS resource record to recycle bin.
-[**List**](RecordApi.md#List) | **GET** /dns/record | Retrieve DNS resource records.
-[**Read**](RecordApi.md#Read) | **GET** /dns/record/{id} | Retrieve the DNS resource record.
-[**SOASerialIncrement**](RecordApi.md#SOASerialIncrement) | **POST** /dns/record/{id}/serial_increment | Increment serial number for the SOA record.
-[**Update**](RecordApi.md#Update) | **PATCH** /dns/record/{id} | Update the DNS resource record.
+[**create**](RecordApi.md#create) | **POST** /dns/record | Create the DNS resource record.
+[**delete**](RecordApi.md#delete) | **DELETE** /dns/record/{id} | Move the DNS resource record to recycle bin.
+[**list**](RecordApi.md#list) | **GET** /dns/record | Retrieve DNS resource records.
+[**read**](RecordApi.md#read) | **GET** /dns/record/{id} | Retrieve the DNS resource record.
+[**soa_serial_increment**](RecordApi.md#soa_serial_increment) | **POST** /dns/record/{id}/serial_increment | Increment serial number for the SOA record.
+[**update**](RecordApi.md#update) | **PATCH** /dns/record/{id} | Update the DNS resource record.
 
 
-# **Create**
-> CreateRecordResponse Create(body, inherit=inherit)
+# **create**
+> CreateRecordResponse create(body, inherit=inherit)
 
 Create the DNS resource record.
 
@@ -56,11 +56,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Create the DNS resource record.
-        api_response = api_instance.Create(body, inherit=inherit)
-        print("The response of RecordApi->Create:\n")
+        api_response = api_instance.create(body, inherit=inherit)
+        print("The response of RecordApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RecordApi->Create: %s\n" % e)
+        print("Exception when calling RecordApi->create: %s\n" % e)
 ```
 
 
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the DNS resource record to recycle bin.
 
@@ -135,9 +135,9 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Move the DNS resource record to recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling RecordApi->Delete: %s\n" % e)
+        print("Exception when calling RecordApi->delete: %s\n" % e)
 ```
 
 
@@ -170,8 +170,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListRecordResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+# **list**
+> ListRecordResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
 
 Retrieve DNS resource records.
 
@@ -220,11 +220,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DNS resource records.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
-        print("The response of RecordApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by, inherit=inherit)
+        print("The response of RecordApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RecordApi->List: %s\n" % e)
+        print("Exception when calling RecordApi->list: %s\n" % e)
 ```
 
 
@@ -265,8 +265,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadRecordResponse Read(id, fields=fields, inherit=inherit)
+# **read**
+> ReadRecordResponse read(id, fields=fields, inherit=inherit)
 
 Retrieve the DNS resource record.
 
@@ -309,11 +309,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DNS resource record.
-        api_response = api_instance.Read(id, fields=fields, inherit=inherit)
-        print("The response of RecordApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields, inherit=inherit)
+        print("The response of RecordApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RecordApi->Read: %s\n" % e)
+        print("Exception when calling RecordApi->read: %s\n" % e)
 ```
 
 
@@ -348,8 +348,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **SOASerialIncrement**
-> SOASerialIncrementResponse SOASerialIncrement(id, body)
+# **soa_serial_increment**
+> SOASerialIncrementResponse soa_serial_increment(id, body)
 
 Increment serial number for the SOA record.
 
@@ -392,11 +392,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Increment serial number for the SOA record.
-        api_response = api_instance.SOASerialIncrement(id, body)
-        print("The response of RecordApi->SOASerialIncrement:\n")
+        api_response = api_instance.soa_serial_increment(id, body)
+        print("The response of RecordApi->soa_serial_increment:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RecordApi->SOASerialIncrement: %s\n" % e)
+        print("Exception when calling RecordApi->soa_serial_increment: %s\n" % e)
 ```
 
 
@@ -430,8 +430,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateRecordResponse Update(id, body, inherit=inherit)
+# **update**
+> UpdateRecordResponse update(id, body, inherit=inherit)
 
 Update the DNS resource record.
 
@@ -475,11 +475,11 @@ with dns_data.ApiClient(configuration) as api_client:
 
     try:
         # Update the DNS resource record.
-        api_response = api_instance.Update(id, body, inherit=inherit)
-        print("The response of RecordApi->Update:\n")
+        api_response = api_instance.update(id, body, inherit=inherit)
+        print("The response of RecordApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RecordApi->Update: %s\n" % e)
+        print("Exception when calling RecordApi->update: %s\n" % e)
 ```
 
 

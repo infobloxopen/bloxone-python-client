@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/host-activation/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Approve**](UICSRApi.md#Approve) | **POST** /csr/{activation_code}/approve | Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
-[**Deny**](UICSRApi.md#Deny) | **POST** /csr/{activation_code}/deny | Marks the certificate signing request as denied.
-[**List**](UICSRApi.md#List) | **GET** /csr | User can list the certificate signing requests for an account.
-[**Revoke**](UICSRApi.md#Revoke) | **POST** /cert/{cert_serial}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
-[**Revoke2**](UICSRApi.md#Revoke2) | **POST** /host/{ophid}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
+[**approve**](UICSRApi.md#approve) | **POST** /csr/{activation_code}/approve | Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
+[**deny**](UICSRApi.md#deny) | **POST** /csr/{activation_code}/deny | Marks the certificate signing request as denied.
+[**list**](UICSRApi.md#list) | **GET** /csr | User can list the certificate signing requests for an account.
+[**revoke**](UICSRApi.md#revoke) | **POST** /cert/{cert_serial}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
+[**revoke2**](UICSRApi.md#revoke2) | **POST** /host/{ophid}/revoke | Invalidates a certificate by adding it to a certificate revocation list.
 
 
-# **Approve**
-> object Approve(activation_code, body)
+# **approve**
+> object approve(activation_code, body)
 
 Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
 
@@ -52,11 +52,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # Marks the certificate signing request as approved. The host activation service will then continue with the signing process.
-        api_response = api_instance.Approve(activation_code, body)
-        print("The response of UICSRApi->Approve:\n")
+        api_response = api_instance.approve(activation_code, body)
+        print("The response of UICSRApi->approve:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UICSRApi->Approve: %s\n" % e)
+        print("Exception when calling UICSRApi->approve: %s\n" % e)
 ```
 
 
@@ -90,8 +90,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Deny**
-> object Deny(activation_code, body)
+# **deny**
+> object deny(activation_code, body)
 
 Marks the certificate signing request as denied.
 
@@ -131,11 +131,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # Marks the certificate signing request as denied.
-        api_response = api_instance.Deny(activation_code, body)
-        print("The response of UICSRApi->Deny:\n")
+        api_response = api_instance.deny(activation_code, body)
+        print("The response of UICSRApi->deny:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UICSRApi->Deny: %s\n" % e)
+        print("Exception when calling UICSRApi->deny: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListCSRsResponse List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListCSRsResponse list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 User can list the certificate signing requests for an account.
 
@@ -215,11 +215,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can list the certificate signing requests for an account.
-        api_response = api_instance.List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of UICSRApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of UICSRApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UICSRApi->List: %s\n" % e)
+        print("Exception when calling UICSRApi->list: %s\n" % e)
 ```
 
 
@@ -258,8 +258,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Revoke**
-> object Revoke(cert_serial, body)
+# **revoke**
+> object revoke(cert_serial, body)
 
 Invalidates a certificate by adding it to a certificate revocation list.
 
@@ -301,11 +301,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # Invalidates a certificate by adding it to a certificate revocation list.
-        api_response = api_instance.Revoke(cert_serial, body)
-        print("The response of UICSRApi->Revoke:\n")
+        api_response = api_instance.revoke(cert_serial, body)
+        print("The response of UICSRApi->revoke:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UICSRApi->Revoke: %s\n" % e)
+        print("Exception when calling UICSRApi->revoke: %s\n" % e)
 ```
 
 
@@ -339,8 +339,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Revoke2**
-> object Revoke2(ophid, body)
+# **revoke2**
+> object revoke2(ophid, body)
 
 Invalidates a certificate by adding it to a certificate revocation list.
 
@@ -382,11 +382,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # Invalidates a certificate by adding it to a certificate revocation list.
-        api_response = api_instance.Revoke2(ophid, body)
-        print("The response of UICSRApi->Revoke2:\n")
+        api_response = api_instance.revoke2(ophid, body)
+        print("The response of UICSRApi->revoke2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UICSRApi->Revoke2: %s\n" % e)
+        print("Exception when calling UICSRApi->revoke2: %s\n" % e)
 ```
 
 

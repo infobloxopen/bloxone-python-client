@@ -25,8 +25,8 @@ class TestFilterApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve DHCP filters.
         """

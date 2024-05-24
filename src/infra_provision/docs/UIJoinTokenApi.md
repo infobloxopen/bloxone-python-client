@@ -4,16 +4,16 @@ All URIs are relative to *http://csp.infoblox.com/host-activation/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](UIJoinTokenApi.md#Create) | **POST** /jointoken | User can create a join token. Join token is random character string which is used for instant validation of new hosts.
-[**Delete**](UIJoinTokenApi.md#Delete) | **DELETE** /jointoken/{id} | User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
-[**DeleteSet**](UIJoinTokenApi.md#DeleteSet) | **DELETE** /jointokens | User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
-[**List**](UIJoinTokenApi.md#List) | **GET** /jointoken | User can list the join tokens for an account.
-[**Read**](UIJoinTokenApi.md#Read) | **GET** /jointoken/{id} | User can get the join token providing its resource id in the parameter.
-[**Update**](UIJoinTokenApi.md#Update) | **PATCH** /jointoken/{id} | User can modify the tags or expiration time of a join token.
+[**create**](UIJoinTokenApi.md#create) | **POST** /jointoken | User can create a join token. Join token is random character string which is used for instant validation of new hosts.
+[**delete**](UIJoinTokenApi.md#delete) | **DELETE** /jointoken/{id} | User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
+[**delete_set**](UIJoinTokenApi.md#delete_set) | **DELETE** /jointokens | User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
+[**list**](UIJoinTokenApi.md#list) | **GET** /jointoken | User can list the join tokens for an account.
+[**read**](UIJoinTokenApi.md#read) | **GET** /jointoken/{id} | User can get the join token providing its resource id in the parameter.
+[**update**](UIJoinTokenApi.md#update) | **PATCH** /jointoken/{id} | User can modify the tags or expiration time of a join token.
 
 
-# **Create**
-> CreateJoinTokenResponse Create(body)
+# **create**
+> CreateJoinTokenResponse create(body)
 
 User can create a join token. Join token is random character string which is used for instant validation of new hosts.
 
@@ -55,11 +55,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can create a join token. Join token is random character string which is used for instant validation of new hosts.
-        api_response = api_instance.Create(body)
-        print("The response of UIJoinTokenApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of UIJoinTokenApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->Create: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->create: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
 
@@ -131,9 +131,9 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can revoke the join token. Once revoked, it can not be used further. The join token record is preserved forever.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->Delete: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->delete: %s\n" % e)
 ```
 
 
@@ -166,8 +166,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSet**
-> DeleteSet(body)
+# **delete_set**
+> delete_set(body)
 
 User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
 
@@ -206,9 +206,9 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can revoke a list of join tokens. Once revoked, join tokens can not be used further. The records are preserved forever.
-        api_instance.DeleteSet(body)
+        api_instance.delete_set(body)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->DeleteSet: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->delete_set: %s\n" % e)
 ```
 
 
@@ -241,8 +241,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListJoinTokenResponse List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+# **list**
+> ListJoinTokenResponse list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
 
 User can list the join tokens for an account.
 
@@ -289,11 +289,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can list the join tokens for an account.
-        api_response = api_instance.List(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of UIJoinTokenApi->List:\n")
+        api_response = api_instance.list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
+        print("The response of UIJoinTokenApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->List: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->list: %s\n" % e)
 ```
 
 
@@ -332,8 +332,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadJoinTokenResponse Read(id, fields=fields)
+# **read**
+> ReadJoinTokenResponse read(id, fields=fields)
 
 User can get the join token providing its resource id in the parameter.
 
@@ -373,11 +373,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can get the join token providing its resource id in the parameter.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of UIJoinTokenApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of UIJoinTokenApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->Read: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->read: %s\n" % e)
 ```
 
 
@@ -411,8 +411,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateJoinTokenResponse Update(id, body)
+# **update**
+> UpdateJoinTokenResponse update(id, body)
 
 User can modify the tags or expiration time of a join token.
 
@@ -455,11 +455,11 @@ with infra_provision.ApiClient(configuration) as api_client:
 
     try:
         # User can modify the tags or expiration time of a join token.
-        api_response = api_instance.Update(id, body)
-        print("The response of UIJoinTokenApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of UIJoinTokenApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UIJoinTokenApi->Update: %s\n" % e)
+        print("Exception when calling UIJoinTokenApi->update: %s\n" % e)
 ```
 
 

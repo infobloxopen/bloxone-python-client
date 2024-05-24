@@ -4,15 +4,15 @@ All URIs are relative to *http://csp.infoblox.com/api/ddi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](OptionSpaceApi.md#Create) | **POST** /dhcp/option_space | Create the DHCP option space.
-[**Delete**](OptionSpaceApi.md#Delete) | **DELETE** /dhcp/option_space/{id} | Move the DHCP option space to the recycle bin.
-[**List**](OptionSpaceApi.md#List) | **GET** /dhcp/option_space | Retrieve DHCP option spaces.
-[**Read**](OptionSpaceApi.md#Read) | **GET** /dhcp/option_space/{id} | Retrieve the DHCP option space.
-[**Update**](OptionSpaceApi.md#Update) | **PATCH** /dhcp/option_space/{id} | Update the DHCP option space.
+[**create**](OptionSpaceApi.md#create) | **POST** /dhcp/option_space | Create the DHCP option space.
+[**delete**](OptionSpaceApi.md#delete) | **DELETE** /dhcp/option_space/{id} | Move the DHCP option space to the recycle bin.
+[**list**](OptionSpaceApi.md#list) | **GET** /dhcp/option_space | Retrieve DHCP option spaces.
+[**read**](OptionSpaceApi.md#read) | **GET** /dhcp/option_space/{id} | Retrieve the DHCP option space.
+[**update**](OptionSpaceApi.md#update) | **PATCH** /dhcp/option_space/{id} | Update the DHCP option space.
 
 
-# **Create**
-> CreateOptionSpaceResponse Create(body)
+# **create**
+> CreateOptionSpaceResponse create(body)
 
 Create the DHCP option space.
 
@@ -54,11 +54,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Create the DHCP option space.
-        api_response = api_instance.Create(body)
-        print("The response of OptionSpaceApi->Create:\n")
+        api_response = api_instance.create(body)
+        print("The response of OptionSpaceApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionSpaceApi->Create: %s\n" % e)
+        print("Exception when calling OptionSpaceApi->create: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Delete**
-> Delete(id)
+# **delete**
+> delete(id)
 
 Move the DHCP option space to the recycle bin.
 
@@ -132,9 +132,9 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Move the DHCP option space to the recycle bin.
-        api_instance.Delete(id)
+        api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling OptionSpaceApi->Delete: %s\n" % e)
+        print("Exception when calling OptionSpaceApi->delete: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **List**
-> ListOptionSpaceResponse List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+# **list**
+> ListOptionSpaceResponse list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
 
 Retrieve DHCP option spaces.
 
@@ -216,11 +216,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve DHCP option spaces.
-        api_response = api_instance.List(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
-        print("The response of OptionSpaceApi->List:\n")
+        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
+        print("The response of OptionSpaceApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionSpaceApi->List: %s\n" % e)
+        print("Exception when calling OptionSpaceApi->list: %s\n" % e)
 ```
 
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Read**
-> ReadOptionSpaceResponse Read(id, fields=fields)
+# **read**
+> ReadOptionSpaceResponse read(id, fields=fields)
 
 Retrieve the DHCP option space.
 
@@ -303,11 +303,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the DHCP option space.
-        api_response = api_instance.Read(id, fields=fields)
-        print("The response of OptionSpaceApi->Read:\n")
+        api_response = api_instance.read(id, fields=fields)
+        print("The response of OptionSpaceApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionSpaceApi->Read: %s\n" % e)
+        print("Exception when calling OptionSpaceApi->read: %s\n" % e)
 ```
 
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Update**
-> UpdateOptionSpaceResponse Update(id, body)
+# **update**
+> UpdateOptionSpaceResponse update(id, body)
 
 Update the DHCP option space.
 
@@ -385,11 +385,11 @@ with ipam.ApiClient(configuration) as api_client:
 
     try:
         # Update the DHCP option space.
-        api_response = api_instance.Update(id, body)
-        print("The response of OptionSpaceApi->Update:\n")
+        api_response = api_instance.update(id, body)
+        print("The response of OptionSpaceApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OptionSpaceApi->Update: %s\n" % e)
+        print("Exception when calling OptionSpaceApi->update: %s\n" % e)
 ```
 
 

@@ -25,29 +25,29 @@ class TestDhcpHostApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve DHCP hosts.
         """
         pass
 
-    def test_ListAssociations(self) -> None:
-        """Test case for ListAssociations
+    def test_list_associations(self) -> None:
+        """Test case for list_associations
 
         Retrieve DHCP host associations.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the DHCP host.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the DHCP hosts.
         """

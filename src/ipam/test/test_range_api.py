@@ -25,50 +25,50 @@ class TestRangeApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_Create(self) -> None:
-        """Test case for Create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create the range.
         """
         pass
 
-    def test_CreateNextAvailableIP(self) -> None:
-        """Test case for CreateNextAvailableIP
+    def test_create_next_available_ip(self) -> None:
+        """Test case for create_next_available_ip
 
         Allocate the next available IP address.
         """
         pass
 
-    def test_Delete(self) -> None:
-        """Test case for Delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Move the range to the recycle bin.
         """
         pass
 
-    def test_List(self) -> None:
-        """Test case for List
+    def test_list(self) -> None:
+        """Test case for list
 
         Retrieve ranges.
         """
         pass
 
-    def test_ListNextAvailableIP(self) -> None:
-        """Test case for ListNextAvailableIP
+    def test_list_next_available_ip(self) -> None:
+        """Test case for list_next_available_ip
 
         Retrieve the next available IP address.
         """
         pass
 
-    def test_Read(self) -> None:
-        """Test case for Read
+    def test_read(self) -> None:
+        """Test case for read
 
         Retrieve the range.
         """
         pass
 
-    def test_Update(self) -> None:
-        """Test case for Update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update the range.
         """
