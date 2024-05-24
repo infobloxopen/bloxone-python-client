@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **name** | **str** | The name of the Service (unique). | 
 **pool_id** | **str** | The resource identifier. | 
 **service_type** | **str** | The type of the Service deployed on the Host (&#x60;dns&#x60;, &#x60;cdc&#x60;, etc.). | 
-**tags** | **Dict[str, str]** | Tags associated with this Service. | [optional] 
+**tags** | **object** | Tags associated with this Service. | [optional] 
 **updated_at** | **datetime** | Timestamp of the latest update on Service. | [optional] [readonly] 
 
 ## Example
