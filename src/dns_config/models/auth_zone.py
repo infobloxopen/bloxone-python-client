@@ -76,7 +76,8 @@ class AuthZone(BaseModel):
             default=None,
             description=
             "The list of the inheritance assigned hosts of the object.")
-    inheritance_sources: Optional[AuthZoneInheritance] = None
+    inheritance_sources: Optional[AuthZoneInheritance] = Field(
+        default=None, description="Optional. Inheritance configuration.")
     initial_soa_serial: Optional[StrictInt] = Field(
         default=None,
         description=
@@ -143,7 +144,8 @@ class AuthZone(BaseModel):
                                       description="The resource identifier.")
     warnings: Optional[List[Warning]] = Field(
         default=None, description="The list of an auth zone warnings.")
-    zone_authority: Optional[ZoneAuthority] = None
+    zone_authority: Optional[ZoneAuthority] = Field(
+        default=None, description="Optional. ZoneAuthority.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "comment", "created_at", "disabled", "external_primaries",

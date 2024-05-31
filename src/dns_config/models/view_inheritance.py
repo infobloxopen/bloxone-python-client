@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inheritance2_inherited_bool import Inheritance2InheritedBool
 from dns_config.models.inheritance2_inherited_string import Inheritance2InheritedString
@@ -38,33 +38,124 @@ class ViewInheritance(BaseModel):
     Inheritance configuration specifies how and which fields _View_ object inherits from [ _Global_, _Server_ ] parent.
     """ # noqa: E501
     add_edns_option_in_outgoing_query: Optional[
-        Inheritance2InheritedBool] = None
-    custom_root_ns_block: Optional[InheritedCustomRootNSBlock] = None
-    dnssec_validation_block: Optional[InheritedDNSSECValidationBlock] = None
-    dtc_config: Optional[InheritedDtcConfig] = None
-    ecs_block: Optional[InheritedECSBlock] = None
-    edns_udp_size: Optional[Inheritance2InheritedUInt32] = None
-    filter_aaaa_acl: Optional[InheritedACLItems] = None
-    filter_aaaa_on_v4: Optional[Inheritance2InheritedString] = None
-    forwarders_block: Optional[InheritedForwardersBlock] = None
-    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = None
-    lame_ttl: Optional[Inheritance2InheritedUInt32] = None
-    match_recursive_only: Optional[Inheritance2InheritedBool] = None
-    max_cache_ttl: Optional[Inheritance2InheritedUInt32] = None
-    max_negative_ttl: Optional[Inheritance2InheritedUInt32] = None
-    max_udp_size: Optional[Inheritance2InheritedUInt32] = None
-    minimal_responses: Optional[Inheritance2InheritedBool] = None
-    notify: Optional[Inheritance2InheritedBool] = None
-    query_acl: Optional[InheritedACLItems] = None
-    recursion_acl: Optional[InheritedACLItems] = None
-    recursion_enabled: Optional[Inheritance2InheritedBool] = None
-    sort_list: Optional[InheritedSortListItems] = None
+        Inheritance2InheritedBool] = Field(
+            default=None,
+            description=
+            "Field config for _add_edns_option_in_outgoing_query_ field from _View_ object."
+        )
+    custom_root_ns_block: Optional[InheritedCustomRootNSBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _custom_root_ns_block_ field from _View_ object."
+    )
+    dnssec_validation_block: Optional[InheritedDNSSECValidationBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _dnssec_validation_block_ field from _View_ object."
+    )
+    dtc_config: Optional[InheritedDtcConfig] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _dtc_config_ field from _View_ object.")
+    ecs_block: Optional[InheritedECSBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _ecs_block_ field from _View_ object.")
+    edns_udp_size: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _edns_udp_size_ field from [View] object.")
+    filter_aaaa_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _filter_aaaa_acl_ field from _View_ object."
+    )
+    filter_aaaa_on_v4: Optional[Inheritance2InheritedString] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _filter_aaaa_on_v4_ field from _View_ object."
+    )
+    forwarders_block: Optional[InheritedForwardersBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _forwarders_block_ field from _View_ object."
+    )
+    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _gss_tsig_enabled_ field from _View_ object."
+    )
+    lame_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _lame_ttl_ field from _View_ object.")
+    match_recursive_only: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _match_recursive_only_ field from _View_ object."
+    )
+    max_cache_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _max_cache_ttl_ field from _View_ object.")
+    max_negative_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _max_negative_ttl_ field from _View_ object."
+    )
+    max_udp_size: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _max_udp_size_ field from [View] object.")
+    minimal_responses: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _minimal_responses_ field from _View_ object."
+    )
+    notify: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description="Field config for _notify_ field from _View_ object.")
+    query_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _query_acl_ field from _View_ object.")
+    recursion_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _recursion_acl_ field from _View_ object.")
+    recursion_enabled: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _recursion_enabled_ field from _View_ object."
+    )
+    sort_list: Optional[InheritedSortListItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _sort_list_ field from _View_ object.")
     synthesize_address_records_from_https: Optional[
-        Inheritance2InheritedBool] = None
-    transfer_acl: Optional[InheritedACLItems] = None
-    update_acl: Optional[InheritedACLItems] = None
-    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = None
-    zone_authority: Optional[InheritedZoneAuthority] = None
+        Inheritance2InheritedBool] = Field(
+            default=None,
+            description=
+            "Field config for _synthesize_address_records_from_https_ field from _View_ object."
+        )
+    transfer_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _transfer_acl_ field from _View_ object.")
+    update_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _update_acl_ field from _View_ object.")
+    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _use_forwarders_for_subzones_ field from _View_ object."
+    )
+    zone_authority: Optional[InheritedZoneAuthority] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _zone_authority_ field from _View_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "add_edns_option_in_outgoing_query", "custom_root_ns_block",

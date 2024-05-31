@@ -27,7 +27,8 @@ class InheritedDHCPOptionItem(BaseModel):
     """
     A wrapper of item (_dhcp/option_item_) in a list of Inherited DHCP options. It contains extra fields not covered by OptionItem.
     """ # noqa: E501
-    option: Optional[OptionItem] = None
+    option: Optional[OptionItem] = Field(
+        default=None, description="Option inherited from the ancestor.")
     overriding_group: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
     additional_properties: Dict[str, Any] = {}

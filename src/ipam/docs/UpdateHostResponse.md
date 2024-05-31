@@ -6,7 +6,7 @@ The response format to update the DHCP __Host__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Host**](Host.md) |  | [optional] 
+**result** | [**Host**](Host.md) | The DHCP Host object. | [optional] 
 
 ## Example
 

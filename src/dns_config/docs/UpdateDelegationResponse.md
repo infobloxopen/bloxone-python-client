@@ -6,7 +6,7 @@ The Delegation object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Delegation**](Delegation.md) |  | [optional] 
+**result** | [**Delegation**](Delegation.md) | The updated Delegation object. | [optional] 
 
 ## Example
 

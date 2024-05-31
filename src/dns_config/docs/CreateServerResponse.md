@@ -6,7 +6,7 @@ The Server object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Server**](Server.md) |  | [optional] 
+**result** | [**Server**](Server.md) | The created Server object. | [optional] 
 
 ## Example
 

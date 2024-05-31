@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**AccessCode**](AccessCode.md) |  | [optional] 
+**results** | [**AccessCode**](AccessCode.md) | The Bypass Code object. | [optional] 
 
 ## Example
 

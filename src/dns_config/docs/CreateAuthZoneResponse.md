@@ -6,7 +6,7 @@ The Authoritative Zone object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AuthZone**](AuthZone.md) |  | [optional] 
+**result** | [**AuthZone**](AuthZone.md) | The created AuthZone object. | [optional] 
 
 ## Example
 

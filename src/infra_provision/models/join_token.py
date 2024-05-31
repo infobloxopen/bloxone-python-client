@@ -37,7 +37,10 @@ class JoinToken(BaseModel):
                                     description="The resource identifier.")
     last_used_at: Optional[datetime] = None
     name: Optional[StrictStr] = None
-    status: Optional[JoinTokenJoinTokenStatus] = None
+    status: Optional[JoinTokenJoinTokenStatus] = Field(
+        default=None,
+        description=
+        "derived field, \"active\" when expires_at and deleted_at are null.")
     tags: Optional[Dict[str, Any]] = None
     token_id: Optional[StrictStr] = Field(
         default=None, description="first half of the token.")
@@ -82,12 +85,14 @@ class JoinToken(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "deleted_at",
             "id",
             "last_used_at",
+            "status",
             "token_id",
             "use_counter",
             "additional_properties",

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **approvals** | [**List[AppApproval]**](AppApproval.md) |  | [optional] 
-**fields** | [**ProtobufFieldMask**](ProtobufFieldMask.md) |  | [optional] 
+**fields** | [**ProtobufFieldMask**](ProtobufFieldMask.md) | Field Mask. | [optional] 
 
 ## Example
 

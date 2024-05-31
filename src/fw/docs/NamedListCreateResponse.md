@@ -6,7 +6,7 @@ The Named List create response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**NamedList**](NamedList.md) |  | [optional] 
+**results** | [**NamedList**](NamedList.md) | The Named List object. | [optional] 
 
 ## Example
 

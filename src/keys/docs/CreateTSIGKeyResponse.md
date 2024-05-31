@@ -6,7 +6,7 @@ The response format to create a __TSIGKey__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**TSIGKey**](TSIGKey.md) |  | [optional] 
+**result** | [**TSIGKey**](TSIGKey.md) | The created TSIGKey object. | [optional] 
 
 ## Example
 

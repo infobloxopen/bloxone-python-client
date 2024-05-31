@@ -33,7 +33,8 @@ class DetailServiceHostConfig(BaseModel):
     current_version: Optional[StrictStr] = Field(
         default=None,
         description="The current version of the Service deployed on the Host.")
-    status: Optional[ShortServiceStatus] = None
+    status: Optional[ShortServiceStatus] = Field(
+        default=None, description="Service status information.")
     upgraded_at: Optional[datetime] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [

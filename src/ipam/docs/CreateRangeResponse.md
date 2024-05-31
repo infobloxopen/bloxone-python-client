@@ -6,7 +6,7 @@ The response format to create the __Range__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Range**](Range.md) |  | [optional] 
+**result** | [**Range**](Range.md) | The created Range object. | [optional] 
 
 ## Example
 

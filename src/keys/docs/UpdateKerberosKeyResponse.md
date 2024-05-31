@@ -6,7 +6,7 @@ The response format to update __KerberosKey__ resource extracted from the upload
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**KerberosKey**](KerberosKey.md) |  | [optional] 
+**result** | [**KerberosKey**](KerberosKey.md) | The __KerberosKey__ object. | [optional] 
 
 ## Example
 

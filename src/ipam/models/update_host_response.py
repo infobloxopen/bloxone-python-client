@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.host import Host
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class UpdateHostResponse(BaseModel):
     """
     The response format to update the DHCP __Host__ object.
     """ # noqa: E501
-    result: Optional[Host] = None
+    result: Optional[Host] = Field(default=None,
+                                   description="The DHCP Host object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

@@ -6,7 +6,7 @@ The response format to retrieve the __ASM__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ASM**](ASM.md) |  | [optional] 
+**result** | [**ASM**](ASM.md) | The ASM object. | [optional] 
 
 ## Example
 

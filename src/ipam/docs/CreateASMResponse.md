@@ -6,7 +6,7 @@ The response format to update subnet and range for ASM.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ASM**](ASM.md) |  | [optional] 
+**result** | [**ASM**](ASM.md) | The ASM object. | [optional] 
 
 ## Example
 

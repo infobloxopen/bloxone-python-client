@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inheritance2_inherited_bool import Inheritance2InheritedBool
 from dns_config.models.inheritance2_inherited_string import Inheritance2InheritedString
@@ -37,36 +37,144 @@ class ServerInheritance(BaseModel):
     Inheritance configuration specifies how and which fields _Server_ object inherits from _Global_ parent.
     """ # noqa: E501
     add_edns_option_in_outgoing_query: Optional[
-        Inheritance2InheritedBool] = None
-    custom_root_ns_block: Optional[InheritedCustomRootNSBlock] = None
-    dnssec_validation_block: Optional[InheritedDNSSECValidationBlock] = None
-    ecs_block: Optional[InheritedECSBlock] = None
-    filter_aaaa_acl: Optional[InheritedACLItems] = None
-    filter_aaaa_on_v4: Optional[Inheritance2InheritedString] = None
-    forwarders_block: Optional[InheritedForwardersBlock] = None
-    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = None
-    kerberos_keys: Optional[InheritedKerberosKeys] = None
-    lame_ttl: Optional[Inheritance2InheritedUInt32] = None
-    log_query_response: Optional[Inheritance2InheritedBool] = None
-    match_recursive_only: Optional[Inheritance2InheritedBool] = None
-    max_cache_ttl: Optional[Inheritance2InheritedUInt32] = None
-    max_negative_ttl: Optional[Inheritance2InheritedUInt32] = None
-    minimal_responses: Optional[Inheritance2InheritedBool] = None
-    notify: Optional[Inheritance2InheritedBool] = None
-    query_acl: Optional[InheritedACLItems] = None
-    query_port: Optional[Inheritance2InheritedUInt32] = None
-    recursion_acl: Optional[InheritedACLItems] = None
-    recursion_enabled: Optional[Inheritance2InheritedBool] = None
-    recursive_clients: Optional[Inheritance2InheritedUInt32] = None
-    resolver_query_timeout: Optional[Inheritance2InheritedUInt32] = None
-    secondary_axfr_query_limit: Optional[Inheritance2InheritedUInt32] = None
-    secondary_soa_query_limit: Optional[Inheritance2InheritedUInt32] = None
-    sort_list: Optional[InheritedSortListItems] = None
+        Inheritance2InheritedBool] = Field(
+            default=None,
+            description=
+            "Field config for _add_edns_option_in_outgoing_query_ field from _Server_ object."
+        )
+    custom_root_ns_block: Optional[InheritedCustomRootNSBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _custom_root_ns_block_ field from _Server_ object."
+    )
+    dnssec_validation_block: Optional[InheritedDNSSECValidationBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _dnssec_validation_block_ field from _Server_ object."
+    )
+    ecs_block: Optional[InheritedECSBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _ecs_block_ field from _Server_ object.")
+    filter_aaaa_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _filter_aaaa_acl_ field from _Server_ object."
+    )
+    filter_aaaa_on_v4: Optional[Inheritance2InheritedString] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _filter_aaaa_on_v4_ field from _Server_ object."
+    )
+    forwarders_block: Optional[InheritedForwardersBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _forwarders_block_ field from _Server_ object."
+    )
+    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _gss_tsig_enabled_ field from _Server_ object."
+    )
+    kerberos_keys: Optional[InheritedKerberosKeys] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _kerberos_keys_ field from _Server_ object."
+    )
+    lame_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _lame_ttl_ field from _Server_ object.")
+    log_query_response: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _log_queries_response_ field from _Server_ object."
+    )
+    match_recursive_only: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _match_recursive_only_ field from _Server_ object."
+    )
+    max_cache_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _max_cache_ttl_ field from _Server_ object."
+    )
+    max_negative_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _max_negative_ttl_ field from _Server_ object."
+    )
+    minimal_responses: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _minimal_responses_ field from _Server_ object."
+    )
+    notify: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description="Field config for _notify_ field from _Server_ object.")
+    query_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _query_acl_ field from _Server_ object.")
+    query_port: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _query_port_ field from _Server_ object.")
+    recursion_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _recursion_acl_ field from _Server_ object."
+    )
+    recursion_enabled: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _recursion_enabled_ field from _Server_ object."
+    )
+    recursive_clients: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _recursive_clients_ field from _Server_ object."
+    )
+    resolver_query_timeout: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _resolver_query_timeout_ field from _Server_ object."
+    )
+    secondary_axfr_query_limit: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _secondary_axfr_query_limit_ field from _Server_ object."
+    )
+    secondary_soa_query_limit: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _secondary_soa_query_limit_ field from _Server_ object."
+    )
+    sort_list: Optional[InheritedSortListItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _sort_list_ field from _Server object.")
     synthesize_address_records_from_https: Optional[
-        Inheritance2InheritedBool] = None
-    transfer_acl: Optional[InheritedACLItems] = None
-    update_acl: Optional[InheritedACLItems] = None
-    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = None
+        Inheritance2InheritedBool] = Field(
+            default=None,
+            description=
+            "Field config for _synthesize_address_records_from_https_ field from _Server_ object."
+        )
+    transfer_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _transfer_acl_ field from _Server_ object."
+    )
+    update_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _update_acl_ field from _Server_ object.")
+    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _use_forwarders_for_subzones_ field from _Server_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "add_edns_option_in_outgoing_query", "custom_root_ns_block",

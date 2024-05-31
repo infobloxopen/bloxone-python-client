@@ -30,15 +30,21 @@ class BulkCopyView(BaseModel):
     """
 
   # noqa: E501
-    auth_zone_config: Optional[AuthZoneConfig] = None
-    forward_zone_config: Optional[ForwardZoneConfig] = None
+    auth_zone_config: Optional[AuthZoneConfig] = Field(
+        default=None,
+        description="Optional. Authoritative zone related configuration.")
+    forward_zone_config: Optional[ForwardZoneConfig] = Field(
+        default=None,
+        description="Optional. Forward zone related configuration.")
     recursive: Optional[StrictBool] = Field(
         default=None,
         description=
         "Indicates whether child objects should be copied or not.  Defaults to _false_. Reserved for future use."
     )
     resources: List[StrictStr] = Field(description="The resource identifier.")
-    secondary_zone_config: Optional[AuthZoneConfig] = None
+    secondary_zone_config: Optional[AuthZoneConfig] = Field(
+        default=None,
+        description="Optional. Secondary zone related configuration.")
     skip_on_error: Optional[StrictBool] = Field(
         default=None,
         description=

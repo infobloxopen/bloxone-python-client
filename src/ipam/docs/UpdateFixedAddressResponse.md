@@ -6,7 +6,7 @@ The response format to update the __FixedAddress__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**FixedAddress**](FixedAddress.md) |  | [optional] 
+**result** | [**FixedAddress**](FixedAddress.md) | The FixedAddress object. | [optional] 
 
 ## Example
 

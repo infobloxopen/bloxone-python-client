@@ -6,9 +6,9 @@ The response format to retrieve __HAGroup__, __Subnet__ and __DHCPPacketStats__ 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dhcp_pkt_stats** | [**DHCPPacketStats**](DHCPPacketStats.md) |  | [optional] 
+**dhcp_pkt_stats** | [**DHCPPacketStats**](DHCPPacketStats.md) | The DHCP packets statistics. | [optional] 
 **ha_groups** | [**List[HAGroup]**](HAGroup.md) | The list of HA groups. | [optional] 
-**host** | [**Host**](Host.md) |  | [optional] 
+**host** | [**Host**](Host.md) | The host for which the associated objects, subnets and HA groups, are returned. | [optional] 
 **subnets** | [**List[Subnet]**](Subnet.md) | The list of subnets. | [optional] 
 
 ## Example

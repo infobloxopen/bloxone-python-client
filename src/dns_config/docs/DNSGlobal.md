@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **dnssec_root_keys** | [**List[TrustAnchor]**](TrustAnchor.md) | DNSSEC root keys. The root keys are not configurable.  A default list is provided by cloud management and included here for config generation. | [optional] [readonly] 
 **dnssec_trust_anchors** | [**List[TrustAnchor]**](TrustAnchor.md) | Optional. DNSSEC trust anchors.  Error if there are list items with duplicate (_zone_, _sep_, _algorithm_) combinations.  Defaults to empty. | [optional] 
 **dnssec_validate_expiry** | **bool** | Optional. _true_ to reject expired DNSSEC keys. Ignored if either _dnssec_enabled_ or _dnssec_enable_validation_ is _false_.  Defaults to _true_. | [optional] 
-**dtc_config** | [**DTCConfig**](DTCConfig.md) |  | [optional] 
+**dtc_config** | [**DTCConfig**](DTCConfig.md) | Optional. DTC Configuration. | [optional] 
 **ecs_enabled** | **bool** | Optional. _true_ to enable EDNS client subnet for recursive queries. Other _ecs_*_ fields are ignored if this field is not enabled.  Defaults to _false_. | [optional] 
 **ecs_forwarding** | **bool** | Optional. _true_ to enable ECS options in outbound queries. This functionality has additional overhead so it is disabled by default.  Defaults to _false_. | [optional] 
 **ecs_prefix_v4** | **int** | Optional. Maximum scope length for v4 ECS.  Unsigned integer, min 1 max 24.  Defaults to 24. | [optional] 
@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **update_acl** | [**List[ACLItem]**](ACLItem.md) | Optional. Specifies which hosts are allowed to issue Dynamic DNS updates for authoritative zones of _primary_type_ _cloud_.  Defaults to empty. | [optional] 
 **use_forwarders_for_subzones** | **bool** | Optional. Use default forwarders to resolve queries for subzones.  Defaults to _true_. | [optional] 
 **use_root_forwarders_for_local_resolution_with_b1td** | **bool** | _use_root_forwarders_for_local_resolution_with_b1td_ allows DNS recursive queries sent to root forwarders for local resolution when deployed alongside BloxOne Thread Defense. Defaults to _false_. | [optional] 
-**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) |  | [optional] 
+**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) | Optional. ZoneAuthority. | [optional] 
 
 ## Example
 

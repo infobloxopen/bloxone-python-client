@@ -6,7 +6,7 @@ The Redirect Page read response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**RedirectPage**](RedirectPage.md) |  | [optional] 
+**results** | [**RedirectPage**](RedirectPage.md) | The Redirect Page object. | [optional] 
 
 ## Example
 

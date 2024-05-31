@@ -6,7 +6,7 @@ The response format to create the __Server__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Server**](Server.md) |  | [optional] 
+**result** | [**Server**](Server.md) | The created Server object. | [optional] 
 
 ## Example
 

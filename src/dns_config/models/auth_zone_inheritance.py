@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inheritance2_inherited_bool import Inheritance2InheritedBool
 from dns_config.models.inherited_acl_items import InheritedACLItems
@@ -31,13 +31,38 @@ class AuthZoneInheritance(BaseModel):
     """
 
   # noqa: E501
-    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = None
-    notify: Optional[Inheritance2InheritedBool] = None
-    query_acl: Optional[InheritedACLItems] = None
-    transfer_acl: Optional[InheritedACLItems] = None
-    update_acl: Optional[InheritedACLItems] = None
-    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = None
-    zone_authority: Optional[InheritedZoneAuthority] = None
+    gss_tsig_enabled: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _gss_tsig_enabled_ field from _AuthZone_ object."
+    )
+    notify: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description="Field config for _notify_ field from _AuthZone_ object.")
+    query_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _query_acl_ field from _AuthZone_ object.")
+    transfer_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _transfer_acl_ field from _AuthZone_ object."
+    )
+    update_acl: Optional[InheritedACLItems] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _update_acl_ field from _AuthZone_ object."
+    )
+    use_forwarders_for_subzones: Optional[Inheritance2InheritedBool] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _use_forwarders_for_subzones_ field from _AuthZone_ object."
+    )
+    zone_authority: Optional[InheritedZoneAuthority] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _zone_authority_ field from _AuthZone_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "gss_tsig_enabled", "notify", "query_acl", "transfer_acl",

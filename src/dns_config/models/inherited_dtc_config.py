@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inheritance2_inherited_u_int32 import Inheritance2InheritedUInt32
 from typing import Optional, Set
@@ -27,7 +27,11 @@ class InheritedDtcConfig(BaseModel):
     """
     Inheritance configuration for a field of type _DTCConfig_.
     """ # noqa: E501
-    default_ttl: Optional[Inheritance2InheritedUInt32] = None
+    default_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _default_ttl_ field from _DTCConfig_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["default_ttl"]
 

@@ -6,7 +6,7 @@ The response format to retrieve the __Global__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**DHCPGlobal**](DHCPGlobal.md) |  | [optional] 
+**result** | [**DHCPGlobal**](DHCPGlobal.md) | The Global object. | [optional] 
 
 ## Example
 

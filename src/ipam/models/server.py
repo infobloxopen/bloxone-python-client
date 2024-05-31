@@ -99,7 +99,11 @@ class Server(BaseModel):
         description=
         "The DNS zones that DDNS updates can be sent to. There is no resolver fallback. The target zone must be explicitly configured for the update to be performed.  Updates are sent to the closest enclosing zone.  Error if _ddns_enabled_ is _true_ and the _ddns_domain_ does not have a corresponding entry in _ddns_zones_.  Error if there are items with duplicate zone in the list.  Defaults to empty list."
     )
-    dhcp_config: Optional[DHCPConfig] = None
+    dhcp_config: Optional[DHCPConfig] = Field(
+        default=None,
+        description=
+        "The DHCP configuration for the profile. This controls how leases are issued."
+    )
     dhcp_options: Optional[List[OptionItem]] = Field(
         default=None,
         description=
@@ -142,7 +146,8 @@ class Server(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[ServerInheritance] = None
+    inheritance_sources: Optional[ServerInheritance] = Field(
+        default=None, description="The inheritance configuration.")
     kerberos_kdc: Optional[StrictStr] = Field(
         default=None,
         description=

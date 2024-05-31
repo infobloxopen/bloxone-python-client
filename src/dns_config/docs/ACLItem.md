@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **acl** | **str** | The resource identifier. | [optional] 
 **address** | **str** | Optional. Data for _ip_ _element_.  Must be empty if _element_ is not _ip_. | [optional] 
 **element** | **str** | Type of element.  Allowed values:  * _any_,  * _ip_,  * _acl_,  * _tsig_key_. | 
-**tsig_key** | [**TSIGKey**](TSIGKey.md) |  | [optional] 
+**tsig_key** | [**TSIGKey**](TSIGKey.md) | Optional. TSIG key.  Must be empty if _element_ is not _tsig_key_. | [optional] 
 
 ## Example
 

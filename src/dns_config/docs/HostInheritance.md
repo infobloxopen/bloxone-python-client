@@ -6,7 +6,7 @@ Inheritance configuration specifies how and which fields _Host_ object inherits 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kerberos_keys** | [**InheritedKerberosKeys**](InheritedKerberosKeys.md) |  | [optional] 
+**kerberos_keys** | [**InheritedKerberosKeys**](InheritedKerberosKeys.md) | Optional. Field config for _kerberos_keys_ field from _Host_ object. | [optional] 
 
 ## Example
 

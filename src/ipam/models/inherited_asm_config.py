@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.inheritance_inherited_u_int32 import InheritanceInheritedUInt32
 from ipam.models.inherited_asm_enable_block import InheritedAsmEnableBlock
@@ -29,13 +29,35 @@ class InheritedASMConfig(BaseModel):
     """
     The inheritance configuration for the __ASMConfig__ object.
     """ # noqa: E501
-    asm_enable_block: Optional[InheritedAsmEnableBlock] = None
-    asm_growth_block: Optional[InheritedAsmGrowthBlock] = None
-    asm_threshold: Optional[InheritanceInheritedUInt32] = None
-    forecast_period: Optional[InheritanceInheritedUInt32] = None
-    history: Optional[InheritanceInheritedUInt32] = None
-    min_total: Optional[InheritanceInheritedUInt32] = None
-    min_unused: Optional[InheritanceInheritedUInt32] = None
+    asm_enable_block: Optional[InheritedAsmEnableBlock] = Field(
+        default=None,
+        description=
+        "The block of ASM fields: _enable_, _enable_notification_, _reenable_date_."
+    )
+    asm_growth_block: Optional[InheritedAsmGrowthBlock] = Field(
+        default=None,
+        description="The block of ASM fields: _growth_factor_, _growth_type_.")
+    asm_threshold: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "ASM shows the number of addresses forecast to be used _forecast_period_ days in the future, if it is greater than _asm_threshold_percent_ * _dhcp_total_ (see _dhcp_utilization_) then the subnet is flagged."
+    )
+    forecast_period: Optional[InheritanceInheritedUInt32] = Field(
+        default=None, description="The forecast period in days.")
+    history: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The minimum amount of history needed before ASM can run on this subnet."
+    )
+    min_total: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The minimum size of range needed for ASM to run on this subnet.")
+    min_unused: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The minimum percentage of addresses that must be available outside of the DHCP ranges and fixed addresses when making a suggested change."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "asm_enable_block", "asm_growth_block", "asm_threshold",

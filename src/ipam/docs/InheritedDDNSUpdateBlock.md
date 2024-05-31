@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **action** | **str** | The inheritance setting.  Valid values are: * _inherit_: Use the inherited value. * _override_: Use the value set in the object.  Defaults to _inherit_. | [optional] 
 **display_name** | **str** | The human-readable display name for the object referred to by _source_. | [optional] [readonly] 
 **source** | **str** | The resource identifier. | [optional] [readonly] 
-**value** | [**DDNSUpdateBlock**](DDNSUpdateBlock.md) |  | [optional] 
+**value** | [**DDNSUpdateBlock**](DDNSUpdateBlock.md) | The inherited value. | [optional] [readonly] 
 
 ## Example
 

@@ -35,7 +35,8 @@ class ThreatFeed(BaseModel):
         default=None, description="The TSIG key of the threat feed.")
     name: Optional[StrictStr] = Field(
         default=None, description="The name of the thread feed.")
-    source: Optional[ThreatFeedSource] = None
+    source: Optional[ThreatFeedSource] = Field(
+        default=None, description="The source of the threat feed.")
     threat_level: Optional[StrictStr] = Field(
         default=None, description="The Threat Level of the Feed.")
     additional_properties: Dict[str, Any] = {}
@@ -78,6 +79,7 @@ class ThreatFeed(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
@@ -85,6 +87,7 @@ class ThreatFeed(BaseModel):
             "description",
             "key",
             "name",
+            "source",
             "threat_level",
             "additional_properties",
         ])

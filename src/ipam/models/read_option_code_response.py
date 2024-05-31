@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.option_code import OptionCode
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class ReadOptionCodeResponse(BaseModel):
     """
     The response format to retrieve the __OptionCode__ object.
     """ # noqa: E501
-    result: Optional[OptionCode] = None
+    result: Optional[OptionCode] = Field(default=None,
+                                         description="The OptionCode object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

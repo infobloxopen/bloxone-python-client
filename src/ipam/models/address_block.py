@@ -41,7 +41,10 @@ class AddressBlock(BaseModel):
         description=
         "The address field in form “a.b.c.d/n” where the “/n” may be omitted. In this case, the CIDR value must be defined in the _cidr_ field. When reading, the _address_ field is always in the form “a.b.c.d”."
     )
-    asm_config: Optional[ASMConfig] = None
+    asm_config: Optional[ASMConfig] = Field(
+        default=None,
+        description=
+        "The Automated Scope Management configuration for the address block.")
     asm_scope_flag: Optional[StrictInt] = Field(
         default=None,
         description=
@@ -104,13 +107,21 @@ class AddressBlock(BaseModel):
         description=
         "When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_."
     )
-    dhcp_config: Optional[DHCPConfig] = None
+    dhcp_config: Optional[DHCPConfig] = Field(
+        default=None,
+        description=
+        "The shared DHCP configuration that controls how leases are issued for the address block."
+    )
     dhcp_options: Optional[List[OptionItem]] = Field(
         default=None,
         description=
         "The list of DHCP options for the address block. May be either a specific option or a group of options."
     )
-    dhcp_utilization: Optional[DHCPUtilization] = None
+    dhcp_utilization: Optional[DHCPUtilization] = Field(
+        default=None,
+        description=
+        "The utilization of IP addresses within the DHCP ranges of the address block."
+    )
     discovery_attrs: Optional[Dict[str, Any]] = Field(
         default=None,
         description=
@@ -148,7 +159,10 @@ class AddressBlock(BaseModel):
                                     description="The resource identifier.")
     inheritance_parent: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
-    inheritance_sources: Optional[DHCPInheritance] = None
+    inheritance_sources: Optional[DHCPInheritance] = Field(
+        default=None,
+        description="The DHCP inheritance configuration for the address block."
+    )
     name: Optional[StrictStr] = Field(
         default=None,
         description=
@@ -164,7 +178,10 @@ class AddressBlock(BaseModel):
     tags: Optional[Dict[str, Any]] = Field(
         default=None,
         description="The tags for the address block in JSON format.")
-    threshold: Optional[UtilizationThreshold] = None
+    threshold: Optional[UtilizationThreshold] = Field(
+        default=None,
+        description=
+        "The IP address utilization thresholds for the address block.")
     updated_at: Optional[datetime] = Field(
         default=None,
         description=
@@ -175,8 +192,13 @@ class AddressBlock(BaseModel):
         description=
         "The usage is a combination of indicators, each tracking a specific associated use. Listed below are usage indicators with their meaning:  usage indicator        | description  ---------------------- | --------------------------------  _IPAM_                 |  AddressBlock is managed in BloxOne DDI.  _DISCOVERED_           |  AddressBlock is discovered by some network discovery probe like Network Insight or NetMRI in NIOS."
     )
-    utilization: Optional[Utilization] = None
-    utilization_v6: Optional[UtilizationV6] = None
+    utilization: Optional[Utilization] = Field(
+        default=None,
+        description=
+        "The IPV4 address utilization statistics for the address block.")
+    utilization_v6: Optional[UtilizationV6] = Field(
+        default=None,
+        description="The utilization of IPV6 addresses in the Address block.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "address", "asm_config", "asm_scope_flag", "cidr", "comment",
@@ -230,17 +252,23 @@ class AddressBlock(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "asm_scope_flag",
             "created_at",
+            "dhcp_utilization",
             "discovery_attrs",
             "discovery_metadata",
             "id",
             "protocol",
             "updated_at",
             "usage",
+            "utilization",
+            "utilization_v6",
             "additional_properties",
         ])
 

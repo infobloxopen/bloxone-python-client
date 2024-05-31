@@ -6,7 +6,7 @@ The response format to create the __OptionFilter__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**OptionFilter**](OptionFilter.md) |  | [optional] 
+**result** | [**OptionFilter**](OptionFilter.md) | The created OptionFilter object. | [optional] 
 
 ## Example
 

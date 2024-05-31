@@ -6,7 +6,7 @@ The Security Policy create response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**SecurityPolicy**](SecurityPolicy.md) |  | [optional] 
+**results** | [**SecurityPolicy**](SecurityPolicy.md) | The Security Policy object. | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@ The Custom Redirect read response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**CustomRedirect**](CustomRedirect.md) |  | [optional] 
+**results** | [**CustomRedirect**](CustomRedirect.md) | The Custom Redirect object. | [optional] 
 
 ## Example
 

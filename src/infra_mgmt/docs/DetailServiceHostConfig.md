@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_version** | **str** | The current version of the Service deployed on the Host. | [optional] 
-**status** | [**ShortServiceStatus**](ShortServiceStatus.md) |  | [optional] 
+**status** | [**ShortServiceStatus**](ShortServiceStatus.md) | Service status information. | [optional] 
 **upgraded_at** | **datetime** |  | [optional] 
 
 ## Example

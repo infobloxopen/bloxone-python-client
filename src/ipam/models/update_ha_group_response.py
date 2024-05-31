@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.ha_group import HAGroup
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class UpdateHAGroupResponse(BaseModel):
     """
     The response format to update the __HAGroup__ object.
     """ # noqa: E501
-    result: Optional[HAGroup] = None
+    result: Optional[HAGroup] = Field(default=None,
+                                      description="The HAGroup object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

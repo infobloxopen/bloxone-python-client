@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | The brief description for the thread feed. | [optional] [readonly] 
 **key** | **str** | The TSIG key of the threat feed. | [optional] [readonly] 
 **name** | **str** | The name of the thread feed. | [optional] [readonly] 
-**source** | [**ThreatFeedSource**](ThreatFeedSource.md) |  | [optional] 
+**source** | [**ThreatFeedSource**](ThreatFeedSource.md) | The source of the threat feed. | [optional] [readonly] 
 **threat_level** | **str** | The Threat Level of the Feed. | [optional] [readonly] 
 
 ## Example

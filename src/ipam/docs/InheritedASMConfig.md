@@ -6,13 +6,13 @@ The inheritance configuration for the __ASMConfig__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asm_enable_block** | [**InheritedAsmEnableBlock**](InheritedAsmEnableBlock.md) |  | [optional] 
-**asm_growth_block** | [**InheritedAsmGrowthBlock**](InheritedAsmGrowthBlock.md) |  | [optional] 
-**asm_threshold** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**forecast_period** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**history** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**min_total** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**min_unused** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
+**asm_enable_block** | [**InheritedAsmEnableBlock**](InheritedAsmEnableBlock.md) | The block of ASM fields: _enable_, _enable_notification_, _reenable_date_. | [optional] 
+**asm_growth_block** | [**InheritedAsmGrowthBlock**](InheritedAsmGrowthBlock.md) | The block of ASM fields: _growth_factor_, _growth_type_. | [optional] 
+**asm_threshold** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | ASM shows the number of addresses forecast to be used _forecast_period_ days in the future, if it is greater than _asm_threshold_percent_ * _dhcp_total_ (see _dhcp_utilization_) then the subnet is flagged. | [optional] 
+**forecast_period** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The forecast period in days. | [optional] 
+**history** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The minimum amount of history needed before ASM can run on this subnet. | [optional] 
+**min_total** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The minimum size of range needed for ASM to run on this subnet. | [optional] 
+**min_unused** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The minimum percentage of addresses that must be available outside of the DHCP ranges and fixed addresses when making a suggested change. | [optional] 
 
 ## Example
 

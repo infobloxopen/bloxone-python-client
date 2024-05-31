@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_zone_config** | [**AuthZoneConfig**](AuthZoneConfig.md) |  | [optional] 
-**forward_zone_config** | [**ForwardZoneConfig**](ForwardZoneConfig.md) |  | [optional] 
+**auth_zone_config** | [**AuthZoneConfig**](AuthZoneConfig.md) | Optional. Authoritative zone related configuration. | [optional] 
+**forward_zone_config** | [**ForwardZoneConfig**](ForwardZoneConfig.md) | Optional. Forward zone related configuration. | [optional] 
 **recursive** | **bool** | Indicates whether child objects should be copied or not.  Defaults to _false_. Reserved for future use. | [optional] 
 **resources** | **List[str]** | The resource identifier. | 
-**secondary_zone_config** | [**AuthZoneConfig**](AuthZoneConfig.md) |  | [optional] 
+**secondary_zone_config** | [**AuthZoneConfig**](AuthZoneConfig.md) | Optional. Secondary zone related configuration. | [optional] 
 **skip_on_error** | **bool** | Indicates whether copying should skip object in case of error and continue with next, or abort copying in case of error.  Defaults to _false_. | [optional] 
 **target** | **str** | The resource identifier. | 
 

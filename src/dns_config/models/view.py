@@ -88,7 +88,8 @@ class View(BaseModel):
         description=
         "Optional. _true_ to reject expired DNSSEC keys. Ignored if either _dnssec_enabled_ or _dnssec_enable_validation_ is _false_.  Defaults to _true_."
     )
-    dtc_config: Optional[DTCConfig] = None
+    dtc_config: Optional[DTCConfig] = Field(
+        default=None, description="Optional. DTC configuration.")
     ecs_enabled: Optional[StrictBool] = Field(
         default=None,
         description=
@@ -144,7 +145,8 @@ class View(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[ViewInheritance] = None
+    inheritance_sources: Optional[ViewInheritance] = Field(
+        default=None, description="Optional. Inheritance configuration.")
     ip_spaces: Optional[List[StrictStr]] = Field(
         default=None, description="The resource identifier.")
     lame_ttl: Optional[StrictInt] = Field(
@@ -245,7 +247,8 @@ class View(BaseModel):
             description=
             "_use_root_forwarders_for_local_resolution_with_b1td_ allows DNS recursive queries sent to root forwarders for local resolution when deployed alongside BloxOne Thread Defense. Defaults to _false_."
         )
-    zone_authority: Optional[ZoneAuthority] = None
+    zone_authority: Optional[ZoneAuthority] = Field(
+        default=None, description="Optional. ZoneAuthority.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "add_edns_option_in_outgoing_query", "comment", "created_at",

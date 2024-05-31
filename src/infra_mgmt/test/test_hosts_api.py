@@ -25,64 +25,64 @@ class TestHostsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_hosts_assign_tags(self) -> None:
-        """Test case for hosts_assign_tags
+    def test_assign_tags(self) -> None:
+        """Test case for assign_tags
 
         Assign tags for list of hosts.
         """
         pass
 
-    def test_hosts_create(self) -> None:
-        """Test case for hosts_create
+    def test_create(self) -> None:
+        """Test case for create
 
         Create a Host resource.
         """
         pass
 
-    def test_hosts_delete(self) -> None:
-        """Test case for hosts_delete
+    def test_delete(self) -> None:
+        """Test case for delete
 
         Delete a Host resource.
         """
         pass
 
-    def test_hosts_disconnect(self) -> None:
-        """Test case for hosts_disconnect
+    def test_disconnect(self) -> None:
+        """Test case for disconnect
 
         Disconnect a Host by resource ID.
         """
         pass
 
-    def test_hosts_list(self) -> None:
-        """Test case for hosts_list
+    def test_list(self) -> None:
+        """Test case for list
 
         List all the Host resources for an account.
         """
         pass
 
-    def test_hosts_read(self) -> None:
-        """Test case for hosts_read
+    def test_read(self) -> None:
+        """Test case for read
 
         Get a Host resource.
         """
         pass
 
-    def test_hosts_replace(self) -> None:
-        """Test case for hosts_replace
+    def test_replace(self) -> None:
+        """Test case for replace
 
         Migrate a Host's configuration from one to another.
         """
         pass
 
-    def test_hosts_unassign_tags(self) -> None:
-        """Test case for hosts_unassign_tags
+    def test_unassign_tags(self) -> None:
+        """Test case for unassign_tags
 
         Unassign tag for the list hosts.
         """
         pass
 
-    def test_hosts_update(self) -> None:
-        """Test case for hosts_update
+    def test_update(self) -> None:
+        """Test case for update
 
         Update a Host resource.
         """

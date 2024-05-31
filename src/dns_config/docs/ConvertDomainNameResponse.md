@@ -6,7 +6,7 @@ The ConvertDomainName object convert response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ConvertDomainName**](ConvertDomainName.md) |  | [optional] 
+**result** | [**ConvertDomainName**](ConvertDomainName.md) | The ConvertDomainName object. | [optional] 
 
 ## Example
 

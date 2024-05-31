@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.option_filter import OptionFilter
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class UpdateOptionFilterResponse(BaseModel):
     """
     The response format to update the __OptionFilter__ object.
     """ # noqa: E501
-    result: Optional[OptionFilter] = None
+    result: Optional[OptionFilter] = Field(
+        default=None, description="The OptionFilter object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **external_scope_id** | **str** | external scope ID, UUID | [optional] 
 **host_id** | **str** | Host reference, UUID | [optional] 
 **ip_space_id** | **str** | IPSpace reference, UUID | [optional] 
-**scope_type** | [**NetAddrDfpAssignmentScopeType**](NetAddrDfpAssignmentScopeType.md) |  | [optional] 
+**scope_type** | [**NetAddrDfpAssignmentScopeType**](NetAddrDfpAssignmentScopeType.md) | scope type | [optional] 
 **start** | **str** | Start and end pair of addresses used for range scope type | [optional] 
 
 ## Example

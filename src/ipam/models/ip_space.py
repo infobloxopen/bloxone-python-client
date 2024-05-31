@@ -34,7 +34,10 @@ class IPSpace(BaseModel):
     """
     An __IPSpace__ object (_ipam/ip_space_) allows customers to represent their entire managed address space with no collision. A collision arises when two or more block of addresses overlap partially or fully.
     """ # noqa: E501
-    asm_config: Optional[ASMConfig] = None
+    asm_config: Optional[ASMConfig] = Field(
+        default=None,
+        description=
+        "The Automated Scope Management configuration for the IP space.")
     asm_scope_flag: Optional[StrictInt] = Field(
         default=None,
         description=
@@ -92,7 +95,11 @@ class IPSpace(BaseModel):
         description=
         "When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_."
     )
-    dhcp_config: Optional[DHCPConfig] = None
+    dhcp_config: Optional[DHCPConfig] = Field(
+        default=None,
+        description=
+        "The shared DHCP configuration for the IP space that controls how leases are issued."
+    )
     dhcp_options: Optional[List[OptionItem]] = Field(
         default=None,
         description=
@@ -130,21 +137,28 @@ class IPSpace(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[IPSpaceInheritance] = None
+    inheritance_sources: Optional[IPSpaceInheritance] = Field(
+        default=None, description="The inheritance configuration.")
     name: StrictStr = Field(
         description=
         "The name of the IP space. Must contain 1 to 256 characters. Can include UTF-8."
     )
     tags: Optional[Dict[str, Any]] = Field(
         default=None, description="The tags for the IP space in JSON format.")
-    threshold: Optional[UtilizationThreshold] = None
+    threshold: Optional[UtilizationThreshold] = Field(
+        default=None,
+        description="The utilization threshold settings for the IP space.")
     updated_at: Optional[datetime] = Field(
         default=None,
         description=
         "Time when the object has been updated. Equals to _created_at_ if not updated after creation."
     )
-    utilization: Optional[Utilization] = None
-    utilization_v6: Optional[UtilizationV6] = None
+    utilization: Optional[Utilization] = Field(
+        default=None,
+        description="The utilization of IPV4 addresses in the IP space.")
+    utilization_v6: Optional[UtilizationV6] = Field(
+        default=None,
+        description="The utilization of IPV6 addresses in the IP space.")
     vendor_specific_option_option_space: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
     additional_properties: Dict[str, Any] = {}
@@ -195,13 +209,19 @@ class IPSpace(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "asm_scope_flag",
             "created_at",
             "id",
+            "threshold",
             "updated_at",
+            "utilization",
+            "utilization_v6",
             "additional_properties",
         ])
 

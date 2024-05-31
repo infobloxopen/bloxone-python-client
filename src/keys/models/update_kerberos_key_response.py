@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from keys.models.kerberos_key import KerberosKey
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class UpdateKerberosKeyResponse(BaseModel):
     """
     The response format to update __KerberosKey__ resource extracted from the uploaded keytab file.
     """ # noqa: E501
-    result: Optional[KerberosKey] = None
+    result: Optional[KerberosKey] = Field(
+        default=None, description="The __KerberosKey__ object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

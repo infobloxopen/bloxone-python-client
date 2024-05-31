@@ -35,10 +35,12 @@ class LBDN(BaseModel):
         description=
         "Optional. _true_ to disable object. A disabled object is effectively non-existent when generating configuration."
     )
-    dtc_policy: Optional[DTCPolicy] = None
+    dtc_policy: Optional[DTCPolicy] = Field(
+        default=None, description="Optional. __DTC Policy__ information.")
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[TTLInheritance] = None
+    inheritance_sources: Optional[TTLInheritance] = Field(
+        default=None, description="Optional. The inheritance configuration.")
     name: StrictStr = Field(description="Name of __LBDN__.")
     precedence: Optional[StrictInt] = Field(
         default=None, description="Optional. Precedence.")

@@ -6,7 +6,7 @@ The response format to retrieve the __HardwareFilter__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**HardwareFilter**](HardwareFilter.md) |  | [optional] 
+**result** | [**HardwareFilter**](HardwareFilter.md) | The HardwareFilter object. | [optional] 
 
 ## Example
 

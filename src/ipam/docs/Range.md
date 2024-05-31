@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_assigned_hosts** | [**List[InheritanceAssignedHost]**](InheritanceAssignedHost.md) | The list of the inheritance assigned hosts of the object. | [optional] [readonly] 
 **inheritance_parent** | **str** | The resource identifier. | [optional] 
-**inheritance_sources** | [**DHCPOptionsInheritance**](DHCPOptionsInheritance.md) |  | [optional] 
+**inheritance_sources** | [**DHCPOptionsInheritance**](DHCPOptionsInheritance.md) | The DHCP inheritance configuration for the range. | [optional] 
 **name** | **str** | The name of the range. May contain 1 to 256 characters. Can include UTF-8. | [optional] 
 **parent** | **str** | The resource identifier. | [optional] 
 **protocol** | **str** | The type of protocol (_ip4_ or _ip6_). | [optional] [readonly] 
 **space** | **str** | The resource identifier. | [optional] 
 **start** | **str** | The start IP address of the range. | 
 **tags** | **object** | The tags for the range in JSON format. | [optional] 
-**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) |  | [optional] 
+**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) | The utilization threshold settings for the range. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
-**utilization** | [**Utilization**](Utilization.md) |  | [optional] 
-**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) |  | [optional] 
+**utilization** | [**Utilization**](Utilization.md) | The utilization statistics of IPV4 addresses for the range. | [optional] [readonly] 
+**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) | The utilization of IPV6 addresses in the range. | [optional] [readonly] 
 
 ## Example
 

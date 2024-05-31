@@ -71,7 +71,8 @@ class FixedAddress(BaseModel):
     )
     inheritance_parent: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
-    inheritance_sources: Optional[FixedAddressInheritance] = None
+    inheritance_sources: Optional[FixedAddressInheritance] = Field(
+        default=None, description="The inheritance configuration.")
     ip_space: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
     match_type: StrictStr = Field(

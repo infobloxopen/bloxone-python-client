@@ -6,7 +6,7 @@ The ForwardNSG object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ForwardNSG**](ForwardNSG.md) |  | [optional] 
+**result** | [**ForwardNSG**](ForwardNSG.md) | The updated ForwardNSG object. | [optional] 
 
 ## Example
 

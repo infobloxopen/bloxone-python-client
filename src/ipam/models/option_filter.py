@@ -67,7 +67,8 @@ class OptionFilter(BaseModel):
         description=
         "The role of DHCP filter (_values_ or _selection_).  Defaults to _values_."
     )
-    rules: OptionFilterRuleList
+    rules: OptionFilterRuleList = Field(
+        description="The list of option filter rules to match.")
     tags: Optional[Dict[str, Any]] = Field(
         default=None,
         description="The tags for the option filter in JSON format.")

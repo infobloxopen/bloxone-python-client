@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.inheritance_inherited_string import InheritanceInheritedString
 from ipam.models.inherited_dhcp_option_list import InheritedDHCPOptionList
@@ -28,10 +28,22 @@ class FixedAddressInheritance(BaseModel):
     """
     The __FixedAddressInheritance__ object specifies how and which fields _FixedAddress_ object inherits from the parent.
     """ # noqa: E501
-    dhcp_options: Optional[InheritedDHCPOptionList] = None
-    header_option_filename: Optional[InheritanceInheritedString] = None
-    header_option_server_address: Optional[InheritanceInheritedString] = None
-    header_option_server_name: Optional[InheritanceInheritedString] = None
+    dhcp_options: Optional[InheritedDHCPOptionList] = Field(
+        default=None,
+        description="The inheritance configuration for _dhcp_options_ field.")
+    header_option_filename: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_filename_ field.")
+    header_option_server_address: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_server_address_ field."
+    )
+    header_option_server_name: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_server_name_ field.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "dhcp_options", "header_option_filename",

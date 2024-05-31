@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.dhcp_global import DHCPGlobal
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class ReadGlobalResponse(BaseModel):
     """
     The response format to retrieve the __Global__ object.
     """ # noqa: E501
-    result: Optional[DHCPGlobal] = None
+    result: Optional[DHCPGlobal] = Field(default=None,
+                                         description="The Global object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

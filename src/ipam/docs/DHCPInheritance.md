@@ -6,21 +6,21 @@ The __DHCPInheritance__ object specifies how the _dhcp_config_, _dhcp_options_ a
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asm_config** | [**InheritedASMConfig**](InheritedASMConfig.md) |  | [optional] 
-**ddns_client_update** | [**InheritanceInheritedString**](InheritanceInheritedString.md) |  | [optional] 
-**ddns_conflict_resolution_mode** | [**InheritanceInheritedString**](InheritanceInheritedString.md) |  | [optional] 
-**ddns_enabled** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**ddns_hostname_block** | [**InheritedDDNSHostnameBlock**](InheritedDDNSHostnameBlock.md) |  | [optional] 
-**ddns_ttl_percent** | [**InheritanceInheritedFloat**](InheritanceInheritedFloat.md) |  | [optional] 
-**ddns_update_block** | [**InheritedDDNSUpdateBlock**](InheritedDDNSUpdateBlock.md) |  | [optional] 
-**ddns_update_on_renew** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**ddns_use_conflict_resolution** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**dhcp_config** | [**InheritedDHCPConfig**](InheritedDHCPConfig.md) |  | [optional] 
-**dhcp_options** | [**InheritedDHCPOptionList**](InheritedDHCPOptionList.md) |  | [optional] 
-**header_option_filename** | [**InheritanceInheritedString**](InheritanceInheritedString.md) |  | [optional] 
-**header_option_server_address** | [**InheritanceInheritedString**](InheritanceInheritedString.md) |  | [optional] 
-**header_option_server_name** | [**InheritanceInheritedString**](InheritanceInheritedString.md) |  | [optional] 
-**hostname_rewrite_block** | [**InheritedHostnameRewriteBlock**](InheritedHostnameRewriteBlock.md) |  | [optional] 
+**asm_config** | [**InheritedASMConfig**](InheritedASMConfig.md) | The inheritance configuration for _asm_config_ field. | [optional] 
+**ddns_client_update** | [**InheritanceInheritedString**](InheritanceInheritedString.md) | The inheritance configuration for _ddns_client_update_ field. | [optional] 
+**ddns_conflict_resolution_mode** | [**InheritanceInheritedString**](InheritanceInheritedString.md) | The inheritance configuration for _ddns_conflict_resolution_mode_ field. | [optional] 
+**ddns_enabled** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _ddns_enabled_ field. Only action allowed is &#39;inherit&#39;. | [optional] 
+**ddns_hostname_block** | [**InheritedDDNSHostnameBlock**](InheritedDDNSHostnameBlock.md) | The inheritance configuration for _ddns_generate_name_ and _ddns_generated_prefix_ fields. | [optional] 
+**ddns_ttl_percent** | [**InheritanceInheritedFloat**](InheritanceInheritedFloat.md) | The inheritance configuration for _ddns_ttl_percent_ field. | [optional] 
+**ddns_update_block** | [**InheritedDDNSUpdateBlock**](InheritedDDNSUpdateBlock.md) | The inheritance configuration for _ddns_send_updates_ and _ddns_domain_ fields. | [optional] 
+**ddns_update_on_renew** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _ddns_update_on_renew_ field. | [optional] 
+**ddns_use_conflict_resolution** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _ddns_use_conflict_resolution_ field. | [optional] 
+**dhcp_config** | [**InheritedDHCPConfig**](InheritedDHCPConfig.md) | The inheritance configuration for _dhcp_config_ field. | [optional] 
+**dhcp_options** | [**InheritedDHCPOptionList**](InheritedDHCPOptionList.md) | The inheritance configuration for _dhcp_options_ field. | [optional] 
+**header_option_filename** | [**InheritanceInheritedString**](InheritanceInheritedString.md) | The inheritance configuration for _header_option_filename_ field. | [optional] 
+**header_option_server_address** | [**InheritanceInheritedString**](InheritanceInheritedString.md) | The inheritance configuration for _header_option_server_address_ field. | [optional] 
+**header_option_server_name** | [**InheritanceInheritedString**](InheritanceInheritedString.md) | The inheritance configuration for _header_option_server_name_ field. | [optional] 
+**hostname_rewrite_block** | [**InheritedHostnameRewriteBlock**](InheritedHostnameRewriteBlock.md) | The inheritance configuration for _hostname_rewrite_enabled_, _hostname_rewrite_regex_, and _hostname_rewrite_char_ fields. | [optional] 
 
 ## Example
 

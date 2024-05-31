@@ -6,7 +6,7 @@ The Delegation object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Delegation**](Delegation.md) |  | [optional] 
+**result** | [**Delegation**](Delegation.md) | The created Delegation object. | [optional] 
 
 ## Example
 

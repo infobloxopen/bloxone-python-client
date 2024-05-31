@@ -6,7 +6,7 @@ The response format to create the __AddressBlock__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AddressBlock**](AddressBlock.md) |  | [optional] 
+**result** | [**AddressBlock**](AddressBlock.md) | The created AddressBlock object. | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **composite_status** | **str** | Composite Status of the Host (&#x60;online&#x60;, &#x60;degraded&#x60;, &#x60;error&#x60;, &#x60;offline&#x60;, &#x60;pending&#x60;, &#x60;awaiting approval&#x60;). | [optional] 
-**config** | [**DetailServiceHostConfig**](DetailServiceHostConfig.md) |  | [optional] 
+**config** | [**DetailServiceHostConfig**](DetailServiceHostConfig.md) | List of Host-specific configurations of this Service. | [optional] 
 **display_name** | **str** | The name of the Host (unique). | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **ip_address** | **str** | The IP address of the Host. | [optional] 

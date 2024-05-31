@@ -6,7 +6,7 @@ The inheritance configuration that specifies how the _dhcp_options_ field is inh
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dhcp_options** | [**InheritedDHCPOptionList**](InheritedDHCPOptionList.md) |  | [optional] 
+**dhcp_options** | [**InheritedDHCPOptionList**](InheritedDHCPOptionList.md) | The inheritance configuration for the _dhcp_options_ field. | [optional] 
 
 ## Example
 

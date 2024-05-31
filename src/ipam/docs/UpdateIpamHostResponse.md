@@ -6,7 +6,7 @@ The response format to update the _IpamHost__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**IpamHost**](IpamHost.md) |  | [optional] 
+**result** | [**IpamHost**](IpamHost.md) | The IpamHost object. | [optional] 
 
 ## Example
 

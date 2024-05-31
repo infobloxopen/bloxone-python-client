@@ -6,7 +6,7 @@ The DNS Host object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Host**](Host.md) |  | [optional] 
+**result** | [**Host**](Host.md) | The updated DNS Host object. | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@ The Global object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**DNSGlobal**](DNSGlobal.md) |  | [optional] 
+**result** | [**DNSGlobal**](DNSGlobal.md) | The global object. | [optional] 
 
 ## Example
 

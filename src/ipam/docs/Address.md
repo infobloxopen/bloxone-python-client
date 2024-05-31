@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **address** | **str** | The address in form \&quot;a.b.c.d\&quot;. | 
 **comment** | **str** | The description for the address object. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
-**dhcp_info** | [**DHCPInfo**](DHCPInfo.md) |  | [optional] 
+**dhcp_info** | [**DHCPInfo**](DHCPInfo.md) | The DHCP information associated with this object. | [optional] [readonly] 
 **disable_dhcp** | **bool** | Read only. Represent the value of the same field in the associated _dhcp/fixed_address_ object. | [optional] [readonly] 
 **discovery_attrs** | **object** | The discovery attributes for this address in JSON format. | [optional] [readonly] 
 **discovery_metadata** | **object** | The discovery metadata for this address in JSON format. | [optional] [readonly] 

@@ -6,7 +6,7 @@ The response format to create the __Record__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Record**](Record.md) |  | [optional] 
+**result** | [**Record**](Record.md) | The created Record object. | [optional] 
 
 ## Example
 

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.subnet import Subnet
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class CreateSubnetResponse(BaseModel):
     """
     The response format to create the __Subnet__ object.
     """ # noqa: E501
-    result: Optional[Subnet] = None
+    result: Optional[Subnet] = Field(default=None,
+                                     description="The created Subnet object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

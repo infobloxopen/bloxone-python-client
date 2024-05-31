@@ -73,7 +73,8 @@ class Record(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[RecordInheritance] = None
+    inheritance_sources: Optional[RecordInheritance] = Field(
+        default=None, description="The inheritance configuration.")
     ipam_host: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
     name_in_zone: Optional[StrictStr] = Field(

@@ -6,7 +6,7 @@ The response format to create the __IPSpace__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**IPSpace**](IPSpace.md) |  | [optional] 
+**result** | [**IPSpace**](IPSpace.md) | The created IP Space object. | [optional] 
 
 ## Example
 

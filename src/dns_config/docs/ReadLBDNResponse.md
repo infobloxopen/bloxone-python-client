@@ -6,7 +6,7 @@ The __LBDN__ object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**LBDN**](LBDN.md) |  | [optional] 
+**result** | [**LBDN**](LBDN.md) | The __LBDN__ object. | [optional] 
 
 ## Example
 

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.delegation import Delegation
 from typing import Optional, Set
@@ -29,7 +29,8 @@ class ReadDelegationResponse(BaseModel):
     """
 
   # noqa: E501
-    result: Optional[Delegation] = None
+    result: Optional[Delegation] = Field(default=None,
+                                         description="The Delegation object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

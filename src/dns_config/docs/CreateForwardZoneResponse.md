@@ -6,7 +6,7 @@ The Forward Zone object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ForwardZone**](ForwardZone.md) |  | [optional] 
+**result** | [**ForwardZone**](ForwardZone.md) | The created Forward Zone object. | [optional] 
 
 ## Example
 

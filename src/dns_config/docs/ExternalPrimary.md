@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **nsg** | **str** | The resource identifier. | [optional] 
 **protocol_fqdn** | **str** | FQDN of nameserver in punycode. | [optional] [readonly] 
 **tsig_enabled** | **bool** | Optional. If enabled, secondaries will use the configured TSIG key when requesting a zone transfer from this primary. | [optional] 
-**tsig_key** | [**TSIGKey**](TSIGKey.md) |  | [optional] 
+**tsig_key** | [**TSIGKey**](TSIGKey.md) | Optional. TSIG key.  Error if empty while _tsig_enabled_ is _true_. | [optional] 
 **type** | **str** | Allowed values: * _nsg_, * _primary_. | 
 
 ## Example
