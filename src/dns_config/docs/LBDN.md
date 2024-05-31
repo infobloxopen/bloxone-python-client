@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Optional. Comment for __LBDN__. | [optional] 
 **disabled** | **bool** | Optional. _true_ to disable object. A disabled object is effectively non-existent when generating configuration. | [optional] 
-**dtc_policy** | [**DTCPolicy**](DTCPolicy.md) |  | [optional] 
+**dtc_policy** | [**DTCPolicy**](DTCPolicy.md) | Optional. __DTC Policy__ information. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
-**inheritance_sources** | [**TTLInheritance**](TTLInheritance.md) |  | [optional] 
+**inheritance_sources** | [**TTLInheritance**](TTLInheritance.md) | Optional. The inheritance configuration. | [optional] 
 **name** | **str** | Name of __LBDN__. | 
 **precedence** | **int** | Optional. Precedence. | [optional] 
 **tags** | **object** | Optional. The tags for __LBDN__ in JSON format. | [optional] 

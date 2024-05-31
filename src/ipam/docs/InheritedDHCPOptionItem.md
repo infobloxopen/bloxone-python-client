@@ -6,7 +6,7 @@ A wrapper of item (_dhcp/option_item_) in a list of Inherited DHCP options. It c
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**option** | [**OptionItem**](OptionItem.md) |  | [optional] 
+**option** | [**OptionItem**](OptionItem.md) | Option inherited from the ancestor. | [optional] 
 **overriding_group** | **str** | The resource identifier. | [optional] 
 
 ## Example

@@ -6,7 +6,7 @@ The Server object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Server**](Server.md) |  | [optional] 
+**result** | [**Server**](Server.md) | The Server object. | [optional] 
 
 ## Example
 

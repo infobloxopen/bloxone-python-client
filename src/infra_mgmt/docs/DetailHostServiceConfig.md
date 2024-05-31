@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **service_id** | **str** | The resource identifier. | [optional] 
 **service_name** | **str** | The name of the Service. | [optional] 
 **service_type** | **str** | The type of the Service deployed on the Host (&#x60;dns&#x60;, &#x60;cdc&#x60;, etc.). | [optional] 
-**status** | [**ShortServiceStatus**](ShortServiceStatus.md) |  | [optional] 
+**status** | [**ShortServiceStatus**](ShortServiceStatus.md) | Service status information. | [optional] 
 **upgraded_at** | **datetime** | The timestamp of the latest upgrade of the Host-specific Service configuration. | [optional] 
 
 ## Example

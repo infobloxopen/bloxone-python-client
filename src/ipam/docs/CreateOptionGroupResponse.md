@@ -6,7 +6,7 @@ The response format to create the __OptionGroup__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**OptionGroup**](OptionGroup.md) |  | [optional] 
+**result** | [**OptionGroup**](OptionGroup.md) | The created OptionGroup object. | [optional] 
 
 ## Example
 

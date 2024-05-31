@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.inherited_dhcp_option_list import InheritedDHCPOptionList
 from typing import Optional, Set
@@ -27,7 +27,10 @@ class DHCPOptionsInheritance(BaseModel):
     """
     The inheritance configuration that specifies how the _dhcp_options_ field is inherited from the parent object.
     """ # noqa: E501
-    dhcp_options: Optional[InheritedDHCPOptionList] = None
+    dhcp_options: Optional[InheritedDHCPOptionList] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for the _dhcp_options_ field.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["dhcp_options"]
 

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from fw.models.network_list import NetworkList
 from typing import Optional, Set
@@ -29,7 +29,8 @@ class NetworkListUpdateResponse(BaseModel):
     """
 
   # noqa: E501
-    results: Optional[NetworkList] = None
+    results: Optional[NetworkList] = Field(
+        default=None, description="The Network List object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["results"]
 

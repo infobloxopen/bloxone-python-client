@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gss_tsig_enabled** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) |  | [optional] 
-**notify** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) |  | [optional] 
-**query_acl** | [**InheritedACLItems**](InheritedACLItems.md) |  | [optional] 
-**transfer_acl** | [**InheritedACLItems**](InheritedACLItems.md) |  | [optional] 
-**update_acl** | [**InheritedACLItems**](InheritedACLItems.md) |  | [optional] 
-**use_forwarders_for_subzones** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) |  | [optional] 
-**zone_authority** | [**InheritedZoneAuthority**](InheritedZoneAuthority.md) |  | [optional] 
+**gss_tsig_enabled** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) | Optional. Field config for _gss_tsig_enabled_ field from _AuthZone_ object. | [optional] 
+**notify** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) | Field config for _notify_ field from _AuthZone_ object. | [optional] 
+**query_acl** | [**InheritedACLItems**](InheritedACLItems.md) | Optional. Field config for _query_acl_ field from _AuthZone_ object. | [optional] 
+**transfer_acl** | [**InheritedACLItems**](InheritedACLItems.md) | Optional. Field config for _transfer_acl_ field from _AuthZone_ object. | [optional] 
+**update_acl** | [**InheritedACLItems**](InheritedACLItems.md) | Optional. Field config for _update_acl_ field from _AuthZone_ object. | [optional] 
+**use_forwarders_for_subzones** | [**Inheritance2InheritedBool**](Inheritance2InheritedBool.md) | Optional. Field config for _use_forwarders_for_subzones_ field from _AuthZone_ object. | [optional] 
+**zone_authority** | [**InheritedZoneAuthority**](InheritedZoneAuthority.md) | Optional. Field config for _zone_authority_ field from _AuthZone_ object. | [optional] 
 
 ## Example
 

@@ -44,7 +44,8 @@ class NetAddrDfpAssignment(BaseModel):
                                          description="Host reference, UUID")
     ip_space_id: Optional[StrictStr] = Field(
         default=None, description="IPSpace reference, UUID")
-    scope_type: Optional[NetAddrDfpAssignmentScopeType] = None
+    scope_type: Optional[NetAddrDfpAssignmentScopeType] = Field(
+        default=None, description="scope type")
     start: Optional[StrictStr] = Field(
         default=None,
         description="Start and end pair of addresses used for range scope type"

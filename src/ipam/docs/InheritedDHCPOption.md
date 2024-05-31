@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **action** | **str** | The inheritance setting.  Valid values are: * _inherit_: Use the inherited value. * _block_: Don&#39;t use the inherited value.  Defaults to _inherit_. | [optional] 
 **display_name** | **str** | The human-readable display name for the object referred to by _source_. | [optional] [readonly] 
 **source** | **str** | The resource identifier. | [optional] [readonly] 
-**value** | [**InheritedDHCPOptionItem**](InheritedDHCPOptionItem.md) |  | [optional] 
+**value** | [**InheritedDHCPOptionItem**](InheritedDHCPOptionItem.md) | The inherited value for the DHCP option. | [optional] [readonly] 
 
 ## Example
 

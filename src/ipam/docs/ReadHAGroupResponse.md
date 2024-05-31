@@ -6,7 +6,7 @@ The response format to retrieve the __HAGroup__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**HAGroup**](HAGroup.md) |  | [optional] 
+**result** | [**HAGroup**](HAGroup.md) | The HAGroup object. | [optional] 
 
 ## Example
 

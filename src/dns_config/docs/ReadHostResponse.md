@@ -6,7 +6,7 @@ The DNS Host object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Host**](Host.md) |  | [optional] 
+**result** | [**Host**](Host.md) | The DNS Host object. | [optional] 
 
 ## Example
 

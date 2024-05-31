@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inheritance2_inherited_string import Inheritance2InheritedString
 from dns_config.models.inheritance2_inherited_u_int32 import Inheritance2InheritedUInt32
@@ -29,14 +29,46 @@ class InheritedZoneAuthority(BaseModel):
     """
     Inheritance configuration for a field of type _ZoneAuthority_.
     """ # noqa: E501
-    default_ttl: Optional[Inheritance2InheritedUInt32] = None
-    expire: Optional[Inheritance2InheritedUInt32] = None
-    mname_block: Optional[InheritedZoneAuthorityMNameBlock] = None
-    negative_ttl: Optional[Inheritance2InheritedUInt32] = None
-    protocol_rname: Optional[Inheritance2InheritedString] = None
-    refresh: Optional[Inheritance2InheritedUInt32] = None
-    retry: Optional[Inheritance2InheritedUInt32] = None
-    rname: Optional[Inheritance2InheritedString] = None
+    default_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _default_ttl_ field from _ZoneAuthority_ object."
+    )
+    expire: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _expire_ field from _ZoneAuthority_ object."
+    )
+    mname_block: Optional[InheritedZoneAuthorityMNameBlock] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _mname_ block from _ZoneAuthority_ object."
+    )
+    negative_ttl: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _negative_ttl_ field from _ZoneAuthority_ object."
+    )
+    protocol_rname: Optional[Inheritance2InheritedString] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _protocol_rname_ field from _ZoneAuthority_ object."
+    )
+    refresh: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _refresh_ field from _ZoneAuthority_ object."
+    )
+    retry: Optional[Inheritance2InheritedUInt32] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _retry_ field from _ZoneAuthority_ object."
+    )
+    rname: Optional[Inheritance2InheritedString] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _rname_ field from _ZoneAuthority_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "default_ttl", "expire", "mname_block", "negative_ttl",

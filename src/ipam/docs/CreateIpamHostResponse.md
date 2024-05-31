@@ -6,7 +6,7 @@ The response format to create the __IpamHost__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**IpamHost**](IpamHost.md) |  | [optional] 
+**result** | [**IpamHost**](IpamHost.md) | The created IpamHost object. | [optional] 
 
 ## Example
 

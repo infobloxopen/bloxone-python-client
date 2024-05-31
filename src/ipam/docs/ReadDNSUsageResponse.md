@@ -6,7 +6,7 @@ The response format to retrieve the __DNSUsage__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**DNSUsage**](DNSUsage.md) |  | [optional] 
+**result** | [**DNSUsage**](DNSUsage.md) | The DNSUsage object. | [optional] 
 
 ## Example
 

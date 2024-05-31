@@ -6,17 +6,17 @@ The inheritance configuration for a field of type _DHCPConfig_.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**abandoned_reclaim_time** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**abandoned_reclaim_time_v6** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**allow_unknown** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**allow_unknown_v6** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**echo_client_id** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**filters** | [**InheritedDHCPConfigFilterList**](InheritedDHCPConfigFilterList.md) |  | [optional] 
-**filters_v6** | [**InheritedDHCPConfigFilterList**](InheritedDHCPConfigFilterList.md) |  | [optional] 
-**ignore_client_uid** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) |  | [optional] 
-**ignore_list** | [**InheritedDHCPConfigIgnoreItemList**](InheritedDHCPConfigIgnoreItemList.md) |  | [optional] 
-**lease_time** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
-**lease_time_v6** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) |  | [optional] 
+**abandoned_reclaim_time** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The inheritance configuration for _abandoned_reclaim_time_ field from _DHCPConfig_ object. | [optional] 
+**abandoned_reclaim_time_v6** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The inheritance configuration for _abandoned_reclaim_time_v6_ field from _DHCPConfig_ object. | [optional] 
+**allow_unknown** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _allow_unknown_ field from _DHCPConfig_ object. | [optional] 
+**allow_unknown_v6** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _allow_unknown_v6_ field from _DHCPConfig_ object. | [optional] 
+**echo_client_id** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _echo_client_id_ field from _DHCPConfig_ object. | [optional] 
+**filters** | [**InheritedDHCPConfigFilterList**](InheritedDHCPConfigFilterList.md) | The inheritance configuration for filters field from _DHCPConfig_ object. | [optional] 
+**filters_v6** | [**InheritedDHCPConfigFilterList**](InheritedDHCPConfigFilterList.md) | The inheritance configuration for _filters_v6_ field from _DHCPConfig_ object. | [optional] 
+**ignore_client_uid** | [**InheritanceInheritedBool**](InheritanceInheritedBool.md) | The inheritance configuration for _ignore_client_uid_ field from _DHCPConfig_ object. | [optional] 
+**ignore_list** | [**InheritedDHCPConfigIgnoreItemList**](InheritedDHCPConfigIgnoreItemList.md) | The inheritance configuration for _ignore_list_ field from _DHCPConfig_ object. | [optional] 
+**lease_time** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The inheritance configuration for _lease_time_ field from _DHCPConfig_ object. | [optional] 
+**lease_time_v6** | [**InheritanceInheritedUInt32**](InheritanceInheritedUInt32.md) | The inheritance configuration for _lease_time_v6_ field from _DHCPConfig_ object. | [optional] 
 
 ## Example
 

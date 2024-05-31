@@ -7,7 +7,7 @@ An __AddressBlock__ object (_ipam/address_block_) is a set of contiguous IP addr
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | The address field in form “a.b.c.d/n” where the “/n” may be omitted. In this case, the CIDR value must be defined in the _cidr_ field. When reading, the _address_ field is always in the form “a.b.c.d”. | [optional] 
-**asm_config** | [**ASMConfig**](ASMConfig.md) |  | [optional] 
+**asm_config** | [**ASMConfig**](ASMConfig.md) | The Automated Scope Management configuration for the address block. | [optional] 
 **asm_scope_flag** | **int** | Incremented by 1 if the IP address usage limits for automated scope management are exceeded for any subnets in the address block. | [optional] [readonly] 
 **cidr** | **int** | The CIDR of the address block. This is required, if _address_ does not specify it in its input. | [optional] 
 **comment** | **str** | The description for the address block. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **ddns_ttl_percent** | **float** | DDNS TTL value - to be calculated as a simple percentage of the lease&#39;s lifetime, using the parameter&#39;s value as the percentage. It is specified as a percentage (e.g. 25, 75). Defaults to unspecified. | [optional] 
 **ddns_update_on_renew** | **bool** | Instructs the DHCP server to always update the DNS information when a lease is renewed even if its DNS information has not changed.  Defaults to _false_. | [optional] 
 **ddns_use_conflict_resolution** | **bool** | When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_. | [optional] 
-**dhcp_config** | [**DHCPConfig**](DHCPConfig.md) |  | [optional] 
+**dhcp_config** | [**DHCPConfig**](DHCPConfig.md) | The shared DHCP configuration that controls how leases are issued for the address block. | [optional] 
 **dhcp_options** | [**List[OptionItem]**](OptionItem.md) | The list of DHCP options for the address block. May be either a specific option or a group of options. | [optional] 
-**dhcp_utilization** | [**DHCPUtilization**](DHCPUtilization.md) |  | [optional] 
+**dhcp_utilization** | [**DHCPUtilization**](DHCPUtilization.md) | The utilization of IP addresses within the DHCP ranges of the address block. | [optional] [readonly] 
 **discovery_attrs** | **object** | The discovery attributes for this address block in JSON format. | [optional] [readonly] 
 **discovery_metadata** | **object** | The discovery metadata for this address block in JSON format. | [optional] [readonly] 
 **header_option_filename** | **str** | The configuration for header option filename field. | [optional] 
@@ -34,17 +34,17 @@ Name | Type | Description | Notes
 **hostname_rewrite_regex** | **str** | The regex bracket expression to match valid characters.  Must begin with \&quot;[\&quot; and end with \&quot;]\&quot; and be a compilable POSIX regex.  Defaults to \&quot;[^a-zA-Z0-9_.]\&quot;. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_parent** | **str** | The resource identifier. | [optional] 
-**inheritance_sources** | [**DHCPInheritance**](DHCPInheritance.md) |  | [optional] 
+**inheritance_sources** | [**DHCPInheritance**](DHCPInheritance.md) | The DHCP inheritance configuration for the address block. | [optional] 
 **name** | **str** | The name of the address block. May contain 1 to 256 characters. Can include UTF-8. | [optional] 
 **parent** | **str** | The resource identifier. | [optional] 
 **protocol** | **str** | The type of protocol of address block (_ip4_ or _ip6_). | [optional] [readonly] 
 **space** | **str** | The resource identifier. | [optional] 
 **tags** | **object** | The tags for the address block in JSON format. | [optional] 
-**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) |  | [optional] 
+**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) | The IP address utilization thresholds for the address block. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 **usage** | **List[str]** | The usage is a combination of indicators, each tracking a specific associated use. Listed below are usage indicators with their meaning:  usage indicator        | description  ---------------------- | --------------------------------  _IPAM_                 |  AddressBlock is managed in BloxOne DDI.  _DISCOVERED_           |  AddressBlock is discovered by some network discovery probe like Network Insight or NetMRI in NIOS. | [optional] [readonly] 
-**utilization** | [**Utilization**](Utilization.md) |  | [optional] 
-**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) |  | [optional] 
+**utilization** | [**Utilization**](Utilization.md) | The IPV4 address utilization statistics for the address block. | [optional] [readonly] 
+**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) | The utilization of IPV6 addresses in the Address block. | [optional] [readonly] 
 
 ## Example
 

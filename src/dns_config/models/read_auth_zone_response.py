@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.auth_zone import AuthZone
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class ReadAuthZoneResponse(BaseModel):
     """
     The Authoritative Zone object read response format.
     """ # noqa: E501
-    result: Optional[AuthZone] = None
+    result: Optional[AuthZone] = Field(default=None,
+                                       description="The AuthZone object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

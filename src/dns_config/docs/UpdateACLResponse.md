@@ -6,7 +6,7 @@ The ACL object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ACL**](ACL.md) |  | [optional] 
+**result** | [**ACL**](ACL.md) | The updated ACL object. | [optional] 
 
 ## Example
 

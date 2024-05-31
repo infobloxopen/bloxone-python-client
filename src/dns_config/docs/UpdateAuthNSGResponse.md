@@ -6,7 +6,7 @@ The AuthNSG object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AuthNSG**](AuthNSG.md) |  | [optional] 
+**result** | [**AuthNSG**](AuthNSG.md) | The updated AuthNSG object. | [optional] 
 
 ## Example
 

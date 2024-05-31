@@ -6,7 +6,7 @@ The Forward Zone object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ForwardZone**](ForwardZone.md) |  | [optional] 
+**result** | [**ForwardZone**](ForwardZone.md) | The updated Forward Zone object. | [optional] 
 
 ## Example
 

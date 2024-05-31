@@ -39,7 +39,8 @@ class InheritedDDNSBlock(BaseModel):
     )
     source: Optional[StrictStr] = Field(default=None,
                                         description="The resource identifier.")
-    value: Optional[DDNSBlock] = None
+    value: Optional[DDNSBlock] = Field(default=None,
+                                       description="The inherited value.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "action", "display_name", "source", "value"

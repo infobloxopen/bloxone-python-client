@@ -41,7 +41,8 @@ class DetailHostServiceConfig(BaseModel):
         default=None,
         description=
         "The type of the Service deployed on the Host (`dns`, `cdc`, etc.).")
-    status: Optional[ShortServiceStatus] = None
+    status: Optional[ShortServiceStatus] = Field(
+        default=None, description="Service status information.")
     upgraded_at: Optional[datetime] = Field(
         default=None,
         description=

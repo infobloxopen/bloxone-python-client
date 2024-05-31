@@ -6,7 +6,7 @@ The response format to create the __OptionCode__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**OptionCode**](OptionCode.md) |  | [optional] 
+**result** | [**OptionCode**](OptionCode.md) | The created OptionCode object. | [optional] 
 
 ## Example
 

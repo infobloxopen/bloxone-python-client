@@ -6,7 +6,7 @@ The Authoritative Zone object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AuthZone**](AuthZone.md) |  | [optional] 
+**result** | [**AuthZone**](AuthZone.md) | The AuthZone object. | [optional] 
 
 ## Example
 

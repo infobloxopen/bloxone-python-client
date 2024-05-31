@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.inheritance_inherited_bool import InheritanceInheritedBool
 from ipam.models.inheritance_inherited_float import InheritanceInheritedFloat
@@ -35,21 +35,70 @@ class DHCPInheritance(BaseModel):
     """
     The __DHCPInheritance__ object specifies how the _dhcp_config_, _dhcp_options_ and _asm_config_ configuration fields are inherited from the parent object.
     """ # noqa: E501
-    asm_config: Optional[InheritedASMConfig] = None
-    ddns_client_update: Optional[InheritanceInheritedString] = None
-    ddns_conflict_resolution_mode: Optional[InheritanceInheritedString] = None
-    ddns_enabled: Optional[InheritanceInheritedBool] = None
-    ddns_hostname_block: Optional[InheritedDDNSHostnameBlock] = None
-    ddns_ttl_percent: Optional[InheritanceInheritedFloat] = None
-    ddns_update_block: Optional[InheritedDDNSUpdateBlock] = None
-    ddns_update_on_renew: Optional[InheritanceInheritedBool] = None
-    ddns_use_conflict_resolution: Optional[InheritanceInheritedBool] = None
-    dhcp_config: Optional[InheritedDHCPConfig] = None
-    dhcp_options: Optional[InheritedDHCPOptionList] = None
-    header_option_filename: Optional[InheritanceInheritedString] = None
-    header_option_server_address: Optional[InheritanceInheritedString] = None
-    header_option_server_name: Optional[InheritanceInheritedString] = None
-    hostname_rewrite_block: Optional[InheritedHostnameRewriteBlock] = None
+    asm_config: Optional[InheritedASMConfig] = Field(
+        default=None,
+        description="The inheritance configuration for _asm_config_ field.")
+    ddns_client_update: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_client_update_ field.")
+    ddns_conflict_resolution_mode: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_conflict_resolution_mode_ field."
+    )
+    ddns_enabled: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_enabled_ field. Only action allowed is 'inherit'."
+    )
+    ddns_hostname_block: Optional[InheritedDDNSHostnameBlock] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_generate_name_ and _ddns_generated_prefix_ fields."
+    )
+    ddns_ttl_percent: Optional[InheritanceInheritedFloat] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_ttl_percent_ field.")
+    ddns_update_block: Optional[InheritedDDNSUpdateBlock] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_send_updates_ and _ddns_domain_ fields."
+    )
+    ddns_update_on_renew: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_update_on_renew_ field.")
+    ddns_use_conflict_resolution: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ddns_use_conflict_resolution_ field."
+    )
+    dhcp_config: Optional[InheritedDHCPConfig] = Field(
+        default=None,
+        description="The inheritance configuration for _dhcp_config_ field.")
+    dhcp_options: Optional[InheritedDHCPOptionList] = Field(
+        default=None,
+        description="The inheritance configuration for _dhcp_options_ field.")
+    header_option_filename: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_filename_ field.")
+    header_option_server_address: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_server_address_ field."
+    )
+    header_option_server_name: Optional[InheritanceInheritedString] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _header_option_server_name_ field.")
+    hostname_rewrite_block: Optional[InheritedHostnameRewriteBlock] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _hostname_rewrite_enabled_, _hostname_rewrite_regex_, and _hostname_rewrite_char_ fields."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "asm_config", "ddns_client_update", "ddns_conflict_resolution_mode",

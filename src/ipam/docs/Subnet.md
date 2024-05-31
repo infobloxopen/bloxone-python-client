@@ -7,7 +7,7 @@ A __Subnet__ object (_ipam/subnet_) is a set of contiguous IP addresses in the s
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | The address of the subnet in the form “a.b.c.d/n” where the “/n” may be omitted. In this case, the CIDR value must be defined in the _cidr_ field. When reading, the _address_ field is always in the form “a.b.c.d”. | [optional] 
-**asm_config** | [**ASMConfig**](ASMConfig.md) |  | [optional] 
+**asm_config** | [**ASMConfig**](ASMConfig.md) | The Automated Scope Management configuration for the subnet. | [optional] 
 **asm_scope_flag** | **int** | Set to 1 to indicate that the subnet may run out of addresses. | [optional] [readonly] 
 **cidr** | **int** | The CIDR of the subnet. This is required if _address_ does not include CIDR. | [optional] 
 **comment** | **str** | The description for the subnet. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
@@ -21,10 +21,10 @@ Name | Type | Description | Notes
 **ddns_ttl_percent** | **float** | DDNS TTL value - to be calculated as a simple percentage of the lease&#39;s lifetime, using the parameter&#39;s value as the percentage. It is specified as a percentage (e.g. 25, 75). Defaults to unspecified. | [optional] 
 **ddns_update_on_renew** | **bool** | Instructs the DHCP server to always update the DNS information when a lease is renewed even if its DNS information has not changed.  Defaults to _false_. | [optional] 
 **ddns_use_conflict_resolution** | **bool** | When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_. | [optional] 
-**dhcp_config** | [**DHCPConfig**](DHCPConfig.md) |  | [optional] 
+**dhcp_config** | [**DHCPConfig**](DHCPConfig.md) | The DHCP configuration of the subnet that controls how leases are issued. | [optional] 
 **dhcp_host** | **str** | The resource identifier. | [optional] 
 **dhcp_options** | [**List[OptionItem]**](OptionItem.md) | The DHCP options of the subnet. This can either be a specific option or a group of options. | [optional] 
-**dhcp_utilization** | [**DHCPUtilization**](DHCPUtilization.md) |  | [optional] 
+**dhcp_utilization** | [**DHCPUtilization**](DHCPUtilization.md) | The utilization of IP addresses within the DHCP ranges of the subnet. | [optional] [readonly] 
 **disable_dhcp** | **bool** | Optional. _true_ to disable object. A disabled object is effectively non-existent when generating configuration.  Defaults to _false_. | [optional] 
 **discovery_attrs** | **object** | The discovery attributes for this subnet in JSON format. | [optional] [readonly] 
 **discovery_metadata** | **object** | The discovery metadata for this subnet in JSON format. | [optional] [readonly] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_assigned_hosts** | [**List[InheritanceAssignedHost]**](InheritanceAssignedHost.md) | The list of the inheritance assigned hosts of the object. | [optional] [readonly] 
 **inheritance_parent** | **str** | The resource identifier. | [optional] 
-**inheritance_sources** | [**DHCPInheritance**](DHCPInheritance.md) |  | [optional] 
+**inheritance_sources** | [**DHCPInheritance**](DHCPInheritance.md) | The DHCP inheritance configuration for the subnet. | [optional] 
 **name** | **str** | The name of the subnet. May contain 1 to 256 characters. Can include UTF-8. | [optional] 
 **parent** | **str** | The resource identifier. | [optional] 
 **protocol** | **str** | The type of protocol of the subnet (_ip4_ or _ip6_). | [optional] [readonly] 
@@ -45,11 +45,11 @@ Name | Type | Description | Notes
 **renew_time** | **int** | The lease renew time (T1) in seconds. | [optional] 
 **space** | **str** | The resource identifier. | [optional] 
 **tags** | **object** | The tags for the subnet in JSON format. | [optional] 
-**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) |  | [optional] 
+**threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) | The IP address utilization threshold settings for the subnet. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 **usage** | **List[str]** | The usage is a combination of indicators, each tracking a specific associated use. Listed below are usage indicators with their meaning:  usage indicator        | description  ---------------------- | --------------------------------  _IPAM_                 |  Subnet is managed in BloxOne DDI.  _DHCP_                 |  Subnet is served by a DHCP Host.  _DISCOVERED_           |  Subnet is discovered by some network discovery probe like Network Insight or NetMRI in NIOS. | [optional] [readonly] 
-**utilization** | [**Utilization**](Utilization.md) |  | [optional] 
-**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) |  | [optional] 
+**utilization** | [**Utilization**](Utilization.md) | The IPV4 address utilization statistics of the subnet. | [optional] [readonly] 
+**utilization_v6** | [**UtilizationV6**](UtilizationV6.md) | The utilization of IPV6 addresses in the subnet. | [optional] [readonly] 
 
 ## Example
 

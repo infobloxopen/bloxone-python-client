@@ -40,7 +40,7 @@ class UploadRequest(BaseModel):
     tags: Optional[Dict[str, Any]] = Field(
         default=None,
         description="The tags for uploaded content in JSON format.")
-    type: UploadContentType
+    type: UploadContentType = Field(description="Type of uploaded content.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "comment", "content", "fields", "tags", "type"

@@ -6,7 +6,7 @@ The ForwardNSG object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ForwardNSG**](ForwardNSG.md) |  | [optional] 
+**result** | [**ForwardNSG**](ForwardNSG.md) | The ForwardNSG object. | [optional] 
 
 ## Example
 

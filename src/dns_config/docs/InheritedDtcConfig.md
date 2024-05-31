@@ -6,7 +6,7 @@ Inheritance configuration for a field of type _DTCConfig_.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**default_ttl** | [**Inheritance2InheritedUInt32**](Inheritance2InheritedUInt32.md) |  | [optional] 
+**default_ttl** | [**Inheritance2InheritedUInt32**](Inheritance2InheritedUInt32.md) | Optional. Field config for _default_ttl_ field from _DTCConfig_ object. | [optional] 
 
 ## Example
 

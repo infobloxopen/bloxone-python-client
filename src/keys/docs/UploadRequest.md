@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **content** | **str** | Base64 encoded content. | 
 **fields** | [**ProtobufFieldMask**](ProtobufFieldMask.md) |  | [optional] 
 **tags** | **object** | The tags for uploaded content in JSON format. | [optional] 
-**type** | [**UploadContentType**](UploadContentType.md) |  | 
+**type** | [**UploadContentType**](UploadContentType.md) | Type of uploaded content. | 
 
 ## Example
 

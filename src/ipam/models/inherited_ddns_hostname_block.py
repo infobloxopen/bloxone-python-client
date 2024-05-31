@@ -39,7 +39,8 @@ class InheritedDDNSHostnameBlock(BaseModel):
     )
     source: Optional[StrictStr] = Field(default=None,
                                         description="The resource identifier.")
-    value: Optional[DDNSHostnameBlock] = None
+    value: Optional[DDNSHostnameBlock] = Field(
+        default=None, description="The inherited value.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "action", "display_name", "source", "value"
@@ -76,11 +77,13 @@ class InheritedDDNSHostnameBlock(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "display_name",
             "source",
+            "value",
             "additional_properties",
         ])
 

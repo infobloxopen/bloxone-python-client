@@ -6,7 +6,7 @@ The response format to retrieve the __Address__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Address**](Address.md) |  | [optional] 
+**result** | [**Address**](Address.md) | The Address object. | [optional] 
 
 ## Example
 

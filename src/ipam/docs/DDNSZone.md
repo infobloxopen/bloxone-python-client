@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **gss_tsig_enabled** | **bool** | _gss_tsig_enabled_ enables/disables GSS-TSIG signed dynamic updates.  Defaults to _false_. | [optional] 
 **nameservers** | [**List[Nameserver]**](Nameserver.md) | The Nameservers in the zone.  Each nameserver IP should be unique across the list of nameservers. | [optional] 
 **tsig_enabled** | **bool** | Indicates if TSIG key should be used for the update.  Defaults to _false_. | [optional] 
-**tsig_key** | [**TSIGKey**](TSIGKey.md) |  | [optional] 
+**tsig_key** | [**TSIGKey**](TSIGKey.md) | The TSIG key. Required if _tsig_enabled_ is _true_.  Defaults to empty. | [optional] 
 **view** | **str** | The resource identifier. | [optional] 
 **view_name** | **str** | The name of the view. | [optional] [readonly] 
 **zone** | **str** | The resource identifier. | 

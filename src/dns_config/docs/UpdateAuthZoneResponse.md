@@ -6,7 +6,7 @@ The Authoritative Zone object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AuthZone**](AuthZone.md) |  | [optional] 
+**result** | [**AuthZone**](AuthZone.md) | The updated AuthZone object. | [optional] 
 
 ## Example
 

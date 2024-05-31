@@ -6,7 +6,7 @@ The response format to generate the TSIG key.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**GenerateTSIGResult**](GenerateTSIGResult.md) |  | [optional] 
+**result** | [**GenerateTSIGResult**](GenerateTSIGResult.md) | The generated TSIG key. | [optional] 
 
 ## Example
 

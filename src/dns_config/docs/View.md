@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **dnssec_root_keys** | [**List[TrustAnchor]**](TrustAnchor.md) | DNSSEC root keys. The root keys are not configurable.  A default list is provided by cloud management and included here for config generation. | [optional] [readonly] 
 **dnssec_trust_anchors** | [**List[TrustAnchor]**](TrustAnchor.md) | Optional. DNSSEC trust anchors.  Error if there are list items with duplicate (_zone_, _sep_, _algorithm_) combinations.  Defaults to empty. | [optional] 
 **dnssec_validate_expiry** | **bool** | Optional. _true_ to reject expired DNSSEC keys. Ignored if either _dnssec_enabled_ or _dnssec_enable_validation_ is _false_.  Defaults to _true_. | [optional] 
-**dtc_config** | [**DTCConfig**](DTCConfig.md) |  | [optional] 
+**dtc_config** | [**DTCConfig**](DTCConfig.md) | Optional. DTC configuration. | [optional] 
 **ecs_enabled** | **bool** | Optional. _true_ to enable EDNS client subnet for recursive queries. Other _ecs_*_ fields are ignored if this field is not enabled.  Defaults to _false-. | [optional] 
 **ecs_forwarding** | **bool** | Optional. _true_ to enable ECS options in outbound queries. This functionality has additional overhead so it is disabled by default.  Defaults to _false_. | [optional] 
 **ecs_prefix_v4** | **int** | Optional. Maximum scope length for v4 ECS.  Unsigned integer, min 1 max 24  Defaults to 24. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **forwarders_only** | **bool** | Optional. _true_ to only forward.  Defaults to _false_. | [optional] 
 **gss_tsig_enabled** | **bool** | _gss_tsig_enabled_ enables/disables GSS-TSIG signed dynamic updates.  Defaults to _false_. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
-**inheritance_sources** | [**ViewInheritance**](ViewInheritance.md) |  | [optional] 
+**inheritance_sources** | [**ViewInheritance**](ViewInheritance.md) | Optional. Inheritance configuration. | [optional] 
 **ip_spaces** | **List[str]** | The resource identifier. | [optional] 
 **lame_ttl** | **int** | Optional. Unused in the current on-prem DNS server implementation.  Unsigned integer, min 0 max 3600 (1h).  Defaults to 600. | [optional] 
 **match_clients_acl** | [**List[ACLItem]**](ACLItem.md) | Optional. Specifies which clients have access to the view.  Defaults to empty. | [optional] 
@@ -53,7 +53,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** | The timestamp when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 **use_forwarders_for_subzones** | **bool** | Optional. Use default forwarders to resolve queries for subzones.  Defaults to _true_. | [optional] 
 **use_root_forwarders_for_local_resolution_with_b1td** | **bool** | _use_root_forwarders_for_local_resolution_with_b1td_ allows DNS recursive queries sent to root forwarders for local resolution when deployed alongside BloxOne Thread Defense. Defaults to _false_. | [optional] 
-**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) |  | [optional] 
+**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) | Optional. ZoneAuthority. | [optional] 
 
 ## Example
 

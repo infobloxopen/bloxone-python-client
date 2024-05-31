@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_assigned_hosts** | [**List[InheritanceAssignedHost]**](InheritanceAssignedHost.md) | The list of the inheritance assigned hosts of the object. | [optional] [readonly] 
 **inheritance_parent** | **str** | The resource identifier. | [optional] 
-**inheritance_sources** | [**FixedAddressInheritance**](FixedAddressInheritance.md) |  | [optional] 
+**inheritance_sources** | [**FixedAddressInheritance**](FixedAddressInheritance.md) | The inheritance configuration. | [optional] 
 **ip_space** | **str** | The resource identifier. | [optional] 
 **match_type** | **str** | Indicates how to match the client:  * _mac_: match the client MAC address for both IPv4 and IPv6,  * _client_text_ or _client_hex_: match the client identifier for IPv4 only,  * _relay_text_ or _relay_hex_: match the circuit ID or remote ID in the DHCP relay agent option (82) for IPv4 only,  * _duid_: match the DHCP unique identifier, currently match only for IPv6 protocol. | 
 **match_value** | **str** | The value to match. | 

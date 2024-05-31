@@ -35,7 +35,8 @@ class InheritedCustomRootNSBlock(BaseModel):
         "Human-readable display name for the object referred to by _source_.")
     source: Optional[StrictStr] = Field(default=None,
                                         description="The resource identifier.")
-    value: Optional[CustomRootNSBlock] = None
+    value: Optional[CustomRootNSBlock] = Field(default=None,
+                                               description="Inherited value.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "action", "display_name", "source", "value"
@@ -72,11 +73,13 @@ class InheritedCustomRootNSBlock(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "display_name",
             "source",
+            "value",
             "additional_properties",
         ])
 

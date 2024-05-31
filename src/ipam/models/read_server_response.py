@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.server import Server
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class ReadServerResponse(BaseModel):
     """
     The response format to retrieve the __Server__ object.
     """ # noqa: E501
-    result: Optional[Server] = None
+    result: Optional[Server] = Field(default=None,
+                                     description="The Server object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

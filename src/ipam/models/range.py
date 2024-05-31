@@ -70,7 +70,9 @@ class Range(BaseModel):
     )
     inheritance_parent: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
-    inheritance_sources: Optional[DHCPOptionsInheritance] = None
+    inheritance_sources: Optional[DHCPOptionsInheritance] = Field(
+        default=None,
+        description="The DHCP inheritance configuration for the range.")
     name: Optional[StrictStr] = Field(
         default=None,
         description=
@@ -85,14 +87,21 @@ class Range(BaseModel):
     start: StrictStr = Field(description="The start IP address of the range.")
     tags: Optional[Dict[str, Any]] = Field(
         default=None, description="The tags for the range in JSON format.")
-    threshold: Optional[UtilizationThreshold] = None
+    threshold: Optional[UtilizationThreshold] = Field(
+        default=None,
+        description="The utilization threshold settings for the range.")
     updated_at: Optional[datetime] = Field(
         default=None,
         description=
         "Time when the object has been updated. Equals to _created_at_ if not updated after creation."
     )
-    utilization: Optional[Utilization] = None
-    utilization_v6: Optional[UtilizationV6] = None
+    utilization: Optional[Utilization] = Field(
+        default=None,
+        description=
+        "The utilization statistics of IPV4 addresses for the range.")
+    utilization_v6: Optional[UtilizationV6] = Field(
+        default=None,
+        description="The utilization of IPV6 addresses in the range.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "comment", "created_at", "dhcp_host", "dhcp_options", "disable_dhcp",
@@ -136,6 +145,8 @@ class Range(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
@@ -144,6 +155,8 @@ class Range(BaseModel):
             "inheritance_assigned_hosts",
             "protocol",
             "updated_at",
+            "utilization",
+            "utilization_v6",
             "additional_properties",
         ])
 

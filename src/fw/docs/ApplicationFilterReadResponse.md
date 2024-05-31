@@ -6,7 +6,7 @@ The Application Filter read response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**ApplicationFilter**](ApplicationFilter.md) |  | [optional] 
+**results** | [**ApplicationFilter**](ApplicationFilter.md) | The Application Filter object. | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@ The Network List update response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**NetworkList**](NetworkList.md) |  | [optional] 
+**results** | [**NetworkList**](NetworkList.md) | The Network List object. | [optional] 
 
 ## Example
 

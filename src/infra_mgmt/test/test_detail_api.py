@@ -25,15 +25,15 @@ class TestDetailApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_detail_hosts_list(self) -> None:
-        """Test case for detail_hosts_list
+    def test_hosts_list(self) -> None:
+        """Test case for hosts_list
 
         List all the Hosts along with its associated Services (applications).
         """
         pass
 
-    def test_detail_services_list(self) -> None:
-        """Test case for detail_services_list
+    def test_services_list(self) -> None:
+        """Test case for services_list
 
         List all the Services (applications) along with its associated Hosts.
         """

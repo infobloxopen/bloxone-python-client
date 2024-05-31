@@ -57,9 +57,7 @@ class TestGetServiceResponse(unittest.TestCase):
                     name = 'Example Service Name', 
                     pool_id = 'dhcp/pool/9432a119-6f1e-49c2-bf47-57944773cae6', 
                     service_type = 'dns', 
-                    tags = {
-                        'key' : ''
-                        }, 
+                    tags = infra_mgmt.models.tags.tags(), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
             )
         else:

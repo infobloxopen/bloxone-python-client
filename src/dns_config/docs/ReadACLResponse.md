@@ -6,7 +6,7 @@ The ACL object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ACL**](ACL.md) |  | [optional] 
+**result** | [**ACL**](ACL.md) | The ACL object. | [optional] 
 
 ## Example
 

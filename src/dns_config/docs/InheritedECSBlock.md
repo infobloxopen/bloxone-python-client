@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **action** | **str** | Defaults to _inherit_. | [optional] 
 **display_name** | **str** | Human-readable display name for the object referred to by _source_. | [optional] [readonly] 
 **source** | **str** | The resource identifier. | [optional] [readonly] 
-**value** | [**ECSBlock**](ECSBlock.md) |  | [optional] 
+**value** | [**ECSBlock**](ECSBlock.md) | Inherited value. | [optional] [readonly] 
 
 ## Example
 

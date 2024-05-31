@@ -47,7 +47,11 @@ class DDNSZone(BaseModel):
         description=
         "Indicates if TSIG key should be used for the update.  Defaults to _false_."
     )
-    tsig_key: Optional[TSIGKey] = None
+    tsig_key: Optional[TSIGKey] = Field(
+        default=None,
+        description=
+        "The TSIG key. Required if _tsig_enabled_ is _true_.  Defaults to empty."
+    )
     view: Optional[StrictStr] = Field(default=None,
                                       description="The resource identifier.")
     view_name: Optional[StrictStr] = Field(default=None,

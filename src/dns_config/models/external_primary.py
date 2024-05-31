@@ -47,7 +47,10 @@ class ExternalPrimary(BaseModel):
         description=
         "Optional. If enabled, secondaries will use the configured TSIG key when requesting a zone transfer from this primary."
     )
-    tsig_key: Optional[TSIGKey] = None
+    tsig_key: Optional[TSIGKey] = Field(
+        default=None,
+        description=
+        "Optional. TSIG key.  Error if empty while _tsig_enabled_ is _true_.")
     type: StrictStr = Field(
         description="Allowed values: * _nsg_, * _primary_.")
     additional_properties: Dict[str, Any] = {}

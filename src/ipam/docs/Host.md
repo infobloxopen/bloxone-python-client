@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | The primary IP address of the on-prem host. | [optional] [readonly] 
 **anycast_addresses** | **List[str]** | Anycast address configured to the host. Order is not significant. | [optional] [readonly] 
-**associated_server** | [**HostAssociatedServer**](HostAssociatedServer.md) |  | [optional] 
+**associated_server** | [**HostAssociatedServer**](HostAssociatedServer.md) | The DHCP Config Profile for the on-prem host. | [optional] 
 **comment** | **str** | The description for the on-prem host. | [optional] [readonly] 
 **current_version** | **str** | Current dhcp application version of the host. | [optional] [readonly] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 

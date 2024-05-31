@@ -6,7 +6,7 @@ The response format to update __TSIGKey__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**TSIGKey**](TSIGKey.md) |  | [optional] 
+**result** | [**TSIGKey**](TSIGKey.md) | The TSIGKey object. | [optional] 
 
 ## Example
 

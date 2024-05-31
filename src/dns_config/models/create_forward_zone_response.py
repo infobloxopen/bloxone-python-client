@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.forward_zone import ForwardZone
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class CreateForwardZoneResponse(BaseModel):
     """
     The Forward Zone object create response format.
     """ # noqa: E501
-    result: Optional[ForwardZone] = None
+    result: Optional[ForwardZone] = Field(
+        default=None, description="The created Forward Zone object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

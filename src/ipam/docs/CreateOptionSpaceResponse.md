@@ -6,7 +6,7 @@ The response format to create the __OptionSpace__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**OptionSpace**](OptionSpace.md) |  | [optional] 
+**result** | [**OptionSpace**](OptionSpace.md) | The created OptionSpace object. | [optional] 
 
 ## Example
 

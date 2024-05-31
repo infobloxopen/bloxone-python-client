@@ -62,10 +62,14 @@ class DetailService(BaseModel):
     interface_labels: Optional[List[StrictStr]] = Field(
         default=None,
         description="List of interfaces on which this Service can operate.")
-    location: Optional[DetailLocation] = None
+    location: Optional[DetailLocation] = Field(
+        default=None,
+        description="Location that this Host is associated with.")
     name: Optional[StrictStr] = Field(default=None,
                                       description="The name of the Service.")
-    pool: Optional[PoolInfo] = None
+    pool: Optional[PoolInfo] = Field(
+        default=None,
+        description="Pool information for this Service (internal).")
     service_type: Optional[StrictStr] = Field(
         default=None,
         description=

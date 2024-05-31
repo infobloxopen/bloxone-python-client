@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from keys.models.tsig_key import TSIGKey
 from typing import Optional, Set
@@ -27,7 +27,8 @@ class CreateTSIGKeyResponse(BaseModel):
     """
     The response format to create a __TSIGKey__ object.
     """ # noqa: E501
-    result: Optional[TSIGKey] = None
+    result: Optional[TSIGKey] = Field(
+        default=None, description="The created TSIGKey object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

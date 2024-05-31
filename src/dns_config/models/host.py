@@ -37,7 +37,8 @@ class Host(BaseModel):
         default=None,
         description=
         "Anycast address configured to the host. Order is not significant.")
-    associated_server: Optional[HostAssociatedServer] = None
+    associated_server: Optional[HostAssociatedServer] = Field(
+        default=None, description="Host associated server configuration.")
     comment: Optional[StrictStr] = Field(default=None,
                                          description="Host description.")
     current_version: Optional[StrictStr] = Field(
@@ -54,7 +55,8 @@ class Host(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[HostInheritance] = None
+    inheritance_sources: Optional[HostInheritance] = Field(
+        default=None, description="Optional. Inheritance configuration.")
     kerberos_keys: Optional[List[KerberosKey]] = Field(
         default=None,
         description=

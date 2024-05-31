@@ -135,7 +135,8 @@ class Server(BaseModel):
     )
     id: Optional[StrictStr] = Field(default=None,
                                     description="The resource identifier.")
-    inheritance_sources: Optional[ServerInheritance] = None
+    inheritance_sources: Optional[ServerInheritance] = Field(
+        default=None, description="Optional. Inheritance configuration.")
     kerberos_keys: Optional[List[KerberosKey]] = Field(
         default=None,
         description=

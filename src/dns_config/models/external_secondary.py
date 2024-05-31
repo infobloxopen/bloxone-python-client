@@ -43,7 +43,10 @@ class ExternalSecondary(BaseModel):
         description=
         "If enabled, secondaries will use the configured TSIG key when requesting a zone transfer.  Default: _false_"
     )
-    tsig_key: Optional[TSIGKey] = None
+    tsig_key: Optional[TSIGKey] = Field(
+        default=None,
+        description="TSIG key.  Error if empty while _tsig_enabled_ is _true_."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "address", "fqdn", "protocol_fqdn", "stealth", "tsig_enabled",

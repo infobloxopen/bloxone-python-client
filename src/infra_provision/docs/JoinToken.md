@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **last_used_at** | **datetime** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] 
-**status** | [**JoinTokenJoinTokenStatus**](JoinTokenJoinTokenStatus.md) |  | [optional] 
+**status** | [**JoinTokenJoinTokenStatus**](JoinTokenJoinTokenStatus.md) | derived field, \&quot;active\&quot; when expires_at and deleted_at are null. | [optional] [readonly] 
 **tags** | **object** |  | [optional] 
 **token_id** | **str** | first half of the token. | [optional] [readonly] 
 **use_counter** | **int** |  | [optional] [readonly] 

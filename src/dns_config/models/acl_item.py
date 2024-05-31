@@ -42,7 +42,10 @@ class ACLItem(BaseModel):
         description=
         "Type of element.  Allowed values:  * _any_,  * _ip_,  * _acl_,  * _tsig_key_."
     )
-    tsig_key: Optional[TSIGKey] = None
+    tsig_key: Optional[TSIGKey] = Field(
+        default=None,
+        description=
+        "Optional. TSIG key.  Must be empty if _element_ is not _tsig_key_.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "access", "acl", "address", "element", "tsig_key"

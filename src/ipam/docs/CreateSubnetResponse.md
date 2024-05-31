@@ -6,7 +6,7 @@ The response format to create the __Subnet__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Subnet**](Subnet.md) |  | [optional] 
+**result** | [**Subnet**](Subnet.md) | The created Subnet object. | [optional] 
 
 ## Example
 

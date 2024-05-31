@@ -6,7 +6,7 @@ The response format to retrieve the __OptionGroup__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**OptionGroup**](OptionGroup.md) |  | [optional] 
+**result** | [**OptionGroup**](OptionGroup.md) | The OptionGroup object. | [optional] 
 
 ## Example
 

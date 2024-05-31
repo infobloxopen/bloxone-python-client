@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fields** | [**ProtobufFieldMask**](ProtobufFieldMask.md) |  | [optional] 
+**fields** | [**ProtobufFieldMask**](ProtobufFieldMask.md) | Field Mask. | [optional] 
 **inserted_approvals** | [**List[AppApproval]**](AppApproval.md) |  | [optional] 
 **removed_approvals** | [**List[AppApprovalRemovalRequest]**](AppApprovalRemovalRequest.md) |  | [optional] 
 

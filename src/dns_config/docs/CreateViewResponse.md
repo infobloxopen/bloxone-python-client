@@ -6,7 +6,7 @@ The View object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**View**](View.md) |  | [optional] 
+**result** | [**View**](View.md) | The created View object. | [optional] 
 
 ## Example
 

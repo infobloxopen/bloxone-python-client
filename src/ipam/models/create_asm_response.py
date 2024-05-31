@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.asm import ASM
 from typing import Optional, Set
@@ -27,7 +27,7 @@ class CreateASMResponse(BaseModel):
     """
     The response format to update subnet and range for ASM.
     """ # noqa: E501
-    result: Optional[ASM] = None
+    result: Optional[ASM] = Field(default=None, description="The ASM object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

@@ -6,7 +6,7 @@ The response format to update the __AddressBlock__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**AddressBlock**](AddressBlock.md) |  | [optional] 
+**result** | [**AddressBlock**](AddressBlock.md) | The AddressBlock object. | [optional] 
 
 ## Example
 

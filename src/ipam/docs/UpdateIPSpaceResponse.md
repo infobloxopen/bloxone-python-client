@@ -6,7 +6,7 @@ The response format to update the __IPSpace__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**IPSpace**](IPSpace.md) |  | [optional] 
+**result** | [**IPSpace**](IPSpace.md) | The IPSpace object. | [optional] 
 
 ## Example
 

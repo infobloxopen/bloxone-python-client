@@ -32,7 +32,9 @@ class DHCPGlobal(BaseModel):
     """
     The global DHCP configuration (_dhcp/global_). Used by default unless more specific configuration exists. There is only one instance of this object.
     """ # noqa: E501
-    asm_config: Optional[ASMConfig] = None
+    asm_config: Optional[ASMConfig] = Field(
+        default=None,
+        description="The global Automated Scope Management configuration.")
     client_principal: Optional[StrictStr] = Field(
         default=None,
         description=
@@ -93,7 +95,10 @@ class DHCPGlobal(BaseModel):
         description=
         "DNS zones that DDNS updates can be sent to. There is no resolver fallback. The target zone must be explicitly configured for the update to be performed.  Updates are sent to the closest enclosing zone.  Error if _ddns_enabled_ is _true_ and the _ddns_domain_ does not have a corresponding entry in _ddns_zones_.  Error if there are items with duplicate zone in the list.  Defaults to empty list."
     )
-    dhcp_config: Optional[DHCPConfig] = None
+    dhcp_config: Optional[DHCPConfig] = Field(
+        default=None,
+        description=
+        "The global DHCP configuration that controls how leases are issued.")
     dhcp_options: Optional[List[OptionItem]] = Field(
         default=None,
         description=
@@ -104,7 +109,9 @@ class DHCPGlobal(BaseModel):
         description=
         "The list of DHCP options or group of options for IPv6. An option list is ordered and may include both option groups and specific options. Multiple occurrences of the same option or group is not an error. The last occurrence of an option in the list will be used.  Error if the graph of referenced groups contains cycles.  Defaults to empty list."
     )
-    dhcp_threshold: Optional[DHCPUtilizationThreshold] = None
+    dhcp_threshold: Optional[DHCPUtilizationThreshold] = Field(
+        default=None,
+        description="The global DHCP Utilization threshold settings.")
     gss_tsig_fallback: Optional[StrictBool] = Field(
         default=None,
         description=

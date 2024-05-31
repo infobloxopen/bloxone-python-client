@@ -6,7 +6,7 @@ The __LBDN__ object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**LBDN**](LBDN.md) |  | [optional] 
+**result** | [**LBDN**](LBDN.md) | The created __LBDN__ object. | [optional] 
 
 ## Example
 

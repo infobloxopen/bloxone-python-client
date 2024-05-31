@@ -34,7 +34,9 @@ class DetailServiceHost(BaseModel):
         description=
         "Composite Status of the Host (`online`, `degraded`, `error`, `offline`, `pending`, `awaiting approval`)."
     )
-    config: Optional[DetailServiceHostConfig] = None
+    config: Optional[DetailServiceHostConfig] = Field(
+        default=None,
+        description="List of Host-specific configurations of this Service.")
     display_name: Optional[StrictStr] = Field(
         default=None, description="The name of the Host (unique).")
     id: Optional[StrictStr] = Field(default=None,

@@ -37,7 +37,9 @@ class Address(BaseModel):
     )
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
-    dhcp_info: Optional[DHCPInfo] = None
+    dhcp_info: Optional[DHCPInfo] = Field(
+        default=None,
+        description="The DHCP information associated with this object.")
     disable_dhcp: Optional[StrictBool] = Field(
         default=None,
         description=
@@ -134,10 +136,12 @@ class Address(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "created_at",
+            "dhcp_info",
             "disable_dhcp",
             "discovery_attrs",
             "discovery_metadata",

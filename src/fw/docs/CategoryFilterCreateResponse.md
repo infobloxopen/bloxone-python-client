@@ -6,7 +6,7 @@ The Category Filter create response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**CategoryFilter**](CategoryFilter.md) |  | [optional] 
+**results** | [**CategoryFilter**](CategoryFilter.md) | The Category Filter object. | [optional] 
 
 ## Example
 

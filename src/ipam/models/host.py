@@ -34,7 +34,9 @@ class Host(BaseModel):
         default=None,
         description=
         "Anycast address configured to the host. Order is not significant.")
-    associated_server: Optional[HostAssociatedServer] = None
+    associated_server: Optional[HostAssociatedServer] = Field(
+        default=None,
+        description="The DHCP Config Profile for the on-prem host.")
     comment: Optional[StrictStr] = Field(
         default=None, description="The description for the on-prem host.")
     current_version: Optional[StrictStr] = Field(

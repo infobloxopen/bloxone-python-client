@@ -30,10 +30,15 @@ class HostAssociationsResponse(BaseModel):
     """
     The response format to retrieve __HAGroup__, __Subnet__ and __DHCPPacketStats__ objects associated with the DHCP __Host__ object. The host in question is also included in the output, for the convenience reasons.
     """ # noqa: E501
-    dhcp_pkt_stats: Optional[DHCPPacketStats] = None
+    dhcp_pkt_stats: Optional[DHCPPacketStats] = Field(
+        default=None, description="The DHCP packets statistics.")
     ha_groups: Optional[List[HAGroup]] = Field(
         default=None, description="The list of HA groups.")
-    host: Optional[Host] = None
+    host: Optional[Host] = Field(
+        default=None,
+        description=
+        "The host for which the associated objects, subnets and HA groups, are returned."
+    )
     subnets: Optional[List[Subnet]] = Field(default=None,
                                             description="The list of subnets.")
     additional_properties: Dict[str, Any] = {}

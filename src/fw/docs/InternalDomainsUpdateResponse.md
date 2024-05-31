@@ -6,7 +6,7 @@ The Internal domains update response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**InternalDomains**](InternalDomains.md) |  | [optional] 
+**results** | [**InternalDomains**](InternalDomains.md) | The Internal Domains object. | [optional] 
 
 ## Example
 

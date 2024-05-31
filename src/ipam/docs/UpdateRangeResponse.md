@@ -6,7 +6,7 @@ The response format to update the __Range__ object.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Range**](Range.md) |  | [optional] 
+**result** | [**Range**](Range.md) | The Range object. | [optional] 
 
 ## Example
 

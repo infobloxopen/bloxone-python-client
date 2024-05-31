@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.auth_nsg import AuthNSG
 from typing import Optional, Set
@@ -29,7 +29,8 @@ class UpdateAuthNSGResponse(BaseModel):
     """
 
   # noqa: E501
-    result: Optional[AuthNSG] = None
+    result: Optional[AuthNSG] = Field(
+        default=None, description="The updated AuthNSG object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["result"]
 

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from fw.models.app_approval import AppApproval
 from fw.models.protobuf_field_mask import ProtobufFieldMask
@@ -31,7 +31,8 @@ class AppApprovalsReplaceRequest(BaseModel):
 
   # noqa: E501
     approvals: Optional[List[AppApproval]] = None
-    fields: Optional[ProtobufFieldMask] = None
+    fields: Optional[ProtobufFieldMask] = Field(default=None,
+                                                description="Field Mask.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["approvals", "fields"]
 

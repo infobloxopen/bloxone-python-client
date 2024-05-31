@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from ipam.models.inheritance_inherited_bool import InheritanceInheritedBool
 from ipam.models.inheritance_inherited_u_int32 import InheritanceInheritedUInt32
@@ -30,17 +30,61 @@ class InheritedDHCPConfig(BaseModel):
     """
     The inheritance configuration for a field of type _DHCPConfig_.
     """ # noqa: E501
-    abandoned_reclaim_time: Optional[InheritanceInheritedUInt32] = None
-    abandoned_reclaim_time_v6: Optional[InheritanceInheritedUInt32] = None
-    allow_unknown: Optional[InheritanceInheritedBool] = None
-    allow_unknown_v6: Optional[InheritanceInheritedBool] = None
-    echo_client_id: Optional[InheritanceInheritedBool] = None
-    filters: Optional[InheritedDHCPConfigFilterList] = None
-    filters_v6: Optional[InheritedDHCPConfigFilterList] = None
-    ignore_client_uid: Optional[InheritanceInheritedBool] = None
-    ignore_list: Optional[InheritedDHCPConfigIgnoreItemList] = None
-    lease_time: Optional[InheritanceInheritedUInt32] = None
-    lease_time_v6: Optional[InheritanceInheritedUInt32] = None
+    abandoned_reclaim_time: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _abandoned_reclaim_time_ field from _DHCPConfig_ object."
+    )
+    abandoned_reclaim_time_v6: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _abandoned_reclaim_time_v6_ field from _DHCPConfig_ object."
+    )
+    allow_unknown: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _allow_unknown_ field from _DHCPConfig_ object."
+    )
+    allow_unknown_v6: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _allow_unknown_v6_ field from _DHCPConfig_ object."
+    )
+    echo_client_id: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _echo_client_id_ field from _DHCPConfig_ object."
+    )
+    filters: Optional[InheritedDHCPConfigFilterList] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for filters field from _DHCPConfig_ object."
+    )
+    filters_v6: Optional[InheritedDHCPConfigFilterList] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _filters_v6_ field from _DHCPConfig_ object."
+    )
+    ignore_client_uid: Optional[InheritanceInheritedBool] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ignore_client_uid_ field from _DHCPConfig_ object."
+    )
+    ignore_list: Optional[InheritedDHCPConfigIgnoreItemList] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _ignore_list_ field from _DHCPConfig_ object."
+    )
+    lease_time: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _lease_time_ field from _DHCPConfig_ object."
+    )
+    lease_time_v6: Optional[InheritanceInheritedUInt32] = Field(
+        default=None,
+        description=
+        "The inheritance configuration for _lease_time_v6_ field from _DHCPConfig_ object."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "abandoned_reclaim_time", "abandoned_reclaim_time_v6", "allow_unknown",

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dns_config.models.inherited_kerberos_keys import InheritedKerberosKeys
 from typing import Optional, Set
@@ -27,7 +27,10 @@ class HostInheritance(BaseModel):
     """
     Inheritance configuration specifies how and which fields _Host_ object inherits from _Global_ or _Server_ parent.
     """ # noqa: E501
-    kerberos_keys: Optional[InheritedKerberosKeys] = None
+    kerberos_keys: Optional[InheritedKerberosKeys] = Field(
+        default=None,
+        description=
+        "Optional. Field config for _kerberos_keys_ field from _Host_ object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["kerberos_keys"]
 

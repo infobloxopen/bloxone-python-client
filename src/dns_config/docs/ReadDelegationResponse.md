@@ -6,7 +6,7 @@ The Delegation object read response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**Delegation**](Delegation.md) |  | [optional] 
+**result** | [**Delegation**](Delegation.md) | The Delegation object. | [optional] 
 
 ## Example
 

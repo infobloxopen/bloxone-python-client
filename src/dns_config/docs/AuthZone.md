@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **gss_tsig_enabled** | **bool** | _gss_tsig_enabled_ enables/disables GSS-TSIG signed dynamic updates.  Defaults to _false_. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_assigned_hosts** | [**List[Inheritance2AssignedHost]**](Inheritance2AssignedHost.md) | The list of the inheritance assigned hosts of the object. | [optional] [readonly] 
-**inheritance_sources** | [**AuthZoneInheritance**](AuthZoneInheritance.md) |  | [optional] 
+**inheritance_sources** | [**AuthZoneInheritance**](AuthZoneInheritance.md) | Optional. Inheritance configuration. | [optional] 
 **initial_soa_serial** | **int** | On-create-only. SOA serial is allowed to be set when the authoritative zone is created. | [optional] 
 **internal_secondaries** | [**List[InternalSecondary]**](InternalSecondary.md) | Optional. BloxOne DDI hosts acting as internal secondaries. Order is not significant. | [optional] 
 **mapped_subnet** | **str** | Reverse zone network address in the following format: \&quot;ip-address/cidr\&quot;. Defaults to empty. | [optional] [readonly] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **use_forwarders_for_subzones** | **bool** | Optional. Use default forwarders to resolve queries for subzones.  Defaults to _true_. | [optional] 
 **view** | **str** | The resource identifier. | [optional] 
 **warnings** | [**List[Warning]**](Warning.md) | The list of an auth zone warnings. | [optional] [readonly] 
-**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) |  | [optional] 
+**zone_authority** | [**ZoneAuthority**](ZoneAuthority.md) | Optional. ZoneAuthority. | [optional] 
 
 ## Example
 

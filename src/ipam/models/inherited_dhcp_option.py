@@ -39,7 +39,8 @@ class InheritedDHCPOption(BaseModel):
     )
     source: Optional[StrictStr] = Field(default=None,
                                         description="The resource identifier.")
-    value: Optional[InheritedDHCPOptionItem] = None
+    value: Optional[InheritedDHCPOptionItem] = Field(
+        default=None, description="The inherited value for the DHCP option.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "action", "display_name", "source", "value"
@@ -76,11 +77,13 @@ class InheritedDHCPOption(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "display_name",
             "source",
+            "value",
             "additional_properties",
         ])
 

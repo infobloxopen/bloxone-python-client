@@ -6,7 +6,7 @@ The DNS Forwarding Proxy update response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**Dfp**](Dfp.md) |  | [optional] 
+**results** | [**Dfp**](Dfp.md) | The DNS Forwarding Proxy object. | [optional] 
 
 ## Example
 

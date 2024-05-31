@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from redirect.models.redirect_page import RedirectPage
 from typing import Optional, Set
@@ -29,7 +29,8 @@ class RedirectPageUpdateResponse(BaseModel):
     """
 
   # noqa: E501
-    results: Optional[RedirectPage] = None
+    results: Optional[RedirectPage] = Field(
+        default=None, description="The Redirect Page object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["results"]
 

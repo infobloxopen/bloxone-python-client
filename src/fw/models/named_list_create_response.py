@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from fw.models.named_list import NamedList
 from typing import Optional, Set
@@ -29,7 +29,8 @@ class NamedListCreateResponse(BaseModel):
     """
 
   # noqa: E501
-    results: Optional[NamedList] = None
+    results: Optional[NamedList] = Field(default=None,
+                                         description="The Named List object.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["results"]
 

@@ -6,7 +6,7 @@ The ForwardNSG object create response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**ForwardNSG**](ForwardNSG.md) |  | [optional] 
+**result** | [**ForwardNSG**](ForwardNSG.md) | The created ForwardNSG object. | [optional] 
 
 ## Example
 

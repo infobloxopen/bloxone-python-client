@@ -6,7 +6,7 @@ The View object update response format.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result** | [**View**](View.md) |  | [optional] 
+**result** | [**View**](View.md) | The View object. | [optional] 
 
 ## Example
 
