@@ -13,53 +13,83 @@
 
 import unittest
 
-from dns_config.api.auth_nsg_api import AuthNsgApi
+from dns_config import AuthNSG
+from dns_config.api import NewApiClient
 
+
+AuthNSGCreate = AuthNSG(
+    # Add required attributes to create the object
+    Comment = "hello",
+    name = "hello"
+)
+AuthNSGUpdate = AuthNSG(
+    # Add required attributes to update the object
+    Comment = "hello2",
+    name = "hello"
+)
 
 class TestAuthNsgApi(unittest.TestCase):
     """AuthNsgApi unit test stubs"""
 
+    id = None
+
     def setUp(self) -> None:
-        self.api = AuthNsgApi()
+        self.api = NewApiClient()
+        self.response = None
 
     def tearDown(self) -> None:
         pass
 
-    def test_create(self) -> None:
+    def test_a_create(self) -> None:
         """Test case for create
 
         Create the AuthNSG object.
         """
-        pass
 
-    def test_delete(self) -> None:
-        """Test case for delete
+        self.response = self.api.auth_nsg_api.create(
+            body=AuthNSGCreate,
+        )
+        TestAuthNsgApi.id = self.response.result.id
+        self.assertIsNotNone(self.response)
 
-        Move the AuthNSG object to Recyclebin.
-        """
-        pass
-
-    def test_list(self) -> None:
+    def test_b_list(self) -> None:
         """Test case for list
 
         List AuthNSG objects.
         """
-        pass
 
-    def test_read(self) -> None:
+        self.response = self.api.auth_nsg_api.list()
+
+    def test_c_read(self) -> None:
         """Test case for read
 
         Read the AuthNSG object.
         """
-        pass
 
-    def test_update(self) -> None:
+        print(self.id)
+        self.response = self.api.auth_nsg_api.read(TestAuthNsgApi.id)
+        self.assertIsNotNone(self.response)
+
+    def test_d_update(self) -> None:
         """Test case for update
 
         Update the AuthNSG object.
         """
-        pass
 
+        self.response = self.api.auth_nsg_api.update(
+            id = TestAuthNsgApi.id,
+            body=AuthNSGUpdate
+        )
+        self.assertIsNotNone(self.response)
+
+    def test_e_delete(self) -> None:
+        """Test case for delete
+
+        Move the AuthNSG object to Recyclebin.
+        """
+
+        self.response = self.api.auth_nsg_api.delete(TestAuthNsgApi.id)
+        self.assertIsNone(self.response)
 
 if __name__ == '__main__':
     unittest.main()

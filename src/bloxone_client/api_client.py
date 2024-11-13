@@ -24,6 +24,15 @@ from bloxone_client.exceptions import (ApiValueError, ApiException,
 
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
 
+ENV_BLOXONE_CSP_URL = "BLOXONE_CSP_URL"
+ENV_BLOXONE_API_KEY = "BLOXONE_API_KEY"
+ENV_LOG_LEVEL = "LOG_LEVEL"
+
+def look_up_env(key):
+    v = os.environ.get(key)
+    if v is not None:
+        return v
+    return None
 
 class ApiClient:
     """Generic API client for OpenAPI client library builds.
@@ -108,6 +117,25 @@ class ApiClient:
         :param default: object of ApiClient.
         """
         cls._default = default
+
+    def new_api_client(self):
+
+        config = Configuration.get_default()
+
+        env_csp_url = look_up_env(ENV_BLOXONE_CSP_URL)
+        env_api_key = look_up_env(ENV_BLOXONE_API_KEY)
+        env_log_level = look_up_env(ENV_LOG_LEVEL)
+
+        if env_csp_url is not None:
+            config.csp_url = env_csp_url
+
+        if env_api_key is not None:
+            config.api_key = env_api_key
+
+        if env_log_level is not None:
+            config.debug  = env_log_level
+
+        return ApiClient(config)
 
     def call_api(self,
                  method,

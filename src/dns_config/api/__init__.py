@@ -15,3 +15,4 @@ from dns_config.api.host_api import HostApi
 from dns_config.api.lbdn_api import LbdnApi
 from dns_config.api.server_api import ServerApi
 from dns_config.api.view_api import ViewApi
+from dns_config.api.client import NewApiClient
