@@ -60,7 +60,7 @@ class ApiClient:
         self.configuration = configuration
 
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = {}
+        self.default_headers = configuration.default_headers
         # Set default User-Agent.
         self.user_agent = 'OpenAPI-Generator/0.1.0/python'
         self.client_side_validation = configuration.client_side_validation
@@ -673,3 +673,4 @@ class ApiClient:
                 return split_value[-1]
 
         return value
+
