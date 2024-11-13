@@ -89,7 +89,7 @@ conf = ipam.Configuration(
         self.logger_file = None
         """Debug file location
         """
-        self.debug = False
+        self.debug = True
         """Debug switch
         """
 
@@ -158,6 +158,10 @@ conf = ipam.Configuration(
             "Accept": "application/json",
         }
         """Default headers
+        """
+
+        self.default_tags = {}
+        """Default tags
         """
 
     def __deepcopy__(self, memo):
@@ -359,3 +363,19 @@ conf = ipam.Configuration(
         :param value: The default headers.
         """
         self.__default_headers = value
+
+    @property
+    def default_tags(self):
+        """Get the default tags.
+
+        :return: The default tags.
+        """
+        return self.__default_tags
+
+    @default_tags.setter
+    def default_tags(self, value):
+        """Set the default tags.
+
+        :param value: The default tags.
+        """
+        self.__default_tags = value
