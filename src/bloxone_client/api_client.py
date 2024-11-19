@@ -25,6 +25,12 @@ from bloxone_client.exceptions import (ApiValueError, ApiException,
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
 
 
+header_client = "x-infoblox-client"
+header_sdk = "x-infoblox-sdk"
+sdk_identifier = "python-sdk"
+
+VERSION = 0.1
+
 class ApiClient:
     """Generic API client for OpenAPI client library builds.
 
@@ -60,9 +66,9 @@ class ApiClient:
         self.configuration = configuration
 
         self.rest_client = RESTClientObject(configuration)
-        self.default_headers = configuration.default_headers
+        self.default_headers = {}
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.1.0/python'
+        self.user_agent = f"bloxone-{sdk_identifier}/{VERSION}"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -184,7 +190,17 @@ class ApiClient:
 
         # header parameters
         header_params = header_params or {}
-        header_params.update(self.default_headers)
+        headers = {
+            header_client: self.configuration.client_name,
+            header_sdk: sdk_identifier,
+            'Authorization': 'f"Token {self.configuration.api_key}"',
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+        #header_params = {**headers, **header_params, **self.default_headers}
+        headers.update(header_params)
+        headers.update(self.default_headers)
+        header_params = headers
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
             header_params = dict(
