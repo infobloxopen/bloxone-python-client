@@ -85,14 +85,6 @@ class AuthNsgApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
-
-        if len(self.api_client.configuration.default_tags) > 0 and body is not None:
-            if body.tags is None:
-                body.tags = {}
-            for k, v in self.api_client.configuration.default_tags.items():
-                if k not in body.tags:
-                    body.tags[k] = v
-
         _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,

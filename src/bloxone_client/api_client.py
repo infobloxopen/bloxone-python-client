@@ -231,6 +231,12 @@ class ApiClient:
 
         # body
         if body:
+            if len(self.configuration.default_tags) > 0 and hasattr(body, 'tags'):
+                if body.tags is None:
+                    body.tags = {}
+                for k, v in self.configuration.default_tags.items():
+                    if k not in body.tags:
+                        body.tags[k] = v
             body = self.sanitize_for_serialization(body)
 
         # request url
