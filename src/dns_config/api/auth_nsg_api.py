@@ -85,6 +85,7 @@ class AuthNsgApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+
         _param = self._create_serialize(body=body,
                                         _request_auth=_request_auth,
                                         _content_type=_content_type,
