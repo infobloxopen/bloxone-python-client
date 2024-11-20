@@ -17,6 +17,10 @@ class TestApiClient(unittest.TestCase):
                          'https://csp.infoblox.com')
         self.assertEqual(self.api_client.configuration.client_name,
                          'bloxone-python-client')
+        self.assertEqual(self.api_client.configuration.default_headers['Accept'],'application/json')
+        self.assertEqual(self.api_client.configuration.default_headers['Content-Type'],'application/json')
+        self.assertRegex(self.api_client.configuration.default_headers['Authorization'],'Token \w*',"Invalid Authorization header")
+
 
     def test_path_param_value_with_resource_id_type(self):
         result = self.api_client.path_param_value('id', 'app/type/id',
