@@ -1,29 +1,112 @@
 import sys
 sys.path.append("../src")
 
+import logging
 import ipam.models as models
-from ipam.api import NewApiClient  
+from typing import Optional
+from ipam.api import NewApiClient 
+from ipam.models import (
+     IPSpace,
+     AddressBlock,
+     ASMConfig,
+     Subnet,
+     ExclusionRange,
+     Range,
+     FixedAddress,
+     Address,
+     IpamHost,
+     HostAddress,
+     OptionSpace,
+     OptionGroup,
+     OptionCode
+)
  
 
+def create_ip_sapce(api_client:NewApiClient,name:str)-> Optional[IPSpace]:
+     """Creates an IP Space"""
+     return api_client.ip_space_api.create(
+          body=IPSpace(name=name)
+     )
+
+def create_address_block(api_client:NewApiClient,address:str,cidr:int,asm_config:ASMConfig,space:str)->Optional[AddressBlock]:
+     """Creates Address Block"""
+     return api_client.address_block_api.create(
+          body=AddressBlock(address=address,cidr=cidr,asm_config=asm_config,space=space)
+     )
+
+
+def create_subnet(api_client:NewApiClient,address:str,cidr:int,space:str)->Optional[Subnet]:
+     """Creates a Subnet"""
+     return api_client.subnet_api.create(
+          body=Subnet(address=address,cidr=cidr,space=space)
+     )
+
+def create_range(api_client:NewApiClient,space:str,start:str,end:str,name:str,exclusion_ranges:ExclusionRange)->Optional[Range]:
+     """Creates a Range"""
+     return api_client.range_api.create(
+          body=Range(space=space,start=start,end=end,name=name,exclusion_ranges=[exclusion_ranges])
+     )
+
+def create_fixed_address(api_client:NewApiClient,ip_space:str,address:str,match_type:str,match_value:str)->Optional[FixedAddress]:
+     """Creates a Fixed Address"""
+     return api_client.fixed_address_api.create(
+          body=FixedAddress(ip_space=ip_space,address=address,match_type=match_type,match_value=match_value)
+     )
+
+def create_reservation(api_client:NewApiClient,address:str,space:str,comment:str)->Optional[Address]:
+     """Creates a Reservation"""
+     return api_client.address_api.create(
+          body=Address(address=address,space=space,comment=comment)
+     )
+
+def create_ipam_host(api_client:NewApiClient,name:str,addresses:HostAddress)->Optional[IpamHost]:
+     """Creates a Ipam Host"""
+     return api_client.ipam_host_api.create(
+          body=IpamHost(name=name,addresses=[addresses])
+     )
+
+def create_option_space(api_client:NewApiClient,name:str,protocol:str)->Optional[OptionSpace]:
+     """Creates a Option Space"""
+     return api_client.option_space_api.create(
+          body=OptionSpace(name=name,protocol=protocol)
+     )
+
+def create_option_code(api_client:NewApiClient,code:int,name:str,option_space:str,type:str)->Optional[OptionCode]:
+     """Creates a Option Code"""
+     return api_client.option_code_api.create(
+          body=OptionCode(code=code,name=name,option_space=option_space,type=type)
+     )
+
+def create_option_group(api_client:NewApiClient,name:str,protcol:str)->Optional[OptionGroup]:
+     """Creates a Option group"""
+     return api_client.option_group_api.create(
+          body=OptionGroup(name=name,protocol=protcol)
+     )
+
+def cleanup_resources(api_client: NewApiClient, resource_ids: list):
+    """Deletes created resources for cleanup."""
+    resource_ids.reverse()
+    for resource_type, resource_id in resource_ids:
+        try:
+            getattr(api_client, f"{resource_type}_api").delete(resource_id)
+            logging.info(f"Deleted {resource_type} with ID: {resource_id}")
+        except Exception as e:
+            logging.error(f"Failed to delete {resource_type} with ID {resource_id}: {e}")
+
 def sample_ipam():
+    """Runs a sample IPAM configuration process."""
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
     api_client = NewApiClient()
+    resource_ids = []
 
     try:
-        ip_space_response=api_client.ip_space_api.create(
-            body=models.IPSpace(
-                name="example_ip_space"
-            )
-        )
-        if ip_space_response is not None :
-            print("IP Space Created")
-        else:
-            raise Exception("IP Space not created")
+        ip_space_response=create_ip_sapce(api_client,"example_ip_space")
+        if ip_space_response: 
+            resource_ids.append(("ip_space", ip_space_response.result.id))
+            logging.info("IP Space created successfully")
 
-        address_block_response=api_client.address_block_api.create(
-            body=models.AddressBlock(
-                address="192.168.0.0",
-                cidr=16,
-                asm_config=models.ASMConfig(
+        address_block_response=create_address_block(api_client,"192.168.0.0",16,ASMConfig(
                     asm_threshold       = 90,
                     enable              = True,
                     enable_notification = True,
@@ -35,151 +118,68 @@ def sample_ipam():
                     min_unused          = 10,
                     reenable_date       = "2024-01-24T10:10:00+00:00"
                 ),
-                space=ip_space_response.result.id
+                ip_space_response.result.id
             )
-        )
-        if address_block_response is not None :
-            print("Address Block Created")
-        else:
-            raise Exception("Address Block not created")
-        
-        subnet_response=api_client.subnet_api.create(
-            body=models.Subnet(
-                address="192.168.1.0",
-                cidr=24,
-                space=ip_space_response.result.id
-            )
-        )
+        if ip_space_response: 
+            resource_ids.append(("address_block", address_block_response.result.id))
+            logging.info("Address Block created successfully")
 
-        if subnet_response is not None :
-            print("Subnet Created")
-        else:
-            raise Exception("Subnet not created")
         
-        range_response=api_client.range_api.create(
-            body=models.Range(
-                space=ip_space_response.result.id,
-                start = "192.168.1.15",
-                end   = "192.168.1.30",
-                name="example",
-                exclusion_ranges = [
-                        models.ExclusionRange(
+        subnet_response=create_subnet(api_client,"192.168.1.0",24,ip_space_response.result.id)
+        if subnet_response: 
+            resource_ids.append(("subnet", subnet_response.result.id))
+            logging.info("Subnet created successfully")
+   
+        range_response=create_range(api_client,ip_space_response.result.id,"192.168.1.15","192.168.1.30","example",ExclusionRange(
                             start = "192.168.1.17",
-                            end   = "192.168.1.20"
-                )
-            ])
-        )
+                            end = "192.168.1.20"
+                            ))
+                
+        if range_response: 
+            resource_ids.append(("range", range_response.result.id))
+            logging.info("Range created successfully")   
 
-        if range_response is not None:
-            print("Range created")
-        else:
-            raise Exception("Range not created")
-        
-        fixed_address_response=api_client.fixed_address_api.create(
-            body=models.FixedAddress(
-                ip_space=ip_space_response.result.id,
-                address="192.168.1.10",
-                match_type="mac",
-                match_value="00:00:00:00:00:00"
-            )
-        )
 
-        if fixed_address_response is not None:
-            print("Fixed Address created")
-        else:
-            raise Exception("Fixed Address not created")
+        fixed_address_response=create_fixed_address(api_client,ip_space_response.result.id,"192.168.1.10","mac","00:00:00:00:00:00")
+        if fixed_address_response: 
+            resource_ids.append(("fixed_address", fixed_address_response.result.id))
+            logging.info("Fixed Address created successfully") 
 
-        reservation_response=api_client.address_api.create(
-            body=models.Address(
-                address="192.168.1.1",
-                space=ip_space_response.result.id,
-                comment = "reservation for Site A"
-            )
-        )
+        reservation_response=create_reservation(api_client,"192.168.1.1",ip_space_response.result.id,"reservation for Site A")
+        if reservation_response: 
+            logging.info("Reservation created successfully") 
 
-        if reservation_response is not None:
-                    print("Reservation created")
-        else:
-            raise Exception("Reservation not created")
-
-        ipam_host_response=api_client.ipam_host_api.create(
-            body=models.IpamHost(
-                name="example_ipam_host",
-                addresses=[
-                    models.HostAddress(
+        ipam_host_response=create_ipam_host(api_client,"example_ipam_host",HostAddress(
                         address="192.168.1.1",
                         space=ip_space_response.result.id
-                    )
-                ])
-        )
-
-        if ipam_host_response is not None:
-                    print("IPAM host created")
-        else:
-            raise Exception("IPAM host not created")
-
-        option_space_response=api_client.option_space_api.create(
-            body=models.OptionSpace(
-                name="example_dhcp_option_space",
-                protocol="ip4"
-            )
-        )
-
-        if option_space_response is not None:
-                    print("Option Space created")
-        else:
-            raise Exception("Option Space not created")
-
-        option_code_response=api_client.option_code_api.create(
-            body=models.OptionCode(
-                code=251,
-                name="example_option_code",
-                option_space=option_space_response.result.id,
-                type="int32"
-            )
-        )
-
-        if option_code_response is not None:
-                    print("Option Code created")
-        else:
-            raise Exception("Option Code not created")
-
-        option_group_response=api_client.option_group_api.create(
-            body=models.OptionGroup(
-                name="example_option_group",
-                protocol="ip4"
-            )
-        )
-
-        if option_group_response is not None:
-                    print("Option Group created")
-        else:
-            raise Exception("Option Group not created")
-       
-        if option_group_response is not None:
-            api_client.option_group_api.delete(option_group_response.result.id)
-        if option_code_response is not None:
-            api_client.option_code_api.delete(option_code_response.result.id)
-        if option_space_response is not None:
-            api_client.option_space_api.delete(option_space_response.result.id)
-        if ipam_host_response is not None:
-            api_client.ipam_host_api.delete(ipam_host_response.result.id)
-        if range_response is not None:
-            api_client.range_api.delete(range_response.result.id)
-        if fixed_address_response is not None:
-            api_client.fixed_address_api.delete(fixed_address_response.result.id)
-        if subnet_response is not None:
-            api_client.subnet_api.delete(subnet_response.result.id)
-        if address_block_response is not None:
-            api_client.address_block_api.delete(address_block_response.result.id)
-        if ip_space_response is not None:
-            api_client.ip_space_api.delete(ip_space_response.result.id)
+                    ))
+        if ipam_host_response: 
+            resource_ids.append(("ipam_host", ipam_host_response.result.id))
+            logging.info("IPAM Host created successfully")        
 
 
-        print("Done")
+        option_space_response=create_option_space(api_client,"example_dhcp_option_space",protocol="ip4")
+        if option_space_response: 
+            resource_ids.append(("option_space", option_space_response.result.id))
+            logging.info("Option Space created successfully") 
         
+
+        option_code_response=create_option_code(api_client,251,"example_option_code",option_space_response.result.id,"int32")
+        if option_code_response: 
+            resource_ids.append(("option_code", option_code_response.result.id))
+            logging.info("Option Code created successfully") 
+
+
+        option_group_response=create_option_group(api_client,"example_option_group","ip4")
+        if option_group_response: 
+            resource_ids.append(("option_group", option_group_response.result.id))
+            logging.info("Option Group created successfully")
+
     except Exception as e:
-        print(f"Error occurred: {str(e)}")
+        logging.error(f"Error occurred: {e}")
+
+    finally:
+        cleanup_resources(api_client, resource_ids)
 
 
 if __name__ == "__main__":
