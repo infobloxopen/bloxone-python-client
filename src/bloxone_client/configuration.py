@@ -14,6 +14,9 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     'maxLength', 'minLength', 'pattern', 'maxItems', 'minItems'
 }
 
+header_client = "x-infoblox-client"
+header_sdk = "x-infoblox-sdk"
+sdk_identifier = "python-sdk"
 
 class Configuration:
     """This class contains various settings of the API client.
@@ -86,7 +89,7 @@ conf = ipam.Configuration(
         self.logger_file = None
         """Debug file location
         """
-        self.debug = False
+        self.debug = True
         """Debug switch
         """
 
@@ -145,6 +148,20 @@ conf = ipam.Configuration(
 
         self.date_format = "%Y-%m-%d"
         """date format
+        """
+
+        self.default_headers = {
+            header_client: self.client_name,
+            header_sdk: sdk_identifier,
+            'Authorization': 'f"Token {self.api_key}"',
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+        """Default headers
+        """
+
+        self.default_tags = {}
+        """Default tags
         """
 
     def __deepcopy__(self, memo):
@@ -330,3 +347,35 @@ conf = ipam.Configuration(
         :param value: The client name.
         """
         self.__client_name = value
+
+    @property
+    def default_headers(self):
+        """Get the default headers.
+
+        :return: The default headers.
+        """
+        return self.__default_headers
+
+    @default_headers.setter
+    def default_headers(self, value):
+        """Set the default headers.
+
+        :param value: The default headers.
+        """
+        self.__default_headers = value
+
+    @property
+    def default_tags(self):
+        """Get the default tags.
+
+        :return: The default tags.
+        """
+        return self.__default_tags
+
+    @default_tags.setter
+    def default_tags(self, value):
+        """Set the default tags.
+
+        :param value: The default tags.
+        """
+        self.__default_tags = value

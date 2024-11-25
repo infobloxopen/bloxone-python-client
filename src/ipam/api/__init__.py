@@ -21,3 +21,4 @@ from ipam.api.option_space_api import OptionSpaceApi
 from ipam.api.range_api import RangeApi
 from ipam.api.server_api import ServerApi
 from ipam.api.subnet_api import SubnetApi
+from ipam.api.client import NewApiClient
