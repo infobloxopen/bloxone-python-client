@@ -190,11 +190,7 @@ class ApiClient:
 
         # header parameters
         header_params = header_params or {}
-        headers = {
-            HEADER_CLIENT: self.configuration.client_name,
-            HEADER_SDK: SDK_IDENTIFIER,
-        }
-        header_params = {**headers, **header_params, **self.default_headers}
+        header_params.update(self.default_headers)
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
             header_params = dict(
@@ -222,6 +218,9 @@ class ApiClient:
 
         # auth setting
         self.update_params_for_auth(header_params, )
+
+        # Update Client Name and SDK Identifier
+        self.update_infoblox_headers(header_params)
 
         # body
         if body:
@@ -552,6 +551,17 @@ class ApiClient:
         """
         headers['Authorization'] = "Token {}".format(
             self.configuration.api_key)
+
+    def update_infoblox_headers(
+            self,
+            headers,
+    )-> None:
+        """Updates headers with client name and sdk identifier.
+
+        :param headers: Header parameters dict to be updated.
+        """
+        headers[HEADER_CLIENT] = self.configuration.client_name
+        headers[HEADER_SDK] = SDK_IDENTIFIER
 
     def __deserialize_file(self, response):
         """Deserializes body to file

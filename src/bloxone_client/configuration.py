@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import os
 import copy
 import logging
 from logging import FileHandler
@@ -53,14 +54,15 @@ conf = ipam.Configuration(
     ) -> None:
         """Constructor
         """
-        self.csp_url = "https://csp.infoblox.com" if csp_url is None else csp_url
+
+        self.csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com") if csp_url is None else csp_url
         """Default CSP url
         """
         self.temp_folder_path = None
         """Temp file folder for downloading files
         """
         # Authentication Settings
-        self.api_key = {}
+        self.api_key = os.getenv('BLOXONE_API_KEY', "")
         if api_key:
             self.api_key = api_key
         """API Key
@@ -85,7 +87,7 @@ conf = ipam.Configuration(
         self.logger_file = None
         """Debug file location
         """
-        self.debug = True
+        self.debug = False
         """Debug switch
         """
 
