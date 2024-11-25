@@ -552,8 +552,6 @@ class ApiClient:
         """
         headers['Authorization'] = "Token {}".format(
             self.configuration.api_key)
-        headers["Content-Type"] = "application/json"
-        headers["Accept"] = "application/json"
 
     def __deserialize_file(self, response):
         """Deserializes body to file
