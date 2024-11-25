@@ -2,7 +2,6 @@ import sys
 sys.path.append("../src")
 
 import logging
-import ipam.models as models
 from typing import Optional
 from ipam.api import NewApiClient 
 from ipam.models import (
