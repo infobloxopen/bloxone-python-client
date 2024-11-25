@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import os
 import copy
 import logging
 from logging import FileHandler
@@ -13,7 +14,6 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     'multipleOf', 'maximum', 'exclusiveMaximum', 'minimum', 'exclusiveMinimum',
     'maxLength', 'minLength', 'pattern', 'maxItems', 'minItems'
 }
-
 
 class Configuration:
     """This class contains various settings of the API client.
@@ -54,14 +54,15 @@ conf = ipam.Configuration(
     ) -> None:
         """Constructor
         """
-        self.csp_url = "https://csp.infoblox.com" if csp_url is None else csp_url
+
+        self.csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com") if csp_url is None else csp_url
         """Default CSP url
         """
         self.temp_folder_path = None
         """Temp file folder for downloading files
         """
         # Authentication Settings
-        self.api_key = {}
+        self.api_key = os.getenv('BLOXONE_API_KEY', "")
         if api_key:
             self.api_key = api_key
         """API Key
@@ -145,6 +146,10 @@ conf = ipam.Configuration(
 
         self.date_format = "%Y-%m-%d"
         """date format
+        """
+
+        self.default_tags = {}
+        """Default tags
         """
 
     def __deepcopy__(self, memo):
@@ -330,3 +335,19 @@ conf = ipam.Configuration(
         :param value: The client name.
         """
         self.__client_name = value
+
+    @property
+    def default_tags(self):
+        """Get the default tags.
+
+        :return: The default tags.
+        """
+        return self.__default_tags
+
+    @default_tags.setter
+    def default_tags(self, value):
+        """Set the default tags.
+
+        :param value: The default tags.
+        """
+        self.__default_tags = value
