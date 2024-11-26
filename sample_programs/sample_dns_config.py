@@ -81,7 +81,7 @@ def create_dns_server(api_client: NewApiClient, name: str) -> Optional[Server]:
 
 def cleanup_resources(api_client: NewApiClient, resource_ids: list):
     """Deletes created resources for cleanup."""
-    for resource_type, resource_id in resource_ids:
+    for resource_type, resource_id in reversed(resource_ids):
         try:
             getattr(api_client, f"{resource_type}_api").delete(resource_id)
             logging.info(f"Deleted {resource_type} with ID: {resource_id}")
