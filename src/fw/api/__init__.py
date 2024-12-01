@@ -14,3 +14,4 @@ from fw.api.pop_regions_api import PopRegionsApi
 from fw.api.security_policies_api import SecurityPoliciesApi
 from fw.api.security_policy_rules_api import SecurityPolicyRulesApi
 from fw.api.threat_feeds_api import ThreatFeedsApi
+from fw.api.client import NewApiClient

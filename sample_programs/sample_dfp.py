@@ -1,0 +1,92 @@
+import sys
+import logging
+from typing import Optional
+from dfp.api import NewApiClient as DfpApiClient
+from fw.api import NewApiClient as FwApiClient
+from infra_mgmt.api import NewApiClient as InfraApiClient
+from fw.models import InternalDomainsDeleteRequest, InternalDomains
+from dfp.models import DfpCreateOrUpdatePayload
+
+sys.path.append("../src")
+
+def get_infra_service(infra_client: InfraApiClient)-> str:
+    """get an infra sservice list."""
+    infra_service_response = infra_client.services_api.list()
+    return infra_service_response.results
+
+
+def create_internal_domain_list(
+        fw_client: FwApiClient, name: str, domains: list, comment: str
+) -> Optional[InternalDomains]:
+    """Creates an internal domain list."""
+    return fw_client.internal_domain_lists_api.create_internal_domains(
+        body=InternalDomains(name=name, internal_domains=domains)
+    )
+
+
+def create_dfp_service(
+        dfp_client: DfpApiClient, service_id: str, domain_list_id: str, comment: str
+) -> Optional[DfpCreateOrUpdatePayload]:
+    """Creates or updates a DFP service."""
+    return dfp_client.infra_service_api.create_or_update_dfp_service(
+        payload_service_id=service_id,
+        body=DfpCreateOrUpdatePayload(internal_domain_lists=[domain_list_id])
+    )
+
+
+def delete_internal_domain_list(
+        fw_client: FwApiClient, domain_list_id: str
+):
+    """Deletes an internal domain list."""
+    try:
+        delete_response = fw_client.internal_domain_lists_api.delete_internal_domains(
+            body=InternalDomainsDeleteRequest(ids=[domain_list_id])
+        )
+        logging.info(f"Deleted internal domain list with ID: {domain_list_id}")
+        return delete_response
+    except Exception as e:
+        logging.error(f"Failed to delete internal domain list with ID {domain_list_id}: {e}")
+
+
+def sample_dfp():
+    """Runs a sample DFP configuration process."""
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+    dfp_client = DfpApiClient()
+    fw_client = FwApiClient()
+    infra_client = InfraApiClient()
+    resource_ids = []
+
+    try:
+        # Step 1: Get Infra service information
+        infra_service_response = get_infra_service(infra_client)
+        if not infra_service_response:
+            logging.error("No infra services found")
+        else :
+            logging.info(f"infra Service ID: {infra_service_response[0].id}")
+
+        # Step 2: Create internal domain list
+        internal_domain_list_response = create_internal_domain_list(
+            fw_client, "example_internal_domain_list_test1", ["example.domain.com"], "Internal domain list created"
+        )
+        if internal_domain_list_response:
+            resource_ids.append(("internal_domain_list", internal_domain_list_response.results.id))
+            logging.info("Internal domain list created successfully")
+
+        # Step 3: Create or update DFP service
+        service_id = infra_service_response[0].id
+        dfp_service_response = create_dfp_service(
+            dfp_client, service_id, internal_domain_list_response.results.id, "DFP service created or updated"
+        )
+        if dfp_service_response:
+            logging.info("DFP service created or updated successfully")
+
+    except Exception as e:
+        logging.error(f"Error occurred: {e}")
+
+    finally:
+        delete_internal_domain_list(fw_client,internal_domain_list_response.results.id)
+
+
+if __name__ == "__main__":
+    sample_dfp()
