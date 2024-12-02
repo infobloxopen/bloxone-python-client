@@ -33,7 +33,32 @@ pip install bloxone-python-client
 
 ## Usage
 
-> Pending
+
+To use the Bloxone Python Client, you need to import the client and create an instance of the client. For example:
+
+```python
+from bloxone_client import ApiClient
+
+client = ApiClient()
+```
+
+Additionally , you can also add a custom config to the client. For example:
+
+```python
+from bloxone_client import Configuration, ApiClient
+
+config = Configuration()
+
+client = ApiClient(config)
+```
+
+Furthermore , you can import the specific API module and use the client to interact with the API. For example:
+
+```python
+from dns_config import ViewApi
+
+view_api = ViewApi(client)
+```
 
 ## Configuration
 
