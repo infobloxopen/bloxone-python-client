@@ -21,7 +21,7 @@ from ipam.models import (
 )
  
 
-def create_ip_sapce(api_client:NewApiClient,name:str)-> Optional[IPSpace]:
+def create_ip_space(api_client:NewApiClient,name:str)-> Optional[IPSpace]:
      """Creates an IP Space"""
      return api_client.ip_space_api.create(
           body=IPSpace(name=name)
@@ -100,7 +100,7 @@ def sample_ipam():
     resource_ids = []
 
     try:
-        ip_space_response=create_ip_sapce(api_client,"example_ip_space")
+        ip_space_response=create_ip_space(api_client,"example_ip_space")
         if ip_space_response: 
             resource_ids.append(("ip_space", ip_space_response.result.id))
             logging.info("IP Space created successfully")
