@@ -29,11 +29,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -45,10 +51,10 @@ with ApiClient(config) as api_client:
     try:
         # Retrieve the next available federated block.
         api_response = api_instance.create_next_available_federated_blocks(id, body)
-        print("The response of NextAvailableFederatedBlockApi->create_next_available_federated_blocks:\n")
+        pprint("The response of NextAvailableFederatedBlockApi->create_next_available_federated_blocks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NextAvailableFederatedBlockApi->create_next_available_federated_blocks: %s\n" % e)
+        pprint("Exception when calling NextAvailableFederatedBlockApi->create_next_available_federated_blocks: %s\n" % e)
 ```
 
 
@@ -101,11 +107,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -117,10 +129,10 @@ with ApiClient(config) as api_client:
     try:
         # Retrieve the next available overlapping block.
         api_response = api_instance.create_next_available_overlapping_blocks(id, body)
-        print("The response of NextAvailableFederatedBlockApi->create_next_available_overlapping_blocks:\n")
+        pprint("The response of NextAvailableFederatedBlockApi->create_next_available_overlapping_blocks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NextAvailableFederatedBlockApi->create_next_available_overlapping_blocks: %s\n" % e)
+        pprint("Exception when calling NextAvailableFederatedBlockApi->create_next_available_overlapping_blocks: %s\n" % e)
 ```
 
 
@@ -173,11 +185,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -189,10 +207,10 @@ with ApiClient(config) as api_client:
     try:
         # Retrieve the next available reserved block.
         api_response = api_instance.create_next_available_reserved_blocks(id, body)
-        print("The response of NextAvailableFederatedBlockApi->create_next_available_reserved_blocks:\n")
+        pprint("The response of NextAvailableFederatedBlockApi->create_next_available_reserved_blocks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NextAvailableFederatedBlockApi->create_next_available_reserved_blocks: %s\n" % e)
+        pprint("Exception when calling NextAvailableFederatedBlockApi->create_next_available_reserved_blocks: %s\n" % e)
 ```
 
 
@@ -245,11 +263,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -264,10 +288,10 @@ with ApiClient(config) as api_client:
     try:
         # List the next available federated block.
         api_response = api_instance.list_next_available_federated_blocks(id, cidr=cidr, count=count, name=name, comment=comment)
-        print("The response of NextAvailableFederatedBlockApi->list_next_available_federated_blocks:\n")
+        pprint("The response of NextAvailableFederatedBlockApi->list_next_available_federated_blocks:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NextAvailableFederatedBlockApi->list_next_available_federated_blocks: %s\n" % e)
+        pprint("Exception when calling NextAvailableFederatedBlockApi->list_next_available_federated_blocks: %s\n" % e)
 ```
 
 

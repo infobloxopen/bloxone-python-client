@@ -30,11 +30,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -45,10 +51,10 @@ with ApiClient(config) as api_client:
     try:
         # Create the federated block.
         api_response = api_instance.create(body)
-        print("The response of FederatedBlockApi->create:\n")
+        pprint("The response of FederatedBlockApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FederatedBlockApi->create: %s\n" % e)
+        pprint("Exception when calling FederatedBlockApi->create: %s\n" % e)
 ```
 
 
@@ -100,11 +106,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -116,7 +128,7 @@ with ApiClient(config) as api_client:
         # Delete the federated block.
         api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling FederatedBlockApi->delete: %s\n" % e)
+        pprint("Exception when calling FederatedBlockApi->delete: %s\n" % e)
 ```
 
 
@@ -168,11 +180,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -190,10 +208,10 @@ with ApiClient(config) as api_client:
     try:
         # Retrieve the federated blocks.
         api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter)
-        print("The response of FederatedBlockApi->list:\n")
+        pprint("The response of FederatedBlockApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FederatedBlockApi->list: %s\n" % e)
+        pprint("Exception when calling FederatedBlockApi->list: %s\n" % e)
 ```
 
 
@@ -252,11 +270,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -268,10 +292,10 @@ with ApiClient(config) as api_client:
     try:
         # Retrieve the federated block.
         api_response = api_instance.read(id, fields=fields)
-        print("The response of FederatedBlockApi->read:\n")
+        pprint("The response of FederatedBlockApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FederatedBlockApi->read: %s\n" % e)
+        pprint("Exception when calling FederatedBlockApi->read: %s\n" % e)
 ```
 
 
@@ -324,11 +348,17 @@ import ipam_federation
 from bloxone_client.api_client import ApiClient
 from bloxone_client.configuration import Configuration
 
-# Configure CSP URL and API key for authorization via environment variables
-config = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL', "https://csp.infoblox.com"),
-    api_key = os.getenv('BLOXONE_API_KEY', ""),
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -340,10 +370,10 @@ with ApiClient(config) as api_client:
     try:
         # Update the federated block.
         api_response = api_instance.update(id, body)
-        print("The response of FederatedBlockApi->update:\n")
+        pprint("The response of FederatedBlockApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FederatedBlockApi->update: %s\n" % e)
+        pprint("Exception when calling FederatedBlockApi->update: %s\n" % e)
 ```
 
 
