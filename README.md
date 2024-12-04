@@ -28,7 +28,7 @@ The following Bloxone APIs are supported:
 To install the Bloxone Python Client, use the following command:
 
 ```bash
-pip install bloxone-python-client
+pip install git+https://github.com/infobloxopen/bloxone-python-client
 ```
 
 ## Usage
