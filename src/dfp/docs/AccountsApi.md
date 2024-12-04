@@ -16,23 +16,24 @@ Use this method to check configuration
 
 ### Example
 
-
 ```python
-import dfp
-from dfp.models.types_config_check_request import TypesConfigCheckRequest
-from dfp.models.types_config_check_response import TypesConfigCheckResponse
-from dfp.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcdfp/v1
+import dfp
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = dfp.Configuration(
-    host = "https://csp.infoblox.com/api/atcdfp/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with dfp.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = dfp.AccountsApi(api_client)
     body = dfp.TypesConfigCheckRequest() # TypesConfigCheckRequest | 
@@ -40,10 +41,10 @@ with dfp.ApiClient(configuration) as api_client:
     try:
         # Check Config.
         api_response = api_instance.check_config(body)
-        print("The response of AccountsApi->check_config:\n")
+        pprint("The response of AccountsApi->check_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccountsApi->check_config: %s\n" % e)
+        pprint("Exception when calling AccountsApi->check_config: %s\n" % e)
 ```
 
 
