@@ -514,17 +514,10 @@ configuration.api_key = os.getenv("BLOXONE_API_KEY")
 with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
-    account_id = 56 # int |  (optional)
-    service = 'service_example' # str |  (optional)
-    host_id = 56 # int |  (optional)
-    ophid = 'ophid_example' # str |  (optional)
-    is_configured = True # bool |  (optional)
-    tfilter = 'tfilter_example' # str |  (optional)
-    torder_by = 'torder_by_example' # str |  (optional)
 
     try:
         # Retrieve Multiple Anycast Configurations
-        api_response = api_instance.get_anycast_config_list(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+        api_response = api_instance.get_anycast_config_list()
         pprint("The response of OnPremAnycastManagerApi->get_anycast_config_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -680,12 +673,10 @@ with ApiClient(config) as api_client:
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
     version = 'version_example' # str | 
-    app_name = 'app_name_example' # str |  (optional)
-    app_version = 'app_version_example' # str |  (optional)
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.get_onprem_config(ophid, version, app_name=app_name, app_version=app_version)
+        api_response = api_instance.get_onprem_config(ophid, version)
         pprint("The response of OnPremAnycastManagerApi->get_onprem_config:\n")
         pprint(api_response)
     except Exception as e:
@@ -762,12 +753,10 @@ with ApiClient(config) as api_client:
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
     version = 'version_example' # str | 
-    app_name = 'app_name_example' # str |  (optional)
-    app_version = 'app_version_example' # str |  (optional)
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.get_onprem_config2(ophid, version, app_name=app_name, app_version=app_version)
+        api_response = api_instance.get_onprem_config2(ophid, version)
         pprint("The response of OnPremAnycastManagerApi->get_onprem_config2:\n")
         pprint(api_response)
     except Exception as e:
@@ -1070,17 +1059,10 @@ configuration.api_key = os.getenv("BLOXONE_API_KEY")
 with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
-    account_id = 56 # int |  (optional)
-    service = 'service_example' # str |  (optional)
-    host_id = 56 # int |  (optional)
-    ophid = 'ophid_example' # str |  (optional)
-    is_configured = True # bool |  (optional)
-    tfilter = 'tfilter_example' # str |  (optional)
-    torder_by = 'torder_by_example' # str |  (optional)
 
     try:
         # Read list of Anycast Configurations
-        api_response = api_instance.list_anycast_configs_with_runtime_status(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
+        api_response = api_instance.list_anycast_configs_with_runtime_status()
         pprint("The response of OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status:\n")
         pprint(api_response)
     except Exception as e:
