@@ -25,32 +25,29 @@ Validation: - \"ids\" is required. - \"tags\" is required.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.assign_tags_request import AssignTagsRequest
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     body = infra_mgmt.AssignTagsRequest() # AssignTagsRequest | 
@@ -58,10 +55,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Assign tags for list of hosts.
         api_response = api_instance.assign_tags(body)
-        print("The response of HostsApi->assign_tags:\n")
+        pprint("The response of HostsApi->assign_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->assign_tags: %s\n" % e)
+        pprint("Exception when calling HostsApi->assign_tags: %s\n" % e)
 ```
 
 
@@ -104,33 +101,29 @@ Validation: - \"display_name\" is required and should be unique.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.create_host_response import CreateHostResponse
-from infra_mgmt.models.host import Host
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     body = infra_mgmt.Host() # Host | 
@@ -138,10 +131,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Create a Host resource.
         api_response = api_instance.create(body)
-        print("The response of HostsApi->create:\n")
+        pprint("The response of HostsApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->create: %s\n" % e)
+        pprint("Exception when calling HostsApi->create: %s\n" % e)
 ```
 
 
@@ -184,31 +177,29 @@ Validation: - \"id\" is required.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -217,7 +208,7 @@ with infra_mgmt.ApiClient(configuration) as api_client:
         # Delete a Host resource.
         api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling HostsApi->delete: %s\n" % e)
+        pprint("Exception when calling HostsApi->delete: %s\n" % e)
 ```
 
 
@@ -260,32 +251,29 @@ The user can disconnect the host from the cloud (for example, if in case a host 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.disconnect_request import DisconnectRequest
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -294,10 +282,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Disconnect a Host by resource ID.
         api_response = api_instance.disconnect(id, body)
-        print("The response of HostsApi->disconnect:\n")
+        pprint("The response of HostsApi->disconnect:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->disconnect: %s\n" % e)
+        pprint("Exception when calling HostsApi->disconnect: %s\n" % e)
 ```
 
 
@@ -339,50 +327,39 @@ List all the Host resources for an account.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.list_host_response import ListHostResponse
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
-    order_by = 'order_by_example' # str |   A collection of response resources can be sorted by their JSON tags. For a 'flat' resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix 'asc' sorts the data in ascending order. The suffix 'desc' sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    tfilter = 'tfilter_example' # str | This parameter is used for filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | This parameter is used for sorting by tags. (optional)
 
     try:
         # List all the Host resources for an account.
-        api_response = api_instance.list(filter=filter, order_by=order_by, offset=offset, limit=limit, page_token=page_token, fields=fields, tfilter=tfilter, torder_by=torder_by)
-        print("The response of HostsApi->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of HostsApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->list: %s\n" % e)
+        pprint("Exception when calling HostsApi->list: %s\n" % e)
 ```
 
 
@@ -432,32 +409,29 @@ Validation: - \"id\" is required.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.get_host_response import GetHostResponse
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -465,10 +439,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Get a Host resource.
         api_response = api_instance.read(id)
-        print("The response of HostsApi->read:\n")
+        pprint("The response of HostsApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->read: %s\n" % e)
+        pprint("Exception when calling HostsApi->read: %s\n" % e)
 ```
 
 
@@ -509,32 +483,29 @@ Migrate a Host's configuration from one to another.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.replace_host_request import ReplaceHostRequest
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     from_resource_id = 'from_resource_id_example' # str | An application specific resource identity of a resource
@@ -544,10 +515,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Migrate a Host's configuration from one to another.
         api_response = api_instance.replace(from_resource_id, to_resource_id, body)
-        print("The response of HostsApi->replace:\n")
+        pprint("The response of HostsApi->replace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->replace: %s\n" % e)
+        pprint("Exception when calling HostsApi->replace: %s\n" % e)
 ```
 
 
@@ -592,32 +563,29 @@ Validation: - \"ids\" is required. - \"keys\" is required.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.unassign_tags_request import UnassignTagsRequest
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     body = infra_mgmt.UnassignTagsRequest() # UnassignTagsRequest | 
@@ -625,10 +593,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Unassign tag for the list hosts.
         api_response = api_instance.unassign_tags(body)
-        print("The response of HostsApi->unassign_tags:\n")
+        pprint("The response of HostsApi->unassign_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->unassign_tags: %s\n" % e)
+        pprint("Exception when calling HostsApi->unassign_tags: %s\n" % e)
 ```
 
 
@@ -671,33 +639,29 @@ Validation: - \"id\" is required. - \"display_name\" is required and should be u
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import infra_mgmt
-from infra_mgmt.models.host import Host
-from infra_mgmt.models.update_host_response import UpdateHostResponse
-from infra_mgmt.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/infra/v1
+import infra_mgmt
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = infra_mgmt.Configuration(
-    host = "http://csp.infoblox.com/api/infra/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with infra_mgmt.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_mgmt.HostsApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -706,10 +670,10 @@ with infra_mgmt.ApiClient(configuration) as api_client:
     try:
         # Update a Host resource.
         api_response = api_instance.update(id, body)
-        print("The response of HostsApi->update:\n")
+        pprint("The response of HostsApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HostsApi->update: %s\n" % e)
+        pprint("Exception when calling HostsApi->update: %s\n" % e)
 ```
 
 
