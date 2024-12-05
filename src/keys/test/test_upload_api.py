@@ -15,12 +15,15 @@ import unittest
 
 from keys.api.upload_api import UploadApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestUploadApi(unittest.TestCase):
     """UploadApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = UploadApi()
+        api_instance = ApiClient()
+        self.api = UploadApi(api_instance)
 
     def tearDown(self) -> None:
         pass
