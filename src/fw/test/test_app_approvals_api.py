@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.app_approvals_api import AppApprovalsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAppApprovalsApi(unittest.TestCase):
     """AppApprovalsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AppApprovalsApi()
+        api_instance = ApiClient()
+        self.api = AppApprovalsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

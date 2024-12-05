@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.security_policies_api import SecurityPoliciesApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestSecurityPoliciesApi(unittest.TestCase):
     """SecurityPoliciesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SecurityPoliciesApi()
+        api_instance = ApiClient()
+        self.api = SecurityPoliciesApi(api_instance)
 
     def tearDown(self) -> None:
         pass

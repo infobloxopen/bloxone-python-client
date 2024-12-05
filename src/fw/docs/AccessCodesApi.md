@@ -21,23 +21,24 @@ Use this method to create the Bypass Code corresponding to the security rules pa
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.access_code import AccessCode
-from fw.models.access_code_create_response import AccessCodeCreateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     body = fw.AccessCode() # AccessCode | The Bypass Code object.
@@ -45,10 +46,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Create Access Codes
         api_response = api_instance.create_access_code(body)
-        print("The response of AccessCodesApi->create_access_code:\n")
+        pprint("The response of AccessCodesApi->create_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->create_access_code: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->create_access_code: %s\n" % e)
 ```
 
 
@@ -94,22 +95,24 @@ Use this method to delete Bypass Code objects. Deletion of multiple bypass codes
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.access_code_delete_request import AccessCodeDeleteRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     body = fw.AccessCodeDeleteRequest() # AccessCodeDeleteRequest | 
@@ -118,7 +121,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Access Codes
         api_instance.delete_access_codes(body)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->delete_access_codes: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->delete_access_codes: %s\n" % e)
 ```
 
 
@@ -162,21 +165,24 @@ Use this method to delete Bypass Code object.
 
 ### Example
 
-
 ```python
-import fw
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     access_key = 'access_key_example' # str | The Bypass Code identifier.
@@ -185,7 +191,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Access Code By ID
         api_instance.delete_single_access_codes(access_key)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->delete_single_access_codes: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->delete_single_access_codes: %s\n" % e)
 ```
 
 
@@ -229,36 +235,34 @@ Use this method to retrieve a collection of Bypass Code objects.
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.access_code_multi_response import AccessCodeMultiResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
-    filter = 'filter_example' # str | A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'.  You can filter by following fields:  | Name               | type   | Supported Op                | | ------------------ | ------ | --------------------------- | | access_key         | string | !=, ==, ~, !~, >, <, <=, >= | | name               | string | !=, ==, ~, !~, >, <, <=, >= | | description        | string | !=, ==, ~, !~, >, <, <=, >= | | security_policy_id | int32  | !=, ==, >, <, <=, >=        |  In addition, grouping operators are supported:  | Op  | Description          | | --- | -------------------- | | and | Logical AND          | | or  | Logical OR           | | not | Logical NOT          | | ()  | Groupping Operators  |  Example: ``` ?_filter=\"((name=='acc_code')or(name~'key'))and(security_policy_id!=32)\" ```  (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
 
     try:
         # List Access Codes
-        api_response = api_instance.list_access_codes(filter=filter, offset=offset, limit=limit, page_token=page_token)
-        print("The response of AccessCodesApi->list_access_codes:\n")
+        api_response = api_instance.list_access_codes()
+        pprint("The response of AccessCodesApi->list_access_codes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->list_access_codes: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->list_access_codes: %s\n" % e)
 ```
 
 
@@ -304,34 +308,35 @@ Use this method to retrieve the Bypass Code by key.
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.access_code_read_response import AccessCodeReadResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     access_key = 'access_key_example' # str | The Bypass Code identifier.
-    name = 'name_example' # str | The Bypass Code name. (optional)
 
     try:
         # Read Access Codes
-        api_response = api_instance.read_access_code(access_key, name=name)
-        print("The response of AccessCodesApi->read_access_code:\n")
+        api_response = api_instance.read_access_code(access_key)
+        pprint("The response of AccessCodesApi->read_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->read_access_code: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->read_access_code: %s\n" % e)
 ```
 
 
@@ -376,23 +381,24 @@ Use this method to update the Bypass Code corresponding to the security rules pa
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.access_code import AccessCode
-from fw.models.access_code_update_response import AccessCodeUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     payload_access_key = 'payload_access_key_example' # str | Auto generated unique Bypass Code value
@@ -401,10 +407,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Update Access Codes
         api_response = api_instance.update_access_code(payload_access_key, body)
-        print("The response of AccessCodesApi->update_access_code:\n")
+        pprint("The response of AccessCodesApi->update_access_code:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AccessCodesApi->update_access_code: %s\n" % e)
+        pprint("Exception when calling AccessCodesApi->update_access_code: %s\n" % e)
 ```
 
 

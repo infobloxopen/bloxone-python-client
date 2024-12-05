@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.internal_domain_lists_api import InternalDomainListsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestInternalDomainListsApi(unittest.TestCase):
     """InternalDomainListsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = InternalDomainListsApi()
+        api_instance = ApiClient()
+        self.api = InternalDomainListsApi(api_instance)
 
     def tearDown(self) -> None:
         pass
