@@ -15,12 +15,15 @@ import unittest
 
 from redirect.api.custom_redirects_api import CustomRedirectsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestCustomRedirectsApi(unittest.TestCase):
     """CustomRedirectsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = CustomRedirectsApi()
+        api_instance = ApiClient()
+        self.api = CustomRedirectsApi(api_instance)
 
     def tearDown(self) -> None:
         pass
