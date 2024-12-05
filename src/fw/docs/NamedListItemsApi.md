@@ -18,22 +18,24 @@ Use this method to remove items from a specified Named List object. Note that du
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_items_delete_request import NamedListItemsDeleteRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListItemsApi(api_client)
     id = 56 # int | The Named List object identifier.
@@ -43,7 +45,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Named List Items.
         api_instance.delete_named_list_items(id, body)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->delete_named_list_items: %s\n" % e)
+        pprint("Exception when calling NamedListItemsApi->delete_named_list_items: %s\n" % e)
 ```
 
 
@@ -89,23 +91,24 @@ Use this method to update existing items with new ones for a specified Named Lis
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_items_insert_or_update import NamedListItemsInsertOrUpdate
-from fw.models.named_list_items_insert_or_update_response import NamedListItemsInsertOrUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListItemsApi(api_client)
     id = 56 # int | The Named List object identifier.
@@ -114,10 +117,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Insert Named List Items.
         api_response = api_instance.insert_or_replace_named_list_items(id, body)
-        print("The response of NamedListItemsApi->insert_or_replace_named_list_items:\n")
+        pprint("The response of NamedListItemsApi->insert_or_replace_named_list_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->insert_or_replace_named_list_items: %s\n" % e)
+        pprint("Exception when calling NamedListItemsApi->insert_or_replace_named_list_items: %s\n" % e)
 ```
 
 
@@ -163,22 +166,24 @@ Use this method to insert ot delete items  for a specified Named List object. No
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_items_partial_update import NamedListItemsPartialUpdate
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListItemsApi(api_client)
     id = 56 # int | The Named List object identifier.
@@ -187,10 +192,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Partial Update Named List Items.
         api_response = api_instance.named_list_items_partial_update(id, body)
-        print("The response of NamedListItemsApi->named_list_items_partial_update:\n")
+        pprint("The response of NamedListItemsApi->named_list_items_partial_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListItemsApi->named_list_items_partial_update: %s\n" % e)
+        pprint("Exception when calling NamedListItemsApi->named_list_items_partial_update: %s\n" % e)
 ```
 
 

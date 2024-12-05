@@ -15,12 +15,15 @@ import unittest
 
 from keys.api.generate_tsig_api import GenerateTsigApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestGenerateTsigApi(unittest.TestCase):
     """GenerateTsigApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = GenerateTsigApi()
+        api_instance = ApiClient()
+        self.api = GenerateTsigApi(api_instance)
 
     def tearDown(self) -> None:
         pass

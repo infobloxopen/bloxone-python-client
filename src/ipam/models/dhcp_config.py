@@ -50,6 +50,8 @@ class DHCPConfig(BaseModel):
     )
     filters: Optional[List[StrictStr]] = Field(
         default=None, description="The resource identifier.")
+    filters_large_selection: Optional[List[StrictStr]] = Field(
+        default=None, description="The resource identifier.")
     filters_v6: Optional[List[StrictStr]] = Field(
         default=None, description="The resource identifier.")
     ignore_client_uid: Optional[StrictBool] = Field(
@@ -68,8 +70,9 @@ class DHCPConfig(BaseModel):
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "abandoned_reclaim_time", "abandoned_reclaim_time_v6", "allow_unknown",
-        "allow_unknown_v6", "echo_client_id", "filters", "filters_v6",
-        "ignore_client_uid", "ignore_list", "lease_time", "lease_time_v6"
+        "allow_unknown_v6", "echo_client_id", "filters",
+        "filters_large_selection", "filters_v6", "ignore_client_uid",
+        "ignore_list", "lease_time", "lease_time_v6"
     ]
 
     model_config = ConfigDict(
@@ -153,6 +156,8 @@ class DHCPConfig(BaseModel):
             if obj.get("echo_client_id") is not None else False,
             "filters":
             obj.get("filters"),
+            "filters_large_selection":
+            obj.get("filters_large_selection"),
             "filters_v6":
             obj.get("filters_v6"),
             "ignore_client_uid":

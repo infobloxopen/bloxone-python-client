@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.forward_zone_api import ForwardZoneApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestForwardZoneApi(unittest.TestCase):
     """ForwardZoneApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ForwardZoneApi()
+        api_instance = ApiClient()
+        self.api = ForwardZoneApi(api_instance)
 
     def tearDown(self) -> None:
         pass

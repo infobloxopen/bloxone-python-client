@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.subnet_api import SubnetApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestSubnetApi(unittest.TestCase):
     """SubnetApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SubnetApi()
+        api_instance = ApiClient()
+        self.api = SubnetApi(api_instance)
 
     def tearDown(self) -> None:
         pass
@@ -57,6 +60,13 @@ class TestSubnetApi(unittest.TestCase):
         """Test case for list
 
         Retrieve subnets.
+        """
+        pass
+
+    def test_list_ancestor(self) -> None:
+        """Test case for list_ancestor
+
+        Retrieve subnet ancestors.
         """
         pass
 

@@ -15,12 +15,15 @@ import unittest
 
 from infra_provision.api.ui_join_token_api import UIJoinTokenApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestUIJoinTokenApi(unittest.TestCase):
     """UIJoinTokenApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = UIJoinTokenApi()
+        api_instance = ApiClient()
+        self.api = UIJoinTokenApi(api_instance)
 
     def tearDown(self) -> None:
         pass

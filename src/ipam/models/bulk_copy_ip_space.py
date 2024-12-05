@@ -40,6 +40,11 @@ class BulkCopyIPSpace(BaseModel):
         description=
         "Indicates whether child objects should be copied or not.  Defaults to _false_."
     )
+    retain_child_compartment: Optional[StrictBool] = Field(
+        default=None,
+        description=
+        "Indicates whether the child objects are going to retain their compartment_id, or inherit from the object to copy into.  Defaults to false"
+    )
     skip_on_error: Optional[StrictBool] = Field(
         default=None,
         description=
@@ -48,8 +53,8 @@ class BulkCopyIPSpace(BaseModel):
     target: StrictStr = Field(description="The resource identifier.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "copy_dhcp_options", "copy_objects", "recursive", "skip_on_error",
-        "target"
+        "copy_dhcp_options", "copy_objects", "recursive",
+        "retain_child_compartment", "skip_on_error", "target"
     ]
 
     model_config = ConfigDict(
@@ -115,6 +120,8 @@ class BulkCopyIPSpace(BaseModel):
             obj.get("copy_objects"),
             "recursive":
             obj.get("recursive"),
+            "retain_child_compartment":
+            obj.get("retain_child_compartment"),
             "skip_on_error":
             obj.get("skip_on_error"),
             "target":

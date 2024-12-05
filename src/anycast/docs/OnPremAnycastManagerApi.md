@@ -33,33 +33,29 @@ Use this method to create anycast configuration, as per the specified payload. @
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.anycast_config import AnycastConfig
-from anycast.models.anycast_config_response import AnycastConfigResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     body = anycast.AnycastConfig() # AnycastConfig | 
@@ -67,10 +63,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Create Anycast Configuration
         api_response = api_instance.create_anycast_config(body)
-        print("The response of OnPremAnycastManagerApi->create_anycast_config:\n")
+        pprint("The response of OnPremAnycastManagerApi->create_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->create_anycast_config: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->create_anycast_config: %s\n" % e)
 ```
 
 
@@ -113,31 +109,29 @@ Use this method to create anycast 2.0 version for the account ID @responses.500.
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -145,10 +139,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Create Anycast Version
         api_response = api_instance.create_anycast_version(id)
-        print("The response of OnPremAnycastManagerApi->create_anycast_version:\n")
+        pprint("The response of OnPremAnycastManagerApi->create_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->create_anycast_version: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->create_anycast_version: %s\n" % e)
 ```
 
 
@@ -191,31 +185,29 @@ Use this method to delete the addressed anycast configuration. @responses.400._e
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -223,10 +215,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Delete Anycast Configuration
         api_response = api_instance.delete_anycast_config(id)
-        print("The response of OnPremAnycastManagerApi->delete_anycast_config:\n")
+        pprint("The response of OnPremAnycastManagerApi->delete_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->delete_anycast_config: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->delete_anycast_config: %s\n" % e)
 ```
 
 
@@ -269,31 +261,29 @@ Use this method to delete anycast 2.0 version associated with the given account 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -301,10 +291,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Delete anycast version
         api_response = api_instance.delete_anycast_version(id)
-        print("The response of OnPremAnycastManagerApi->delete_anycast_version:\n")
+        pprint("The response of OnPremAnycastManagerApi->delete_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->delete_anycast_version: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->delete_anycast_version: %s\n" % e)
 ```
 
 
@@ -347,31 +337,29 @@ Use this method to delete the addressed on-prem host. @responses.400._error {\"c
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -379,10 +367,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Delete On-Prem Host
         api_response = api_instance.delete_onprem_host(id)
-        print("The response of OnPremAnycastManagerApi->delete_onprem_host:\n")
+        pprint("The response of OnPremAnycastManagerApi->delete_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->delete_onprem_host: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->delete_onprem_host: %s\n" % e)
 ```
 
 
@@ -425,32 +413,29 @@ Use this method to retrieve the specified anycast configuration, together with t
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.anycast_config_response import AnycastConfigResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -458,10 +443,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Retrieve Anycast Configuration
         api_response = api_instance.get_anycast_config(id)
-        print("The response of OnPremAnycastManagerApi->get_anycast_config:\n")
+        pprint("The response of OnPremAnycastManagerApi->get_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_anycast_config: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_anycast_config: %s\n" % e)
 ```
 
 
@@ -504,49 +489,39 @@ Without any filtering, use this method to retrieve all named anycast configurati
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.get_anycast_config_list_response import GetAnycastConfigListResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
-    account_id = 56 # int |  (optional)
-    service = 'service_example' # str |  (optional)
-    host_id = 56 # int |  (optional)
-    ophid = 'ophid_example' # str |  (optional)
-    is_configured = True # bool |  (optional)
-    tfilter = 'tfilter_example' # str |  (optional)
-    torder_by = 'torder_by_example' # str |  (optional)
 
     try:
         # Retrieve Multiple Anycast Configurations
-        api_response = api_instance.get_anycast_config_list(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
-        print("The response of OnPremAnycastManagerApi->get_anycast_config_list:\n")
+        api_response = api_instance.get_anycast_config_list()
+        pprint("The response of OnPremAnycastManagerApi->get_anycast_config_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_anycast_config_list: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_anycast_config_list: %s\n" % e)
 ```
 
 
@@ -595,32 +570,29 @@ Use this method to retrieve the anycast version for the given account id @respon
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.anycast_version import AnycastVersion
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -628,10 +600,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Retrieve Anycast Version
         api_response = api_instance.get_anycast_version(id)
-        print("The response of OnPremAnycastManagerApi->get_anycast_version:\n")
+        pprint("The response of OnPremAnycastManagerApi->get_anycast_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_anycast_version: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_anycast_version: %s\n" % e)
 ```
 
 
@@ -674,46 +646,41 @@ Use this method to retrieve generated anycast configuration for anycast-enabled 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.service_config import ServiceConfig
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
     version = 'version_example' # str | 
-    app_name = 'app_name_example' # str |  (optional)
-    app_version = 'app_version_example' # str |  (optional)
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.get_onprem_config(ophid, version, app_name=app_name, app_version=app_version)
-        print("The response of OnPremAnycastManagerApi->get_onprem_config:\n")
+        api_response = api_instance.get_onprem_config(ophid, version)
+        pprint("The response of OnPremAnycastManagerApi->get_onprem_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_onprem_config: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_onprem_config: %s\n" % e)
 ```
 
 
@@ -759,46 +726,41 @@ Use this method to retrieve generated anycast configuration for anycast-enabled 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.service_config import ServiceConfig
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
     version = 'version_example' # str | 
-    app_name = 'app_name_example' # str |  (optional)
-    app_version = 'app_version_example' # str |  (optional)
 
     try:
         # Retrieve Generated, Per-Host Anycast Configuration
-        api_response = api_instance.get_onprem_config2(ophid, version, app_name=app_name, app_version=app_version)
-        print("The response of OnPremAnycastManagerApi->get_onprem_config2:\n")
+        api_response = api_instance.get_onprem_config2(ophid, version)
+        pprint("The response of OnPremAnycastManagerApi->get_onprem_config2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_onprem_config2: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_onprem_config2: %s\n" % e)
 ```
 
 
@@ -844,32 +806,29 @@ Use this method to retrieve the specified on-prem host from the anycast database
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.onprem_host_response import OnpremHostResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -877,10 +836,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Retrieve On-Prem Host
         api_response = api_instance.get_onprem_host(id)
-        print("The response of OnPremAnycastManagerApi->get_onprem_host:\n")
+        pprint("The response of OnPremAnycastManagerApi->get_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_onprem_host: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_onprem_host: %s\n" % e)
 ```
 
 
@@ -923,32 +882,29 @@ Use this method to retrieve configuration status for the specified host. The con
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.service_status_update_request import ServiceStatusUpdateRequest
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
@@ -956,10 +912,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Retrieve Configuration Status
         api_response = api_instance.get_status(ophid)
-        print("The response of OnPremAnycastManagerApi->get_status:\n")
+        pprint("The response of OnPremAnycastManagerApi->get_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_status: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_status: %s\n" % e)
 ```
 
 
@@ -1002,32 +958,29 @@ Use this method to retrieve configuration status for the specified host. The con
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.service_status_update_request import ServiceStatusUpdateRequest
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     ophid = 'ophid_example' # str | 
@@ -1035,10 +988,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Retrieve Configuration Status
         api_response = api_instance.get_status2(ophid)
-        print("The response of OnPremAnycastManagerApi->get_status2:\n")
+        pprint("The response of OnPremAnycastManagerApi->get_status2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->get_status2: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->get_status2: %s\n" % e)
 ```
 
 
@@ -1081,49 +1034,39 @@ Without any filtering, use this method to retrieve all named anycast configurati
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.get_anycast_config_list_response import GetAnycastConfigListResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
-    account_id = 56 # int |  (optional)
-    service = 'service_example' # str |  (optional)
-    host_id = 56 # int |  (optional)
-    ophid = 'ophid_example' # str |  (optional)
-    is_configured = True # bool |  (optional)
-    tfilter = 'tfilter_example' # str |  (optional)
-    torder_by = 'torder_by_example' # str |  (optional)
 
     try:
         # Read list of Anycast Configurations
-        api_response = api_instance.list_anycast_configs_with_runtime_status(account_id=account_id, service=service, host_id=host_id, ophid=ophid, is_configured=is_configured, tfilter=tfilter, torder_by=torder_by)
-        print("The response of OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status:\n")
+        api_response = api_instance.list_anycast_configs_with_runtime_status()
+        pprint("The response of OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->list_anycast_configs_with_runtime_status: %s\n" % e)
 ```
 
 
@@ -1172,32 +1115,29 @@ Use this method to retrieve the specified anycast configuration, together with t
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.anycast_config_response import AnycastConfigResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -1205,10 +1145,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Read Anycast Configuration
         api_response = api_instance.read_anycast_config_with_runtime_status(id)
-        print("The response of OnPremAnycastManagerApi->read_anycast_config_with_runtime_status:\n")
+        pprint("The response of OnPremAnycastManagerApi->read_anycast_config_with_runtime_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->read_anycast_config_with_runtime_status: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->read_anycast_config_with_runtime_status: %s\n" % e)
 ```
 
 
@@ -1251,33 +1191,29 @@ Use this method to replace the addressed anycast configuration with configuratio
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.anycast_config import AnycastConfig
-from anycast.models.anycast_config_response import AnycastConfigResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | 
@@ -1286,10 +1222,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Create or Update Anycast Configuration
         api_response = api_instance.update_anycast_config(id, body)
-        print("The response of OnPremAnycastManagerApi->update_anycast_config:\n")
+        pprint("The response of OnPremAnycastManagerApi->update_anycast_config:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->update_anycast_config: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->update_anycast_config: %s\n" % e)
 ```
 
 
@@ -1333,33 +1269,29 @@ Use this method to create or update the addressed host as per the specified payl
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import anycast
-from anycast.models.onprem_host import OnpremHost
-from anycast.models.onprem_host_response import OnpremHostResponse
-from anycast.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/anycast/v1
+import anycast
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = anycast.Configuration(
-    host = "http://csp.infoblox.com/api/anycast/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with anycast.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = anycast.OnPremAnycastManagerApi(api_client)
     id = 56 # int | Numeric host identifier
@@ -1368,10 +1300,10 @@ with anycast.ApiClient(configuration) as api_client:
     try:
         # Create or Update On-Prem Host
         api_response = api_instance.update_onprem_host(id, body)
-        print("The response of OnPremAnycastManagerApi->update_onprem_host:\n")
+        pprint("The response of OnPremAnycastManagerApi->update_onprem_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OnPremAnycastManagerApi->update_onprem_host: %s\n" % e)
+        pprint("Exception when calling OnPremAnycastManagerApi->update_onprem_host: %s\n" % e)
 ```
 
 

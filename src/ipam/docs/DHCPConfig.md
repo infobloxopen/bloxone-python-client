@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **allow_unknown_v6** | **bool** | Disable to allow leases only for known IPV6 clients, those for which a fixed address is configured. | [optional] [default to True]
 **echo_client_id** | **bool** | Enable/disable to include/exclude the client id when responding to discover or request. | [optional] [default to False]
 **filters** | **List[str]** | The resource identifier. | [optional] 
+**filters_large_selection** | **List[str]** | The resource identifier. | [optional] 
 **filters_v6** | **List[str]** | The resource identifier. | [optional] 
 **ignore_client_uid** | **bool** | Enable to ignore the client UID when issuing a DHCP lease. Use this option to prevent assigning two IP addresses for a client which does not have a UID during one phase of PXE boot but acquires one for the other phase. | [optional] [default to False]
 **ignore_list** | [**List[IgnoreItem]**](IgnoreItem.md) | The list of clients to ignore requests from. | [optional] 

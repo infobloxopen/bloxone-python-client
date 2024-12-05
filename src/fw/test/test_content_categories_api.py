@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.content_categories_api import ContentCategoriesApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestContentCategoriesApi(unittest.TestCase):
     """ContentCategoriesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ContentCategoriesApi()
+        api_instance = ApiClient()
+        self.api = ContentCategoriesApi(api_instance)
 
     def tearDown(self) -> None:
         pass

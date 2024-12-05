@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.option_space_api import OptionSpaceApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestOptionSpaceApi(unittest.TestCase):
     """OptionSpaceApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = OptionSpaceApi()
+        api_instance = ApiClient()
+        self.api = OptionSpaceApi(api_instance)
 
     def tearDown(self) -> None:
         pass

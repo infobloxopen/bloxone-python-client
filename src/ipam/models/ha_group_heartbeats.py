@@ -35,8 +35,15 @@ class HAGroupHeartbeats(BaseModel):
         description=
         "The timestamp as a string of the last successful heartbeat received from the peer above."
     )
+    successful_heartbeat_v6: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The timestamp as a string of the last successful DHCPv6 heartbeat received from the peer above."
+    )
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["peer", "successful_heartbeat"]
+    __properties: ClassVar[List[str]] = [
+        "peer", "successful_heartbeat", "successful_heartbeat_v6"
+    ]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +105,9 @@ class HAGroupHeartbeats(BaseModel):
             "peer":
             obj.get("peer"),
             "successful_heartbeat":
-            obj.get("successful_heartbeat")
+            obj.get("successful_heartbeat"),
+            "successful_heartbeat_v6":
+            obj.get("successful_heartbeat_v6")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

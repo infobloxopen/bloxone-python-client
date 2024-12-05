@@ -15,12 +15,15 @@ import unittest
 
 from infra_provision.api.uicsr_api import UICSRApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestUICSRApi(unittest.TestCase):
     """UICSRApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = UICSRApi()
+        api_instance = ApiClient()
+        self.api = UICSRApi(api_instance)
 
     def tearDown(self) -> None:
         pass

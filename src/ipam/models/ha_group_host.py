@@ -36,6 +36,8 @@ class HAGroupHost(BaseModel):
     )
     host: StrictStr = Field(description="The resource identifier.")
     port: Optional[StrictInt] = Field(default=None, description="The HA port.")
+    port_v6: Optional[StrictInt] = Field(
+        default=None, description="The HA port used for IPv6 communication.")
     role: Optional[StrictStr] = Field(
         default=None,
         description=
@@ -45,9 +47,15 @@ class HAGroupHost(BaseModel):
         description=
         "The state of DHCP on the host. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request."
     )
+    state_v6: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The state of DHCPv6 on the host. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request."
+    )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "address", "heartbeats", "host", "port", "role", "state"
+        "address", "heartbeats", "host", "port", "port_v6", "role", "state",
+        "state_v6"
     ]
 
     model_config = ConfigDict(
@@ -80,10 +88,12 @@ class HAGroupHost(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "port",
+            "port_v6",
             "additional_properties",
         ])
 
@@ -126,10 +136,14 @@ class HAGroupHost(BaseModel):
             obj.get("host"),
             "port":
             obj.get("port"),
+            "port_v6":
+            obj.get("port_v6"),
             "role":
             obj.get("role"),
             "state":
-            obj.get("state")
+            obj.get("state"),
+            "state_v6":
+            obj.get("state_v6")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**create_next_available_subnet**](AddressBlockApi.md#create_next_available_subnet) | **POST** /ipam/address_block/{id}/nextavailablesubnet | Create the Next Available Subnet object.
 [**delete**](AddressBlockApi.md#delete) | **DELETE** /ipam/address_block/{id} | Move the address block to the recycle bin.
 [**list**](AddressBlockApi.md#list) | **GET** /ipam/address_block | Retrieve the address blocks.
+[**list_ancestor**](AddressBlockApi.md#list_ancestor) | **GET** /ipam/address_block/{id}/ancestor | Retrieve address block ancestors.
 [**list_next_available_ab**](AddressBlockApi.md#list_next_available_ab) | **GET** /ipam/address_block/{id}/nextavailableaddressblock | List Next Available Address Block objects.
 [**list_next_available_ip**](AddressBlockApi.md#list_next_available_ip) | **GET** /ipam/address_block/{id}/nextavailableip | Retrieve the next available IP address.
 [**list_next_available_subnet**](AddressBlockApi.md#list_next_available_subnet) | **GET** /ipam/address_block/{id}/nextavailablesubnet | List Next Available Subnet objects.
@@ -28,33 +29,29 @@ Use this method to copy an __AddressBlock__ object. The __AddressBlock__ object 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.copy_address_block import CopyAddressBlock
-from ipam.models.copy_address_block_response import CopyAddressBlockResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -63,10 +60,10 @@ with ipam.ApiClient(configuration) as api_client:
     try:
         # Copy the address block.
         api_response = api_instance.copy(id, body)
-        print("The response of AddressBlockApi->copy:\n")
+        pprint("The response of AddressBlockApi->copy:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->copy: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->copy: %s\n" % e)
 ```
 
 
@@ -110,45 +107,40 @@ Use this method to create an __AddressBlock__ object. The __AddressBlock__ objec
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.address_block import AddressBlock
-from ipam.models.create_address_block_response import CreateAddressBlockResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     body = ipam.AddressBlock() # AddressBlock | 
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Create the address block.
-        api_response = api_instance.create(body, inherit=inherit)
-        print("The response of AddressBlockApi->create:\n")
+        api_response = api_instance.create(body)
+        pprint("The response of AddressBlockApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->create: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->create: %s\n" % e)
 ```
 
 
@@ -192,47 +184,41 @@ Use this method to create a Next Available __AddressBlock__ object. The Next Ava
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.create_next_available_ab_response import CreateNextAvailableABResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
     cidr = 56 # int | The cidr value of address blocks to be created.
-    count = 1 # int | Number of address blocks to generate. Default 1 if not set. (optional) (default to 1)
-    name = 'name_example' # str | Name of next available address blocks. (optional)
-    comment = 'comment_example' # str | Comment of next available address blocks. (optional)
 
     try:
         # Create the Next Available Address Block object.
-        api_response = api_instance.create_next_available_ab(id, cidr, count=count, name=name, comment=comment)
-        print("The response of AddressBlockApi->create_next_available_ab:\n")
+        api_response = api_instance.create_next_available_ab(id, cidr)
+        pprint("The response of AddressBlockApi->create_next_available_ab:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->create_next_available_ab: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->create_next_available_ab: %s\n" % e)
 ```
 
 
@@ -279,45 +265,40 @@ Use this method to allocate the next available IP address. This allocates one or
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.create_next_available_ip_response import CreateNextAvailableIPResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    contiguous = False # bool | Indicates whether the IP addresses should belong to a contiguous block.  Defaults to _false_. (optional) (default to False)
-    count = 1 # int | The number of IP addresses requested.  Defaults to 1. (optional) (default to 1)
 
     try:
         # Allocate the next available IP address.
-        api_response = api_instance.create_next_available_ip(id, contiguous=contiguous, count=count)
-        print("The response of AddressBlockApi->create_next_available_ip:\n")
+        api_response = api_instance.create_next_available_ip(id)
+        pprint("The response of AddressBlockApi->create_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->create_next_available_ip: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->create_next_available_ip: %s\n" % e)
 ```
 
 
@@ -362,48 +343,41 @@ Use this method to create a Next Available __Subnet__ object. The Next Available
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.create_next_available_subnet_response import CreateNextAvailableSubnetResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
     cidr = 56 # int | The cidr value of subnets to be created.
-    count = 1 # int | Number of subnets to generate. Default 1 if not set. (optional) (default to 1)
-    name = 'name_example' # str | Name of next available subnets. (optional)
-    comment = 'comment_example' # str | Comment of next available subnets. (optional)
-    dhcp_host = 'dhcp_host_example' # str | Reference of OnPrem Host associated with the next available subnets to be created. (optional)
 
     try:
         # Create the Next Available Subnet object.
-        api_response = api_instance.create_next_available_subnet(id, cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
-        print("The response of AddressBlockApi->create_next_available_subnet:\n")
+        api_response = api_instance.create_next_available_subnet(id, cidr)
+        pprint("The response of AddressBlockApi->create_next_available_subnet:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->create_next_available_subnet: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->create_next_available_subnet: %s\n" % e)
 ```
 
 
@@ -451,31 +425,29 @@ Use this method to move an __AddressBlock__ object to the recycle bin. The __Add
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -484,7 +456,7 @@ with ipam.ApiClient(configuration) as api_client:
         # Move the address block to the recycle bin.
         api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->delete: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->delete: %s\n" % e)
 ```
 
 
@@ -527,51 +499,39 @@ Use this method to retrieve __AddressBlock__ objects. The __AddressBlock__ objec
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.list_address_block_response import ListAddressBlockResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    order_by = 'order_by_example' # str |   A collection of response resources can be sorted by their JSON tags. For a 'flat' resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix 'asc' sorts the data in ascending order. The suffix 'desc' sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         (optional)
-    torder_by = 'torder_by_example' # str | This parameter is used for sorting by tags. (optional)
-    tfilter = 'tfilter_example' # str | This parameter is used for filtering by tags. (optional)
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Retrieve the address blocks.
-        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of AddressBlockApi->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of AddressBlockApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->list: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->list: %s\n" % e)
 ```
 
 
@@ -612,8 +572,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_ancestor**
+> ListAncestorResponse list_ancestor(id)
+
+Retrieve address block ancestors.
+
+Use this method to retrieve the ancestors of the __AddressBlock__ object. This returns all the ancestors of the address block.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+```python
+import os
+from pprint import pprint
+
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
+
+# Enter a context with an instance of the API client
+with ApiClient(config) as api_client:
+    # Create an instance of the API class
+    api_instance = ipam.AddressBlockApi(api_client)
+    id = 'id_example' # str | An application specific resource identity of a resource
+
+    try:
+        # Retrieve address block ancestors.
+        api_response = api_instance.list_ancestor(id)
+        pprint("The response of AddressBlockApi->list_ancestor:\n")
+        pprint(api_response)
+    except Exception as e:
+        pprint("Exception when calling AddressBlockApi->list_ancestor: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| An application specific resource identity of a resource | 
+
+### Return type
+
+[**ListAncestorResponse**](ListAncestorResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | GET operation response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_next_available_ab**
-> NextAvailableABResponse list_next_available_ab(id, cidr=cidr, count=count, name=name, comment=comment)
+> NextAvailableABResponse list_next_available_ab(id, cidr=cidr, count=count, name=name, comment=comment, federated_realms=federated_realms, compartment_id=compartment_id)
 
 List Next Available Address Block objects.
 
@@ -622,47 +658,40 @@ Use this method to list Next Available __AddressBlock__ objects. The Next Availa
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.next_available_ab_response import NextAvailableABResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    cidr = 56 # int | The cidr value of address blocks to be created. (optional)
-    count = 56 # int | Number of address blocks to generate. Default 1 if not set. (optional)
-    name = 'name_example' # str | Name of next available address blocks. (optional)
-    comment = 'comment_example' # str | Comment of next available address blocks. (optional)
 
     try:
         # List Next Available Address Block objects.
-        api_response = api_instance.list_next_available_ab(id, cidr=cidr, count=count, name=name, comment=comment)
-        print("The response of AddressBlockApi->list_next_available_ab:\n")
+        api_response = api_instance.list_next_available_ab(id)
+        pprint("The response of AddressBlockApi->list_next_available_ab:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->list_next_available_ab: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->list_next_available_ab: %s\n" % e)
 ```
 
 
@@ -677,6 +706,8 @@ Name | Type | Description  | Notes
  **count** | **int**| Number of address blocks to generate. Default 1 if not set. | [optional] 
  **name** | **str**| Name of next available address blocks. | [optional] 
  **comment** | **str**| Comment of next available address blocks. | [optional] 
+ **federated_realms** | [**List[str]**](str.md)| Reserved for future use. | [optional] 
+ **compartment_id** | **str**| The compartment id of the address blocks to be created. | [optional] 
 
 ### Return type
 
@@ -709,45 +740,40 @@ Use this method to retrieve the next available IP address. This returns one or m
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.next_available_ip_response import NextAvailableIPResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    contiguous = True # bool | Indicates whether the IP addresses should belong to a contiguous block.  Defaults to _false_. (optional)
-    count = 56 # int | The number of IP addresses requested.  Defaults to 1. (optional)
 
     try:
         # Retrieve the next available IP address.
-        api_response = api_instance.list_next_available_ip(id, contiguous=contiguous, count=count)
-        print("The response of AddressBlockApi->list_next_available_ip:\n")
+        api_response = api_instance.list_next_available_ip(id)
+        pprint("The response of AddressBlockApi->list_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->list_next_available_ip: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->list_next_available_ip: %s\n" % e)
 ```
 
 
@@ -783,7 +809,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_next_available_subnet**
-> NextAvailableSubnetResponse list_next_available_subnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
+> NextAvailableSubnetResponse list_next_available_subnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host, federated_realms=federated_realms)
 
 List Next Available Subnet objects.
 
@@ -792,48 +818,40 @@ Use this method to list Next Available __Subnet__ objects. The Next Available Ad
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.next_available_subnet_response import NextAvailableSubnetResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    cidr = 56 # int | The cidr value of subnets to be created. (optional)
-    count = 56 # int | Number of subnets to generate. Default 1 if not set. (optional)
-    name = 'name_example' # str | Name of next available subnets. (optional)
-    comment = 'comment_example' # str | Comment of next available subnets. (optional)
-    dhcp_host = 'dhcp_host_example' # str | Reference of OnPrem Host associated with the next available subnets to be created. (optional)
 
     try:
         # List Next Available Subnet objects.
-        api_response = api_instance.list_next_available_subnet(id, cidr=cidr, count=count, name=name, comment=comment, dhcp_host=dhcp_host)
-        print("The response of AddressBlockApi->list_next_available_subnet:\n")
+        api_response = api_instance.list_next_available_subnet(id)
+        pprint("The response of AddressBlockApi->list_next_available_subnet:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->list_next_available_subnet: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->list_next_available_subnet: %s\n" % e)
 ```
 
 
@@ -849,6 +867,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name of next available subnets. | [optional] 
  **comment** | **str**| Comment of next available subnets. | [optional] 
  **dhcp_host** | **str**| Reference of OnPrem Host associated with the next available subnets to be created. | [optional] 
+ **federated_realms** | [**List[str]**](str.md)| Reserved for future use. | [optional] 
 
 ### Return type
 
@@ -881,45 +900,40 @@ Use this method to retrieve an __AddressBlock__ object. The __AddressBlock__ obj
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.read_address_block_response import ReadAddressBlockResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Retrieve the address block.
-        api_response = api_instance.read(id, fields=fields, inherit=inherit)
-        print("The response of AddressBlockApi->read:\n")
+        api_response = api_instance.read(id)
+        pprint("The response of AddressBlockApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->read: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->read: %s\n" % e)
 ```
 
 
@@ -964,46 +978,41 @@ Use this method to update an __AddressBlock__ object. The __AddressBlock__ objec
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.address_block import AddressBlock
-from ipam.models.update_address_block_response import UpdateAddressBlockResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AddressBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
     body = ipam.AddressBlock() # AddressBlock | 
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Update the address block.
-        api_response = api_instance.update(id, body, inherit=inherit)
-        print("The response of AddressBlockApi->update:\n")
+        api_response = api_instance.update(id, body)
+        pprint("The response of AddressBlockApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AddressBlockApi->update: %s\n" % e)
+        pprint("Exception when calling AddressBlockApi->update: %s\n" % e)
 ```
 
 

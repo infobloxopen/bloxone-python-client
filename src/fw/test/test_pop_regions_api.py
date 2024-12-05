@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.pop_regions_api import PopRegionsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestPopRegionsApi(unittest.TestCase):
     """PopRegionsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = PopRegionsApi()
+        api_instance = ApiClient()
+        self.api = PopRegionsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

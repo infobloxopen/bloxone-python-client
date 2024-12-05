@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.delegation_api import DelegationApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestDelegationApi(unittest.TestCase):
     """DelegationApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DelegationApi()
+        api_instance = ApiClient()
+        self.api = DelegationApi(api_instance)
 
     def tearDown(self) -> None:
         pass

@@ -15,12 +15,15 @@ import unittest
 
 from redirect.api.certificate_api import CertificateApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestCertificateApi(unittest.TestCase):
     """CertificateApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = CertificateApi()
+        api_instance = ApiClient()
+        self.api = CertificateApi(api_instance)
 
     def tearDown(self) -> None:
         pass

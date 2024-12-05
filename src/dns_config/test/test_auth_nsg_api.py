@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.auth_nsg_api import AuthNsgApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAuthNsgApi(unittest.TestCase):
     """AuthNsgApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AuthNsgApi()
+        api_instance = ApiClient()
+        self.api = AuthNsgApi(api_instance)
 
     def tearDown(self) -> None:
         pass

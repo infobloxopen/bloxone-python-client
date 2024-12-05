@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **peer** | **str** | The name of the peer. | [optional] 
 **successful_heartbeat** | **str** | The timestamp as a string of the last successful heartbeat received from the peer above. | [optional] 
+**successful_heartbeat_v6** | **str** | The timestamp as a string of the last successful DHCPv6 heartbeat received from the peer above. | [optional] 
 
 ## Example
 

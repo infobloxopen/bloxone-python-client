@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.option_code_api import OptionCodeApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestOptionCodeApi(unittest.TestCase):
     """OptionCodeApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = OptionCodeApi()
+        api_instance = ApiClient()
+        self.api = OptionCodeApi(api_instance)
 
     def tearDown(self) -> None:
         pass
