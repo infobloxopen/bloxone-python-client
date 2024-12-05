@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.cache_flush_api import CacheFlushApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestCacheFlushApi(unittest.TestCase):
     """CacheFlushApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = CacheFlushApi()
+        api_instance = ApiClient()
+        self.api = CacheFlushApi(api_instance)
 
     def tearDown(self) -> None:
         pass

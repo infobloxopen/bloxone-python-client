@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.auth_zone_api import AuthZoneApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAuthZoneApi(unittest.TestCase):
     """AuthZoneApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AuthZoneApi()
+        api_instance = ApiClient()
+        self.api = AuthZoneApi(api_instance)
 
     def tearDown(self) -> None:
         pass

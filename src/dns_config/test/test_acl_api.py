@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.acl_api import AclApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAclApi(unittest.TestCase):
     """AclApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AclApi()
+        api_instance = ApiClient()
+        self.api = AclApi(api_instance)
 
     def tearDown(self) -> None:
         pass
