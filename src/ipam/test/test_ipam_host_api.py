@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.ipam_host_api import IpamHostApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestIpamHostApi(unittest.TestCase):
     """IpamHostApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = IpamHostApi()
+        api_instance = ApiClient()
+        self.api = IpamHostApi(api_instance)
 
     def tearDown(self) -> None:
         pass

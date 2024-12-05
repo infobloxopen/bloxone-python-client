@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.dhcp_host_api import DhcpHostApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestDhcpHostApi(unittest.TestCase):
     """DhcpHostApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DhcpHostApi()
+        api_instance = ApiClient()
+        self.api = DhcpHostApi(api_instance)
 
     def tearDown(self) -> None:
         pass

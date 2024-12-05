@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBool, StrictInt, StrictStr
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from ipam.models.address_block import AddressBlock
 from ipam.models.copy_address_block import CopyAddressBlock
@@ -27,6 +27,7 @@ from ipam.models.create_next_available_ab_response import CreateNextAvailableABR
 from ipam.models.create_next_available_ip_response import CreateNextAvailableIPResponse
 from ipam.models.create_next_available_subnet_response import CreateNextAvailableSubnetResponse
 from ipam.models.list_address_block_response import ListAddressBlockResponse
+from ipam.models.list_ancestor_response import ListAncestorResponse
 from ipam.models.next_available_ab_response import NextAvailableABResponse
 from ipam.models.next_available_ip_response import NextAvailableIPResponse
 from ipam.models.next_available_subnet_response import NextAvailableSubnetResponse
@@ -2324,6 +2325,243 @@ class AddressBlockApi:
             _request_auth=_request_auth)
 
     @validate_call
+    def list_ancestor(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ListAncestorResponse:
+        """Retrieve address block ancestors.
+
+        Use this method to retrieve the ancestors of the __AddressBlock__ object. This returns all the ancestors of the address block.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_ancestor_serialize(id=id,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ListAncestorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            models=models,
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def list_ancestor_with_http_info(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ListAncestorResponse]:
+        """Retrieve address block ancestors.
+
+        Use this method to retrieve the ancestors of the __AddressBlock__ object. This returns all the ancestors of the address block.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_ancestor_serialize(id=id,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ListAncestorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            models=models,
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def list_ancestor_without_preload_content(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve address block ancestors.
+
+        Use this method to retrieve the ancestors of the __AddressBlock__ object. This returns all the ancestors of the address block.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_ancestor_serialize(id=id,
+                                               _request_auth=_request_auth,
+                                               _content_type=_content_type,
+                                               _headers=_headers,
+                                               _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ListAncestorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        return response_data.response
+
+    def _list_ancestor_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {}
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = self.api_client.path_param_value('id', id)
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # authentication setting
+        _auth_settings: List[str] = ['ApiKeyAuth']
+
+        return self.api_client.param_serialize(
+            method='GET',
+            base_path='/api/ddi/v1',
+            resource_path='/ipam/address_block/{id}/ancestor',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth)
+
+    @validate_call
     def list_next_available_ab(
         self,
         id: Annotated[
@@ -2346,6 +2584,14 @@ class AddressBlockApi:
         comment: Annotated[
             Optional[StrictStr],
             Field(description="Comment of next available address blocks."
+                  )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
+        compartment_id: Annotated[
+            Optional[StrictStr],
+            Field(description=
+                  "The compartment id of the address blocks to be created."
                   )] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
@@ -2372,6 +2618,10 @@ class AddressBlockApi:
         :type name: str
         :param comment: Comment of next available address blocks.
         :type comment: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
+        :param compartment_id: The compartment id of the address blocks to be created.
+        :type compartment_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2400,6 +2650,8 @@ class AddressBlockApi:
             count=count,
             name=name,
             comment=comment,
+            federated_realms=federated_realms,
+            compartment_id=compartment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2441,6 +2693,14 @@ class AddressBlockApi:
             Optional[StrictStr],
             Field(description="Comment of next available address blocks."
                   )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
+        compartment_id: Annotated[
+            Optional[StrictStr],
+            Field(description=
+                  "The compartment id of the address blocks to be created."
+                  )] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
                                 Tuple[Annotated[StrictFloat,
@@ -2466,6 +2726,10 @@ class AddressBlockApi:
         :type name: str
         :param comment: Comment of next available address blocks.
         :type comment: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
+        :param compartment_id: The compartment id of the address blocks to be created.
+        :type compartment_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2494,6 +2758,8 @@ class AddressBlockApi:
             count=count,
             name=name,
             comment=comment,
+            federated_realms=federated_realms,
+            compartment_id=compartment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2535,6 +2801,14 @@ class AddressBlockApi:
             Optional[StrictStr],
             Field(description="Comment of next available address blocks."
                   )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
+        compartment_id: Annotated[
+            Optional[StrictStr],
+            Field(description=
+                  "The compartment id of the address blocks to be created."
+                  )] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
                                 Tuple[Annotated[StrictFloat,
@@ -2560,6 +2834,10 @@ class AddressBlockApi:
         :type name: str
         :param comment: Comment of next available address blocks.
         :type comment: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
+        :param compartment_id: The compartment id of the address blocks to be created.
+        :type compartment_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2588,6 +2866,8 @@ class AddressBlockApi:
             count=count,
             name=name,
             comment=comment,
+            federated_realms=federated_realms,
+            compartment_id=compartment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2607,6 +2887,8 @@ class AddressBlockApi:
         count,
         name,
         comment,
+        federated_realms,
+        compartment_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2615,7 +2897,9 @@ class AddressBlockApi:
 
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+            'federated_realms': 'csv',
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -2643,6 +2927,14 @@ class AddressBlockApi:
         if comment is not None:
 
             _query_params.append(('comment', comment))
+
+        if federated_realms is not None:
+
+            _query_params.append(('federated_realms', federated_realms))
+
+        if compartment_id is not None:
+
+            _query_params.append(('compartment_id', compartment_id))
 
         # process the header parameters
         # process the form parameters
@@ -2999,6 +3291,9 @@ class AddressBlockApi:
                 description=
                 "Reference of OnPrem Host associated with the next available subnets to be created."
             )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
                                 Tuple[Annotated[StrictFloat,
@@ -3026,6 +3321,8 @@ class AddressBlockApi:
         :type comment: str
         :param dhcp_host: Reference of OnPrem Host associated with the next available subnets to be created.
         :type dhcp_host: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3055,6 +3352,7 @@ class AddressBlockApi:
             name=name,
             comment=comment,
             dhcp_host=dhcp_host,
+            federated_realms=federated_realms,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3100,6 +3398,9 @@ class AddressBlockApi:
                 description=
                 "Reference of OnPrem Host associated with the next available subnets to be created."
             )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
                                 Tuple[Annotated[StrictFloat,
@@ -3127,6 +3428,8 @@ class AddressBlockApi:
         :type comment: str
         :param dhcp_host: Reference of OnPrem Host associated with the next available subnets to be created.
         :type dhcp_host: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3156,6 +3459,7 @@ class AddressBlockApi:
             name=name,
             comment=comment,
             dhcp_host=dhcp_host,
+            federated_realms=federated_realms,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3201,6 +3505,9 @@ class AddressBlockApi:
                 description=
                 "Reference of OnPrem Host associated with the next available subnets to be created."
             )] = None,
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(description="Reserved for future use.")] = None,
         _request_timeout: Union[None, Annotated[StrictFloat,
                                                 Field(gt=0)],
                                 Tuple[Annotated[StrictFloat,
@@ -3228,6 +3535,8 @@ class AddressBlockApi:
         :type comment: str
         :param dhcp_host: Reference of OnPrem Host associated with the next available subnets to be created.
         :type dhcp_host: str
+        :param federated_realms: Reserved for future use.
+        :type federated_realms: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3257,6 +3566,7 @@ class AddressBlockApi:
             name=name,
             comment=comment,
             dhcp_host=dhcp_host,
+            federated_realms=federated_realms,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3277,6 +3587,7 @@ class AddressBlockApi:
         name,
         comment,
         dhcp_host,
+        federated_realms,
         _request_auth,
         _content_type,
         _headers,
@@ -3285,7 +3596,9 @@ class AddressBlockApi:
 
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+            'federated_realms': 'csv',
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -3317,6 +3630,10 @@ class AddressBlockApi:
         if dhcp_host is not None:
 
             _query_params.append(('dhcp_host', dhcp_host))
+
+        if federated_realms is not None:
+
+            _query_params.append(('federated_realms', federated_realms))
 
         # process the header parameters
         # process the form parameters

@@ -56,6 +56,11 @@ class HAGroup(BaseModel):
         description=
         "Status of the HA group. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request."
     )
+    status_v6: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "Status of the DHCPv6 HA group. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request."
+    )
     tags: Optional[Dict[str,
                         Any]] = Field(default=None,
                                       description="The tags for the HA group.")
@@ -67,7 +72,7 @@ class HAGroup(BaseModel):
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "anycast_config_id", "comment", "created_at", "hosts", "id",
-        "ip_space", "mode", "name", "status", "tags", "updated_at"
+        "ip_space", "mode", "name", "status", "status_v6", "tags", "updated_at"
     ]
 
     model_config = ConfigDict(
@@ -158,6 +163,8 @@ class HAGroup(BaseModel):
             obj.get("name"),
             "status":
             obj.get("status"),
+            "status_v6":
+            obj.get("status_v6"),
             "tags":
             obj.get("tags"),
             "updated_at":

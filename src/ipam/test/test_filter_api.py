@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.filter_api import FilterApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestFilterApi(unittest.TestCase):
     """FilterApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = FilterApi()
+        api_instance = ApiClient()
+        self.api = FilterApi(api_instance)
 
     def tearDown(self) -> None:
         pass

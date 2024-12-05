@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.hardware_filter_api import HardwareFilterApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestHardwareFilterApi(unittest.TestCase):
     """HardwareFilterApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = HardwareFilterApi()
+        api_instance = ApiClient()
+        self.api = HardwareFilterApi(api_instance)
 
     def tearDown(self) -> None:
         pass

@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.leases_command_api import LeasesCommandApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestLeasesCommandApi(unittest.TestCase):
     """LeasesCommandApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = LeasesCommandApi()
+        api_instance = ApiClient()
+        self.api = LeasesCommandApi(api_instance)
 
     def tearDown(self) -> None:
         pass
