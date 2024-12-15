@@ -16,32 +16,33 @@ Method | HTTP request | Description
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.app_approval_multi_response import AppApprovalMultiResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AppApprovalsApi(api_client)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
 
     try:
-        api_response = api_instance.list_app_approvals(filter=filter)
-        print("The response of AppApprovalsApi->list_app_approvals:\n")
+        api_response = api_instance.list_app_approvals()
+        pprint("The response of AppApprovalsApi->list_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->list_app_approvals: %s\n" % e)
+        pprint("Exception when calling AppApprovalsApi->list_app_approvals: %s\n" % e)
 ```
 
 
@@ -83,23 +84,24 @@ Use this method to update the specified Application Approved object.  Required: 
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.app_approval_multi_response import AppApprovalMultiResponse
-from fw.models.app_approvals_replace_request import AppApprovalsReplaceRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AppApprovalsApi(api_client)
     body = fw.AppApprovalsReplaceRequest() # AppApprovalsReplaceRequest | 
@@ -107,10 +109,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Update Application Approval.
         api_response = api_instance.replace_app_approvals(body)
-        print("The response of AppApprovalsApi->replace_app_approvals:\n")
+        pprint("The response of AppApprovalsApi->replace_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->replace_app_approvals: %s\n" % e)
+        pprint("Exception when calling AppApprovalsApi->replace_app_approvals: %s\n" % e)
 ```
 
 
@@ -151,33 +153,34 @@ No authorization required
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.app_approval_multi_response import AppApprovalMultiResponse
-from fw.models.app_approvals_update_request import AppApprovalsUpdateRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.AppApprovalsApi(api_client)
     body = fw.AppApprovalsUpdateRequest() # AppApprovalsUpdateRequest | 
 
     try:
         api_response = api_instance.update_app_approvals(body)
-        print("The response of AppApprovalsApi->update_app_approvals:\n")
+        pprint("The response of AppApprovalsApi->update_app_approvals:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AppApprovalsApi->update_app_approvals: %s\n" % e)
+        pprint("Exception when calling AppApprovalsApi->update_app_approvals: %s\n" % e)
 ```
 
 

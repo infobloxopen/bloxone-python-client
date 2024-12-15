@@ -16,33 +16,34 @@ Use this method to get certificates to use proxy server
 
 ### Example
 
-
 ```python
-import redirect
-from redirect.models.proxy_cert_response import ProxyCertResponse
-from redirect.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import redirect
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = redirect.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with redirect.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = redirect.CertificateApi(api_client)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Get Proxy Certificates
-        api_response = api_instance.get_proxy_certificates(fields=fields)
-        print("The response of CertificateApi->get_proxy_certificates:\n")
+        api_response = api_instance.get_proxy_certificates()
+        pprint("The response of CertificateApi->get_proxy_certificates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CertificateApi->get_proxy_certificates: %s\n" % e)
+        pprint("Exception when calling CertificateApi->get_proxy_certificates: %s\n" % e)
 ```
 
 

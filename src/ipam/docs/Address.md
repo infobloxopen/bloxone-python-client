@@ -8,11 +8,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | The address in form \&quot;a.b.c.d\&quot;. | 
 **comment** | **str** | The description for the address object. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
+**compartment_id** | **str** | The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty. | [optional] [readonly] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
 **dhcp_info** | [**DHCPInfo**](DHCPInfo.md) | The DHCP information associated with this object. | [optional] [readonly] 
 **disable_dhcp** | **bool** | Read only. Represent the value of the same field in the associated _dhcp/fixed_address_ object. | [optional] [readonly] 
 **discovery_attrs** | **object** | The discovery attributes for this address in JSON format. | [optional] [readonly] 
 **discovery_metadata** | **object** | The discovery metadata for this address in JSON format. | [optional] [readonly] 
+**external_keys** | **object** | The external keys (source key) for this address in JSON format. | [optional] 
 **host** | **str** | The resource identifier. | [optional] 
 **hwaddr** | **str** | The hardware address associated with this IP address. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 

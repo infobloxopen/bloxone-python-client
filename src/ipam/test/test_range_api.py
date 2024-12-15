@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.range_api import RangeApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestRangeApi(unittest.TestCase):
     """RangeApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = RangeApi()
+        api_instance = ApiClient()
+        self.api = RangeApi(api_instance)
 
     def tearDown(self) -> None:
         pass

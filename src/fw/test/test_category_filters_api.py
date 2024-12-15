@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.category_filters_api import CategoryFiltersApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestCategoryFiltersApi(unittest.TestCase):
     """CategoryFiltersApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = CategoryFiltersApi()
+        api_instance = ApiClient()
+        self.api = CategoryFiltersApi(api_instance)
 
     def tearDown(self) -> None:
         pass

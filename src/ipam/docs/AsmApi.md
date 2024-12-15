@@ -19,33 +19,29 @@ Use this method to update the subnet and range for Automated Scope Management. T
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.asm import ASM
-from ipam.models.create_asm_response import CreateASMResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AsmApi(api_client)
     body = ipam.ASM() # ASM | 
@@ -53,10 +49,10 @@ with ipam.ApiClient(configuration) as api_client:
     try:
         # Update subnet and ranges for Automated Scope Management.
         api_response = api_instance.create(body)
-        print("The response of AsmApi->create:\n")
+        pprint("The response of AsmApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->create: %s\n" % e)
+        pprint("Exception when calling AsmApi->create: %s\n" % e)
 ```
 
 
@@ -99,44 +95,39 @@ Use this method to retrieve __ASM__ objects for Automated Scope Management. The 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.list_asm_response import ListASMResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AsmApi(api_client)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    subnet_id = 'subnet_id_example' # str |  (optional)
 
     try:
         # Retrieve suggested updates for Automated Scope Management.
-        api_response = api_instance.list(fields=fields, subnet_id=subnet_id)
-        print("The response of AsmApi->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of AsmApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->list: %s\n" % e)
+        pprint("Exception when calling AsmApi->list: %s\n" % e)
 ```
 
 
@@ -180,44 +171,40 @@ Use this method to retrieve an __ASM__ object for Automated Scope Management. Th
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.read_asm_response import ReadASMResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.AsmApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Retrieve the suggested update for Automated Scope Management.
-        api_response = api_instance.read(id, fields=fields)
-        print("The response of AsmApi->read:\n")
+        api_response = api_instance.read(id)
+        pprint("The response of AsmApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AsmApi->read: %s\n" % e)
+        pprint("Exception when calling AsmApi->read: %s\n" % e)
 ```
 
 

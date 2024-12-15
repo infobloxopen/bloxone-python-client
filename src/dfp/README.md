@@ -33,10 +33,10 @@ import dfp
 from dfp.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcdfp/v1
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = dfp.Configuration(
-    host = "https://csp.infoblox.com/api/atcdfp/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 

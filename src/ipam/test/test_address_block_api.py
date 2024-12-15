@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.address_block_api import AddressBlockApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAddressBlockApi(unittest.TestCase):
     """AddressBlockApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AddressBlockApi()
+        api_instance = ApiClient()
+        self.api = AddressBlockApi(api_instance)
 
     def tearDown(self) -> None:
         pass
@@ -71,6 +74,13 @@ class TestAddressBlockApi(unittest.TestCase):
         """Test case for list
 
         Retrieve the address blocks.
+        """
+        pass
+
+    def test_list_ancestor(self) -> None:
+        """Test case for list_ancestor
+
+        Retrieve address block ancestors.
         """
         pass
 

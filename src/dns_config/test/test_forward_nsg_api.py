@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.forward_nsg_api import ForwardNsgApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestForwardNsgApi(unittest.TestCase):
     """ForwardNsgApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ForwardNsgApi()
+        api_instance = ApiClient()
+        self.api = ForwardNsgApi(api_instance)
 
     def tearDown(self) -> None:
         pass

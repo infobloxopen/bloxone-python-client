@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.fixed_address_api import FixedAddressApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestFixedAddressApi(unittest.TestCase):
     """FixedAddressApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = FixedAddressApi()
+        api_instance = ApiClient()
+        self.api = FixedAddressApi(api_instance)
 
     def tearDown(self) -> None:
         pass

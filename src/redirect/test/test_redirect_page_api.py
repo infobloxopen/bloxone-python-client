@@ -15,12 +15,15 @@ import unittest
 
 from redirect.api.redirect_page_api import RedirectPageApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestRedirectPageApi(unittest.TestCase):
     """RedirectPageApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = RedirectPageApi()
+        api_instance = ApiClient()
+        self.api = RedirectPageApi(api_instance)
 
     def tearDown(self) -> None:
         pass

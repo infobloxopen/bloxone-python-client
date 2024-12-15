@@ -35,6 +35,11 @@ class Address(BaseModel):
         description=
         "The description for the address object. May contain 0 to 1024 characters. Can include UTF-8."
     )
+    compartment_id: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty."
+    )
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
     dhcp_info: Optional[DHCPInfo] = Field(
@@ -52,6 +57,10 @@ class Address(BaseModel):
     discovery_metadata: Optional[Dict[str, Any]] = Field(
         default=None,
         description="The discovery metadata for this address in JSON format.")
+    external_keys: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description=
+        "The external keys (source key) for this address in JSON format.")
     host: Optional[StrictStr] = Field(default=None,
                                       description="The resource identifier.")
     hwaddr: Optional[StrictStr] = Field(
@@ -92,10 +101,11 @@ class Address(BaseModel):
     )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "address", "comment", "created_at", "dhcp_info", "disable_dhcp",
-        "discovery_attrs", "discovery_metadata", "host", "hwaddr", "id",
-        "interface", "names", "parent", "protocol", "range", "space", "state",
-        "tags", "updated_at", "usage"
+        "address", "comment", "compartment_id", "created_at", "dhcp_info",
+        "disable_dhcp", "discovery_attrs", "discovery_metadata",
+        "external_keys", "host", "hwaddr", "id", "interface", "names",
+        "parent", "protocol", "range", "space", "state", "tags", "updated_at",
+        "usage"
     ]
 
     model_config = ConfigDict(
@@ -137,9 +147,11 @@ class Address(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "compartment_id",
             "created_at",
             "dhcp_info",
             "disable_dhcp",
@@ -189,6 +201,8 @@ class Address(BaseModel):
             obj.get("address"),
             "comment":
             obj.get("comment"),
+            "compartment_id":
+            obj.get("compartment_id"),
             "created_at":
             obj.get("created_at"),
             "dhcp_info":
@@ -200,6 +214,8 @@ class Address(BaseModel):
             obj.get("discovery_attrs"),
             "discovery_metadata":
             obj.get("discovery_metadata"),
+            "external_keys":
+            obj.get("external_keys"),
             "host":
             obj.get("host"),
             "hwaddr":

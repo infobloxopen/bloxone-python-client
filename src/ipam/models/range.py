@@ -40,6 +40,11 @@ class Range(BaseModel):
         description=
         "The description for the range. May contain 0 to 1024 characters. Can include UTF-8."
     )
+    compartment_id: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty."
+    )
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
     dhcp_host: Optional[StrictStr] = Field(
@@ -84,6 +89,9 @@ class Range(BaseModel):
         default=None, description="The type of protocol (_ip4_ or _ip6_).")
     space: Optional[StrictStr] = Field(default=None,
                                        description="The resource identifier.")
+    space_name: Optional[StrictStr] = Field(
+        default=None,
+        description="The name of the IP Space the range belongs to.")
     start: StrictStr = Field(description="The start IP address of the range.")
     tags: Optional[Dict[str, Any]] = Field(
         default=None, description="The tags for the range in JSON format.")
@@ -104,11 +112,12 @@ class Range(BaseModel):
         description="The utilization of IPV6 addresses in the range.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "comment", "created_at", "dhcp_host", "dhcp_options", "disable_dhcp",
-        "end", "exclusion_ranges", "filters", "id",
+        "comment", "compartment_id", "created_at", "dhcp_host", "dhcp_options",
+        "disable_dhcp", "end", "exclusion_ranges", "filters", "id",
         "inheritance_assigned_hosts", "inheritance_parent",
-        "inheritance_sources", "name", "parent", "protocol", "space", "start",
-        "tags", "threshold", "updated_at", "utilization", "utilization_v6"
+        "inheritance_sources", "name", "parent", "protocol", "space",
+        "space_name", "start", "tags", "threshold", "updated_at",
+        "utilization", "utilization_v6"
     ]
 
     model_config = ConfigDict(
@@ -147,13 +156,17 @@ class Range(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "compartment_id",
             "created_at",
             "id",
             "inheritance_assigned_hosts",
             "protocol",
+            "space_name",
             "updated_at",
             "utilization",
             "utilization_v6",
@@ -224,6 +237,8 @@ class Range(BaseModel):
         _obj = cls.model_validate({
             "comment":
             obj.get("comment"),
+            "compartment_id":
+            obj.get("compartment_id"),
             "created_at":
             obj.get("created_at"),
             "dhcp_host":
@@ -261,6 +276,8 @@ class Range(BaseModel):
             obj.get("protocol"),
             "space":
             obj.get("space"),
+            "space_name":
+            obj.get("space_name"),
             "start":
             obj.get("start"),
             "tags":

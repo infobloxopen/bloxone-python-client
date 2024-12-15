@@ -50,7 +50,7 @@ class Subnet(BaseModel):
         default=None,
         description=
         "Set to 1 to indicate that the subnet may run out of addresses.")
-    cidr: Optional[Annotated[int, Field(le=32, strict=True, ge=1)]] = Field(
+    cidr: Optional[Annotated[int, Field(le=128, strict=True, ge=1)]] = Field(
         default=None,
         description=
         "The CIDR of the subnet. This is required if _address_ does not include CIDR."
@@ -60,6 +60,13 @@ class Subnet(BaseModel):
         description=
         "The description for the subnet. May contain 0 to 1024 characters. Can include UTF-8."
     )
+    compartment_id: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty."
+    )
+    config_profiles: Optional[List[StrictStr]] = Field(
+        default=None, description="The resource identifier.")
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
     ddns_client_update: Optional[StrictStr] = Field(
@@ -107,6 +114,9 @@ class Subnet(BaseModel):
         description=
         "When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_."
     )
+    delegation: Optional[StrictStr] = Field(
+        default=None,
+        description="The ID of the delegation associated with the subnet.")
     dhcp_config: Optional[DHCPConfig] = Field(
         default=None,
         description=
@@ -135,6 +145,12 @@ class Subnet(BaseModel):
     discovery_metadata: Optional[Dict[str, Any]] = Field(
         default=None,
         description="The discovery metadata for this subnet in JSON format.")
+    external_keys: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description=
+        "The external keys (source key) for this subnet in JSON format.")
+    federated_realms: Optional[List[StrictStr]] = Field(
+        default=None, description="Reserved for future use.")
     header_option_filename: Optional[StrictStr] = Field(
         default=None,
         description="The configuration for header option filename field.")
@@ -212,12 +228,14 @@ class Subnet(BaseModel):
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
         "address", "asm_config", "asm_scope_flag", "cidr", "comment",
-        "created_at", "ddns_client_update", "ddns_conflict_resolution_mode",
-        "ddns_domain", "ddns_generate_name", "ddns_generated_prefix",
-        "ddns_send_updates", "ddns_ttl_percent", "ddns_update_on_renew",
-        "ddns_use_conflict_resolution", "dhcp_config", "dhcp_host",
-        "dhcp_options", "dhcp_utilization", "disable_dhcp", "discovery_attrs",
-        "discovery_metadata", "header_option_filename",
+        "compartment_id", "config_profiles", "created_at",
+        "ddns_client_update", "ddns_conflict_resolution_mode", "ddns_domain",
+        "ddns_generate_name", "ddns_generated_prefix", "ddns_send_updates",
+        "ddns_ttl_percent", "ddns_update_on_renew",
+        "ddns_use_conflict_resolution", "delegation", "dhcp_config",
+        "dhcp_host", "dhcp_options", "dhcp_utilization", "disable_dhcp",
+        "discovery_attrs", "discovery_metadata", "external_keys",
+        "federated_realms", "header_option_filename",
         "header_option_server_address", "header_option_server_name",
         "hostname_rewrite_char", "hostname_rewrite_enabled",
         "hostname_rewrite_regex", "id", "inheritance_assigned_hosts",
@@ -267,11 +285,15 @@ class Subnet(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "asm_scope_flag",
+            "compartment_id",
             "created_at",
+            "delegation",
             "dhcp_utilization",
             "discovery_attrs",
             "discovery_metadata",
@@ -353,6 +375,10 @@ class Subnet(BaseModel):
             obj.get("cidr"),
             "comment":
             obj.get("comment"),
+            "compartment_id":
+            obj.get("compartment_id"),
+            "config_profiles":
+            obj.get("config_profiles"),
             "created_at":
             obj.get("created_at"),
             "ddns_client_update":
@@ -373,6 +399,8 @@ class Subnet(BaseModel):
             obj.get("ddns_update_on_renew"),
             "ddns_use_conflict_resolution":
             obj.get("ddns_use_conflict_resolution"),
+            "delegation":
+            obj.get("delegation"),
             "dhcp_config":
             DHCPConfig.from_dict(obj["dhcp_config"])
             if obj.get("dhcp_config") is not None else None,
@@ -390,6 +418,10 @@ class Subnet(BaseModel):
             obj.get("discovery_attrs"),
             "discovery_metadata":
             obj.get("discovery_metadata"),
+            "external_keys":
+            obj.get("external_keys"),
+            "federated_realms":
+            obj.get("federated_realms"),
             "header_option_filename":
             obj.get("header_option_filename"),
             "header_option_server_address":

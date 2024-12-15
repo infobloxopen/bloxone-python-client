@@ -15,12 +15,15 @@ import unittest
 
 from dfp.api.accounts_api import AccountsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAccountsApi(unittest.TestCase):
     """AccountsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AccountsApi()
+        api_instance = ApiClient()
+        self.api = AccountsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

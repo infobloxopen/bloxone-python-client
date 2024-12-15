@@ -48,6 +48,11 @@ class IPSpace(BaseModel):
         description=
         "The description for the IP space. May contain 0 to 1024 characters. Can include UTF-8."
     )
+    compartment_id: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty."
+    )
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
     ddns_client_update: Optional[StrictStr] = Field(
@@ -95,6 +100,8 @@ class IPSpace(BaseModel):
         description=
         "When true, DHCP server will apply conflict resolution, as described in RFC 4703, when attempting to fulfill the update request.  When false, DHCP server will simply attempt to update the DNS entries per the request, regardless of whether or not they conflict with existing entries owned by other DHCP4 clients.  Defaults to _true_."
     )
+    default_realms: Optional[List[StrictStr]] = Field(
+        default=None, description="Reserved for future use.")
     dhcp_config: Optional[DHCPConfig] = Field(
         default=None,
         description=
@@ -163,12 +170,12 @@ class IPSpace(BaseModel):
         default=None, description="The resource identifier.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "asm_config", "asm_scope_flag", "comment", "created_at",
-        "ddns_client_update", "ddns_conflict_resolution_mode", "ddns_domain",
-        "ddns_generate_name", "ddns_generated_prefix", "ddns_send_updates",
-        "ddns_ttl_percent", "ddns_update_on_renew",
-        "ddns_use_conflict_resolution", "dhcp_config", "dhcp_options",
-        "dhcp_options_v6", "header_option_filename",
+        "asm_config", "asm_scope_flag", "comment", "compartment_id",
+        "created_at", "ddns_client_update", "ddns_conflict_resolution_mode",
+        "ddns_domain", "ddns_generate_name", "ddns_generated_prefix",
+        "ddns_send_updates", "ddns_ttl_percent", "ddns_update_on_renew",
+        "ddns_use_conflict_resolution", "default_realms", "dhcp_config",
+        "dhcp_options", "dhcp_options_v6", "header_option_filename",
         "header_option_server_address", "header_option_server_name",
         "hostname_rewrite_char", "hostname_rewrite_enabled",
         "hostname_rewrite_regex", "id", "inheritance_sources", "name", "tags",
@@ -286,6 +293,8 @@ class IPSpace(BaseModel):
             obj.get("asm_scope_flag"),
             "comment":
             obj.get("comment"),
+            "compartment_id":
+            obj.get("compartment_id"),
             "created_at":
             obj.get("created_at"),
             "ddns_client_update":
@@ -314,6 +323,8 @@ class IPSpace(BaseModel):
             "ddns_use_conflict_resolution":
             obj.get("ddns_use_conflict_resolution")
             if obj.get("ddns_use_conflict_resolution") is not None else True,
+            "default_realms":
+            obj.get("default_realms"),
             "dhcp_config":
             DHCPConfig.from_dict(obj["dhcp_config"])
             if obj.get("dhcp_config") is not None else None,

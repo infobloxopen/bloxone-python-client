@@ -15,12 +15,15 @@ import unittest
 
 from keys.api.kerberos_api import KerberosApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestKerberosApi(unittest.TestCase):
     """KerberosApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = KerberosApi()
+        api_instance = ApiClient()
+        self.api = KerberosApi(api_instance)
 
     def tearDown(self) -> None:
         pass

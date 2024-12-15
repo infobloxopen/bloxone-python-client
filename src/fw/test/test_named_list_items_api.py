@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.named_list_items_api import NamedListItemsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestNamedListItemsApi(unittest.TestCase):
     """NamedListItemsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = NamedListItemsApi()
+        api_instance = ApiClient()
+        self.api = NamedListItemsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

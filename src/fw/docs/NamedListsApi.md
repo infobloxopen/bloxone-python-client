@@ -24,23 +24,24 @@ Use this method to create a Named List object.  The Named List object represents
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list import NamedList
-from fw.models.named_list_create_response import NamedListCreateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     body = fw.NamedList() # NamedList | The Named List object.
@@ -48,10 +49,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Create Named List.
         api_response = api_instance.create_named_list(body)
-        print("The response of NamedListsApi->create_named_list:\n")
+        pprint("The response of NamedListsApi->create_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->create_named_list: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->create_named_list: %s\n" % e)
 ```
 
 
@@ -96,22 +97,24 @@ Use this method to delete Named List objects. Deletion of multiple lists is an a
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_lists_delete_request import NamedListsDeleteRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     body = fw.NamedListsDeleteRequest() # NamedListsDeleteRequest | 
@@ -120,7 +123,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Named Lists.
         api_instance.delete_named_lists(body)
     except Exception as e:
-        print("Exception when calling NamedListsApi->delete_named_lists: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->delete_named_lists: %s\n" % e)
 ```
 
 
@@ -165,21 +168,24 @@ Use this method to delete Named List object by given Named List object identifie
 
 ### Example
 
-
 ```python
-import fw
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     id = 56 # int | The Named List object identifiers.
@@ -188,7 +194,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Named Lists.
         api_instance.delete_single_named_lists(id)
     except Exception as e:
-        print("Exception when calling NamedListsApi->delete_single_named_lists: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->delete_single_named_lists: %s\n" % e)
 ```
 
 
@@ -233,39 +239,34 @@ Use this method to retrieve information on all Named List objects for the accoun
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_read_multi_response import NamedListReadMultiResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
-    filter = 'filter_example' # str | A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'.  You can filter by following fields:  | Name               | type   | Supported Ops    | | ------------------ | ------ | ---------------- | | type               | string | ==, !=           | | items              | string | ~, !~            | | items_described    | string | ==               |  Grouping operators (and, or, not, ()) are not supported between different fields.  (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    tfilter = 'tfilter_example' # str | Filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | Sorting by tags. (optional)
 
     try:
         # List Named Lists.
-        api_response = api_instance.list_named_lists(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of NamedListsApi->list_named_lists:\n")
+        api_response = api_instance.list_named_lists()
+        pprint("The response of NamedListsApi->list_named_lists:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->list_named_lists: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->list_named_lists: %s\n" % e)
 ```
 
 
@@ -314,36 +315,34 @@ Use this method to download the selected list of named lists in CSV (comma-separ
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_csv_list_response import NamedListCSVListResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
-    filter = 'filter_example' # str | A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'.  You can filter by following fields:  | Name               | type   | Supported Ops    | | ------------------ | ------ | ---------------- | | type               | string | ==, !=           | | items              | string | ~, !~            | | items_described    | string | ==               |  Grouping operators (and, or, not, ()) are not supported between different fields.  (optional)
-    order_by = 'order_by_example' # str |   A collection of response resources can be sorted by their JSON tags. For a 'flat' resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix 'asc' sorts the data in ascending order. The suffix 'desc' sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         (optional)
-    tfilter = 'tfilter_example' # str | Filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | Sorting by tags. (optional)
 
     try:
         # List Named Lists in CSV format.
-        api_response = api_instance.list_named_lists_csv(filter=filter, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of NamedListsApi->list_named_lists_csv:\n")
+        api_response = api_instance.list_named_lists_csv()
+        pprint("The response of NamedListsApi->list_named_lists_csv:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->list_named_lists_csv: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->list_named_lists_csv: %s\n" % e)
 ```
 
 
@@ -389,22 +388,24 @@ Multiple Named Lists in a single operation. Use this method to insert items for 
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.multi_list_update import MultiListUpdate
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     body = fw.MultiListUpdate() # MultiListUpdate | 
@@ -412,10 +413,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Patch Multiple Named Lists.
         api_response = api_instance.multi_list_update(body)
-        print("The response of NamedListsApi->multi_list_update:\n")
+        pprint("The response of NamedListsApi->multi_list_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->multi_list_update: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->multi_list_update: %s\n" % e)
 ```
 
 
@@ -460,39 +461,35 @@ Use this method to retrieve information on the specified Named List object. Note
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list_read_response import NamedListReadResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     id = 56 # int | The Named List identifier.
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    name = 'name_example' # str | The name of the named list. Can be used in pair with 'type' (both fields are mandatory) to request the object by their name. This aproach available only if the field 'id' is empty (==0). (optional)
-    type = 'type_example' # str | The type of the named list. See 'NamedList' for more details. (optional)
 
     try:
         # Read Named List.
-        api_response = api_instance.read_named_list(id, fields=fields, offset=offset, limit=limit, page_token=page_token, name=name, type=type)
-        print("The response of NamedListsApi->read_named_list:\n")
+        api_response = api_instance.read_named_list(id)
+        pprint("The response of NamedListsApi->read_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->read_named_list: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->read_named_list: %s\n" % e)
 ```
 
 
@@ -542,23 +539,24 @@ Use this method to update the specified Named List object. Note that list type c
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.named_list import NamedList
-from fw.models.named_list_update_response import NamedListUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     id = 56 # int | The Named List object identifier.
@@ -567,10 +565,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Update Named List.
         api_response = api_instance.update_named_list(id, body)
-        print("The response of NamedListsApi->update_named_list:\n")
+        pprint("The response of NamedListsApi->update_named_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->update_named_list: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->update_named_list: %s\n" % e)
 ```
 
 
@@ -617,23 +615,24 @@ Use this method to update the Severity for a specified named list, which must be
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.list_severity_levels import ListSeverityLevels
-from fw.models.named_list_update_response import NamedListUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.NamedListsApi(api_client)
     id = 56 # int | The Named List object identifier.
@@ -642,10 +641,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Patch TI List.
         api_response = api_instance.update_named_list_partial(id, body)
-        print("The response of NamedListsApi->update_named_list_partial:\n")
+        pprint("The response of NamedListsApi->update_named_list_partial:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NamedListsApi->update_named_list_partial: %s\n" % e)
+        pprint("Exception when calling NamedListsApi->update_named_list_partial: %s\n" % e)
 ```
 
 

@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.server_api import ServerApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestServerApi(unittest.TestCase):
     """ServerApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ServerApi()
+        api_instance = ApiClient()
+        self.api = ServerApi(api_instance)
 
     def tearDown(self) -> None:
         pass

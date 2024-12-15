@@ -23,45 +23,40 @@ Use this method to create a __Range__ object. A __Range__ object represents a se
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.create_range_response import CreateRangeResponse
-from ipam.models.range import Range
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     body = ipam.Range() # Range | 
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Create the range.
-        api_response = api_instance.create(body, inherit=inherit)
-        print("The response of RangeApi->create:\n")
+        api_response = api_instance.create(body)
+        pprint("The response of RangeApi->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->create: %s\n" % e)
+        pprint("Exception when calling RangeApi->create: %s\n" % e)
 ```
 
 
@@ -105,45 +100,40 @@ Use this method to allocate the next available IP address. This allocates one or
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.create_next_available_ip_response import CreateNextAvailableIPResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    contiguous = False # bool | Indicates whether the IP addresses should belong to a contiguous block.  Defaults to _false_. (optional) (default to False)
-    count = 1 # int | The number of IP addresses requested.  Defaults to 1. (optional) (default to 1)
 
     try:
         # Allocate the next available IP address.
-        api_response = api_instance.create_next_available_ip(id, contiguous=contiguous, count=count)
-        print("The response of RangeApi->create_next_available_ip:\n")
+        api_response = api_instance.create_next_available_ip(id)
+        pprint("The response of RangeApi->create_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->create_next_available_ip: %s\n" % e)
+        pprint("Exception when calling RangeApi->create_next_available_ip: %s\n" % e)
 ```
 
 
@@ -188,31 +178,29 @@ Use this method to move a __Range__ object to the recycle bin. A __Range__ objec
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -221,7 +209,7 @@ with ipam.ApiClient(configuration) as api_client:
         # Move the range to the recycle bin.
         api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling RangeApi->delete: %s\n" % e)
+        pprint("Exception when calling RangeApi->delete: %s\n" % e)
 ```
 
 
@@ -264,51 +252,39 @@ Use this method to retrieve __Range__ objects. A __Range__ object represents a s
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.list_range_response import ListRangeResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
-    order_by = 'order_by_example' # str |   A collection of response resources can be sorted by their JSON tags. For a 'flat' resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix 'asc' sorts the data in ascending order. The suffix 'desc' sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    torder_by = 'torder_by_example' # str | This parameter is used for sorting by tags. (optional)
-    tfilter = 'tfilter_example' # str | This parameter is used for filtering by tags. (optional)
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Retrieve ranges.
-        api_response = api_instance.list(filter=filter, order_by=order_by, fields=fields, offset=offset, limit=limit, page_token=page_token, torder_by=torder_by, tfilter=tfilter, inherit=inherit)
-        print("The response of RangeApi->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of RangeApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->list: %s\n" % e)
+        pprint("Exception when calling RangeApi->list: %s\n" % e)
 ```
 
 
@@ -359,45 +335,40 @@ Use this method to retrieve the next available IP address. This returns one or m
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.next_available_ip_response import NextAvailableIPResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    contiguous = True # bool | Indicates whether the IP addresses should belong to a contiguous block.  Defaults to _false_. (optional)
-    count = 56 # int | The number of IP addresses requested.  Defaults to 1. (optional)
 
     try:
         # Retrieve the next available IP address.
-        api_response = api_instance.list_next_available_ip(id, contiguous=contiguous, count=count)
-        print("The response of RangeApi->list_next_available_ip:\n")
+        api_response = api_instance.list_next_available_ip(id)
+        pprint("The response of RangeApi->list_next_available_ip:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->list_next_available_ip: %s\n" % e)
+        pprint("Exception when calling RangeApi->list_next_available_ip: %s\n" % e)
 ```
 
 
@@ -442,45 +413,40 @@ Use this method to retrieve a __Range__ object. A __Range__ object represents a 
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.read_range_response import ReadRangeResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Retrieve the range.
-        api_response = api_instance.read(id, fields=fields, inherit=inherit)
-        print("The response of RangeApi->read:\n")
+        api_response = api_instance.read(id)
+        pprint("The response of RangeApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->read: %s\n" % e)
+        pprint("Exception when calling RangeApi->read: %s\n" % e)
 ```
 
 
@@ -525,46 +491,41 @@ Use this method to update a __Range__ object. A __Range__ object represents a se
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.range import Range
-from ipam.models.update_range_response import UpdateRangeResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.RangeApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
     body = ipam.Range() # Range | 
-    inherit = 'inherit_example' # str | This parameter is used for getting inheritance_sources.  Allowed values: * _none_, * _partial_, * _full_.  Defaults to _none (optional)
 
     try:
         # Update the range.
-        api_response = api_instance.update(id, body, inherit=inherit)
-        print("The response of RangeApi->update:\n")
+        api_response = api_instance.update(id, body)
+        pprint("The response of RangeApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RangeApi->update: %s\n" % e)
+        pprint("Exception when calling RangeApi->update: %s\n" % e)
 ```
 
 

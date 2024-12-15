@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.address_api import AddressApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAddressApi(unittest.TestCase):
     """AddressApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AddressApi()
+        api_instance = ApiClient()
+        self.api = AddressApi(api_instance)
 
     def tearDown(self) -> None:
         pass

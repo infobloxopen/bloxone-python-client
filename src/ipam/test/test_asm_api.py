@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.asm_api import AsmApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAsmApi(unittest.TestCase):
     """AsmApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AsmApi()
+        api_instance = ApiClient()
+        self.api = AsmApi(api_instance)
 
     def tearDown(self) -> None:
         pass

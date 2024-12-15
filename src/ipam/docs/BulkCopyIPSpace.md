@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **copy_dhcp_options** | **bool** | Indicates whether dhcp options for IPv4 should be copied or not when objects (_ipam/address_block_ and _ipam/subnet_ only) are copied.  Defaults to _false_. | [optional] 
 **copy_objects** | **List[str]** | The resource identifier. | 
 **recursive** | **bool** | Indicates whether child objects should be copied or not.  Defaults to _false_. | [optional] 
+**retain_child_compartment** | **bool** | Indicates whether the child objects are going to retain their compartment_id, or inherit from the object to copy into.  Defaults to false | [optional] 
 **skip_on_error** | **bool** | Indicates whether copying should skip object in case of error and continue with next, or abort copying in case of error.  Defaults to _false_. | [optional] 
 **target** | **str** | The resource identifier. | 
 

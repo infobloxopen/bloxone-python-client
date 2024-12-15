@@ -36,6 +36,11 @@ class FixedAddress(BaseModel):
         description=
         "The description for the fixed address. May contain 0 to 1024 characters. Can include UTF-8."
     )
+    compartment_id: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty."
+    )
     created_at: Optional[datetime] = Field(
         default=None, description="Time when the object has been created.")
     dhcp_options: Optional[List[OptionItem]] = Field(
@@ -97,10 +102,10 @@ class FixedAddress(BaseModel):
     )
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = [
-        "address", "comment", "created_at", "dhcp_options", "disable_dhcp",
-        "header_option_filename", "header_option_server_address",
-        "header_option_server_name", "hostname", "id",
-        "inheritance_assigned_hosts", "inheritance_parent",
+        "address", "comment", "compartment_id", "created_at", "dhcp_options",
+        "disable_dhcp", "header_option_filename",
+        "header_option_server_address", "header_option_server_name",
+        "hostname", "id", "inheritance_assigned_hosts", "inheritance_parent",
         "inheritance_sources", "ip_space", "match_type", "match_value", "name",
         "parent", "tags", "updated_at"
     ]
@@ -138,9 +143,11 @@ class FixedAddress(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "compartment_id",
             "created_at",
             "id",
             "inheritance_assigned_hosts",
@@ -191,6 +198,8 @@ class FixedAddress(BaseModel):
             obj.get("address"),
             "comment":
             obj.get("comment"),
+            "compartment_id":
+            obj.get("compartment_id"),
             "created_at":
             obj.get("created_at"),
             "dhcp_options":

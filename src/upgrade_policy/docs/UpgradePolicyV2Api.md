@@ -21,33 +21,29 @@ Immediately apply the config updates object to the list of hosts
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.apply_config_now_request import ApplyConfigNowRequest
-from upgrade_policy.models.apply_config_now_response import ApplyConfigNowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.ApplyConfigNowRequest() # ApplyConfigNowRequest | 
@@ -55,10 +51,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Immediately apply the config updates object to the list of hosts
         api_response = api_instance.apply_config_now(body)
-        print("The response of UpgradePolicyV2Api->apply_config_now:\n")
+        pprint("The response of UpgradePolicyV2Api->apply_config_now:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->apply_config_now: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->apply_config_now: %s\n" % e)
 ```
 
 
@@ -99,33 +95,29 @@ Create, update and/or delete multiple maintenance windows in a single request
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.batch_maintenance_window_request import BatchMaintenanceWindowRequest
-from upgrade_policy.models.batch_maintenance_window_response import BatchMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.BatchMaintenanceWindowRequest() # BatchMaintenanceWindowRequest | 
@@ -133,10 +125,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Create, update and/or delete multiple maintenance windows in a single request
         api_response = api_instance.batch(body)
-        print("The response of UpgradePolicyV2Api->batch:\n")
+        pprint("The response of UpgradePolicyV2Api->batch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->batch: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->batch: %s\n" % e)
 ```
 
 
@@ -177,33 +169,29 @@ Create a maintenance window
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.create_maintenance_window_request import CreateMaintenanceWindowRequest
-from upgrade_policy.models.create_maintenance_window_response import CreateMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.CreateMaintenanceWindowRequest() # CreateMaintenanceWindowRequest | 
@@ -211,10 +199,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Create a maintenance window
         api_response = api_instance.create(body)
-        print("The response of UpgradePolicyV2Api->create:\n")
+        pprint("The response of UpgradePolicyV2Api->create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->create: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->create: %s\n" % e)
 ```
 
 
@@ -255,32 +243,29 @@ Delete maintenance window
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.delete_maintenance_window_response import DeleteMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record
@@ -288,10 +273,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Delete maintenance window
         api_response = api_instance.delete(id)
-        print("The response of UpgradePolicyV2Api->delete:\n")
+        pprint("The response of UpgradePolicyV2Api->delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->delete: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->delete: %s\n" % e)
 ```
 
 
@@ -332,32 +317,29 @@ Read a maintenance window
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.get_maintenance_window_response import GetMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record
@@ -365,10 +347,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Read a maintenance window
         api_response = api_instance.get(id)
-        print("The response of UpgradePolicyV2Api->get:\n")
+        pprint("The response of UpgradePolicyV2Api->get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->get: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->get: %s\n" % e)
 ```
 
 
@@ -409,43 +391,39 @@ List all the maintenance windows
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.list_maintenance_window_response import ListMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
-    window_type = 'window_type_example' # str | window type (software or config). (optional)
 
     try:
         # List all the maintenance windows
-        api_response = api_instance.list(window_type=window_type)
-        print("The response of UpgradePolicyV2Api->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of UpgradePolicyV2Api->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->list: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->list: %s\n" % e)
 ```
 
 
@@ -486,33 +464,29 @@ Update an existing maintenance window
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import upgrade_policy
-from upgrade_policy.models.update_maintenance_window_request import UpdateMaintenanceWindowRequest
-from upgrade_policy.models.update_maintenance_window_response import UpdateMaintenanceWindowResponse
-from upgrade_policy.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/upgrade_policy
+import upgrade_policy
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = upgrade_policy.Configuration(
-    host = "http://csp.infoblox.com/api/upgrade_policy"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with upgrade_policy.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record
@@ -521,10 +495,10 @@ with upgrade_policy.ApiClient(configuration) as api_client:
     try:
         # Update an existing maintenance window
         api_response = api_instance.update(id, body)
-        print("The response of UpgradePolicyV2Api->update:\n")
+        pprint("The response of UpgradePolicyV2Api->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpgradePolicyV2Api->update: %s\n" % e)
+        pprint("Exception when calling UpgradePolicyV2Api->update: %s\n" % e)
 ```
 
 

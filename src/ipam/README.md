@@ -33,22 +33,17 @@ import ipam
 from ipam.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 
 # Enter a context with an instance of the API client
@@ -85,6 +80,7 @@ Class | Method | HTTP request | Description
 *AddressBlockApi* | [**create_next_available_subnet**](ipam/docs/AddressBlockApi.md#create_next_available_subnet) | **POST** /ipam/address_block/{id}/nextavailablesubnet | Create the Next Available Subnet object.
 *AddressBlockApi* | [**delete**](ipam/docs/AddressBlockApi.md#delete) | **DELETE** /ipam/address_block/{id} | Move the address block to the recycle bin.
 *AddressBlockApi* | [**list**](ipam/docs/AddressBlockApi.md#list) | **GET** /ipam/address_block | Retrieve the address blocks.
+*AddressBlockApi* | [**list_ancestor**](ipam/docs/AddressBlockApi.md#list_ancestor) | **GET** /ipam/address_block/{id}/ancestor | Retrieve address block ancestors.
 *AddressBlockApi* | [**list_next_available_ab**](ipam/docs/AddressBlockApi.md#list_next_available_ab) | **GET** /ipam/address_block/{id}/nextavailableaddressblock | List Next Available Address Block objects.
 *AddressBlockApi* | [**list_next_available_ip**](ipam/docs/AddressBlockApi.md#list_next_available_ip) | **GET** /ipam/address_block/{id}/nextavailableip | Retrieve the next available IP address.
 *AddressBlockApi* | [**list_next_available_subnet**](ipam/docs/AddressBlockApi.md#list_next_available_subnet) | **GET** /ipam/address_block/{id}/nextavailablesubnet | List Next Available Subnet objects.
@@ -93,6 +89,12 @@ Class | Method | HTTP request | Description
 *AsmApi* | [**create**](ipam/docs/AsmApi.md#create) | **POST** /ipam/asm | Update subnet and ranges for Automated Scope Management.
 *AsmApi* | [**list**](ipam/docs/AsmApi.md#list) | **GET** /ipam/asm | Retrieve suggested updates for Automated Scope Management.
 *AsmApi* | [**read**](ipam/docs/AsmApi.md#read) | **GET** /ipam/asm/{id} | Retrieve the suggested update for Automated Scope Management.
+*ConfigProfileApi* | [**associate_config_profile_to_objects**](ipam/docs/ConfigProfileApi.md#associate_config_profile_to_objects) | **POST** /dhcp/config_profile/link_profile | Associate a config profile to objects.
+*ConfigProfileApi* | [**associate_object_to_config_profiles**](ipam/docs/ConfigProfileApi.md#associate_object_to_config_profiles) | **POST** /dhcp/config_profile/link_object | Associate an object to config profiles.
+*ConfigProfileApi* | [**disassociate_config_profile_from_objects**](ipam/docs/ConfigProfileApi.md#disassociate_config_profile_from_objects) | **POST** /dhcp/config_profile/delink_profile | Disassociate a config profile from objects.
+*ConfigProfileApi* | [**disassociate_object_from_config_profiles**](ipam/docs/ConfigProfileApi.md#disassociate_object_from_config_profiles) | **POST** /dhcp/config_profile/delink_object | Disassociate an object from a config profile.
+*ConfigProfileApi* | [**list_config_profiles**](ipam/docs/ConfigProfileApi.md#list_config_profiles) | **GET** /dhcp/config_profile/profiles | Retrieve config profiles.
+*ConfigProfileApi* | [**list_subnets**](ipam/docs/ConfigProfileApi.md#list_subnets) | **GET** /dhcp/config_profile/subnets | Retrieve subnets associated with a config profile.
 *DhcpHostApi* | [**list**](ipam/docs/DhcpHostApi.md#list) | **GET** /dhcp/host | Retrieve DHCP hosts.
 *DhcpHostApi* | [**list_associations**](ipam/docs/DhcpHostApi.md#list_associations) | **GET** /dhcp/host/{id}/associations | Retrieve DHCP host associations.
 *DhcpHostApi* | [**read**](ipam/docs/DhcpHostApi.md#read) | **GET** /dhcp/host/{id} | Retrieve the DHCP host.
@@ -123,6 +125,7 @@ Class | Method | HTTP request | Description
 *IpSpaceApi* | [**copy**](ipam/docs/IpSpaceApi.md#copy) | **POST** /ipam/ip_space/{id}/copy | Copy the IP space.
 *IpSpaceApi* | [**create**](ipam/docs/IpSpaceApi.md#create) | **POST** /ipam/ip_space | Create the IP space.
 *IpSpaceApi* | [**delete**](ipam/docs/IpSpaceApi.md#delete) | **DELETE** /ipam/ip_space/{id} | Move the IP space to the recycle bin.
+*IpSpaceApi* | [**get_conflicts**](ipam/docs/IpSpaceApi.md#get_conflicts) | **GET** /ipam/ip_space/{id}/conflicts | Retrieve Conflicted __AddressBlock__ and __Subnet__ objects in Federated Realms.
 *IpSpaceApi* | [**list**](ipam/docs/IpSpaceApi.md#list) | **GET** /ipam/ip_space | Retrieve IP spaces.
 *IpSpaceApi* | [**read**](ipam/docs/IpSpaceApi.md#read) | **GET** /ipam/ip_space/{id} | Retrieve the IP space.
 *IpSpaceApi* | [**update**](ipam/docs/IpSpaceApi.md#update) | **PATCH** /ipam/ip_space/{id} | Update the IP space.
@@ -132,6 +135,13 @@ Class | Method | HTTP request | Description
 *IpamHostApi* | [**read**](ipam/docs/IpamHostApi.md#read) | **GET** /ipam/host/{id} | Retrieve the IPAM host.
 *IpamHostApi* | [**update**](ipam/docs/IpamHostApi.md#update) | **PATCH** /ipam/host/{id} | Update the IPAM host.
 *LeasesCommandApi* | [**create**](ipam/docs/LeasesCommandApi.md#create) | **POST** /dhcp/leases_command | Perform actions like clearing DHCP lease(s).
+*MacAddressItemApi* | [**bulk_create**](ipam/docs/MacAddressItemApi.md#bulk_create) | **POST** /dhcp/mac_address_item/bulk_create | Bulk create the mac address items.
+*MacAddressItemApi* | [**create**](ipam/docs/MacAddressItemApi.md#create) | **POST** /dhcp/mac_address_item | Create the mac address item.
+*MacAddressItemApi* | [**delete**](ipam/docs/MacAddressItemApi.md#delete) | **DELETE** /dhcp/mac_address_item/{id} | Delete the mac address item.
+*MacAddressItemApi* | [**list**](ipam/docs/MacAddressItemApi.md#list) | **GET** /dhcp/mac_address_item | Retrieve mac address items.
+*MacAddressItemApi* | [**read**](ipam/docs/MacAddressItemApi.md#read) | **GET** /dhcp/mac_address_item/{id} | Retrieve the mac address item.
+*MacAddressItemApi* | [**update**](ipam/docs/MacAddressItemApi.md#update) | **PATCH** /dhcp/mac_address_item/{id} | Update the mac address item.
+*MacAddressItemApi* | [**upload**](ipam/docs/MacAddressItemApi.md#upload) | **POST** /dhcp/mac_address_item/upload | Upload mac addresses to a large scale hardware filter.
 *OptionCodeApi* | [**create**](ipam/docs/OptionCodeApi.md#create) | **POST** /dhcp/option_code | Create the DHCP option code.
 *OptionCodeApi* | [**delete**](ipam/docs/OptionCodeApi.md#delete) | **DELETE** /dhcp/option_code/{id} | Delete the DHCP option code.
 *OptionCodeApi* | [**list**](ipam/docs/OptionCodeApi.md#list) | **GET** /dhcp/option_code | Retrieve DHCP option codes.
@@ -164,11 +174,14 @@ Class | Method | HTTP request | Description
 *ServerApi* | [**list**](ipam/docs/ServerApi.md#list) | **GET** /dhcp/server | Retrieve DHCP configuration profiles.
 *ServerApi* | [**read**](ipam/docs/ServerApi.md#read) | **GET** /dhcp/server/{id} | Retrieve the DHCP configuration profile.
 *ServerApi* | [**update**](ipam/docs/ServerApi.md#update) | **PATCH** /dhcp/server/{id} | Update the DHCP configuration profile.
+*ServiceApi* | [**list**](ipam/docs/ServiceApi.md#list) | **GET** /dhcp/service | List DHCP service instance objects.
+*ServiceApi* | [**read**](ipam/docs/ServiceApi.md#read) | **GET** /dhcp/service/{id} | Read the DHCP service instance object.
 *SubnetApi* | [**copy**](ipam/docs/SubnetApi.md#copy) | **POST** /ipam/subnet/{id}/copy | Copy the subnet.
 *SubnetApi* | [**create**](ipam/docs/SubnetApi.md#create) | **POST** /ipam/subnet | Create the subnet.
 *SubnetApi* | [**create_next_available_ip**](ipam/docs/SubnetApi.md#create_next_available_ip) | **POST** /ipam/subnet/{id}/nextavailableip | Allocate the next available IP address.
 *SubnetApi* | [**delete**](ipam/docs/SubnetApi.md#delete) | **DELETE** /ipam/subnet/{id} | Move the subnet to the recycle bin.
 *SubnetApi* | [**list**](ipam/docs/SubnetApi.md#list) | **GET** /ipam/subnet | Retrieve subnets.
+*SubnetApi* | [**list_ancestor**](ipam/docs/SubnetApi.md#list_ancestor) | **GET** /ipam/subnet/{id}/ancestor | Retrieve subnet ancestors.
 *SubnetApi* | [**list_next_available_ip**](ipam/docs/SubnetApi.md#list_next_available_ip) | **GET** /ipam/subnet/{id}/nextavailableip | Retrieve the next available IP address.
 *SubnetApi* | [**read**](ipam/docs/SubnetApi.md#read) | **GET** /ipam/subnet/{id} | Retrieve the subnet.
 *SubnetApi* | [**update**](ipam/docs/SubnetApi.md#update) | **PATCH** /ipam/subnet/{id} | Update the subnet.
@@ -183,9 +196,16 @@ Class | Method | HTTP request | Description
  - [AddressBlock](ipam/docs/AddressBlock.md)
  - [AsmEnableBlock](ipam/docs/AsmEnableBlock.md)
  - [AsmGrowthBlock](ipam/docs/AsmGrowthBlock.md)
+ - [AssociateConfigProfileToObjectsRequest](ipam/docs/AssociateConfigProfileToObjectsRequest.md)
+ - [AssociateObjectToConfigProfilesRequest](ipam/docs/AssociateObjectToConfigProfilesRequest.md)
+ - [AssociatedHost](ipam/docs/AssociatedHost.md)
  - [BulkCopyError](ipam/docs/BulkCopyError.md)
  - [BulkCopyIPSpace](ipam/docs/BulkCopyIPSpace.md)
  - [BulkCopyIPSpaceResponse](ipam/docs/BulkCopyIPSpaceResponse.md)
+ - [BulkCreateMacAddressItemResponse](ipam/docs/BulkCreateMacAddressItemResponse.md)
+ - [BulkMacAddressItem](ipam/docs/BulkMacAddressItem.md)
+ - [CPSubnet](ipam/docs/CPSubnet.md)
+ - [CidrBlock](ipam/docs/CidrBlock.md)
  - [CopyAddressBlock](ipam/docs/CopyAddressBlock.md)
  - [CopyAddressBlockResponse](ipam/docs/CopyAddressBlockResponse.md)
  - [CopyIPSpace](ipam/docs/CopyIPSpace.md)
@@ -202,6 +222,7 @@ Class | Method | HTTP request | Description
  - [CreateIPSpaceResponse](ipam/docs/CreateIPSpaceResponse.md)
  - [CreateIpamHostResponse](ipam/docs/CreateIpamHostResponse.md)
  - [CreateLeasesCommandResponse](ipam/docs/CreateLeasesCommandResponse.md)
+ - [CreateMacAddressItemResponse](ipam/docs/CreateMacAddressItemResponse.md)
  - [CreateNextAvailableABResponse](ipam/docs/CreateNextAvailableABResponse.md)
  - [CreateNextAvailableIPResponse](ipam/docs/CreateNextAvailableIPResponse.md)
  - [CreateNextAvailableSubnetResponse](ipam/docs/CreateNextAvailableSubnetResponse.md)
@@ -222,9 +243,12 @@ Class | Method | HTTP request | Description
  - [DHCPInheritance](ipam/docs/DHCPInheritance.md)
  - [DHCPOptionsInheritance](ipam/docs/DHCPOptionsInheritance.md)
  - [DHCPPacketStats](ipam/docs/DHCPPacketStats.md)
+ - [DHCPServiceInstance](ipam/docs/DHCPServiceInstance.md)
  - [DHCPUtilization](ipam/docs/DHCPUtilization.md)
  - [DHCPUtilizationThreshold](ipam/docs/DHCPUtilizationThreshold.md)
  - [DNSUsage](ipam/docs/DNSUsage.md)
+ - [DisassociateConfigProfileFromObjectsRequest](ipam/docs/DisassociateConfigProfileFromObjectsRequest.md)
+ - [DisassociateObjectFromConfigProfilesRequest](ipam/docs/DisassociateObjectFromConfigProfilesRequest.md)
  - [ExclusionRange](ipam/docs/ExclusionRange.md)
  - [Filter](ipam/docs/Filter.md)
  - [FixedAddress](ipam/docs/FixedAddress.md)
@@ -270,6 +294,10 @@ Class | Method | HTTP request | Description
  - [ListASMResponse](ipam/docs/ListASMResponse.md)
  - [ListAddressBlockResponse](ipam/docs/ListAddressBlockResponse.md)
  - [ListAddressResponse](ipam/docs/ListAddressResponse.md)
+ - [ListAncestorResponse](ipam/docs/ListAncestorResponse.md)
+ - [ListCPSubnetResponse](ipam/docs/ListCPSubnetResponse.md)
+ - [ListConfigProfileResponse](ipam/docs/ListConfigProfileResponse.md)
+ - [ListDHCPServiceInstanceResponse](ipam/docs/ListDHCPServiceInstanceResponse.md)
  - [ListDNSUsageResponse](ipam/docs/ListDNSUsageResponse.md)
  - [ListFilterResponse](ipam/docs/ListFilterResponse.md)
  - [ListFixedAddressResponse](ipam/docs/ListFixedAddressResponse.md)
@@ -278,6 +306,7 @@ Class | Method | HTTP request | Description
  - [ListHostResponse](ipam/docs/ListHostResponse.md)
  - [ListIPSpaceResponse](ipam/docs/ListIPSpaceResponse.md)
  - [ListIpamHostResponse](ipam/docs/ListIpamHostResponse.md)
+ - [ListMacAddressItemResponse](ipam/docs/ListMacAddressItemResponse.md)
  - [ListOptionCodeResponse](ipam/docs/ListOptionCodeResponse.md)
  - [ListOptionFilterResponse](ipam/docs/ListOptionFilterResponse.md)
  - [ListOptionGroupResponse](ipam/docs/ListOptionGroupResponse.md)
@@ -285,6 +314,9 @@ Class | Method | HTTP request | Description
  - [ListRangeResponse](ipam/docs/ListRangeResponse.md)
  - [ListServerResponse](ipam/docs/ListServerResponse.md)
  - [ListSubnetResponse](ipam/docs/ListSubnetResponse.md)
+ - [MacAddressItem](ipam/docs/MacAddressItem.md)
+ - [MacAddressItemUpload](ipam/docs/MacAddressItemUpload.md)
+ - [MacAddressItemUploadResponse](ipam/docs/MacAddressItemUploadResponse.md)
  - [Name](ipam/docs/Name.md)
  - [Nameserver](ipam/docs/Nameserver.md)
  - [NextAvailableABResponse](ipam/docs/NextAvailableABResponse.md)
@@ -297,10 +329,12 @@ Class | Method | HTTP request | Description
  - [OptionGroup](ipam/docs/OptionGroup.md)
  - [OptionItem](ipam/docs/OptionItem.md)
  - [OptionSpace](ipam/docs/OptionSpace.md)
+ - [ProtobufFieldMask](ipam/docs/ProtobufFieldMask.md)
  - [Range](ipam/docs/Range.md)
  - [ReadASMResponse](ipam/docs/ReadASMResponse.md)
  - [ReadAddressBlockResponse](ipam/docs/ReadAddressBlockResponse.md)
  - [ReadAddressResponse](ipam/docs/ReadAddressResponse.md)
+ - [ReadDHCPServiceInstanceResponse](ipam/docs/ReadDHCPServiceInstanceResponse.md)
  - [ReadDNSUsageResponse](ipam/docs/ReadDNSUsageResponse.md)
  - [ReadFixedAddressResponse](ipam/docs/ReadFixedAddressResponse.md)
  - [ReadGlobalResponse](ipam/docs/ReadGlobalResponse.md)
@@ -309,6 +343,7 @@ Class | Method | HTTP request | Description
  - [ReadHostResponse](ipam/docs/ReadHostResponse.md)
  - [ReadIPSpaceResponse](ipam/docs/ReadIPSpaceResponse.md)
  - [ReadIpamHostResponse](ipam/docs/ReadIpamHostResponse.md)
+ - [ReadMacAddressItemResponse](ipam/docs/ReadMacAddressItemResponse.md)
  - [ReadOptionCodeResponse](ipam/docs/ReadOptionCodeResponse.md)
  - [ReadOptionFilterResponse](ipam/docs/ReadOptionFilterResponse.md)
  - [ReadOptionGroupResponse](ipam/docs/ReadOptionGroupResponse.md)
@@ -316,6 +351,8 @@ Class | Method | HTTP request | Description
  - [ReadRangeResponse](ipam/docs/ReadRangeResponse.md)
  - [ReadServerResponse](ipam/docs/ReadServerResponse.md)
  - [ReadSubnetResponse](ipam/docs/ReadSubnetResponse.md)
+ - [RealmsConflict](ipam/docs/RealmsConflict.md)
+ - [RealmsConflictResponse](ipam/docs/RealmsConflictResponse.md)
  - [Server](ipam/docs/Server.md)
  - [ServerInheritance](ipam/docs/ServerInheritance.md)
  - [Subnet](ipam/docs/Subnet.md)
@@ -329,6 +366,7 @@ Class | Method | HTTP request | Description
  - [UpdateHostResponse](ipam/docs/UpdateHostResponse.md)
  - [UpdateIPSpaceResponse](ipam/docs/UpdateIPSpaceResponse.md)
  - [UpdateIpamHostResponse](ipam/docs/UpdateIpamHostResponse.md)
+ - [UpdateMacAddressItemResponse](ipam/docs/UpdateMacAddressItemResponse.md)
  - [UpdateOptionCodeResponse](ipam/docs/UpdateOptionCodeResponse.md)
  - [UpdateOptionFilterResponse](ipam/docs/UpdateOptionFilterResponse.md)
  - [UpdateOptionGroupResponse](ipam/docs/UpdateOptionGroupResponse.md)

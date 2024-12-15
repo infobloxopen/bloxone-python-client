@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.view_api import ViewApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestViewApi(unittest.TestCase):
     """ViewApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ViewApi()
+        api_instance = ApiClient()
+        self.api = ViewApi(api_instance)
 
     def tearDown(self) -> None:
         pass

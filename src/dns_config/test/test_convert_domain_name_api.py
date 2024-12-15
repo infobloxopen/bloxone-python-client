@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.convert_domain_name_api import ConvertDomainNameApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestConvertDomainNameApi(unittest.TestCase):
     """ConvertDomainNameApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ConvertDomainNameApi()
+        api_instance = ApiClient()
+        self.api = ConvertDomainNameApi(api_instance)
 
     def tearDown(self) -> None:
         pass

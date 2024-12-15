@@ -20,31 +20,29 @@ Use this method to delete a __KerberosKey__ object. A __KerberosKey__ object rep
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import keys
-from keys.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import keys
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = keys.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with keys.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = keys.KerberosApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -53,7 +51,7 @@ with keys.ApiClient(configuration) as api_client:
         # Delete the Kerberos key.
         api_instance.delete(id)
     except Exception as e:
-        print("Exception when calling KerberosApi->delete: %s\n" % e)
+        pprint("Exception when calling KerberosApi->delete: %s\n" % e)
 ```
 
 
@@ -96,50 +94,39 @@ Use this method to retrieve __KerberosKey__ objects. A __KerberosKey__ object re
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import keys
-from keys.models.list_kerberos_key_response import ListKerberosKeyResponse
-from keys.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import keys
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = keys.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with keys.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = keys.KerberosApi(api_client)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    order_by = 'order_by_example' # str |   A collection of response resources can be sorted by their JSON tags. For a 'flat' resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix 'asc' sorts the data in ascending order. The suffix 'desc' sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         (optional)
-    tfilter = 'tfilter_example' # str | This parameter is used for filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | This parameter is used for sorting by tags. (optional)
 
     try:
         # Retrieve Kerberos keys.
-        api_response = api_instance.list(fields=fields, filter=filter, offset=offset, limit=limit, page_token=page_token, order_by=order_by, tfilter=tfilter, torder_by=torder_by)
-        print("The response of KerberosApi->list:\n")
+        api_response = api_instance.list()
+        pprint("The response of KerberosApi->list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->list: %s\n" % e)
+        pprint("Exception when calling KerberosApi->list: %s\n" % e)
 ```
 
 
@@ -189,44 +176,40 @@ Use this method to retrieve a __KerberosKey__ object. A __KerberosKey__ object r
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import keys
-from keys.models.read_kerberos_key_response import ReadKerberosKeyResponse
-from keys.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import keys
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = keys.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with keys.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = keys.KerberosApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Retrieve the Kerberos key.
-        api_response = api_instance.read(id, fields=fields)
-        print("The response of KerberosApi->read:\n")
+        api_response = api_instance.read(id)
+        pprint("The response of KerberosApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->read: %s\n" % e)
+        pprint("Exception when calling KerberosApi->read: %s\n" % e)
 ```
 
 
@@ -270,33 +253,29 @@ Use this method to update a __KerberosKey__ object. A __KerberosKey__ object rep
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import keys
-from keys.models.kerberos_key import KerberosKey
-from keys.models.update_kerberos_key_response import UpdateKerberosKeyResponse
-from keys.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import keys
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = keys.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with keys.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = keys.KerberosApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -305,10 +284,10 @@ with keys.ApiClient(configuration) as api_client:
     try:
         # Update the Kerberos key.
         api_response = api_instance.update(id, body)
-        print("The response of KerberosApi->update:\n")
+        pprint("The response of KerberosApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling KerberosApi->update: %s\n" % e)
+        pprint("Exception when calling KerberosApi->update: %s\n" % e)
 ```
 
 

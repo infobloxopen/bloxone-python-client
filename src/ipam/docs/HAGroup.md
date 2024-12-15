@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **mode** | **str** | The mode of the HA group.  Valid values are: * _active-active_: Both on-prem hosts remain active. * _active-passive_: One on-prem host remains active and one remains passive. When the active on-prem host is down, the passive on-prem host takes over. * _advanced-active-passive_: One on-prem host may be part of multiple HA groups. When the active on-prem host is down, the passive on-prem host takes over. | [optional] 
 **name** | **str** | The name of the HA group. Must contain 1 to 256 characters. Can include UTF-8. | 
 **status** | **str** | Status of the HA group. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request. | [optional] 
+**status_v6** | **str** | Status of the DHCPv6 HA group. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request. | [optional] 
 **tags** | **object** | The tags for the HA group. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 
