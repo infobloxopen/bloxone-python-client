@@ -1,0 +1,41 @@
+# Bloxone Python Client release workflow.
+name: Release
+
+# This GitHub action creates a release when a tag that matches the pattern
+# "v*" (e.g. v0.1.0) is created.
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+
+# Releases need permissions to read and write the repository contents.
+# GitHub considers creating releases and uploading assets as writing contents.
+permissions:
+  contents: write
+
+jobs:
+  pypi-publish:
+    name: Publish release to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/bloxone-python-client
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install pypa/build
+        run: python -m pip install build --user
+      - name: Build a package
+        run: python -m build
+      - name: Publish package distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        env:
+          password: ${{ secrets.PYPI_API_TOKEN }}
