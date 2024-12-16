@@ -4,16 +4,24 @@ import logging
 from typing import Optional
 
 from bloxone_client import ApiClient
-from cloud_discovery import ProvidersApi , Providers
+from cloud_discovery import ProvidersApi , DiscoveryConfig
 
 from auth_zone_with_records import cleanup_resources
 
 
-def create_discovery_job(api_client: ProvidersApi, body) -> Optional[Providers]:
+def create_discovery_job(api_client: ProvidersApi, body) -> Optional[DiscoveryConfig]:
     """Creates a DNS view."""
     return api_client.create(
         body=body
     )
+
+def delete_discovery_job(api_client: ProvidersApi,resource_ids):
+    for resource_type, resource_id in reversed(resource_ids):
+        try:
+            api_client.delete(resource_id)
+            logging.info(f"Deleted {resource_type} with ID: {resource_id}")
+        except Exception as e:
+            logging.error(f"Failed to delete {resource_type} with ID {resource_id}: {e}")
 
 def sample_dns_records():
     """Runs a sample DNS configuration process."""
@@ -137,7 +145,7 @@ def sample_dns_records():
         logging.error(f"Error occurred: {e}")
 
     finally:
-        cleanup_resources(api_client, resource_ids)
+        delete_discovery_job(discovery_api, resource_ids)
         logging.info("Cleanup done.")
         print("Done")
 

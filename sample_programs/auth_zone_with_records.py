@@ -27,7 +27,7 @@ def create_auth_zone(auth_zone_api, auth_zone_body) -> Optional[AuthZone]:
 
 def create_dns_record(record_api , record_body) -> Optional[Record]:
     """Creates a generic DNS record based on the type."""
-    #print(record_body)
+    print(record_body)
     response = record_api.create(
         body=record_body
     )
@@ -49,13 +49,7 @@ def sample_dns_records():
     """Runs a sample DNS configuration process."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-    # Initialize the API client
-    config = Configuration(
-        csp_url = os.getenv("BLOXONE_CSP_URL"),
-        api_key = os.getenv("BLOXONE_API_KEY"),
-    )
-
-    api_client = ApiClient(config)
+    api_client = ApiClient()
     view_api = dns_config.ViewApi(api_client)
     auth_zone_api = dns_config.AuthZoneApi(api_client)
     record_api = dns_data.RecordApi(api_client)
@@ -79,8 +73,8 @@ def sample_dns_records():
             logging.info("View created successfully")
 
         auth_zone_body  = AuthZone(
-            view=view_response.result.id,
-            fqdn="domain.com.",
+            #view=view_response.result.id,
+            fqdn="mydomain.com.",
             primary_type="cloud",
             comment = "Auth zone created through Python client"
         )
@@ -98,7 +92,6 @@ def sample_dns_records():
             "rdata": {"address": "10.0.0.10"},
             "zone": auth_zone_response.result.id,
             "comment": "IPv4 A record example",
-            "view": view_response.result.id,
             "ttl": 3600
         }
 

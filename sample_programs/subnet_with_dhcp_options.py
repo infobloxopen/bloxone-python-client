@@ -59,7 +59,7 @@ def subnet_with_dhcp_options():
     try:
 
         ip_space_body = {
-            "name": "example_space1",
+            "name": "example_space_python_client",
             "comment": "Space for Sample Example Program"
         }
 
