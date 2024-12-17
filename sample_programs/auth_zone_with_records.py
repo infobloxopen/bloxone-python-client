@@ -7,10 +7,11 @@ sys.path.append("../src")
 
 # Import necessary modules from bloxone_client and dns_data
 from bloxone_client import ApiClient, Configuration
-from dns_data.models import Record
-from dns_config.models import View, AuthZone
 from dns_config.api import ViewApi, AuthZoneApi
 from dns_data.api import RecordApi
+
+from dns_data.models import Record
+from dns_config.models import View, AuthZone
 
 
 def create_view(view_api, view_body) -> Optional[View]:

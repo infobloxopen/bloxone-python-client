@@ -2,10 +2,8 @@ import sys
 import logging
 from typing import Optional, List, Tuple
 
-# Append source directory to Python path
 sys.path.append("../src")
 
-# Import required custom modules
 from bloxone_client import ApiClient
 from cloud_discovery import ProvidersApi, DiscoveryConfig
 

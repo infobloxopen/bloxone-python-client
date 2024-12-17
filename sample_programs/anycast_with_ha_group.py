@@ -6,10 +6,10 @@ from typing import Optional
 sys.path.append("../src")
 
 from anycast import OnPremAnycastManagerApi
-from anycast.models import AnycastConfig
-from auth_zone_with_records import cleanup_resources
 from bloxone_client import ApiClient
 from ipam.api import DhcpHostApi, HaGroupApi
+
+from anycast.models import AnycastConfig
 from ipam.models import HAGroup, ListHostResponse
 
 

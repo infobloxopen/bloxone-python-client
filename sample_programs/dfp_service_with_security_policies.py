@@ -1,65 +1,100 @@
 import sys
-
-sys.path.append("../src")
 import logging
 from typing import Optional
-from datetime import datetime, timedelta ,timezone
-import random
+from datetime import datetime, timedelta, timezone
 
+sys.path.append("../src")
 
 from bloxone_client import ApiClient
 from dfp.api import InfraServicesApi
-from fw.api import AccessCodesApi , InternalDomainListsApi , NamedListsApi , SecurityPoliciesApi
-from infra_mgmt import HostsApi , Service ,ServicesApi
-from fw.models import InternalDomainsDeleteRequest, InternalDomains , AccessCode , NamedList , SecurityPolicy
+from fw.api import AccessCodesApi, InternalDomainListsApi, NamedListsApi, SecurityPoliciesApi
+from infra_mgmt import HostsApi, Service, ServicesApi
+
+from fw.models import InternalDomainsDeleteRequest, InternalDomains, AccessCode, NamedList, SecurityPolicy
 from dfp.models import Dfp
 
 
-from auth_zone_with_records import cleanup_resources
-
-def filter_infra_host(api_client , filter):
+def filter_infra_host(api_client, filter):
+    """Filters infrastructure hosts based on the provided filter criteria."""
     return api_client.list(filter=filter)
 
+def create_infra_service(api_client, infra_service_body) -> Optional[Service]:
+    """Creates an infrastructure service.
 
-def create_infra_service(api_client,infra_service_body)-> Optional[Service]:
-    """get an infra sservice list."""
-    infra_service_response = api_client.create(body = infra_service_body)
+    Args:
+        api_client: The API client instance.
+        infra_service_body: The body of the infrastructure service to be created.
+
+    Returns:
+        The created infrastructure service or None if creation failed.
+    """
+    infra_service_response = api_client.create(body=infra_service_body)
     return infra_service_response
 
-def create_dfp_service(api_client,payload_service_id,dfp_service_body)-> Optional[Dfp]:
-    """get an infra sservice list."""
-    dfp_service_response = (api_client.
-                            create_or_update_dfp_service(body = dfp_service_body ,
-                                                         payload_service_id = payload_service_id))
+def create_dfp_service(api_client, payload_service_id, dfp_service_body) -> Optional[Dfp]:
+    """Creates or updates a DFP service.
+
+    Args:
+        api_client: The API client instance.
+        payload_service_id: The ID of the service to be created or updated.
+        dfp_service_body: The body of the DFP service to be created or updated.
+
+    Returns:
+        The created or updated DFP service or None if the operation failed.
+    """
+    dfp_service_response = api_client.create_or_update_dfp_service(
+        body=dfp_service_body,
+        payload_service_id=payload_service_id
+    )
     return dfp_service_response
 
-def create_internal_domain_list(
-        api_client: InternalDomainListsApi, body) -> Optional[InternalDomains]:
-    """Creates an internal domain list."""
-    return api_client.create_internal_domains(
-        body=body
-    )
+def create_internal_domain_list(api_client: InternalDomainListsApi, body) -> Optional[InternalDomains]:
+    """Creates an internal domain list.
 
-def create_access_code(
-        api_client: AccessCodesApi ,access_code_body) -> Optional[AccessCode]:
-    """Creates an access code."""
-    return api_client.create_access_code(
-        body=access_code_body
-    )
+    Args:
+        api_client: The API client instance.
+        body: The body of the internal domain list to be created.
 
-def create_named_list(
-        api_client: NamedListsApi ,named_list_body) -> Optional[NamedList]:
-    """Creates a named list."""
-    return api_client.create_named_list(
-        body=named_list_body
-    )
+    Returns:
+        The created internal domain list or None if creation failed.
+    """
+    return api_client.create_internal_domains(body=body)
 
-def create_security_policy(
-        api_client: SecurityPoliciesApi ,security_policy_body) -> Optional[SecurityPolicy]:
-    """Creates a security policy."""
-    return api_client.create_security_policy(
-        body=security_policy_body
-    )
+def create_access_code(api_client: AccessCodesApi, access_code_body) -> Optional[AccessCode]:
+    """Creates an access code.
+
+    Args:
+        api_client: The API client instance.
+        access_code_body: The body of the access code to be created.
+
+    Returns:
+        The created access code or None if creation failed.
+    """
+    return api_client.create_access_code(body=access_code_body)
+
+def create_named_list(api_client: NamedListsApi, named_list_body) -> Optional[NamedList]:
+    """Creates a named list.
+
+    Args:
+        api_client: The API client instance.
+        named_list_body: The body of the named list to be created.
+
+    Returns:
+        The created named list or None if creation failed.
+    """
+    return api_client.create_named_list(body=named_list_body)
+
+def create_security_policy(api_client: SecurityPoliciesApi, security_policy_body) -> Optional[SecurityPolicy]:
+    """Creates a security policy.
+
+    Args:
+        api_client: The API client instance.
+        security_policy_body: The body of the security policy to be created.
+
+    Returns:
+        The created security policy or None if creation failed.
+    """
+    return api_client.create_security_policy(body=security_policy_body)
 
 def sample_dfp():
     """Runs a sample DFP configuration process."""
