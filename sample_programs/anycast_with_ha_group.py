@@ -1,15 +1,16 @@
 import logging
 import sys
-from typing import List, Optional
+from typing import Optional
 
+# Add source directory to the system path
 sys.path.append("../src")
 
 from anycast import OnPremAnycastManagerApi
 from anycast.models import AnycastConfig
-from ipam.api import HaGroupApi, DhcpHostApi
-from ipam.models import HAGroup, ListHostResponse
 from auth_zone_with_records import cleanup_resources
 from bloxone_client import ApiClient
+from ipam.api import DhcpHostApi, HaGroupApi
+from ipam.models import HAGroup, ListHostResponse
 
 
 def create_anycast_config(api_client: OnPremAnycastManagerApi, anycast_body: dict) -> Optional[AnycastConfig]:
@@ -74,14 +75,14 @@ def sample_anycast():
     try:
         # Create an anycast configuration
         anycast_body = {
-            "name": f"anycast_example",
+            "name": "anycast_example",
             "service": "DHCP",
             "anycast_ip_address": "192.2.2.35"
         }
         anycast_config_response = create_anycast_config(anycast_api_client, anycast_body)
 
         if anycast_config_response:
-            resource_ids.append(("on_prem_anycast_manager", f"accm/ac_configs/{anycast_config_response.results.id}"))
+            resource_ids.append(("on_prem_anycast_manager", anycast_config_response.results.id))
             logging.info("Anycast config created successfully.")
 
         # List DHCP hosts
@@ -110,9 +111,12 @@ def sample_anycast():
 
     finally:
         # Clean up created resources
-        cleanup_resources(resource_apis, resource_ids)
+        if resource_ids and resource_ids[1][1]:
+            ha_group_api_client.delete(resource_ids[1][1])
+            logging.info("HA group deleted successfully.")
         if resource_ids and resource_ids[0][1]:
             anycast_api_client.delete_anycast_config(resource_ids[0][1])
+            logging.info("Anycast config deleted successfully.")
 
 
 if __name__ == "__main__":

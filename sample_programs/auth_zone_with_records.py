@@ -9,6 +9,8 @@ import dns_config , dns_data
 from bloxone_client import ApiClient , Configuration
 from dns_data.models import Record
 from dns_config.models import View, AuthZone
+from dns_config.api import ViewApi, AuthZoneApi
+from dns_data.api import RecordApi
 
 
 def create_view(view_api, view_body) -> Optional[View]:
@@ -52,7 +54,7 @@ def sample_dns_records():
     api_client = ApiClient()
     view_api = dns_config.ViewApi(api_client)
     auth_zone_api = dns_config.AuthZoneApi(api_client)
-    record_api = dns_data.RecordApi(api_client)
+    record_api = RecordApi(api_client)
     resource_ids = []
     resource_apis = {
         "view": view_api,
@@ -73,7 +75,7 @@ def sample_dns_records():
             logging.info("View created successfully")
 
         auth_zone_body  = AuthZone(
-            #view=view_response.result.id,
+            view=view_response.result.id,
             fqdn="mydomain.com.",
             primary_type="cloud",
             comment = "Auth zone created through Python client"
@@ -86,18 +88,17 @@ def sample_dns_records():
             logging.info("Auth zone created successfully")
 
         # Prepare individual record configurations
-        a_record = {
-            "type": "A",
+        a_record = Record(
+            type = "A",
             #"name_in_zone": "a-record",
-            "rdata": {"address": "10.0.0.10"},
-            "zone": auth_zone_response.result.id,
-            "comment": "IPv4 A record example",
-            "ttl": 3600
-        }
+            rdata = {"address": "10.0.0.10"},
+            zone = auth_zone_response.result.id,
+            comment = "IPv4 A record example",
+            #"ttl": 3600
+        )
 
         aaaa_record = {
             "type": "aaaa",
-            "name": "aaaa-record",
             "rdata": {"address": "2001:db8::1"},
             "zone": auth_zone_response.result.id,
             "comment": "IPv6 AAAA record example",
@@ -133,12 +134,23 @@ def sample_dns_records():
 
         ptr_record = {
             "type": "ptr",
-            "name": "ptr-record",
+            "name_in_zone": "ptr-record",
             "rdata": {"dname": "10.0.0.10.in-addr.arpa."},
             "zone": auth_zone_response.result.id,
             "comment": "Pointer record example",
             "ttl": 3600
         }
+
+        a_record_response  = record_api.create(body=Record(
+            type="A",
+            rdata={"address": "10.0.0.10"},
+            zone=auth_zone_response.result.id,
+            comment="IPv4 A record example",
+        ))
+        if a_record_response:
+            print(a_record_response)
+        else:
+            print("Failed")
 
         # Create records individually
         record_list = [

@@ -1,21 +1,43 @@
 import sys
-sys.path.append("../src")
 import logging
-from typing import Optional
+from typing import Optional, List, Tuple
 
+# Append source directory to Python path
+sys.path.append("../src")
+
+# Import required custom modules
 from bloxone_client import ApiClient
-from cloud_discovery import ProvidersApi , DiscoveryConfig
-
-from auth_zone_with_records import cleanup_resources
+from cloud_discovery import ProvidersApi, DiscoveryConfig
 
 
-def create_discovery_job(api_client: ProvidersApi, body) -> Optional[DiscoveryConfig]:
-    """Creates a DNS view."""
-    return api_client.create(
-        body=body
-    )
+def create_discovery_job(
+        api_client: ProvidersApi,
+        body: dict
+) -> Optional[DiscoveryConfig]:
+    """
+    Create a cloud discovery job.
 
-def delete_discovery_job(api_client: ProvidersApi,resource_ids):
+    Args:
+        api_client (ProvidersApi): API client for providers
+        body (dict): Configuration details for the discovery job
+
+    Returns:
+        Optional[DiscoveryConfig]: Created discovery job configuration or None
+    """
+    return api_client.create(body=body)
+
+
+def delete_discovery_job(
+        api_client: ProvidersApi,
+        resource_ids: List[Tuple[str, str]]
+):
+    """
+    Delete discovery jobs in reverse order.
+
+    Args:
+        api_client (ProvidersApi): API client for providers
+        resource_ids (List[Tuple[str, str]]): List of (resource_type, resource_id) tuples
+    """
     for resource_type, resource_id in reversed(resource_ids):
         try:
             api_client.delete(resource_id)
@@ -23,11 +45,28 @@ def delete_discovery_job(api_client: ProvidersApi,resource_ids):
         except Exception as e:
             logging.error(f"Failed to delete {resource_type} with ID {resource_id}: {e}")
 
+
 def sample_dns_records():
-    """Runs a sample DNS configuration process."""
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+    """
+    Run a sample cloud discovery job configuration process.
+
+    This script demonstrates creating discovery jobs for three cloud providers:
+    - Amazon Web Services (AWS)
+    - Microsoft Azure
+    - Google Cloud Platform (GCP)
+
+    """
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s"
+    )
+
+    # Initialize API client and discovery API
     api_client = ApiClient()
     discovery_api = ProvidersApi(api_client)
+
+    # List to track created resources
     resource_ids = []
 
     try:
@@ -60,10 +99,17 @@ def sample_dns_records():
                 "site": "Site A"
             }
         }
-        discovery_response = create_discovery_job(discovery_api, aws_discovery_job_body)
 
-        if discovery_response:
-            resource_ids.append(("aws_discovery_job", discovery_response.result.id))
+        aws_discovery_response = create_discovery_job(
+            discovery_api,
+            aws_discovery_job_body
+        )
+
+        if aws_discovery_response:
+            resource_ids.append((
+                "aws_discovery_job",
+                aws_discovery_response.result.id
+            ))
             logging.info("AWS Cloud Discovery Job created successfully")
 
         # Create Azure Cloud Discovery Job
@@ -106,11 +152,16 @@ def sample_dns_records():
             }
         }
 
-
-        azure_discovery_response = create_discovery_job(discovery_api, azure_discovery_job_body)
+        azure_discovery_response = create_discovery_job(
+            discovery_api,
+            azure_discovery_job_body
+        )
 
         if azure_discovery_response:
-            resource_ids.append(("azure_discovery_job", azure_discovery_response.result.id))
+            resource_ids.append((
+                "azure_discovery_job",
+                azure_discovery_response.result.id
+            ))
             logging.info("Azure Cloud Discovery Job created successfully")
 
         # Create GCP Cloud Discovery Job
@@ -134,17 +185,23 @@ def sample_dns_records():
             }
         }
 
-
-        gcp_discovery_response = create_discovery_job(discovery_api, gcp_discovery_job_body)
+        gcp_discovery_response = create_discovery_job(
+            discovery_api,
+            gcp_discovery_job_body
+        )
 
         if gcp_discovery_response:
-            resource_ids.append(("gcp_discovery_job", gcp_discovery_response.result.id))
+            resource_ids.append((
+                "gcp_discovery_job",
+                gcp_discovery_response.result.id
+            ))
             logging.info("GCP Cloud Discovery Job created successfully")
 
     except Exception as e:
         logging.error(f"Error occurred: {e}")
 
     finally:
+        # Clean up created resources
         delete_discovery_job(discovery_api, resource_ids)
         logging.info("Cleanup done.")
         print("Done")

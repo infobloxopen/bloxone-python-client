@@ -3,7 +3,7 @@ import sys
 sys.path.append("../src")
 import logging
 from typing import Optional
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta ,timezone
 import random
 
 
@@ -50,7 +50,7 @@ def create_access_code(
 def create_named_list(
         api_client: NamedListsApi ,named_list_body) -> Optional[NamedList]:
     """Creates a named list."""
-    return api_client.named_lists_api.create_named_list(
+    return api_client.create_named_list(
         body=named_list_body
     )
 
@@ -60,21 +60,6 @@ def create_security_policy(
     return api_client.create_security_policy(
         body=security_policy_body
     )
-
-
-# def delete_internal_domain_list(
-#         fw_client: FwApiClient, domain_list_id: str
-# ):
-#     """Deletes an internal domain list."""
-#     try:
-#         delete_response = fw_client.internal_domain_lists_api.delete_internal_domains(
-#             body=InternalDomainsDeleteRequest(ids=[domain_list_id])
-#         )
-#         logging.info(f"Deleted internal domain list with ID: {domain_list_id}")
-#         return delete_response
-#     except Exception as e:
-#         logging.error(f"Failed to delete internal domain list with ID {domain_list_id}: {e}")
-
 
 def sample_dfp():
     """Runs a sample DFP configuration process."""
@@ -93,20 +78,21 @@ def sample_dfp():
 
     resource_apis = {
         "infra_service": infra_service_api,
-        "internal_domain_lists": internal_domain_lists_api,
-        "dfp_service": dfp_service_api ,
-        "access_codes": access_codes_api,
-        "named_lists": named_lists_api,
-        "security_policies": security_policies_api,
+        "internal_domain_list": internal_domain_lists_api,
+        "access_code": access_codes_api,
+        "named_list": named_lists_api,
+        "security_policy": security_policies_api,
     }
 
     try:
 
+        #Obtain the Infra Host
         infra_host_response = filter_infra_host(infra_host_api ,filter="display_name==\"TF_TEST_HOST_01\"")
 
         if len(infra_host_response.results) == 0:
             raise Exception("No infra hosts found")
 
+        # Create an Infra Service
         infra_service_body = {
             "name": "DFP Service",
             "description": "Example infra service",
@@ -122,9 +108,9 @@ def sample_dfp():
             resource_ids.append(("infra_service", infra_service_response.result.id))
 
 
-        random_number = random.randint(10000, 99999)
+        # Create an Internal Domain List
         internal_domain_lists_body = {
-            "name": f"example_domain_list-{random_number}",
+            "name": f"example_domain_list-python-client",
             "internal_domains": ["example.com"],
         }
 
@@ -136,6 +122,7 @@ def sample_dfp():
             logging.info("Internal domain list created successfully")
 
 
+        # Create a DFP Service
         dfp_service_body  = {
             "service_id" : infra_service_response.result.id,
             "pool_id": infra_host_response.results[0].pool_id,
@@ -155,8 +142,9 @@ def sample_dfp():
             resource_ids.append(("infra_service", dfp_service_response.results.id))
 
 
+        #Create a Named List
         named_list_body = {
-            "name": "example_named_list",
+            "name": "example_named_list2",
             "items_described": [
                 {
                     "item": "pc-domain.com",
@@ -172,14 +160,17 @@ def sample_dfp():
             resource_ids.append(("named_list", named_list_response.results.id))
             logging.info("Named list created successfully")
 
-        current_timestamp = datetime.now()
+        # Generate timestamps for access code
+        activation_timestamp = datetime.now(timezone.utc)
+        expiration_timestamp = activation_timestamp + timedelta(hours=24)
+        activation_timestamp = activation_timestamp.isoformat().replace("+00:00", "Z")
+        expiration_timestamp = expiration_timestamp.isoformat().replace("+00:00", "Z")
 
+        # Create access code
         access_code_body = {
             "name": "example_access_code",
-            # Get Timestamp
-
-            "activation": current_timestamp,
-            "expiration": current_timestamp + timedelta(hours=24)
+            "activation": activation_timestamp,
+            "expiration": expiration_timestamp
             ,
             "rules": [
                 {
@@ -196,16 +187,17 @@ def sample_dfp():
         )
 
         if access_code_response:
-            resource_ids.append(("access_code", access_code_response.result.id))
+            resource_ids.append(("access_code", access_code_response.results.access_key))
             logging.info("Access code created successfully")
 
+        # Create security policy
         security_policy_body = {
             "name": "example_security_policy",
             "rules": [
                 {
                     "action": "action_allow",
-                    "data": named_list_response.result.name,
-                    "type": named_list_response.result.type
+                    "data": named_list_response.results.name,
+                    "type": named_list_response.results.type
                 }
             ],
             "description": "Example Security Policy",
@@ -219,7 +211,7 @@ def sample_dfp():
                 "site": "Site A"
             },
             "access_codes": [
-                access_code_response.result.id
+                access_code_response.results.access_key
             ]
         }
 
@@ -228,14 +220,40 @@ def sample_dfp():
         )
 
         if security_policy_response:
-            resource_ids.append(("security_policy", security_policy_response.result.id))
+            resource_ids.append(("security_policy", security_policy_response.results.id))
             logging.info("Security policy created successfully")
+
+        # Cleanup: Delete created resources in reverse order
+        if security_policy_response:
+            security_policies_api.delete_security_policy(
+                body={"ids": [security_policy_response.results.id]}
+            )
+            logging.info("Security policy deleted successfully")
+
+        if access_code_response:
+            access_codes_api.delete_access_codes(
+                body={"ids": [access_code_response.results.access_key]}
+            )
+            logging.info("Access code deleted successfully")
+
+        if named_list_response:
+            named_lists_api.delete_named_lists(
+                body={"ids": [named_list_response.results.id]}
+            )
+            logging.info("Named list deleted successfully")
+
+        if infra_service_response:
+            infra_service_api.delete(infra_service_response.result.id)
+            logging.info("Infrastructure service deleted successfully")
+
+        if internal_domain_list_response:
+            internal_domain_lists_api.delete_internal_domains(
+                body={"ids": [internal_domain_list_response.results.id]}
+            )
+            logging.info("Internal domain list deleted successfully")
 
     except Exception as e:
         logging.error(f"Error occurred: {e}")
-
-    finally:
-        cleanup_resources(resource_apis, resource_ids)
 
 
 if __name__ == "__main__":
