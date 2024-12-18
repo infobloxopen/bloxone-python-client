@@ -721,7 +721,7 @@ class OnPremAnycastManagerApi:
 
         # process the path parameters
         if id is not None:
-            _path_params['id'] = self.api_client.path_param_value('id', id)
+            _path_params['id'] = str(id)
         # process the query parameters
         # process the header parameters
         # process the form parameters
