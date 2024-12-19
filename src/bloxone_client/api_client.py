@@ -685,6 +685,9 @@ class ApiClient:
             If value_type is "resource_id", the value in the form of "app/type/id" or "type/id", the returned value will just have "id".
         :return: The string representation of the path parameter.
         """
+        if value_type == 'integer_id':
+            return value
+
         if (key == 'id' and value_type is None) or value_type == 'resource_id':
             # Extract the last part of the resource id
             # e.g. "app/type/id" or "type/id" -> "id"
