@@ -683,8 +683,12 @@ class ApiClient:
         :param value: The value of the path parameter to be converted to string.
         :param value_type: The type of the path parameter.
             If value_type is "resource_id", the value in the form of "app/type/id" or "type/id", the returned value will just have "id".
+            If value type is "integer_id" ,the value in the form of an integer, the value will be returned as is.
         :return: The string representation of the path parameter.
         """
+        if value_type == 'integer_id':
+            return value
+
         if (key == 'id' and value_type is None) or value_type == 'resource_id':
             # Extract the last part of the resource id
             # e.g. "app/type/id" or "type/id" -> "id"
