@@ -6,7 +6,7 @@ An __Address__ object (_ipam/address_) represents any single IP address within a
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** | The address in form \&quot;a.b.c.d\&quot;. | 
+**address** | **str** | The address in form \&quot;a.b.c.d\&quot;. | [optional] 
 **comment** | **str** | The description for the address object. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
 **compartment_id** | **str** | The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty. | [optional] [readonly] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
