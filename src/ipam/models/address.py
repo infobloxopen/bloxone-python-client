@@ -30,9 +30,7 @@ class Address(BaseModel):
     An __Address__ object (_ipam/address_) represents any single IP address within a given IP space.
     """ # noqa: E501
     address: Optional[StrictStr] = Field(
-        default=None,
-        description="The address in form \"a.b.c.d\"."
-    )
+        default=None, description="The address in form \"a.b.c.d\".")
     comment: Optional[StrictStr] = Field(
         default=None,
         description=
