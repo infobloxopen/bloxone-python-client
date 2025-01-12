@@ -2290,7 +2290,7 @@ class HostsApi:
                                         _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "UpdateHostResponse",
+            '200': "UpdateHostResponse",
         }
         response_data = self.api_client.call_api(
             *_param, _request_timeout=_request_timeout)
@@ -2358,7 +2358,7 @@ class HostsApi:
                                         _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "UpdateHostResponse",
+            '200': "UpdateHostResponse",
         }
         response_data = self.api_client.call_api(
             *_param, _request_timeout=_request_timeout)
@@ -2426,7 +2426,7 @@ class HostsApi:
                                         _host_index=_host_index)
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "UpdateHostResponse",
+            '200': "UpdateHostResponse",
         }
         response_data = self.api_client.call_api(
             *_param, _request_timeout=_request_timeout)
