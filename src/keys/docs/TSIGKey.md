@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **name** | **str** | The TSIG key name in the absolute domain name format. | 
 **protocol_name** | **str** | The TSIG key name supplied during a create/update operation that is converted to canonical form in punycode. | [optional] [readonly] 
-**secret** | **str** | The TSIG key secret as a Base64 encoded string. | 
+**secret** | **str** | The TSIG key secret as a Base64 encoded string. | [optional] 
 **tags** | **object** | The tags for the TSIG key in JSON format. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 
 
