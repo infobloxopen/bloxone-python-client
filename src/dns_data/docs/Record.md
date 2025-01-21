@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **disabled** | **bool** | Indicates if the DNS resource record is disabled. A disabled object is effectively non-existent when generating configuration.  Defaults to _false_. | [optional] 
 **dns_absolute_name_spec** | **str** | The DNS protocol textual representation of _absolute_name_spec_. | [optional] [readonly] 
 **dns_absolute_zone_name** | **str** | The DNS protocol textual representation of the absolute domain name of the zone where this record belongs. | [optional] [readonly] 
-**dns_name_in_zone** | **str** | The DNS protocol textual representation of the relative owner name for the DNS zone. | [optional] [readonly] 
+**dns_name_in_zone** | **str** | The DNS protocol textual representation of the relative owner name for the DNS zone. | [optional] [readonly] [default to '']
 **dns_rdata** | **str** | The DNS protocol textual representation of the DNS resource record data. | [optional] [readonly] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **inheritance_sources** | [**RecordInheritance**](RecordInheritance.md) | The inheritance configuration. | [optional] 

@@ -62,7 +62,7 @@ class Record(BaseModel):
         "The DNS protocol textual representation of the absolute domain name of the zone where this record belongs."
     )
     dns_name_in_zone: Optional[StrictStr] = Field(
-        default=None,
+        default='',
         description=
         "The DNS protocol textual representation of the relative owner name for the DNS zone."
     )
@@ -245,7 +245,8 @@ class Record(BaseModel):
             "dns_absolute_zone_name":
             obj.get("dns_absolute_zone_name"),
             "dns_name_in_zone":
-            obj.get("dns_name_in_zone"),
+            obj.get("dns_name_in_zone")
+            if obj.get("dns_name_in_zone") is not None else '',
             "dns_rdata":
             obj.get("dns_rdata"),
             "id":
