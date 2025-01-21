@@ -70,7 +70,7 @@ class Host(BaseModel):
         default=None, description="Host FQDN in punycode.")
     provider_id: Optional[StrictStr] = Field(
         default=None, description="External provider identifier.")
-    server: Optional[StrictStr] = Field(default=None,
+    server: Optional[StrictStr] = Field(default='',
                                         description="The resource identifier.")
     site_id: Optional[StrictStr] = Field(default=None,
                                          description="Host site ID.")
@@ -223,7 +223,7 @@ class Host(BaseModel):
             "provider_id":
             obj.get("provider_id"),
             "server":
-            obj.get("server"),
+            obj.get("server") if obj.get("server") is not None else '',
             "site_id":
             obj.get("site_id"),
             "tags":

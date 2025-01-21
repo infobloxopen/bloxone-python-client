@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ophid** | **str** | On-Prem Host ID. | [optional] [readonly] 
 **protocol_absolute_name** | **str** | Host FQDN in punycode. | [optional] [readonly] 
 **provider_id** | **str** | External provider identifier. | [optional] [readonly] 
-**server** | **str** | The resource identifier. | [optional] 
+**server** | **str** | The resource identifier. | [optional] [default to '']
 **site_id** | **str** | Host site ID. | [optional] [readonly] 
 **tags** | **object** | Host tagging specifics. | [optional] 
 **type** | **str** | Defines the type of host. Allowed values:  * _bloxone_ddi_: host type is BloxOne DDI,  * _microsoft_azure_: host type is Microsoft Azure,  * _amazon_web_service_: host type is Amazon Web Services,  * _microsoft_active_directory_: host type is Microsoft Active Directory,  * _google_cloud_platform_: host type is Google Cloud Platform. | [optional] [readonly] 
