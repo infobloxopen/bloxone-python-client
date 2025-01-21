@@ -62,7 +62,7 @@ class Record(BaseModel):
         "The DNS protocol textual representation of the absolute domain name of the zone where this record belongs."
     )
     dns_name_in_zone: Optional[StrictStr] = Field(
-        default='',
+        default=None,
         description=
         "The DNS protocol textual representation of the relative owner name for the DNS zone."
     )
@@ -78,7 +78,7 @@ class Record(BaseModel):
     ipam_host: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
     name_in_zone: Optional[StrictStr] = Field(
-        default=None,
+        default='',
         description=
         "The relative owner name to the zone origin. Must be specified for creating the DNS resource record and is read only for other operations."
     )
@@ -245,8 +245,7 @@ class Record(BaseModel):
             "dns_absolute_zone_name":
             obj.get("dns_absolute_zone_name"),
             "dns_name_in_zone":
-            obj.get("dns_name_in_zone")
-            if obj.get("dns_name_in_zone") is not None else '',
+            obj.get("dns_name_in_zone"),
             "dns_rdata":
             obj.get("dns_rdata"),
             "id":
@@ -257,7 +256,8 @@ class Record(BaseModel):
             "ipam_host":
             obj.get("ipam_host"),
             "name_in_zone":
-            obj.get("name_in_zone"),
+            obj.get("name_in_zone")
+            if obj.get("name_in_zone") is not None else '',
             "options":
             obj.get("options"),
             "provider_metadata":
