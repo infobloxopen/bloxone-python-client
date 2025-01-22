@@ -70,8 +70,7 @@ class Host(BaseModel):
         default=None, description="Host FQDN in punycode.")
     provider_id: Optional[StrictStr] = Field(
         default=None, description="External provider identifier.")
-    server: Optional[StrictStr] = Field(default='',
-                                        description="The resource identifier.")
+    server: Optional[StrictStr] = Field(description="The resource identifier.")
     site_id: Optional[StrictStr] = Field(default=None,
                                          description="Host site ID.")
     tags: Optional[Dict[str,
