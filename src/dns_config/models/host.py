@@ -221,6 +221,8 @@ class Host(BaseModel):
             obj.get("protocol_absolute_name"),
             "provider_id":
             obj.get("provider_id"),
+            "server":
+            obj.get("server"),
             "site_id":
             obj.get("site_id"),
             "tags":

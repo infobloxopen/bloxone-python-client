@@ -253,6 +253,8 @@ class Record(BaseModel):
             if obj.get("inheritance_sources") is not None else None,
             "ipam_host":
             obj.get("ipam_host"),
+            "name_in_zone":
+            obj.get("name_in_zone"),
             "options":
             obj.get("options"),
             "provider_metadata":
