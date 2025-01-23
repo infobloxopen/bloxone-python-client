@@ -16,7 +16,7 @@ class TestApiClient(unittest.TestCase):
         self.assertEqual(self.api_client.configuration.csp_url,
                          'https://csp.infoblox.com')
         self.assertEqual(self.api_client.configuration.client_name,
-                         'bloxone-python-client')
+                         'universal-ddi-python-client')
 
     def test_path_param_value_with_resource_id_type(self):
         result = self.api_client.path_param_value('id', 'app/type/id',

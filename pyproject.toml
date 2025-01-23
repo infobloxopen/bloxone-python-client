@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "bloxone_python_client"
+name = "universal_ddi_python_client"
 version = "0.1.0"
-description = "Python Client for Infoblox BloxOne API"
+description = "Python Client for Infoblox Universal DDI APIs"
 authors = ["Infoblox"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/infobloxopen/bloxone-python-client"
-keywords = ["Infoblox", "BloxOne", "OpenAPI-Generator"]
+repository = "https://github.com/infobloxopen/universal-ddi-python-client"
+keywords = ["Infoblox", "Universal", "DDI", "OpenAPI-Generator"]
 
 [tool.poetry.dependencies]
 python = "^3.7"

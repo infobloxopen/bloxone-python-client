@@ -8,7 +8,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "bloxone-python-client"
+NAME = "universal-ddi-python-client"
 VERSION = "0.1.0"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
@@ -23,10 +23,10 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="Python client for the BloxOne API",
+    description="Python client for the Universal DDI APIs",
     author="Infoblox",
-    url="https://github.com/infobloxopen/bloxone-python-client",
-    keywords=["Infoblox", "BloxOne", "OpenAPI-Generator"],
+    url="https://github.com/infobloxopen/universal-ddi-python-client",
+    keywords = ["Infoblox", "Universal", "DDI", "OpenAPI-Generator"],
     install_requires=REQUIRES,
     packages=find_packages('src', exclude=["test", "tests"]),
     package_dir={'': 'src'},

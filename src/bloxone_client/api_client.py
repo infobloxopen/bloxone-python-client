@@ -68,7 +68,7 @@ class ApiClient:
         self.rest_client = RESTClientObject(configuration)
         self.default_headers = {}
         # Set default User-Agent.
-        self.user_agent = f"bloxone-{SDK_IDENTIFIER}/{VERSION}"
+        self.user_agent = f"universal-ddi-{SDK_IDENTIFIER}/{VERSION}"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

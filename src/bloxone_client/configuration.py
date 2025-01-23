@@ -28,7 +28,7 @@ class Configuration:
       Please refer to the following link for more information: https://docs.infoblox.com/space/BloxOneCloud/35430405/Configuring+User+API+Keys.
     :param client_name: The name of the client using the API.
       This can be used to identify the client in the logs.
-      If not provided, the client name will be set to `bloxone-python-client`.
+      If not provided, the client name will be set to `universal-ddi-python-client`.
     :param ssl_ca_cert: str - the path to a file of concatenated CA certificates
       in PEM format.
 
@@ -67,7 +67,7 @@ conf = ipam.Configuration(
             self.api_key = api_key
         """API Key
         """
-        self.client_name = "bloxone-python-client" if client_name is None else client_name
+        self.client_name = "universal-ddi-python-client" if client_name is None else client_name
         """Default Client name
         """
         self.logger = {}
