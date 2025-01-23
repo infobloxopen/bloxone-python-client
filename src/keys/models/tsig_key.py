@@ -48,7 +48,8 @@ class TSIGKey(BaseModel):
         description=
         "The TSIG key name supplied during a create/update operation that is converted to canonical form in punycode."
     )
-    secret: StrictStr = Field(
+    secret: Optional[StrictStr] = Field(
+        default=None,
         description="The TSIG key secret as a Base64 encoded string.")
     tags: Optional[Dict[str, Any]] = Field(
         default=None, description="The tags for the TSIG key in JSON format.")
