@@ -86,7 +86,7 @@ config = Configuration(
 )
 ```
 
-You can also set the URL using the environment variable `UNIVERSAL_DDI_CSP_URL`
+You can also set the URL using the environment variable `INFOBLOX_PORTAL_URL`
 
 ### Authorization
 
@@ -102,7 +102,7 @@ config = Configuration(
 )
 ```
 
-Alternatively, You can also set the API key using the environment variable `UNIVERSAL_DDI_API_KEY`
+Alternatively, You can also set the API key using the environment variable `INFOBLOX_PORTAL_KEY`
 
 Note: The API key is a secret and should be handled securely. Hardcoding the API key in your code is not recommended.
 

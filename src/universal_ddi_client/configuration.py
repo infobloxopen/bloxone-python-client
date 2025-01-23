@@ -19,10 +19,10 @@ class Configuration:
     """This class contains various settings of the API client.
 
     :param csp_url: URL for Infoblox Cloud Services Portal.
-      Can also be configured using the `UNIVERSAL_DDI_CSP_URL` environment variable.
+      Can also be configured using the `INFOBLOX_PORTAL_URL` environment variable.
       Default is `https://csp.infoblox.com`.
     :param api_key: API Key for accessing the Infoblox API.
-      Can also be configured by using the `UNIVERSAL_DDI_API_KEY` environment variable.
+      Can also be configured by using the `INFOBLOX_PORTAL_KEY` environment variable.
 
       You can configure an API key for your user account in the Infoblox Cloud Services Portal.
       Please refer to the following link for more information: https://docs.infoblox.com/space/BloxOneCloud/35430405/Configuring+User+API+Keys.
@@ -55,14 +55,14 @@ conf = ipam.Configuration(
         """Constructor
         """
 
-        self.csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL', "https://csp.infoblox.com") if csp_url is None else csp_url
+        self.csp_url = os.getenv('INFOBLOX_PORTAL_URL', "https://csp.infoblox.com") if csp_url is None else csp_url
         """Default CSP url
         """
         self.temp_folder_path = None
         """Temp file folder for downloading files
         """
         # Authentication Settings
-        self.api_key = os.getenv('UNIVERSAL_DDI_API_KEY', "")
+        self.api_key = os.getenv('INFOBLOX_PORTAL_KEY', "")
         if api_key:
             self.api_key = api_key
         """API Key

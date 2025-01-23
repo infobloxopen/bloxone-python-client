@@ -36,14 +36,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -112,14 +112,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -190,14 +190,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -267,14 +267,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -341,14 +341,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -418,14 +418,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -501,14 +501,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -579,14 +579,14 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("UNIVERSAL_DDI_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:

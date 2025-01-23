@@ -30,7 +30,7 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -105,7 +105,7 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -179,7 +179,7 @@ from universal_ddi_client.configuration import Configuration
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
