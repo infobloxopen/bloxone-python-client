@@ -77,7 +77,9 @@ class Record(BaseModel):
         default=None, description="The inheritance configuration.")
     ipam_host: Optional[StrictStr] = Field(
         default=None, description="The resource identifier.")
-    name_in_zone: Optional[StrictStr] = Field(description=
+    name_in_zone: Optional[StrictStr] = Field(
+        default=None,
+        description=
         "The relative owner name to the zone origin. Must be specified for creating the DNS resource record and is read only for other operations."
     )
     options: Optional[Dict[str, Any]] = Field(
