@@ -15,7 +15,7 @@ import unittest
 
 from upgrade_policy.api.upgrade_policy_v2_api import UpgradePolicyV2Api
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestUpgradePolicyV2Api(unittest.TestCase):

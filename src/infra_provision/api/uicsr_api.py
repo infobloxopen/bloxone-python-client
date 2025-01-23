@@ -25,9 +25,9 @@ from infra_provision.models.list_csrs_response import ListCSRsResponse
 from infra_provision.models.revoke_cert_request import RevokeCertRequest
 from infra_provision import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class UICSRApi:
@@ -1272,7 +1272,7 @@ class UICSRApi:
             StrictStr,
             Field(
                 description=
-                "On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
+                "On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
             )],
         body: RevokeCertRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1290,7 +1290,7 @@ class UICSRApi:
 
         The user can revoke the cert from the cloud (for example, if in case a host is compromised). Validation: - one of \"cert_serial\" or \"ophid\" should be provided - \"revoke_reason\" is optional
 
-        :param ophid: On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
+        :param ophid: On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
         :type ophid: str
         :param body: (required)
         :type body: RevokeCertRequest
@@ -1342,7 +1342,7 @@ class UICSRApi:
             StrictStr,
             Field(
                 description=
-                "On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
+                "On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
             )],
         body: RevokeCertRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1360,7 +1360,7 @@ class UICSRApi:
 
         The user can revoke the cert from the cloud (for example, if in case a host is compromised). Validation: - one of \"cert_serial\" or \"ophid\" should be provided - \"revoke_reason\" is optional
 
-        :param ophid: On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
+        :param ophid: On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
         :type ophid: str
         :param body: (required)
         :type body: RevokeCertRequest
@@ -1412,7 +1412,7 @@ class UICSRApi:
             StrictStr,
             Field(
                 description=
-                "On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
+                "On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
             )],
         body: RevokeCertRequest,
         _request_timeout: Union[None, Annotated[StrictFloat,
@@ -1430,7 +1430,7 @@ class UICSRApi:
 
         The user can revoke the cert from the cloud (for example, if in case a host is compromised). Validation: - one of \"cert_serial\" or \"ophid\" should be provided - \"revoke_reason\" is optional
 
-        :param ophid: On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
+        :param ophid: On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) . (required)
         :type ophid: str
         :param body: (required)
         :type body: RevokeCertRequest

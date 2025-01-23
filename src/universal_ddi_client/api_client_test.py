@@ -1,12 +1,12 @@
 import unittest
 
-import bloxone_client
+import universal_ddi_client
 
 
 class TestApiClient(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.api_client = bloxone_client.ApiClient()
+        self.api_client = universal_ddi_client.ApiClient()
 
     def tearDown(self) -> None:
         pass

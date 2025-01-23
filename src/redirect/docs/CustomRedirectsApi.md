@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create Custom Redirect.
 
-Use this method to create a Custom Redirect object.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - name - data 
+Use this method to create a Custom Redirect object.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - name - data 
 
 ### Example
 
@@ -27,13 +27,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -90,7 +90,7 @@ No authorization required
 
 Delete Custom Redirect.
 
-Use this method to delete Custom Redirect objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - ids 
+Use this method to delete Custom Redirect objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - ids 
 
 ### Example
 
@@ -100,13 +100,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -160,7 +160,7 @@ No authorization required
 
 Delete Custom Redirect By Id.
 
-Use this method to delete Custom Redirect object.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
+Use this method to delete Custom Redirect object.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
 
 ### Example
 
@@ -170,13 +170,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -230,7 +230,7 @@ No authorization required
 
 List Custom Redirects.
 
-Use this method to retrieve information on all Custom Redirect objects for the account.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
+Use this method to retrieve information on all Custom Redirect objects for the account.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
 
 ### Example
 
@@ -240,13 +240,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -301,7 +301,7 @@ No authorization required
 
 Read Custom Redirect.
 
-Use this method to retrieve information on the specified Custom Redirect object.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
+Use this method to retrieve information on the specified Custom Redirect object.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions. 
 
 ### Example
 
@@ -311,13 +311,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -375,7 +375,7 @@ No authorization required
 
 Update Custom Redirect.
 
-Use this method to update a specified Custom Redirect object.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - name - data 
+Use this method to update a specified Custom Redirect object.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.  Required: - name - data 
 
 ### Example
 
@@ -385,13 +385,13 @@ from pprint import pprint
 
 import redirect
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 

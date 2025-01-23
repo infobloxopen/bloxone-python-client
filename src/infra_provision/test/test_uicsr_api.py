@@ -15,7 +15,7 @@ import unittest
 
 from infra_provision.api.uicsr_api import UICSRApi
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestUICSRApi(unittest.TestCase):

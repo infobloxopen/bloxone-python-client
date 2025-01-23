@@ -15,7 +15,7 @@ import unittest
 
 from infra_provision.api.ui_join_token_api import UIJoinTokenApi
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestUIJoinTokenApi(unittest.TestCase):

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Create Named List.
 
-Use this method to create a Named List object.  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. Also use of the field 'items' is discouraged and instead use of new field 'item_described' is suggested as it is possible to add the description/comments to each item in the custom list using this field. In any case, note that use of both the fields 'items' and 'items_described' is not supported and when one of these field is used they must have some value i.e, it cannot be empty.  Required: - name - type - items or items_described 
+Use this method to create a Named List object.  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. Also use of the field 'items' is discouraged and instead use of new field 'item_described' is suggested as it is possible to add the description/comments to each item in the custom list using this field. In any case, note that use of both the fields 'items' and 'items_described' is not supported and when one of these field is used they must have some value i.e, it cannot be empty.  Required: - name - type - items or items_described 
 
 ### Example
 
@@ -30,13 +30,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -93,7 +93,7 @@ No authorization required
 
 Delete Named Lists.
 
-Use this method to delete Named List objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted.  Required: - ids 
+Use this method to delete Named List objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted.  Required: - ids 
 
 ### Example
 
@@ -103,13 +103,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -164,7 +164,7 @@ No authorization required
 
 Delete Named Lists.
 
-Use this method to delete Named List object by given Named List object identifier.  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. 
+Use this method to delete Named List object by given Named List object identifier.  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. 
 
 ### Example
 
@@ -174,13 +174,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -235,7 +235,7 @@ No authorization required
 
 List Named Lists.
 
-Use this method to retrieve information on all Named List objects for the account. Note that list items are not returned for this operation.  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted.   
+Use this method to retrieve information on all Named List objects for the account. Note that list items are not returned for this operation.  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted.   
 
 ### Example
 
@@ -245,13 +245,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -321,13 +321,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -394,13 +394,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -457,7 +457,7 @@ No authorization required
 
 Read Named List.
 
-Use this method to retrieve information on the specified Named List object. Note that returned data includes list items.  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. 
+Use this method to retrieve information on the specified Named List object. Note that returned data includes list items.  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. 
 
 ### Example
 
@@ -467,13 +467,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -535,7 +535,7 @@ No authorization required
 
 Update Named List.
 
-Use this method to update the specified Named List object. Note that list type cannot be updated.  The Named List object represents several types of lists allowed for BloxOne Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. Also use of the field 'items' is discouraged and instead use of new field 'item_described' is suggested as it is possible to add the description/comments to each item in the custom list using this field. In any case, note that use of both the fields 'items' and 'items_described' is not supported and when one of these field is used they must have some value i.e, it cannot be empty.  Required: - name - items or items_described 
+Use this method to update the specified Named List object. Note that list type cannot be updated.  The Named List object represents several types of lists allowed for Infoblox Cloud such as predefined threat intelligence feeds that your subscription offers (Threat Insight, Fast Flux, DGA, DNSM). In addition to the predefined threat intelligence feeds that your subscription offers, you can create custom lists (containing domains and IP addresses) to define whitelists and blacklists for additional protection. You can use a custom list to complement existing feeds or override the Block, Allow, Log, or Redirect action that is currently defined for an existing feed. Note that lists representing predefined TI feeds cannot be created, updated and deleted. Also use of the field 'items' is discouraged and instead use of new field 'item_described' is suggested as it is possible to add the description/comments to each item in the custom list using this field. In any case, note that use of both the fields 'items' and 'items_described' is not supported and when one of these field is used they must have some value i.e, it cannot be empty.  Required: - name - items or items_described 
 
 ### Example
 
@@ -545,13 +545,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
@@ -621,13 +621,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **created_by** | **str** | The creator of the Host (internal use only). | [optional] [readonly] 
 **description** | **str** | The description of the Host (optional). | [optional] 
 **display_name** | **str** | The name of the Host (unique). | 
-**host_subtype** | **str** | The sub-type of a specific Host type.  Example: For Host type BloxOne Appliance, sub-type could be \&quot;B105\&quot; or \&quot;VEP1425\&quot; | [optional] [readonly] 
-**host_type** | **str** | The type of Host.  Should be one of: 1. NIOS , 2. NIOS HA, 3. BloxOne VM , 4. BloxOne Appliance, 5. BloxOne Container, 6. CNIOS | [optional] [readonly] 
+**host_subtype** | **str** | The sub-type of a specific Host type.  Example: For Host type NIOS-X Appliance, sub-type could be \&quot;B105\&quot; or \&quot;VEP1425\&quot; | [optional] [readonly] 
+**host_type** | **str** | The type of Host.  Should be one of: 1. NIOS , 2. NIOS HA, 3. NIOS-X VM , 4. NIOS-X Appliance, 5. NIOS-X Container, 6. CNIOS | [optional] [readonly] 
 **host_version** | **str** | The version of the Host platform services. | [optional] [readonly] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 
 **ip_address** | **str** | The IP address of the Host. | [optional] [readonly] 

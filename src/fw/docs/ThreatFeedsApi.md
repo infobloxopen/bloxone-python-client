@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List Threat Feeds.
 
-Use this method to retrieve information on all Threat Feed objects for the account.  BloxOne Cloud provides predefined threat intelligence feeds based on your subscription. The Plus subscription offers a few more feeds than the Standard subscription. The Advanced subscription offers a few more feeds than the Plus subscription. A threat feed subscription for RPZ updates offers protection against malicious hostnames.  
+Use this method to retrieve information on all Threat Feed objects for the account.  Infoblox Cloud provides predefined threat intelligence feeds based on your subscription. The Plus subscription offers a few more feeds than the Standard subscription. The Advanced subscription offers a few more feeds than the Plus subscription. A threat feed subscription for RPZ updates offers protection against malicious hostnames.  
 
 ### Example
 
@@ -22,13 +22,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('UNIVERSAL_DDI_CSP_URL'),
 )
 
 
