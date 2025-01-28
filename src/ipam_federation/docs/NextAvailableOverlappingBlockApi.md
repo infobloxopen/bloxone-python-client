@@ -23,34 +23,30 @@ from pprint import pprint
 
 import ipam_federation
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam_federation.NextAvailableOverlappingBlockApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    cidr = 56 # int | The CIDR of the federated block. This is required, if _address_ does not specify it in its input. (optional)
-    count = 56 # int | The count of __Block__ required. If not provided, it will default to 1. (optional)
-    name = 'name_example' # str | The name to be provided. (optional)
-    comment = 'comment_example' # str | The description for the _federation/federated_block_. May contain 0 to 1024 characters. Can include UTF-8. (optional)
 
     try:
         # List the next available overlapping block.
-        api_response = api_instance.list_next_available_overlapping_blocks(id, cidr=cidr, count=count, name=name, comment=comment)
+        api_response = api_instance.list_next_available_overlapping_blocks(id)
         pprint("The response of NextAvailableOverlappingBlockApi->list_next_available_overlapping_blocks:\n")
         pprint(api_response)
     except Exception as e:

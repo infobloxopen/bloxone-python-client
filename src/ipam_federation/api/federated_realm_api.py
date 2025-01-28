@@ -26,9 +26,9 @@ from ipam_federation.models.read_federated_realm_response import ReadFederatedRe
 from ipam_federation.models.update_federated_realm_response import UpdateFederatedRealmResponse
 from ipam_federation import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class FederatedRealmApi:

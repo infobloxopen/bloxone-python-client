@@ -26,9 +26,9 @@ from ipam_federation.models.read_overlapping_block_response import ReadOverlappi
 from ipam_federation.models.update_overlapping_block_response import UpdateOverlappingBlockResponse
 from ipam_federation import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class OverlappingBlockApi:

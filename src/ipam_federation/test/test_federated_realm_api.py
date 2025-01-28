@@ -15,7 +15,7 @@ import unittest
 
 from ipam_federation.api.federated_realm_api import FederatedRealmApi
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestFederatedRealmApi(unittest.TestCase):

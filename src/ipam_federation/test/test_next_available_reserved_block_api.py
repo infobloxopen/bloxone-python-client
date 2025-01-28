@@ -15,7 +15,7 @@ import unittest
 
 from ipam_federation.api.next_available_reserved_block_api import NextAvailableReservedBlockApi
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestNextAvailableReservedBlockApi(unittest.TestCase):

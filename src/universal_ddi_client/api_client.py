@@ -13,10 +13,10 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from bloxone_client.configuration import Configuration
-from bloxone_client.api_response import ApiResponse, T as ApiResponseT
-from bloxone_client.rest import RESTClientObject, RESTResponse
-from bloxone_client.exceptions import (ApiValueError, ApiException,
+from universal_ddi_client.configuration import Configuration
+from universal_ddi_client.api_response import ApiResponse, T as ApiResponseT
+from universal_ddi_client.rest import RESTClientObject, RESTResponse
+from universal_ddi_client.exceptions import (ApiValueError, ApiException,
                                        BadRequestException,
                                        UnauthorizedException,
                                        ForbiddenException, NotFoundException,
@@ -68,7 +68,7 @@ class ApiClient:
         self.rest_client = RESTClientObject(configuration)
         self.default_headers = {}
         # Set default User-Agent.
-        self.user_agent = f"bloxone-{SDK_IDENTIFIER}/{VERSION}"
+        self.user_agent = f"universal-ddi-{SDK_IDENTIFIER}/{VERSION}"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

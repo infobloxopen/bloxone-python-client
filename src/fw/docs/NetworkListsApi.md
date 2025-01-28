@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create Network List.
 
-Use this method to create a Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  Required: - name - items 
+Use this method to create a Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  Required: - name - items 
 
 ### Example
 
@@ -27,13 +27,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -79,7 +79,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | POST operation response |  -  |
-**400** |  - &#39;name&#39; length cannot exceed 256 characters limit - &#39;name&#39; value cannot be equal to &#39;All BloxOne Endpoints (Default)&#39;, &#39;All Networks (Default)&#39;, &#39;All DNS Forwarder Proxies (Default)&#39; - &#39;description&#39; length cannot exceed 256 characters limit - &#39;items&#39; value must not be empty - &#39;items&#39; value must contain valid CIDRs from range [24, 32] - CIDRs in &#39;items&#39; cannot overlap with each other and with existing items for all accounts |  -  |
+**400** |  - &#39;name&#39; length cannot exceed 256 characters limit - &#39;name&#39; value cannot be equal to &#39;All Infoblox Endpoints (Default)&#39;, &#39;All Networks (Default)&#39;, &#39;All DNS Forwarder Proxies (Default)&#39; - &#39;description&#39; length cannot exceed 256 characters limit - &#39;items&#39; value must not be empty - &#39;items&#39; value must contain valid CIDRs from range [24, 32] - CIDRs in &#39;items&#39; cannot overlap with each other and with existing items for all accounts |  -  |
 **409** |  - &#39;name&#39; value must be unique among network lists belonging to the same account |  -  |
 **500** |  - Internal server error occurred |  -  |
 
@@ -90,7 +90,7 @@ No authorization required
 
 Delete Network Lists.
 
-Use this method to delete the Network List objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of  or IPv6 addresses or blocks.  Required: - ids 
+Use this method to delete the Network List objects. Deletion of multiple lists is an all-or-nothing operation (if any of the specified lists can not be deleted then none of the specified lists will be deleted).  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of  or IPv6 addresses or blocks.  Required: - ids 
 
 ### Example
 
@@ -100,13 +100,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -161,7 +161,7 @@ No authorization required
 
 Delete Network Lists.
 
-Use this method to delete the Network List object by the specified Network List object id.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of  or IPv6 addresses or blocks.  
+Use this method to delete the Network List object by the specified Network List object id.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of  or IPv6 addresses or blocks.  
 
 ### Example
 
@@ -171,13 +171,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -232,7 +232,7 @@ No authorization required
 
 List Network Lists.
 
-Use this method to retrieve information on all Network List objects for the account.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  
+Use this method to retrieve information on all Network List objects for the account.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  
 
 ### Example
 
@@ -242,13 +242,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -306,7 +306,7 @@ No authorization required
 
 Read Network List.
 
-Use this method to retrieve information on the specified Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks. 
+Use this method to retrieve information on the specified Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks. 
 
 ### Example
 
@@ -316,13 +316,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -380,7 +380,7 @@ No authorization required
 
 Update Network List.
 
-Use this method to update a specified Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring BloxOne Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  Required: - name - items 
+Use this method to update a specified Network List object.  Before you can apply security policies, you must first define the networks that you want to protect from malicious attacks. The first step in configuring Infoblox Cloud is to set up DNS Firewall by defining your remote networks. You identify these external networks by their IP addresses. A network can contain a group of IPv4 or IPv6 addresses or blocks.  Required: - name - items 
 
 ### Example
 
@@ -390,13 +390,13 @@ from pprint import pprint
 
 import fw
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
@@ -444,7 +444,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | PUT operation response |  -  |
-**400** |  - &#39;name&#39; length cannot exceed 256 characters limit - &#39;name&#39; value cannot be equal to &#39;All BloxOne Endpoints (Default)&#39;, &#39;All Networks (Default)&#39;, &#39;All DNS Forwarder Proxies (Default)&#39; - &#39;description&#39; length cannot exceed 256 characters limit - &#39;items&#39; value must not be empty - &#39;items&#39; value must contain valid CIDRs from range [24, 32] - CIDRs in &#39;items&#39; cannot overlap with each other and with existing items for all accounts |  -  |
+**400** |  - &#39;name&#39; length cannot exceed 256 characters limit - &#39;name&#39; value cannot be equal to &#39;All Infoblox Endpoints (Default)&#39;, &#39;All Networks (Default)&#39;, &#39;All DNS Forwarder Proxies (Default)&#39; - &#39;description&#39; length cannot exceed 256 characters limit - &#39;items&#39; value must not be empty - &#39;items&#39; value must contain valid CIDRs from range [24, 32] - CIDRs in &#39;items&#39; cannot overlap with each other and with existing items for all accounts |  -  |
 **404** |  - &#39;id&#39; value must contain existing network list identifier |  -  |
 **409** |  - &#39;name&#39; value must be unique among network lists belonging to the same account |  -  |
 **500** |  - Internal server error occurred |  -  |

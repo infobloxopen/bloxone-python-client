@@ -32,7 +32,7 @@ class RevokeCertRequest(BaseModel):
     ophid: Optional[StrictStr] = Field(
         default=None,
         description=
-        "On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
+        "On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) ."
     )
     revoke_reason: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}

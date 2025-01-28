@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** | The timestamp of creation of Host. | [optional] 
 **description** | **str** | The description of the Host. | [optional] 
 **display_name** | **str** | The name of the Host. | [optional] 
-**host_subtype** | **str** | The sub-type of a specific Host type.  Example: For Host type BloxOne Appliance, sub-type could be \&quot;B105\&quot; or \&quot;VEP1425\&quot; | [optional] 
+**host_subtype** | **str** | The sub-type of a specific Host type.  Example: For Host type NIOS-X Appliance, sub-type could be \&quot;B105\&quot; or \&quot;VEP1425\&quot; | [optional] 
 **host_type** | **str** |  | [optional] 
 **host_version** | **str** | The version of the Host platform services. | [optional] 
 **id** | **str** | The resource identifier. | [optional] [readonly] 

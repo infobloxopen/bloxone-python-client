@@ -25,20 +25,20 @@ from pprint import pprint
 
 import infra_provision
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -101,20 +101,20 @@ from pprint import pprint
 
 import infra_provision
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -177,20 +177,20 @@ from pprint import pprint
 
 import infra_provision
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -258,20 +258,20 @@ from pprint import pprint
 
 import infra_provision
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
@@ -336,26 +336,26 @@ from pprint import pprint
 
 import infra_provision
 
-from bloxone_client.api_client import ApiClient
-from bloxone_client.configuration import Configuration
+from universal_ddi_client.api_client import ApiClient
+from universal_ddi_client.configuration import Configuration
 
 # Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('BLOXONE_CSP_URL'),
+    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("BLOXONE_API_KEY")
+configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
 with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
-    ophid = 'ophid_example' # str | On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) .
+    ophid = 'ophid_example' # str | On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) .
     body = infra_provision.RevokeCertRequest() # RevokeCertRequest | 
 
     try:
@@ -374,7 +374,7 @@ with ApiClient(config) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ophid** | **str**| On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage &gt; Infrastructure &gt; Hosts &gt; Select the onprem &gt; click on 3 dots on top right side &gt; General Information &gt; Ophid) . | 
+ **ophid** | **str**| On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage &gt; Infrastructure &gt; Hosts &gt; Select the onprem &gt; click on 3 dots on top right side &gt; General Information &gt; Ophid) . | 
  **body** | [**RevokeCertRequest**](RevokeCertRequest.md)|  | 
 
 ### Return type

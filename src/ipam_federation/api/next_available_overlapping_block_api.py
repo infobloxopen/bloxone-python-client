@@ -22,9 +22,9 @@ from typing_extensions import Annotated
 from ipam_federation.models.list_next_available_overlapping_block_response import ListNextAvailableOverlappingBlockResponse
 from ipam_federation import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class NextAvailableOverlappingBlockApi:

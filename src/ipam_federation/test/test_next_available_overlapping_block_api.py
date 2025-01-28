@@ -15,7 +15,7 @@ import unittest
 
 from ipam_federation.api.next_available_overlapping_block_api import NextAvailableOverlappingBlockApi
 
-from bloxone_client.api_client import ApiClient
+from universal_ddi_client.api_client import ApiClient
 
 
 class TestNextAvailableOverlappingBlockApi(unittest.TestCase):

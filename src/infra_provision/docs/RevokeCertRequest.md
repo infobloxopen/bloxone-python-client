@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert_serial** | **str** |  | [optional] 
-**ophid** | **str** | On-prem host ID which can be obtained either from on-prem or BloxOne UI portal(Manage &gt; Infrastructure &gt; Hosts &gt; Select the onprem &gt; click on 3 dots on top right side &gt; General Information &gt; Ophid) . | [optional] 
+**ophid** | **str** | On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage &gt; Infrastructure &gt; Hosts &gt; Select the onprem &gt; click on 3 dots on top right side &gt; General Information &gt; Ophid) . | [optional] 
 **revoke_reason** | **str** |  | [optional] 
 
 ## Example

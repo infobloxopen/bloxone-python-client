@@ -1,6 +1,6 @@
 # CustomRedirect
 
-The Custom Redirect object.  You can configure BloxOne Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. BloxOne Cloud allows you to apply multiple redirect actions and integrate BloxOne Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.
+The Custom Redirect object.  You can configure Infoblox Cloud to redirect traffic to the Infoblox redirect page or a custom redirect destination. Infoblox Cloud allows you to apply multiple redirect actions and integrate Infoblox Cloud with third-party proxies, secure web gateways, blackholes, honeypots and sinkhole solutions.
 
 ## Properties
 

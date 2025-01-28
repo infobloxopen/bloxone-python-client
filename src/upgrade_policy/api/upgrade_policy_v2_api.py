@@ -32,9 +32,9 @@ from upgrade_policy.models.update_maintenance_window_request import UpdateMainte
 from upgrade_policy.models.update_maintenance_window_response import UpdateMaintenanceWindowResponse
 from upgrade_policy import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class UpgradePolicyV2Api:

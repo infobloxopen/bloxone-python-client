@@ -1,6 +1,6 @@
 # ApplicationFilter
 
-The Application Filter object.  Application filters are content application rules that BloxOne Cloud uses to detect and filter specific internet content.
+The Application Filter object.  Application filters are content application rules that Infoblox Cloud uses to detect and filter specific internet content.
 
 ## Properties
 

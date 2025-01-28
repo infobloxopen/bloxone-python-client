@@ -27,9 +27,9 @@ from infra_provision.models.read_join_token_response import ReadJoinTokenRespons
 from infra_provision.models.update_join_token_response import UpdateJoinTokenResponse
 from infra_provision import models
 
-from bloxone_client.api_client import ApiClient, RequestSerialized
-from bloxone_client.api_response import ApiResponse
-from bloxone_client.rest import RESTResponseType
+from universal_ddi_client.api_client import ApiClient, RequestSerialized
+from universal_ddi_client.api_response import ApiResponse
+from universal_ddi_client.rest import RESTResponseType
 
 
 class UIJoinTokenApi:
