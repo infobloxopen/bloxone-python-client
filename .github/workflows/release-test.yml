@@ -53,5 +53,5 @@ jobs:
       - name: Publish distribution 📦 to TestPyPI
         uses: pypa/gh-action-pypi-publish@v1.10.1
         with:
-          repository-url: https://test.pypi.org/p/bloxone-python-client/
+          repository-url: https://test.pypi.org/p/universal-python-client/
           password: ${{ secrets.PYPI_API_TOKEN }}
