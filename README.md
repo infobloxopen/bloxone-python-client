@@ -8,7 +8,7 @@ The following Infoblox APIs are supported:
 - [Infrastructure Management](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/infra_mgmt/README.md)
 - [Infrastructure Provision (HostActivation API)](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/infra_provision/README.md)
 - [Anycast Configuration Manager](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/anycast/README.md)
-- [Upgrade Policy](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/upgradePolicy/README.md)
+- [Upgrade Policy](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/upgrade_policy/README.md)
 
 ## Infoblox Threat Defense
 - [Threat Defense Cloud (FW API)](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/fw/README.md)
