@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.access_codes_api import AccessCodesApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestAccessCodesApi(unittest.TestCase):
     """AccessCodesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AccessCodesApi()
+        api_instance = ApiClient()
+        self.api = AccessCodesApi(api_instance)
 
     def tearDown(self) -> None:
         pass

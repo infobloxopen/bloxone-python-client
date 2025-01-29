@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **kerberos_tkey_lifetime** | **int** | Lifetime (in seconds) of GSS-TSIG keys in the TKEY protocol.  Defaults to 160 seconds. | [optional] 
 **kerberos_tkey_protocol** | **str** | Determines which protocol is used to establish the security context with the external DNS servers, TCP or UDP.  Defaults to _tcp_. | [optional] 
 **name** | **str** | The name of the DHCP Config Profile. Must contain 1 to 256 characters. Can include UTF-8. | 
+**profile_type** | **str** | The type of server object.  Defaults to _server_.  Valid values are: * _server_: The server profile type. * _subnet_: The subnet profile type. | [optional] 
 **server_principal** | **str** | The Kerberos principal name of the external DNS server that will receive updates.  Defaults to empty. | [optional] 
 **tags** | **object** | The tags for the DHCP Config Profile in JSON format. | [optional] 
 **updated_at** | **datetime** | Time when the object has been updated. Equals to _created_at_ if not updated after creation. | [optional] [readonly] 

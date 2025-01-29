@@ -7,6 +7,7 @@ A __Range__ object (_ipam/range_) represents a set of contiguous IP addresses in
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | The description for the range. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
+**compartment_id** | **str** | The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty. | [optional] [readonly] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
 **dhcp_host** | **str** | The resource identifier. | [optional] 
 **dhcp_options** | [**List[OptionItem]**](OptionItem.md) | The list of DHCP options. May be either a specific option or a group of options. | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **parent** | **str** | The resource identifier. | [optional] 
 **protocol** | **str** | The type of protocol (_ip4_ or _ip6_). | [optional] [readonly] 
 **space** | **str** | The resource identifier. | [optional] 
+**space_name** | **str** | The name of the IP Space the range belongs to. | [optional] [readonly] 
 **start** | **str** | The start IP address of the range. | 
 **tags** | **object** | The tags for the range in JSON format. | [optional] 
 **threshold** | [**UtilizationThreshold**](UtilizationThreshold.md) | The utilization threshold settings for the range. | [optional] 

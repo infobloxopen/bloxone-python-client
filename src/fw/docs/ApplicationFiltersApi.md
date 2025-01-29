@@ -21,23 +21,24 @@ Use this method to create a Application Filter object.  Required: - name - crite
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.application_filter import ApplicationFilter
-from fw.models.application_filter_create_response import ApplicationFilterCreateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
     body = fw.ApplicationFilter() # ApplicationFilter | The Application Filter object.
@@ -45,10 +46,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Create Application Filter.
         api_response = api_instance.create_application_filter(body)
-        print("The response of ApplicationFiltersApi->create_application_filter:\n")
+        pprint("The response of ApplicationFiltersApi->create_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->create_application_filter: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->create_application_filter: %s\n" % e)
 ```
 
 
@@ -91,22 +92,24 @@ Use this method to delete Application Filter objects. Deletion of multiple lists
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.application_filters_delete_request import ApplicationFiltersDeleteRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
     body = fw.ApplicationFiltersDeleteRequest() # ApplicationFiltersDeleteRequest | 
@@ -115,7 +118,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Application Filters.
         api_instance.delete_application_filters(body)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->delete_application_filters: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->delete_application_filters: %s\n" % e)
 ```
 
 
@@ -159,21 +162,24 @@ Use this method to delete single Application filter object by id.
 
 ### Example
 
-
 ```python
-import fw
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
     id = 56 # int | The Application Filter object identifier.
@@ -182,7 +188,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Application Filter Object by ID.
         api_instance.delete_single_application_filters(id)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->delete_single_application_filters: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->delete_single_application_filters: %s\n" % e)
 ```
 
 
@@ -226,39 +232,34 @@ Use this method to retrieve information on all Application Filter objects for th
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.application_filter_multi_response import ApplicationFilterMultiResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
-    filter = 'filter_example' # str | A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'.  You can filter by following fields:  | Name                    | type   | Supported Op                | | ----------------------- | ------ | --------------------------- | | name                    | string | !=, ==, ~, !~, >, <, <=, >= |  In addition grouping operators are supported:  | Op  | Description          | | --- | -------------------- | | and | Logical AND          | | or  | Logical OR           | | not | Logical NOT          | | ()  | Groupping Operators  |  Allowed sets of parameters that can be groupped in one query:  - name  Example: ``` ?_filter=\"((name=='app_list1')or(name~'app_list2'))\" ```  (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    tfilter = 'tfilter_example' # str | Filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | Sorting by tags. (optional)
 
     try:
         # List Application Filters.
-        api_response = api_instance.list_application_filters(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of ApplicationFiltersApi->list_application_filters:\n")
+        api_response = api_instance.list_application_filters()
+        pprint("The response of ApplicationFiltersApi->list_application_filters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->list_application_filters: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->list_application_filters: %s\n" % e)
 ```
 
 
@@ -307,35 +308,35 @@ Use this method to retrieve information on the specified Application Filter obje
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.application_filter_read_response import ApplicationFilterReadResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
     id = 56 # int | The Application Filter object identifier.
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    name = 'name_example' # str | The name of the application filter. (optional)
 
     try:
         # Read Application Filter.
-        api_response = api_instance.read_application_filter(id, fields=fields, name=name)
-        print("The response of ApplicationFiltersApi->read_application_filter:\n")
+        api_response = api_instance.read_application_filter(id)
+        pprint("The response of ApplicationFiltersApi->read_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->read_application_filter: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->read_application_filter: %s\n" % e)
 ```
 
 
@@ -380,23 +381,24 @@ Use this method to update the specified Application Filter object.  Category fil
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.application_filter import ApplicationFilter
-from fw.models.application_filter_update_response import ApplicationFilterUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.ApplicationFiltersApi(api_client)
     id = 56 # int | The Application Filter object identifier.
@@ -405,10 +407,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Update Application Filter.
         api_response = api_instance.update_application_filter(id, body)
-        print("The response of ApplicationFiltersApi->update_application_filter:\n")
+        pprint("The response of ApplicationFiltersApi->update_application_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApplicationFiltersApi->update_application_filter: %s\n" % e)
+        pprint("Exception when calling ApplicationFiltersApi->update_application_filter: %s\n" % e)
 ```
 
 

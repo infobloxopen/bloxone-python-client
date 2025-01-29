@@ -15,12 +15,15 @@ import unittest
 
 from upgrade_policy.api.upgrade_policy_v2_api import UpgradePolicyV2Api
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestUpgradePolicyV2Api(unittest.TestCase):
     """UpgradePolicyV2Api unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = UpgradePolicyV2Api()
+        api_instance = ApiClient()
+        self.api = UpgradePolicyV2Api(api_instance)
 
     def tearDown(self) -> None:
         pass

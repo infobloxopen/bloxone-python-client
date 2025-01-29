@@ -22,23 +22,24 @@ Use this method to create Internal Domains objects for the account.  The interna
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains import InternalDomains
-from fw.models.internal_domains_create_response import InternalDomainsCreateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     body = fw.InternalDomains() # InternalDomains | The Internal Domains object.
@@ -46,10 +47,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Create Internal Domains.
         api_response = api_instance.create_internal_domains(body)
-        print("The response of InternalDomainListsApi->create_internal_domains:\n")
+        pprint("The response of InternalDomainListsApi->create_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->create_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->create_internal_domains: %s\n" % e)
 ```
 
 
@@ -94,22 +95,24 @@ Use this method to delete Internal Domains objects for the account by a given li
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains_delete_request import InternalDomainsDeleteRequest
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     body = fw.InternalDomainsDeleteRequest() # InternalDomainsDeleteRequest | 
@@ -118,7 +121,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Internal Domains.
         api_instance.delete_internal_domains(body)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->delete_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->delete_internal_domains: %s\n" % e)
 ```
 
 
@@ -163,21 +166,24 @@ Use this method to delete Internal Domains objects for the account by a given in
 
 ### Example
 
-
 ```python
-import fw
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     id = 56 # int | The Internal Domains object identifiers.
@@ -186,7 +192,7 @@ with fw.ApiClient(configuration) as api_client:
         # Delete Internal Domains.
         api_instance.delete_single_internal_domains(id)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->delete_single_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->delete_single_internal_domains: %s\n" % e)
 ```
 
 
@@ -231,22 +237,24 @@ Use this method to insert ot delete items  for a specified Named List object. No
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains_items import InternalDomainsItems
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     id = 56 # int | The Internal Domain List object identifier.
@@ -255,10 +263,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Patch Internal Domains.
         api_response = api_instance.internal_domains_items_partial_update(id, body)
-        print("The response of InternalDomainListsApi->internal_domains_items_partial_update:\n")
+        pprint("The response of InternalDomainListsApi->internal_domains_items_partial_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->internal_domains_items_partial_update: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->internal_domains_items_partial_update: %s\n" % e)
 ```
 
 
@@ -304,39 +312,34 @@ Use this method to retrieve information on all Internal Domains objects for the 
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains_multi_response import InternalDomainsMultiResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
-    filter = 'filter_example' # str | A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'.  You can filter by following fields:  | Name               | type   | Supported Op                | | ------------------ | ------ | --------------------------- | | id                 | int32  | !=, ==, >, <, <=, >=        | | name               | string | !=, ==, ~, !~, >, <, <=, >= | | description        | string | !=, ==, ~, !~, >, <, <=, >= | | items              | string | ~, !~                       | | is_default         | bool   | !=, ==                      |  In addition grouping operators are supported:  | Op  | Description          | | --- | -------------------- | | and | Logical AND          | | or  | Logical OR           | | not | Logical NOT          | | ()  | Grouping Operators  |  Example: ``` ?_filter=\"((name=='internal_dom_a')or(name~'internal_dom_b'))\" ```  (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
-    tfilter = 'tfilter_example' # str | Filtering by tags. (optional)
-    torder_by = 'torder_by_example' # str | Sorting by tags. (optional)
 
     try:
         # List Internal Domains.
-        api_response = api_instance.list_internal_domains(filter=filter, fields=fields, offset=offset, limit=limit, page_token=page_token, tfilter=tfilter, torder_by=torder_by)
-        print("The response of InternalDomainListsApi->list_internal_domains:\n")
+        api_response = api_instance.list_internal_domains()
+        pprint("The response of InternalDomainListsApi->list_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->list_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->list_internal_domains: %s\n" % e)
 ```
 
 
@@ -385,38 +388,35 @@ Use this method to read Internal Domains objects for the account by a internal d
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains_read_response import InternalDomainsReadResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     id = 56 # int | The Internal Domains object identifier.
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
-    name = 'name_example' # str | The name of InternalDomains object. Used if id==0. (optional)
-    offset = 56 # int |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be '0'.          (optional)
-    limit = 56 # int |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          (optional)
-    page_token = 'page_token_example' # str |   The service-defined string used to identify a page of resources. A null value indicates the first page.          (optional)
 
     try:
         # Read Internal Domains.
-        api_response = api_instance.read_internal_domains(id, fields=fields, name=name, offset=offset, limit=limit, page_token=page_token)
-        print("The response of InternalDomainListsApi->read_internal_domains:\n")
+        api_response = api_instance.read_internal_domains(id)
+        pprint("The response of InternalDomainListsApi->read_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->read_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->read_internal_domains: %s\n" % e)
 ```
 
 
@@ -465,23 +465,24 @@ Use this method to update Internal Domains objects for the account by a internal
 
 ### Example
 
-
 ```python
-import fw
-from fw.models.internal_domains import InternalDomains
-from fw.models.internal_domains_update_response import InternalDomainsUpdateResponse
-from fw.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import fw
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = fw.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with fw.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = fw.InternalDomainListsApi(api_client)
     id = 56 # int | The Internal Domain object identifier.
@@ -490,10 +491,10 @@ with fw.ApiClient(configuration) as api_client:
     try:
         # Update Internal Domains.
         api_response = api_instance.update_internal_domains(id, body)
-        print("The response of InternalDomainListsApi->update_internal_domains:\n")
+        pprint("The response of InternalDomainListsApi->update_internal_domains:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InternalDomainListsApi->update_internal_domains: %s\n" % e)
+        pprint("Exception when calling InternalDomainListsApi->update_internal_domains: %s\n" % e)
 ```
 
 

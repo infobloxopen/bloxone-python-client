@@ -15,12 +15,15 @@ import unittest
 
 from infra_mgmt.api.services_api import ServicesApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestServicesApi(unittest.TestCase):
     """ServicesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ServicesApi()
+        api_instance = ApiClient()
+        self.api = ServicesApi(api_instance)
 
     def tearDown(self) -> None:
         pass

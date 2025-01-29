@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from ipam.models.bulk_copy_ip_space import BulkCopyIPSpace
 from ipam.models.bulk_copy_ip_space_response import BulkCopyIPSpaceResponse
@@ -27,6 +27,7 @@ from ipam.models.create_ip_space_response import CreateIPSpaceResponse
 from ipam.models.ip_space import IPSpace
 from ipam.models.list_ip_space_response import ListIPSpaceResponse
 from ipam.models.read_ip_space_response import ReadIPSpaceResponse
+from ipam.models.realms_conflict_response import RealmsConflictResponse
 from ipam.models.update_ip_space_response import UpdateIPSpaceResponse
 from ipam import models
 
@@ -1039,6 +1040,274 @@ class IpSpaceApi:
             method='DELETE',
             base_path='/api/ddi/v1',
             resource_path='/ipam/ip_space/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth)
+
+    @validate_call
+    def get_conflicts(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description="List of __FederatedRealm__ object ids.")] = None,
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RealmsConflictResponse:
+        """Retrieve Conflicted __AddressBlock__ and __Subnet__ objects in Federated Realms.
+
+        Use this endpoint to list Conflicts in an existing IP Space relative to a Federated Realm. Conflicts are Address Blocks contained by or Subnets that overlap with existing Delegations.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param federated_realms: List of __FederatedRealm__ object ids.
+        :type federated_realms: List[str]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_conflicts_serialize(
+            id=id,
+            federated_realms=federated_realms,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RealmsConflictResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            models=models,
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def get_conflicts_with_http_info(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description="List of __FederatedRealm__ object ids.")] = None,
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[RealmsConflictResponse]:
+        """Retrieve Conflicted __AddressBlock__ and __Subnet__ objects in Federated Realms.
+
+        Use this endpoint to list Conflicts in an existing IP Space relative to a Federated Realm. Conflicts are Address Blocks contained by or Subnets that overlap with existing Delegations.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param federated_realms: List of __FederatedRealm__ object ids.
+        :type federated_realms: List[str]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_conflicts_serialize(
+            id=id,
+            federated_realms=federated_realms,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RealmsConflictResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            models=models,
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def get_conflicts_without_preload_content(
+        self,
+        id: Annotated[
+            StrictStr,
+            Field(description=
+                  "An application specific resource identity of a resource")],
+        federated_realms: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description="List of __FederatedRealm__ object ids.")] = None,
+        _request_timeout: Union[None, Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                Tuple[Annotated[StrictFloat,
+                                                Field(gt=0)],
+                                      Annotated[StrictFloat,
+                                                Field(gt=0)]]] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Conflicted __AddressBlock__ and __Subnet__ objects in Federated Realms.
+
+        Use this endpoint to list Conflicts in an existing IP Space relative to a Federated Realm. Conflicts are Address Blocks contained by or Subnets that overlap with existing Delegations.
+
+        :param id: An application specific resource identity of a resource (required)
+        :type id: str
+        :param federated_realms: List of __FederatedRealm__ object ids.
+        :type federated_realms: List[str]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_conflicts_serialize(
+            id=id,
+            federated_realms=federated_realms,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index)
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RealmsConflictResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout)
+        return response_data.response
+
+    def _get_conflicts_serialize(
+        self,
+        id,
+        federated_realms,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'federated_realms': 'csv',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = self.api_client.path_param_value('id', id)
+        # process the query parameters
+        if federated_realms is not None:
+
+            _query_params.append(('federated_realms', federated_realms))
+
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # authentication setting
+        _auth_settings: List[str] = ['ApiKeyAuth']
+
+        return self.api_client.param_serialize(
+            method='GET',
+            base_path='/api/ddi/v1',
+            resource_path='/ipam/ip_space/{id}/conflicts',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -6,7 +6,7 @@ A __Record__ object (_dns/record_) represents a DNS resource record in an author
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**absolute_name_spec** | **str** | Synthetic field, used to determine _zone_ and/or _name_in_zone_ field for records. | [optional] [readonly] 
+**absolute_name_spec** | **str** | Synthetic field, used to determine _zone_ and/or _name_in_zone_ field for records. | [optional] 
 **absolute_zone_name** | **str** | The absolute domain name of the zone where this record belongs. | [optional] [readonly] 
 **comment** | **str** | The description for the DNS resource record. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
 **created_at** | **datetime** | The timestamp when the object has been created. | [optional] [readonly] 

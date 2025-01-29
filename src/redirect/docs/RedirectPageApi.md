@@ -17,34 +17,34 @@ Use this method to retrieve the Redirect Page object.  When blocking users from 
 
 ### Example
 
-
 ```python
-import redirect
-from redirect.models.redirect_page_read_response import RedirectPageReadResponse
-from redirect.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import redirect
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = redirect.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with redirect.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = redirect.RedirectPageApi(api_client)
-    filter = 'filter_example' # str |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and 'null'. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  ==   |  Equal                     |  |  !=   |  Not Equal                 |  |  >    |  Greater Than              |  |   >=  |  Greater Than or Equal To  |  |  <    |  Less Than                 |  |  <=   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         (optional)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Read Redirect Page.
-        api_response = api_instance.read_redirect_page(filter=filter, fields=fields)
-        print("The response of RedirectPageApi->read_redirect_page:\n")
+        api_response = api_instance.read_redirect_page()
+        pprint("The response of RedirectPageApi->read_redirect_page:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RedirectPageApi->read_redirect_page: %s\n" % e)
+        pprint("Exception when calling RedirectPageApi->read_redirect_page: %s\n" % e)
 ```
 
 
@@ -88,23 +88,24 @@ Use this method to update the Redirect Page object.  When blocking users from ac
 
 ### Example
 
-
 ```python
-import redirect
-from redirect.models.redirect_page_update_response import RedirectPageUpdateResponse
-from redirect.models.update_redirect_page_payload import UpdateRedirectPagePayload
-from redirect.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://csp.infoblox.com/api/atcfw/v1
+import redirect
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = redirect.Configuration(
-    host = "https://csp.infoblox.com/api/atcfw/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with redirect.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = redirect.RedirectPageApi(api_client)
     body = redirect.UpdateRedirectPagePayload() # UpdateRedirectPagePayload | The Redirect Page object.
@@ -112,10 +113,10 @@ with redirect.ApiClient(configuration) as api_client:
     try:
         # Update Redirect Page.
         api_response = api_instance.update_redirect_page(body)
-        print("The response of RedirectPageApi->update_redirect_page:\n")
+        pprint("The response of RedirectPageApi->update_redirect_page:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RedirectPageApi->update_redirect_page: %s\n" % e)
+        pprint("Exception when calling RedirectPageApi->update_redirect_page: %s\n" % e)
 ```
 
 

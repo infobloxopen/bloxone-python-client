@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.ha_group_api import HaGroupApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestHaGroupApi(unittest.TestCase):
     """HaGroupApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = HaGroupApi()
+        api_instance = ApiClient()
+        self.api = HaGroupApi(api_instance)
 
     def tearDown(self) -> None:
         pass

@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **heartbeats** | [**List[HAGroupHeartbeats]**](HAGroupHeartbeats.md) | Last successful heartbeat received from its peer/s. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request. | [optional] 
 **host** | **str** | The resource identifier. | 
 **port** | **int** | The HA port. | [optional] [readonly] 
+**port_v6** | **int** | The HA port used for IPv6 communication. | [optional] [readonly] 
 **role** | **str** | The role of this host in the HA relationship: _active_ or _passive_. | [optional] 
 **state** | **str** | The state of DHCP on the host. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request. | [optional] 
+**state_v6** | **str** | The state of DHCPv6 on the host. This field is set when the _collect_stats_ is set to _true_ in the _GET_ _/dhcp/ha_group_ request. | [optional] 
 
 ## Example
 

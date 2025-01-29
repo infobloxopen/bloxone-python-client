@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.dns_usage_api import DnsUsageApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestDnsUsageApi(unittest.TestCase):
     """DnsUsageApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DnsUsageApi()
+        api_instance = ApiClient()
+        self.api = DnsUsageApi(api_instance)
 
     def tearDown(self) -> None:
         pass

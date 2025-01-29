@@ -20,43 +20,39 @@ Use this method to retrieve the __Global__ configuration object. The service ope
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.read_global_response import ReadGlobalResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.GlobalApi(api_client)
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Retrieve the global configuration.
-        api_response = api_instance.read(fields=fields)
-        print("The response of GlobalApi->read:\n")
+        api_response = api_instance.read()
+        pprint("The response of GlobalApi->read:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->read: %s\n" % e)
+        pprint("Exception when calling GlobalApi->read: %s\n" % e)
 ```
 
 
@@ -99,44 +95,40 @@ Use this method to retrieve the __Global__ configuration object. The service ope
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.read_global_response import ReadGlobalResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.GlobalApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
-    fields = 'fields_example' # str |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a “flat” resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         (optional)
 
     try:
         # Retrieve the global configuration.
-        api_response = api_instance.read_by_id(id, fields=fields)
-        print("The response of GlobalApi->read_by_id:\n")
+        api_response = api_instance.read_by_id(id)
+        pprint("The response of GlobalApi->read_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->read_by_id: %s\n" % e)
+        pprint("Exception when calling GlobalApi->read_by_id: %s\n" % e)
 ```
 
 
@@ -180,33 +172,29 @@ Use this method to update the __Global__ configuration object. The service opera
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.dhcp_global import DHCPGlobal
-from ipam.models.update_global_response import UpdateGlobalResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.GlobalApi(api_client)
     body = ipam.DHCPGlobal() # DHCPGlobal | 
@@ -214,10 +202,10 @@ with ipam.ApiClient(configuration) as api_client:
     try:
         # Update the global configuration.
         api_response = api_instance.update(body)
-        print("The response of GlobalApi->update:\n")
+        pprint("The response of GlobalApi->update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->update: %s\n" % e)
+        pprint("Exception when calling GlobalApi->update: %s\n" % e)
 ```
 
 
@@ -260,33 +248,29 @@ Use this method to update the __Global__ configuration object. The service opera
 ### Example
 
 * Api Key Authentication (ApiKeyAuth):
-
 ```python
-import ipam
-from ipam.models.dhcp_global import DHCPGlobal
-from ipam.models.update_global_response import UpdateGlobalResponse
-from ipam.rest import ApiException
+import os
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://csp.infoblox.com/api/ddi/v1
+import ipam
+
+from bloxone_client.api_client import ApiClient
+from bloxone_client.configuration import Configuration
+
+# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ipam.Configuration(
-    host = "http://csp.infoblox.com/api/ddi/v1"
+configuration = Configuration(
+    csp_url = os.getenv('BLOXONE_CSP_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+configuration.api_key = os.getenv("BLOXONE_API_KEY")
 
 # Enter a context with an instance of the API client
-with ipam.ApiClient(configuration) as api_client:
+with ApiClient(config) as api_client:
     # Create an instance of the API class
     api_instance = ipam.GlobalApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -295,10 +279,10 @@ with ipam.ApiClient(configuration) as api_client:
     try:
         # Update the global configuration.
         api_response = api_instance.update_by_id(id, body)
-        print("The response of GlobalApi->update_by_id:\n")
+        pprint("The response of GlobalApi->update_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GlobalApi->update_by_id: %s\n" % e)
+        pprint("Exception when calling GlobalApi->update_by_id: %s\n" % e)
 ```
 
 

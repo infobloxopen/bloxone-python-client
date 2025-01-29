@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.threat_feeds_api import ThreatFeedsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestThreatFeedsApi(unittest.TestCase):
     """ThreatFeedsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ThreatFeedsApi()
+        api_instance = ApiClient()
+        self.api = ThreatFeedsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

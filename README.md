@@ -108,7 +108,8 @@ Note: The API key is a secret and should be handled securely. Hardcoding the API
 
 ### Default Tags
 
-The BloxOne API supports tagging resources. You can set default tags for all resources created using the client.
+
+The BloxOne API supports tagging resources. You can set default tags for all resources created using the client. 
 
 To set the Default Tags , you can create a new instance of Configuration to set the tags. For example:
 
@@ -123,6 +124,6 @@ config = Configuration(
 )
 ```
 
-## Support
+## Support 
 
 For support and inquiries, contact Infoblox Support or refer to the official [BloxOne documentation](https://csp.infoblox.com/apidoc).

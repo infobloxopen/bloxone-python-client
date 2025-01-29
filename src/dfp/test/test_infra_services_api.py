@@ -15,12 +15,15 @@ import unittest
 
 from dfp.api.infra_services_api import InfraServicesApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestInfraServicesApi(unittest.TestCase):
     """InfraServicesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = InfraServicesApi()
+        api_instance = ApiClient()
+        self.api = InfraServicesApi(api_instance)
 
     def tearDown(self) -> None:
         pass

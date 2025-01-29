@@ -15,12 +15,15 @@ import unittest
 
 from anycast.api.on_prem_anycast_manager_api import OnPremAnycastManagerApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestOnPremAnycastManagerApi(unittest.TestCase):
     """OnPremAnycastManagerApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = OnPremAnycastManagerApi()
+        api_instance = ApiClient()
+        self.api = OnPremAnycastManagerApi(api_instance)
 
     def tearDown(self) -> None:
         pass

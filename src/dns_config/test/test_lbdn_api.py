@@ -15,12 +15,15 @@ import unittest
 
 from dns_config.api.lbdn_api import LbdnApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestLbdnApi(unittest.TestCase):
     """LbdnApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = LbdnApi()
+        api_instance = ApiClient()
+        self.api = LbdnApi(api_instance)
 
     def tearDown(self) -> None:
         pass

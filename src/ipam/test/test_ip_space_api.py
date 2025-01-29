@@ -15,12 +15,15 @@ import unittest
 
 from ipam.api.ip_space_api import IpSpaceApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestIpSpaceApi(unittest.TestCase):
     """IpSpaceApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = IpSpaceApi()
+        api_instance = ApiClient()
+        self.api = IpSpaceApi(api_instance)
 
     def tearDown(self) -> None:
         pass
@@ -50,6 +53,13 @@ class TestIpSpaceApi(unittest.TestCase):
         """Test case for delete
 
         Move the IP space to the recycle bin.
+        """
+        pass
+
+    def test_get_conflicts(self) -> None:
+        """Test case for get_conflicts
+
+        Retrieve Conflicted __AddressBlock__ and __Subnet__ objects in Federated Realms.
         """
         pass
 

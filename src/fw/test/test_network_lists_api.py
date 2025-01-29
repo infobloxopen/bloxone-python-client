@@ -15,12 +15,15 @@ import unittest
 
 from fw.api.network_lists_api import NetworkListsApi
 
+from bloxone_client.api_client import ApiClient
+
 
 class TestNetworkListsApi(unittest.TestCase):
     """NetworkListsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = NetworkListsApi()
+        api_instance = ApiClient()
+        self.api = NetworkListsApi(api_instance)
 
     def tearDown(self) -> None:
         pass

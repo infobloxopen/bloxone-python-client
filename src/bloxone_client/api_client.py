@@ -25,6 +25,12 @@ from bloxone_client.exceptions import (ApiValueError, ApiException,
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
 
 
+HEADER_CLIENT = "x-infoblox-client"
+HEADER_SDK = "x-infoblox-sdk"
+SDK_IDENTIFIER = "python-sdk"
+
+VERSION = 0.1
+
 class ApiClient:
     """Generic API client for OpenAPI client library builds.
 
@@ -62,7 +68,7 @@ class ApiClient:
         self.rest_client = RESTClientObject(configuration)
         self.default_headers = {}
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.1.0/python'
+        self.user_agent = f"bloxone-{SDK_IDENTIFIER}/{VERSION}"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -213,8 +219,12 @@ class ApiClient:
         # auth setting
         self.update_params_for_auth(header_params, )
 
+        # Update Client Name and SDK Identifier
+        self.update_infoblox_headers(header_params)
+
         # body
         if body:
+            body = self.add_default_tags(config,body)
             body = self.sanitize_for_serialization(body)
 
         # request url
@@ -542,6 +552,17 @@ class ApiClient:
         headers['Authorization'] = "Token {}".format(
             self.configuration.api_key)
 
+    def update_infoblox_headers(
+            self,
+            headers,
+    )-> None:
+        """Updates headers with client name and sdk identifier.
+
+        :param headers: Header parameters dict to be updated.
+        """
+        headers[HEADER_CLIENT] = self.configuration.client_name
+        headers[HEADER_SDK] = SDK_IDENTIFIER
+
     def __deserialize_file(self, response):
         """Deserializes body to file
 
@@ -673,3 +694,23 @@ class ApiClient:
                 return split_value[-1]
 
         return value
+
+    def add_default_tags(
+            self,
+            configuration,
+            body
+    ):
+        """Add default tags to the body if they are not already set.
+
+        :param configuration: The configuration of the request.
+        :param body: The body of the request.
+        :return: The body with default tags added.
+        """
+        if len(configuration.default_tags) > 0 and hasattr(body, 'tags'):
+            if body.tags is None:
+                body.tags = {}
+            for k, v in configuration.default_tags.items():
+                if k not in body.tags:
+                    body.tags[k] = v
+
+        return body

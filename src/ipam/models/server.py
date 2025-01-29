@@ -181,6 +181,11 @@ class Server(BaseModel):
         description=
         "The name of the DHCP Config Profile. Must contain 1 to 256 characters. Can include UTF-8."
     )
+    profile_type: Optional[StrictStr] = Field(
+        default=None,
+        description=
+        "The type of server object.  Defaults to _server_.  Valid values are: * _server_: The server profile type. * _subnet_: The subnet profile type."
+    )
     server_principal: Optional[StrictStr] = Field(
         default=None,
         description=
@@ -210,7 +215,7 @@ class Server(BaseModel):
         "inheritance_sources", "kerberos_kdc", "kerberos_keys",
         "kerberos_rekey_interval", "kerberos_retry_interval",
         "kerberos_tkey_lifetime", "kerberos_tkey_protocol", "name",
-        "server_principal", "tags", "updated_at",
+        "profile_type", "server_principal", "tags", "updated_at",
         "vendor_specific_option_option_space"
     ]
 
@@ -383,6 +388,8 @@ class Server(BaseModel):
             obj.get("kerberos_tkey_protocol"),
             "name":
             obj.get("name"),
+            "profile_type":
+            obj.get("profile_type"),
             "server_principal":
             obj.get("server_principal"),
             "tags":

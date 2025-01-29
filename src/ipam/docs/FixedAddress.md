@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | The reserved address. | 
 **comment** | **str** | The description for the fixed address. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
+**compartment_id** | **str** | The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty. | [optional] [readonly] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
 **dhcp_options** | [**List[OptionItem]**](OptionItem.md) | The list of DHCP options. May be either a specific option or a group of options. | [optional] 
 **disable_dhcp** | **bool** | Optional. _true_ to disable object. The fixed address is converted to an exclusion when generating configuration.  Defaults to _false_. | [optional] 
