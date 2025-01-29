@@ -2,6 +2,11 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
+# read the contents of your README file
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
 # To install the library, run the following
 #
 # python setup.py install
@@ -31,6 +36,8 @@ setup(
     packages=find_packages('src', exclude=["test", "tests"]),
     package_dir={'': 'src'},
     include_package_data=True,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     package_data={
         "*": ["py.typed"]
     },

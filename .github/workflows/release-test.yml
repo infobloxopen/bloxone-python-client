@@ -1,13 +1,9 @@
 # Universal DDI Python Client release workflow.
 name: Release
 
-# This GitHub action creates a release when a tag that matches the pattern
-# "v*" (e.g. v0.1.0) is created.
+# This GitHub action is triggered on a manual workflow_dispatch event.
 on:
-  push:
-    branches: [ main ]
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 # Releases need permissions to read and write the repository contents.
 # GitHub considers creating releases and uploading assets as writing contents.
@@ -17,7 +13,7 @@ permissions:
 
 
 jobs:
-  build-package:
+  build-package-test:
     name: Create and Store Python 🐍 distribution 📦
     runs-on: ubuntu-latest
     environment:
@@ -43,10 +39,10 @@ jobs:
           name: python-package-distributions
           path: dist/
 
-  publish-to-pypi:
-    name: Publish Python 🐍 distribution 📦 to PyPI
+  publish-to-testpypi:
+    name: Publish Python 🐍 distribution 📦 to TestPyPI
     needs:
-      - build-package
+      - build-package-test
     runs-on: ubuntu-latest
     steps:
       - name: Download all the dists
@@ -54,8 +50,8 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - name: Publish distribution 📦 to PyPI
+      - name: Publish distribution 📦 to TestPyPI
         uses: pypa/gh-action-pypi-publish@v1.10.1
         with:
-          repository-url: https://pypi.org/p/universal-ddi-python-client/
+          repository-url: https://test.pypi.org/p/bloxone-python-client/
           password: ${{ secrets.PYPI_API_TOKEN }}
