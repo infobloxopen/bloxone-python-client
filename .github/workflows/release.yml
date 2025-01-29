@@ -19,9 +19,6 @@ jobs:
   build-package:
     name: Create and Store Python 🐍 distribution 📦
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/universal-ddi-python-client
     steps:
       - uses: actions/checkout@v4
       - name: Setup Python
@@ -47,6 +44,9 @@ jobs:
     needs:
       - build-package
     runs-on: ubuntu-latest
+    environment:
+      name: pypi-python-client
+      url: https://pypi.org/p/universal-ddi-python-client
     steps:
       - name: Download all the dists
         uses: actions/download-artifact@v4
@@ -54,6 +54,6 @@ jobs:
           name: python-package-distributions
           path: dist/
       - name: Publish distribution 📦 to PyPI
-        uses: pypa/gh-action-pypi-publish@v1
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           verbose: true

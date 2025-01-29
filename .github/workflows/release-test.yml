@@ -42,7 +42,7 @@ jobs:
       - build-package-test
     runs-on: ubuntu-latest
     environment:
-      name: pypi
+      name: testpypi-python-client
       url: https://test.pypi.org/p/universal-ddi-python-client
     steps:
       - name: Download all the dists
