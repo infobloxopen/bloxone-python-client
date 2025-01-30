@@ -5,30 +5,30 @@ This repository provides a Python Client library for interacting with Infoblox A
 The following Infoblox APIs are supported:
 
 ## Infoblox Cloud
-- [Infrastructure Management](src/infra_mgmt/README.md)
-- [Infrastructure Provision (HostActivation API)](src/infra_provision/README.md)
-- [Anycast Configuration Manager](src/anycast/README.md)
-- [Upgrade Policy](upgradePolicy/README.md)
+- [Infrastructure Management](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/infra_mgmt/README.md)
+- [Infrastructure Provision (HostActivation API)](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/infra_provision/README.md)
+- [Anycast Configuration Manager](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/anycast/README.md)
+- [Upgrade Policy](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/upgrade_policy/README.md)
 
 ## Infoblox Threat Defense
-- [Threat Defense Cloud (FW API)](src/fw/README.md)
-- [DNS Forwarding Proxy (DFP API)](src/dfp/README.md)
-- [Redirect](src/redirect/README.md)
+- [Threat Defense Cloud (FW API)](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/fw/README.md)
+- [DNS Forwarding Proxy (DFP API)](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/dfp/README.md)
+- [Redirect](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/redirect/README.md)
 
 ## Universal DDI
-- [IP Address Management](src/ipam/README.md)
-- [DNS Configuration](src/dns_config/README.md)
-- [DNS Data](src/dns_data/README.md)
-- [Keys](src/keys/README.md)
-- [Cloud Discovery Providers](src/cloud_discovery/README.md)
-- [IPAM Federation](src/ipam_federation/README.md)
+- [IP Address Management](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/ipam/README.md)
+- [DNS Configuration](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/dns_config/README.md)
+- [DNS Data](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/dns_data/README.md)
+- [Keys](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/keys/README.md)
+- [Cloud Discovery Providers](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/cloud_discovery/README.md)
+- [IPAM Federation](https://github.com/infobloxopen/universal-ddi-python-client/blob/main/src/ipam_federation/README.md)
 
 ## Installation
 
 To install the Universal DDI Python Client, use the following command:
 
 ```bash
-pip install git+https://github.com/infobloxopen/universal-ddi-python-client
+pip install universal-ddi-python-client
 ```
 
 ## Usage
