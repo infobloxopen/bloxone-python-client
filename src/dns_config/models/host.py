@@ -137,7 +137,6 @@ class Host(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "absolute_name",
             "address",
             "anycast_addresses",
             "comment",
