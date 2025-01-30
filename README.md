@@ -82,7 +82,7 @@ The default URL for the Cloud Services Portal is `https://csp.infoblox.com`. If 
 from universal_ddi_client import Configuration
 
 config = Configuration(
-    csp_url = "https://csp.eu.infoblox.com",
+    portal_url = "https://csp.eu.infoblox.com",
 )
 ```
 
@@ -101,7 +101,7 @@ To use an API key with Infoblox API, you can create a new instance of Configurat
 from universal_ddi_client import Configuration
 
 config = Configuration(
-    api_key = "API_KEY",
+    portal_key = "PORTAL_KEY",
 )
 ```
 

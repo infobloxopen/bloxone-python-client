@@ -13,7 +13,7 @@ class TestApiClient(unittest.TestCase):
 
     def test_default_client(self):
         self.assertIsNotNone(self.api_client.configuration)
-        self.assertEqual(self.api_client.configuration.csp_url,
+        self.assertEqual(self.api_client.configuration.portal_url,
                          'https://csp.infoblox.com')
         self.assertEqual(self.api_client.configuration.client_name,
                          'universal-ddi-python-client')

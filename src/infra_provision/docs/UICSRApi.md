@@ -31,17 +31,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
     activation_code = 'activation_code_example' # str | activation code is used by the clients to track the approval of the CSR
@@ -107,17 +107,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
     activation_code = 'activation_code_example' # str | activation code is used by the clients to track the approval of the CSR
@@ -183,17 +183,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
 
@@ -264,17 +264,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
     cert_serial = 'cert_serial_example' # str | x509 serial number of the certificate. This can be obtained by parsing the client certificate file on the onprem. Either cert_serial or ophid is required
@@ -342,17 +342,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = infra_provision.UICSRApi(api_client)
     ophid = 'ophid_example' # str | On-prem host ID which can be obtained either from on-prem or NIOS-X UI portal(Manage > Infrastructure > Hosts > Select the onprem > click on 3 dots on top right side > General Information > Ophid) .

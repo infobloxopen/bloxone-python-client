@@ -33,17 +33,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.ApplyConfigNowRequest() # ApplyConfigNowRequest | 
@@ -107,17 +107,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.BatchMaintenanceWindowRequest() # BatchMaintenanceWindowRequest | 
@@ -181,17 +181,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     body = upgrade_policy.CreateMaintenanceWindowRequest() # CreateMaintenanceWindowRequest | 
@@ -255,17 +255,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record
@@ -329,17 +329,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record
@@ -403,17 +403,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
 
@@ -476,17 +476,17 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
 # Configure Portal key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = upgrade_policy.UpgradePolicyV2Api(api_client)
     id = 'id_example' # str | uuid of a maintenance window record

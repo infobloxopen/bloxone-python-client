@@ -229,7 +229,7 @@ class ApiClient:
 
         # request url
         if _host is None:
-            url = self.configuration.csp_url + base_path + resource_path
+            url = self.configuration.portal_url + base_path + resource_path
         else:
             # use server/host defined in path or operation instead
             url = _host + resource_path
@@ -550,7 +550,7 @@ class ApiClient:
         :param headers: Header parameters dict to be updated.
         """
         headers['Authorization'] = "Token {}".format(
-            self.configuration.api_key)
+            self.configuration.portal_key)
 
     def update_infoblox_headers(
             self,

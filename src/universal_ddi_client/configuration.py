@@ -18,10 +18,10 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
 class Configuration:
     """This class contains various settings of the API client.
 
-    :param csp_url: URL for Infoblox Cloud Services Portal.
+    :param portal_url: URL for Infoblox Cloud Services Portal.
       Can also be configured using the `INFOBLOX_PORTAL_URL` environment variable.
       Default is `https://csp.infoblox.com`.
-    :param api_key: API Key for accessing the Infoblox API.
+    :param portal_key: API Key for accessing the Infoblox API.
       Can also be configured by using the `INFOBLOX_PORTAL_KEY` environment variable.
 
       You can configure an API key for your user account in the Infoblox Cloud Services Portal.
@@ -36,35 +36,35 @@ class Configuration:
 
     API Key Authentication Example.
 conf = ipam.Configuration(
-    api_key='your_api_key'
+    portal_key='your_portal_key'
 )
 
     The following header will be added to the HTTP request:
-       Authorization: Token your_api_key
+       Authorization: Token your_portal_key
     """
 
     _default = None
 
     def __init__(
         self,
-        csp_url=None,
-        api_key=None,
+        portal_url=None,
+        portal_key=None,
         client_name=None,
         ssl_ca_cert=None,
     ) -> None:
         """Constructor
         """
 
-        self.csp_url = csp_url or os.getenv("INFOBLOX_PORTAL_URL") or os.getenv("BLOXONE_CSP_URL") or "https://csp.infoblox.com"
+        self.portal_url = portal_url or os.getenv("INFOBLOX_PORTAL_URL") or os.getenv("BLOXONE_CSP_URL") or "https://csp.infoblox.com"
         """Default CSP url
         """
         self.temp_folder_path = None
         """Temp file folder for downloading files
         """
         # Authentication Settings
-        self.api_key = os.getenv('INFOBLOX_PORTAL_KEY') or os.getenv('BLOXONE_API_KEY') or ""
-        if api_key:
-            self.api_key = api_key
+        self.portal_key = os.getenv('INFOBLOX_PORTAL_KEY') or os.getenv('BLOXONE_API_KEY') or ""
+        if portal_key:
+            self.portal_key = portal_key
         """API Key
         """
         self.client_name = "universal-ddi-python-client" if client_name is None else client_name
@@ -289,36 +289,36 @@ conf = ipam.Configuration(
                format(env=sys.platform, pyversion=sys.version)
 
     @property
-    def csp_url(self):
+    def portal_url(self):
         """Get the CSP URL.
 
         :return: The CSP URL.
         """
-        return self.__csp_url
+        return self.__portal_url
 
-    @csp_url.setter
-    def csp_url(self, value):
+    @portal_url.setter
+    def portal_url(self, value):
         """Set the CSP URL.
 
         :param value: The CSP URL.
         """
-        self.__csp_url = value
+        self.__portal_url = value
 
     @property
-    def api_key(self):
+    def portal_key(self):
         """Get the API key.
 
         :return: The API key.
         """
-        return self.__api_key
+        return self.__portal_key
 
-    @api_key.setter
-    def api_key(self, value):
+    @portal_key.setter
+    def portal_key(self, value):
         """Set the API key.
 
         :param value: The API key.
         """
-        self.__api_key = value
+        self.__portal_key = value
 
     @property
     def client_name(self):

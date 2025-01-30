@@ -33,12 +33,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     body = fw.AccessCode() # AccessCode | The Bypass Code object.
@@ -107,12 +107,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     body = fw.AccessCodeDeleteRequest() # AccessCodeDeleteRequest | 
@@ -177,12 +177,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     access_key = 'access_key_example' # str | The Bypass Code identifier.
@@ -247,12 +247,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
 
@@ -320,12 +320,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     access_key = 'access_key_example' # str | The Bypass Code identifier.
@@ -393,12 +393,12 @@ from universal_ddi_client.configuration import Configuration
 # Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fw.AccessCodesApi(api_client)
     payload_access_key = 'payload_access_key_example' # str | Auto generated unique Bypass Code value
