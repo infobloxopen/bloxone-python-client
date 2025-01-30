@@ -6,7 +6,7 @@ A DNS Host (_dns/host_) object associates DNS configuraton with hosts.   Automat
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**absolute_name** | **str** | Host FQDN. | [optional] [readonly] 
+**absolute_name** | **str** | Host FQDN. | [optional] 
 **address** | **str** | Host&#39;s primary IP Address. | [optional] [readonly] 
 **anycast_addresses** | **List[str]** | Anycast address configured to the host. Order is not significant. | [optional] [readonly] 
 **associated_server** | [**HostAssociatedServer**](HostAssociatedServer.md) | Host associated server configuration. | [optional] 
