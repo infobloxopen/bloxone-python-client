@@ -27,7 +27,7 @@ import fw
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
     csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
@@ -100,7 +100,7 @@ import fw
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
     csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
@@ -175,7 +175,7 @@ import fw
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
     csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
