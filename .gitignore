@@ -67,3 +67,5 @@ target/
 
 # Goland
 .idea
+
+.openapi-generator/
