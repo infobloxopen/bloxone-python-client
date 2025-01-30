@@ -30,20 +30,20 @@ import dns_config
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+# Configure Portal key authorization: ApiKeyAuth
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dns_config.ServerApi(api_client)
     body = dns_config.Server() # Server | 
@@ -107,20 +107,20 @@ import dns_config
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+# Configure Portal key authorization: ApiKeyAuth
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dns_config.ServerApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -181,20 +181,20 @@ import dns_config
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+# Configure Portal key authorization: ApiKeyAuth
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dns_config.ServerApi(api_client)
 
@@ -264,20 +264,20 @@ import dns_config
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+# Configure Portal key authorization: ApiKeyAuth
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dns_config.ServerApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource
@@ -342,20 +342,20 @@ import dns_config
 from universal_ddi_client.api_client import ApiClient
 from universal_ddi_client.configuration import Configuration
 
-# Defining the CSP URL is optional and defaults to "https://csp.infoblox.com"
+# Defining the Portal URL is optional and defaults to "https://csp.infoblox.com"
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration(
-    csp_url = os.getenv('INFOBLOX_PORTAL_URL'),
+    portal_url = os.getenv('INFOBLOX_PORTAL_URL'),
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key = os.getenv("INFOBLOX_PORTAL_KEY")
+# Configure Portal key authorization: ApiKeyAuth
+configuration.portal_key = os.getenv("INFOBLOX_PORTAL_KEY")
 
 # Enter a context with an instance of the API client
-with ApiClient(config) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dns_config.ServerApi(api_client)
     id = 'id_example' # str | An application specific resource identity of a resource

@@ -82,11 +82,14 @@ The default URL for the Cloud Services Portal is `https://csp.infoblox.com`. If 
 from universal_ddi_client import Configuration
 
 config = Configuration(
-    csp_url = "https://csp.eu.infoblox.com",
+    portal_url = "https://csp.eu.infoblox.com",
 )
 ```
 
-You can also set the URL using the environment variable `INFOBLOX_PORTAL_URL`
+You can also set the URL using the environment variable `INFOBLOX_PORTAL_URL` or `BLOXONE_CSP_URL`.
+
+> **Note:** `BLOXONE_CSP_URL` is deprecated and will be removed in future releases. It is recommended to use `INFOBLOX_PORTAL_URL` instead.
+
 
 ### Authorization
 
@@ -98,13 +101,15 @@ To use an API key with Infoblox API, you can create a new instance of Configurat
 from universal_ddi_client import Configuration
 
 config = Configuration(
-    api_key = "API_KEY",
+    portal_key = "PORTAL_KEY",
 )
 ```
 
-Alternatively, You can also set the API key using the environment variable `INFOBLOX_PORTAL_KEY`
+Alternatively, You can also set the API key using the environment variable `INFOBLOX_PORTAL_KEY` or `BLOXONE_API_KEY` .
 
-Note: The API key is a secret and should be handled securely. Hardcoding the API key in your code is not recommended.
+> **Note:** `BLOXONE_API_KEY` is deprecated and will be removed in future releases. It is recommended to use `INFOBLOX_PORTAL_KEY` instead.
+
+> **Note:** The API key is a secret and should be handled securely. Hardcoding the API key in your code is not recommended.
 
 ### Default Tags
 
