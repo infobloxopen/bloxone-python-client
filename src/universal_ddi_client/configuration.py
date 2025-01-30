@@ -55,14 +55,14 @@ conf = ipam.Configuration(
         """Constructor
         """
 
-        self.csp_url = os.getenv('INFOBLOX_PORTAL_URL', "https://csp.infoblox.com") if csp_url is None else csp_url
+        self.csp_url = csp_url or os.getenv("INFOBLOX_PORTAL_URL") or os.getenv("BLOXONE_CSP_URL") or "https://csp.infoblox.com"
         """Default CSP url
         """
         self.temp_folder_path = None
         """Temp file folder for downloading files
         """
         # Authentication Settings
-        self.api_key = os.getenv('INFOBLOX_PORTAL_KEY', "")
+        self.api_key = os.getenv('INFOBLOX_PORTAL_KEY') or os.getenv('BLOXONE_API_KEY') or ""
         if api_key:
             self.api_key = api_key
         """API Key
