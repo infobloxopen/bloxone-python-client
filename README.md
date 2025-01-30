@@ -88,7 +88,7 @@ config = Configuration(
 
 You can also set the URL using the environment variable `INFOBLOX_PORTAL_URL` or `BLOXONE_CSP_URL`.
 
-> **Note:** `BLOXONE_CSP_URL` is subject to deprecation in future releases. It is recommended to use `INFOBLOX_PORTAL_URL` instead.
+> **Note:** `BLOXONE_CSP_URL` is deprecated and will be removed in future releases. It is recommended to use `INFOBLOX_PORTAL_URL` instead.
 
 
 ### Authorization
@@ -107,7 +107,7 @@ config = Configuration(
 
 Alternatively, You can also set the API key using the environment variable `INFOBLOX_PORTAL_KEY` or `BLOXONE_API_KEY` .
 
-> **Note:** `BLOXONE_API_KEY` is subject to deprecation in future releases. It is recommended to use `INFOBLOX_PORTAL_KEY` instead.
+> **Note:** `BLOXONE_API_KEY` is deprecated and will be removed in future releases. It is recommended to use `INFOBLOX_PORTAL_KEY` instead.
 
 > **Note:** The API key is a secret and should be handled securely. Hardcoding the API key in your code is not recommended.
 
