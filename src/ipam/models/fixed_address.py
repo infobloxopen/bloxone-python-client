@@ -30,10 +30,8 @@ class FixedAddress(BaseModel):
     """
     A __FixedAddress__ object (_dhcp/fixed_address_) reserves an address for a specific client. It must have a _match_type_ and a valid corresponding _match_value_ so it can match that client.
     """ # noqa: E501
-    address: Optional[StrictStr] = Field(
-        default=None,
-        description="The reserved address."
-    )
+    address: Optional[StrictStr] = Field(default=None,
+                                         description="The reserved address.")
     comment: Optional[StrictStr] = Field(
         default=None,
         description=
