@@ -6,7 +6,7 @@ A __FixedAddress__ object (_dhcp/fixed_address_) reserves an address for a speci
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** | The reserved address. | 
+**address** | **str** | The reserved address. | [optional] 
 **comment** | **str** | The description for the fixed address. May contain 0 to 1024 characters. Can include UTF-8. | [optional] 
 **compartment_id** | **str** | The compartment associated with the object. If no compartment is associated with the object, the value defaults to empty. | [optional] [readonly] 
 **created_at** | **datetime** | Time when the object has been created. | [optional] [readonly] 
