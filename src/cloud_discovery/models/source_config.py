@@ -105,7 +105,6 @@ class SourceConfig(BaseModel):
             "account_schedule_id",
             "created_at",
             "deleted_at",
-            "id",
             "updated_at",
             "additional_properties",
         ])
